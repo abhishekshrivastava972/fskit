@@ -1,0 +1,13 @@
+#summary Introduction to FSKit
+
+= Introduction =
+
+FSKit is an Objective-C library to help developers connect and use the FamilySearch.org APIs
+
+
+= Details =
+
+Topics:
+  * Authentication
+  * Usage
+  * Model
