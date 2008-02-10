@@ -1,0 +1,103 @@
+        -:    0:Source:/Users/logan/Projects/FSKit/Source/FSKResponse.m
+        -:    0:Graph:/Users/logan/Projects/builds/FSKit.build/Coverage/FSKit.build/Objects-normal/ppc/FSKResponse.gcno
+        -:    0:Data:/Users/logan/Projects/builds/FSKit.build/Coverage/FSKit.build/Objects-normal/ppc/FSKResponse.gcda
+        -:    0:Runs:6
+        -:    0:Programs:1
+        -:    1://
+        -:    2://  FSKResponse.m
+        -:    3://  FSKit
+        -:    4://
+        -:    5://  Created by Logan Allred on 1/26/08.
+        -:    6://  Copyright 2008 Logan Allred. All rights reserved.
+        -:    7://
+        -:    8:
+        -:    9:#import "FSKResponse.h"
+        -:   10:
+        -:   11:
+        -:   12:@implementation FSKResponse
+        -:   13:
+    #####:   14:- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+        -:   15:{
+    #####:   16:    if ((self = [super init]) != nil) 
+        -:   17:	{
+    #####:   18:		xmlDocument = [theXmlDocument retain];
+    #####:   19:		statusCode = INT_MIN;
+        -:   20:	}
+        -:   21:	
+    #####:   22:	return self;
+        -:   23:}
+        -:   24:
+        -:   25:- (void)dealloc
+    #####:   26:{
+    #####:   27:	[xmlDocument release];
+    #####:   28:	[super dealloc];
+        -:   29:}
+        -:   30:
+        -:   31:
+        -:   32:- (NSXMLDocument *)xmlDocument
+    #####:   33:{
+    #####:   34:    return [[xmlDocument retain] autorelease];
+        -:   35:}
+        -:   36:
+        -:   37://- (void)setXmlDocument:(NSXMLDocument *)value {
+        -:   38://    if (xmlDocument != value) {
+        -:   39://        [xmlDocument release];
+        -:   40://        xmlDocument = [value copy];
+        -:   41://    }
+        -:   42://}
+        -:   43:
+        -:   44:- (int)statusCode
+    #####:   45:{
+    #####:   46:	if (statusCode == INT_MIN)
+        -:   47:	{
+    #####:   48:		statusCode = [[[xmlDocument nodesForXPath:@"/node()/@statusCode" error:nil] lastObject] intValue];
+        -:   49:	}
+    #####:   50:    return statusCode;
+        -:   51:}
+        -:   52:
+        -:   53:- (NSString *)statusMessage
+    #####:   54:{
+    #####:   55:	if (!statusMessage)
+        -:   56:	{
+    #####:   57:		statusMessage = [[[xmlDocument nodesForXPath:@"/node()/@statusMessage" error:nil] lastObject] stringValue];
+        -:   58:	}
+    #####:   59:    return [[statusMessage retain] autorelease];
+        -:   60:}
+        -:   61:
+        -:   62:- (NSString *)version
+    #####:   63:{
+    #####:   64:	if (!version)
+        -:   65:	{
+    #####:   66:		version = [[[xmlDocument nodesForXPath:@"/node()/@version" error:nil] lastObject] stringValue];
+        -:   67:	}
+    #####:   68:    return [[version retain] autorelease];
+        -:   69:}
+        -:   70:
+        -:   71:- (BOOL)deprecated
+    #####:   72:{
+    #####:   73:	if (!deprecatedValue)
+        -:   74:	{
+    #####:   75:		deprecatedValue = [[[xmlDocument nodesForXPath:@"/node()/@deprecated" error:nil] lastObject] stringValue];
+    #####:   76:		deprecated = (@"true" == deprecatedValue);
+        -:   77:	}
+    #####:   78:    return deprecated;
+        -:   79:}
+        -:   80:
+        -:   81:- (NSArrayController *)results
+    #####:   82:{
+    #####:   83:    return [[results retain] autorelease];
+        -:   84:}
+        -:   85:
+        -:   86://- (void)setResults:(NSArrayController *)value {
+        -:   87://    if (results != value) {
+        -:   88://        [results release];
+        -:   89://        results = [value copy];
+        -:   90://    }
+        -:   91://}
+        -:   92:
+        -:   93:- (NSArrayController *)errors
+    #####:   94:{
+    #####:   95:    return [[errors retain] autorelease];
+        -:   96:}
+        -:   97:
+        -:   98:@end

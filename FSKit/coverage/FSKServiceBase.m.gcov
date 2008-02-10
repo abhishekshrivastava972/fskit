@@ -1,0 +1,55 @@
+        -:    0:Source:/Users/logan/Projects/FSKit/Source/FSKServiceBase.m
+        -:    0:Graph:/Users/logan/Projects/builds/FSKit.build/Coverage/FSKit.build/Objects-normal/ppc/FSKServiceBase.gcno
+        -:    0:Data:/Users/logan/Projects/builds/FSKit.build/Coverage/FSKit.build/Objects-normal/ppc/FSKServiceBase.gcda
+        -:    0:Runs:6
+        -:    0:Programs:1
+        -:    1://
+        -:    2://  FamilySearchService.m
+        -:    3://  FSKit
+        -:    4://
+        -:    5://  Created by Logan Allred on 9/16/07.
+        -:    6://  Copyright 2008 Logan Allred. All rights reserved.
+        -:    7://
+        -:    8:
+        -:    9:#import "FSKServiceBase.h"
+        -:   10:#import "FSKRequest.h"
+        -:   11:
+        -:   12:@implementation FSKServiceBase
+        -:   13:- (id)initWithConnection:(FSKConnection *)familySearchConnection delegate:(id)theDelegate
+    #####:   14:{
+    #####:   15:    if ((self = [super init]) != nil) 
+        -:   16:	{ 
+    #####:   17:		connection = [familySearchConnection retain];
+    #####:   18:		_delegate = theDelegate ? theDelegate : [familySearchConnection delegate];
+        -:   19:	}
+        -:   20:	
+    #####:   21:	return self;
+        -:   22:}
+        -:   23:
+        -:   24:- (void)dealloc
+    #####:   25:{
+    #####:   26:	[connection release];
+    #####:   27:	[super dealloc];
+        -:   28:}
+        -:   29:
+    #####:   30:-(void) makeFamilySearchRequest:(NSString *)endpoint idList:(NSSet *)idList parameters:(NSDictionary *)parameterDict;
+        -:   31:{
+    #####:   32:	[FSKRequest fetchFamilySearchData:[NSString stringWithFormat:@"%@/%@/%@", moduleName, versionString, endpoint] 
+        -:   33:							  WithIds:idList 
+        -:   34:						   parameters:parameterDict 
+        -:   35:						   connection:connection
+        -:   36:							 delegate:self 
+        -:   37:							 selector:@selector(requestFinished:)];
+        -:   38:}
+        -:   39:
+        -:   40:-(void) requestFinished:(NSXMLElement *)response
+    #####:   41:{
+    #####:   42:	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
+        -:   43:}
+        -:   44:
+        -:   45:-(void) requestFailed:(NSError *)error
+    #####:   46:{
+    #####:   47:	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+        -:   48:}
+        -:   49:
+        -:   50:@end

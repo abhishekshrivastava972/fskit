@@ -1,0 +1,50 @@
+        -:    0:Source:/Users/logan/Projects/FSKit/Source/FSKIdentityRequest.m
+        -:    0:Graph:/Users/logan/Projects/builds/FSKit.build/Coverage/FSKit.build/Objects-normal/ppc/FSKIdentityRequest.gcno
+        -:    0:Data:/Users/logan/Projects/builds/FSKit.build/Coverage/FSKit.build/Objects-normal/ppc/FSKIdentityRequest.gcda
+        -:    0:Runs:6
+        -:    0:Programs:1
+        -:    1://
+        -:    2://  FSKIdentityRequest.m
+        -:    3://  FSKit
+        -:    4://
+        -:    5://  Created by Logan Allred on 1/23/08.
+        -:    6://  Copyright 2008 Logan Allred. All rights reserved.
+        -:    7://
+        -:    8:
+        -:    9:#import "FSKIdentityRequest.h"
+        -:   10:
+        -:   11:
+        -:   12:@implementation FSKIdentityRequest
+        -:   13:-(id)initWithFamilySearchConnection:(FSKConnection *)aFamilySearchConnection 
+        -:   14:						   delegate:(id)aDelegate 
+        -:   15:						   selector:(SEL)aSelector
+    #####:   16:{
+    #####:   17:	self = [super initWithFamilySearchConnection:aFamilySearchConnection delegate:aDelegate selector:aSelector];
+    #####:   18:	return self;
+        -:   19:}											 
+        -:   20:
+        -:   21:+ (void)fetchIdentityData:(NSString *)endpoint 
+        -:   22:				  WithIds:(NSSet *)idList 
+        -:   23:			   parameters:(NSDictionary *)parameters 
+        -:   24:			   connection:aFamilySearchConnection 
+        -:   25:				 delegate:(id)aDelegate 
+        -:   26:				 selector:(SEL)aSelector
+    #####:   27:{
+    #####:   28:	[FSKRequest fetchFamilySearchData:[NSString stringWithFormat:@"identity/v1/%@", endpoint] 
+        -:   29:							WithIds:idList 
+        -:   30:							parameters:parameters 
+        -:   31:							connection:aFamilySearchConnection 
+        -:   32:							delegate:aDelegate 
+        -:   33:							selector:aSelector];
+        -:   34:}
+        -:   35:
+        -:   36:- (void)sendLoginRequest
+    #####:   37:{
+    #####:   38:	[FSKIdentityRequest fetchIdentityData:@"login" WithIds:nil parameters:nil connection:familySearchConnection delegate:_delegate selector:_selector];
+        -:   39:}
+        -:   40:
+        -:   41:- (void)sendLogoutRequest
+    #####:   42:{
+    #####:   43:	[FSKIdentityRequest fetchIdentityData:@"logout" WithIds:nil parameters:nil connection:familySearchConnection delegate:_delegate selector:_selector];
+        -:   44:}
+        -:   45:@end
