@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		025E98F10C95794700BC2458 /* FSKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025E98EC0C95790D00BC2458 /* FSKit.framework */; };
 		025E99870C957E0000BC2458 /* MyAppDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025E99850C957E0000BC2458 /* MyAppDelegate.h */; };
 		025E99880C957E0000BC2458 /* MyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 025E99860C957E0000BC2458 /* MyAppDelegate.m */; };
 		0277D49A0D3A50CF00B1B54B /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0277D4960D3A509600B1B54B /* FSKit.framework */; };
@@ -48,7 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				025E98F10C95794700BC2458 /* FSKit.framework in CopyFiles */,
 				025E99870C957E0000BC2458 /* MyAppDelegate.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,7 +55,6 @@
 
 /* Begin PBXFileReference section */
 		025E98E20C9577DC00BC2458 /* FSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FSKit.xcodeproj; path = ../FSKit/FSKit.xcodeproj; sourceTree = SOURCE_ROOT; };
-		025E98EC0C95790D00BC2458 /* FSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSKit.framework; path = ../builds/Debug/FSKit.framework; sourceTree = SOURCE_ROOT; };
 		025E99850C957E0000BC2458 /* MyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		025E99860C957E0000BC2458 /* MyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -106,7 +103,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				025E98EC0C95790D00BC2458 /* FSKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
