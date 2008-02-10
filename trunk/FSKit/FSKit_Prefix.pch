@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'FSKit' target in the 'FSKit' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

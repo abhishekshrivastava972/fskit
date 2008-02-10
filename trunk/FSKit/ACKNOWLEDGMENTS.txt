@@ -1,0 +1,10 @@
+FSKit: Acknowledgments
+
+General architecture and design influenced strongly by MKAbeFook, gdata-objectivec-client, FlickrKit, and ObjectiveFlickr
+
+Authorization/Login Window code borrowed heavily from WebKit under a BSD License
+
+Some code copyright Karelia
+	(See copyright notice at <http://cocoa.karelia.com>)
+
+Uses code Copyright (c) 2006 Red Sweater Software (NSData+RSHexDump) under the MIT License
