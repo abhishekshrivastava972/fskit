@@ -11,7 +11,8 @@ Initial release. Currently planned for March 12, 2008 to coincide with the Famil
 
 == Future ==
 
-Update/write capability
-Repositories/caches
-Bindings support
-Optional Core Data model?
+* More unit tests
+* Update/write capability
+* Repositories/caches
+* Bindings support
+* Optional Core Data model?
