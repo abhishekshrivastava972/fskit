@@ -2,12 +2,20 @@
 
 = Introduction =
 
-FSKit is an Objective-C library to help developers connect and use the [http://familysearch.org/ FamilySearch.org]  [http://devnet.familysearch.org/articles/apis/ APIs]
+FSKit is an Objective-C library to help developers connect and use the [http://familysearch.org/ FamilySearch.org]  [http://devnet.familysearch.org/articles/apis/ web service APIs]
 
+= Getting Started =
+Until a proper tutorial is written, look at the FSAppTest application in the Sample Apps folder.
 
 = Details =
 
-Topics:
-  * Authentication
-  * Usage
-  * Model
+[Class Overview]
+
+[http://fskit.googlecode.com/svn/trunk/Documentation/index.html HeaderDoc]
+
+== Topics ==
+
+=== Authentication ===
+Each end user needs an account on the [https://new.familysearch.org/ new FamilySearch.org site]. When a request is made that requires authentication, FSKit has several ways of handling this:
+  * By default, FSKit will present an authentication sheet attached to the main window of the application if it is known, or a modal dialog if the main window cannot be discovered
+  * The application may register an authentication delegate that will provide FSKit with the necessary credential
