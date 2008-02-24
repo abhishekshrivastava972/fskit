@@ -9,7 +9,7 @@ Until a proper tutorial is written, look at the FSAppTest application in the Sam
 
 = Details =
 
-[Class Overview]
+[ClassOverview Class Overview]
 
 [http://fskit.googlecode.com/svn/trunk/Documentation/index.html HeaderDoc]
 
