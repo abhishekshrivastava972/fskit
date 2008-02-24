@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		027149CF0D70A07A00072118 /* All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 027149DA0D70A0B900072118 /* Build configuration list for PBXAggregateTarget "All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				027149D10D70A08200072118 /* PBXTargetDependency */,
+				027149D30D70A08200072118 /* PBXTargetDependency */,
+				027149D50D70A08200072118 /* PBXTargetDependency */,
+				027149D70D70A08200072118 /* PBXTargetDependency */,
+			);
+			name = All;
+			productName = All;
+		};
 		02EEFE7C0CA6B53C007006DE /* Documentation */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 02EEFE7D0CA6B55A007006DE /* Build configuration list for PBXAggregateTarget "Documentation" */;
@@ -36,6 +50,16 @@
 		02596CEE0D4D6E7E00AB8632 /* FSKIdentityResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02596CEF0D4D6E7E00AB8632 /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */; };
 		026D89240D3A93E70046406A /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 026D89230D3A93E70046406A /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		027148710D709A1600072118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA98020D7068CF00DC6E04 /* main.m */; };
+		027148720D709A1700072118 /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BA98050D7068CF00DC6E04 /* version.plist */; };
+		027148730D709A1800072118 /* MyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA98040D7068CF00DC6E04 /* MyAppDelegate.m */; };
+		027148740D709A1800072118 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BA98010D7068CF00DC6E04 /* Info.plist */; };
+		0271488C0D709D4D00072118 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		0271489F0D709D5800072118 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
+		027149440D709D5C00072118 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		027149800D709D9E00072118 /* FSKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		0271499D0D709E3500072118 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02BA97F70D7068CF00DC6E04 /* InfoPlist.strings */; };
+		027149A00D709E3C00072118 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 02BA97F90D7068CF00DC6E04 /* MainMenu.nib */; };
 		02810C1E0D4427C2003E36B7 /* FSKIdentityService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810C1C0D4427C2003E36B7 /* FSKIdentityService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02810C1F0D4427C2003E36B7 /* FSKIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */; };
 		02810C5F0D477585003E36B7 /* FSKIdentityRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810C5D0D477585003E36B7 /* FSKIdentityRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +83,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0271486E0D7099DB00072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			remoteInfo = FSKit;
+		};
+		027149D00D70A08200072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			remoteInfo = FSKit;
+		};
+		027149D20D70A08200072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02EEFE7C0CA6B53C007006DE /* Documentation */;
+			remoteInfo = Documentation;
+		};
+		027149D40D70A08200072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02D2CD2B0CC311600013D298 /* Unit Tests */;
+			remoteInfo = "Unit Tests";
+		};
+		027149D60D70A08200072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 027148660D7099D000072118 /* FSAppTest */;
+			remoteInfo = FSAppTest;
+		};
 		02D2CD640CC317130013D298 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -67,6 +126,19 @@
 			remoteInfo = FSKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0271494A0D709D7300072118 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				027149800D709D9E00072118 /* FSKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02433DAC0C9DE06D00FE5892 /* FSKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKConnection.h; sourceTree = "<group>"; };
@@ -84,12 +156,23 @@
 		02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityResponse.h; sourceTree = "<group>"; };
 		02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityResponse.m; sourceTree = "<group>"; };
 		026D89230D3A93E70046406A /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
+		027148670D7099D000072118 /* FSAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		027148690D7099D100072118 /* FSAppTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FSAppTest-Info.plist"; sourceTree = "<group>"; };
 		02810C1C0D4427C2003E36B7 /* FSKIdentityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityService.h; sourceTree = "<group>"; };
 		02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityService.m; sourceTree = "<group>"; };
 		02810C5D0D477585003E36B7 /* FSKIdentityRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityRequest.h; sourceTree = "<group>"; };
 		02810C5E0D477585003E36B7 /* FSKIdentityRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityRequest.m; sourceTree = "<group>"; };
 		02810DD00D4995E5003E36B7 /* FSKLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKLoginController.h; sourceTree = "<group>"; };
 		02810DD10D4995E5003E36B7 /* FSKLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKLoginController.m; sourceTree = "<group>"; };
+		02BA97F80D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		02BA97FA0D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		02BA97FC0D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = "English.lproj/MainMenu~.nib"; sourceTree = "<group>"; };
+		02BA98000D7068CF00DC6E04 /* FSAppTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppTest_Prefix.pch; sourceTree = "<group>"; };
+		02BA98010D7068CF00DC6E04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		02BA98020D7068CF00DC6E04 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		02BA98030D7068CF00DC6E04 /* MyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAppDelegate.h; sourceTree = "<group>"; };
+		02BA98040D7068CF00DC6E04 /* MyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAppDelegate.m; sourceTree = "<group>"; };
+		02BA98050D7068CF00DC6E04 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = version.plist; sourceTree = "<group>"; };
 		02D2CD2C0CC311600013D298 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		02D2CD440CC3139D0013D298 /* FSKConnectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKConnectionTest.h; path = Tests/FSKConnectionTest.h; sourceTree = "<group>"; };
@@ -102,7 +185,7 @@
 		02EEFE830CA6B5B3007006DE /* toctemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = toctemplate.html; path = Source/toctemplate.html; sourceTree = "<group>"; };
 		02EEFE840CA6B5B3007006DE /* Framework.hdoc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Framework.hdoc; path = Source/Framework.hdoc; sourceTree = "<group>"; };
 		02F19D0C0D4A236E0047B392 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
-		02F19E590D4B78220047B392 /* LoginPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPanel.xib; sourceTree = "<group>"; };
+		02F19E590D4B78220047B392 /* LoginPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LoginPanel.xib; sourceTree = "<group>"; };
 		02F19E5E0D4B82410047B392 /* FSKResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKResponse.h; sourceTree = "<group>"; };
 		02F19E5F0D4B82410047B392 /* FSKResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKResponse.m; sourceTree = "<group>"; };
 		02F19E620D4B84DA0047B392 /* FSKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKError.h; sourceTree = "<group>"; };
@@ -120,6 +203,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		027148650D7099D000072118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027149440D709D5C00072118 /* Cocoa.framework in Frameworks */,
+				0271489F0D709D5800072118 /* AppKit.framework in Frameworks */,
+				0271488C0D709D4D00072118 /* FSKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02D2CD290CC311600013D298 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,6 +302,30 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		02BA97F30D70687900DC6E04 /* Sample Apps */ = {
+			isa = PBXGroup;
+			children = (
+				02BA97F60D7068CF00DC6E04 /* FSAppTest */,
+			);
+			path = "Sample Apps";
+			sourceTree = "<group>";
+		};
+		02BA97F60D7068CF00DC6E04 /* FSAppTest */ = {
+			isa = PBXGroup;
+			children = (
+				02BA97F70D7068CF00DC6E04 /* InfoPlist.strings */,
+				02BA97F90D7068CF00DC6E04 /* MainMenu.nib */,
+				02BA97FB0D7068CF00DC6E04 /* MainMenu~.nib */,
+				02BA98000D7068CF00DC6E04 /* FSAppTest_Prefix.pch */,
+				02BA98010D7068CF00DC6E04 /* Info.plist */,
+				02BA98020D7068CF00DC6E04 /* main.m */,
+				02BA98030D7068CF00DC6E04 /* MyAppDelegate.h */,
+				02BA98040D7068CF00DC6E04 /* MyAppDelegate.m */,
+				02BA98050D7068CF00DC6E04 /* version.plist */,
+			);
+			path = FSAppTest;
+			sourceTree = "<group>";
+		};
 		02D2CD480CC3147B0013D298 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +360,7 @@
 			children = (
 				8DC2EF5B0486A6940098B216 /* FSKit.framework */,
 				02D2CD2C0CC311600013D298 /* Unit Tests.octest */,
+				027148670D7099D000072118 /* FSAppTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,12 +374,14 @@
 				02EEFE680CA6B341007006DE /* ACKNOWLEDGMENTS.txt */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				02D2CD480CC3147B0013D298 /* Tests */,
+				02BA97F30D70687900DC6E04 /* Sample Apps */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				02EEFE810CA6B5B3007006DE /* Documentation */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */,
+				027148690D7099D100072118 /* FSAppTest-Info.plist */,
 			);
 			name = FSKit;
 			sourceTree = "<group>";
@@ -361,6 +481,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		027148660D7099D000072118 /* FSAppTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0271486A0D7099D200072118 /* Build configuration list for PBXNativeTarget "FSAppTest" */;
+			buildPhases = (
+				027148630D7099D000072118 /* Resources */,
+				027148640D7099D000072118 /* Sources */,
+				027148650D7099D000072118 /* Frameworks */,
+				0271494A0D709D7300072118 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0271486F0D7099DB00072118 /* PBXTargetDependency */,
+			);
+			name = FSAppTest;
+			productName = FSAppTest;
+			productReference = 027148670D7099D000072118 /* FSAppTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 		02D2CD2B0CC311600013D298 /* Unit Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02D2CD2E0CC311610013D298 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
@@ -405,21 +544,33 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "FSKit" */;
-			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 0867D691FE84028FC02AAC07 /* FSKit */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				027149CF0D70A07A00072118 /* All */,
 				8DC2EF4F0486A6940098B216 /* FSKit */,
 				02EEFE7C0CA6B53C007006DE /* Documentation */,
 				02D2CD2B0CC311600013D298 /* Unit Tests */,
+				027148660D7099D000072118 /* FSAppTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		027148630D7099D000072118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027148720D709A1700072118 /* version.plist in Resources */,
+				027148740D709A1800072118 /* Info.plist in Resources */,
+				0271499D0D709E3500072118 /* InfoPlist.strings in Resources */,
+				027149A00D709E3C00072118 /* MainMenu.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02D2CD270CC311600013D298 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -469,6 +620,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		027148640D7099D000072118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027148710D709A1600072118 /* main.m in Sources */,
+				027148730D709A1800072118 /* MyAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02D2CD280CC311600013D298 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +660,31 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0271486F0D7099DB00072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 0271486E0D7099DB00072118 /* PBXContainerItemProxy */;
+		};
+		027149D10D70A08200072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 027149D00D70A08200072118 /* PBXContainerItemProxy */;
+		};
+		027149D30D70A08200072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02EEFE7C0CA6B53C007006DE /* Documentation */;
+			targetProxy = 027149D20D70A08200072118 /* PBXContainerItemProxy */;
+		};
+		027149D50D70A08200072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02D2CD2B0CC311600013D298 /* Unit Tests */;
+			targetProxy = 027149D40D70A08200072118 /* PBXContainerItemProxy */;
+		};
+		027149D70D70A08200072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 027148660D7099D000072118 /* FSAppTest */;
+			targetProxy = 027149D60D70A08200072118 /* PBXContainerItemProxy */;
+		};
 		02D2CD650CC317130013D298 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
@@ -508,6 +693,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		02BA97F70D7068CF00DC6E04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02BA97F80D7068CF00DC6E04 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		02BA97F90D7068CF00DC6E04 /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02BA97FA0D7068CF00DC6E04 /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		02BA97FB0D7068CF00DC6E04 /* MainMenu~.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02BA97FC0D7068CF00DC6E04 /* English */,
+			);
+			name = "MainMenu~.nib";
+			sourceTree = "<group>";
+		};
 		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -595,6 +804,107 @@
 				ZERO_LINK = NO;
 			};
 			name = Coverage;
+		};
+		0271486B0D7099D200072118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSAppTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSAppTest;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		0271486C0D7099D200072118 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSAppTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSAppTest;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Coverage;
+		};
+		0271486D0D7099D200072118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSAppTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSAppTest;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		027149DB0D70A0B900072118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = All;
+			};
+			name = Debug;
+		};
+		027149DC0D70A0B900072118 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = All;
+			};
+			name = Coverage;
+		};
+		027149DD0D70A0B900072118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = All;
+				ZERO_LINK = NO;
+			};
+			name = Release;
 		};
 		02D2CD2F0CC311610013D298 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -745,6 +1055,26 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0271486A0D7099D200072118 /* Build configuration list for PBXNativeTarget "FSAppTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0271486B0D7099D200072118 /* Debug */,
+				0271486C0D7099D200072118 /* Coverage */,
+				0271486D0D7099D200072118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		027149DA0D70A0B900072118 /* Build configuration list for PBXAggregateTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027149DB0D70A0B900072118 /* Debug */,
+				027149DC0D70A0B900072118 /* Coverage */,
+				027149DD0D70A0B900072118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		02D2CD2E0CC311610013D298 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
