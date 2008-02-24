@@ -9,8 +9,8 @@
 #import "FSKConnection.h"
 
 //NSString *FSAPIServerUrlString = @"https://api.familysearch.org/";  // Production
-NSString *FSAPIServerUrlString = @"https://apibeta.familysearch.org/";  // Beta
-//NSString *FSAPIServerUrlString = @"http://www.dev.usys.org/";  // Development
+//NSString *FSAPIServerUrlString = @"https://apibeta.familysearch.org/";  // Beta
+NSString *FSAPIServerUrlString = @"http://www.dev.usys.org/";  // Development
 NSString *FSAPIVersion = @"v1";
 
 
