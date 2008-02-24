@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+<title>NSObject(FSKConnectionDelegate)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="HeaderDoc">
+<style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style>
+</head>
+<body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">NSObject(FSKConnectionDelegate)</font></h1>
+<br><a name="//apple_ref/doc/class/NSObject(FSKConnectionDelegate)" title="NSObject(FSKConnectionDelegate)"></a><h2>Discussion</h2>
+<br><br><p>
+The FSKConnectionDelegate category on NSObject defines
+FSKConnection delegate methods that can be implemented by
+objects to receive informational callbacks about the asynchronous
+load of a URL request. Other delegate methods provide hooks that
+allow the delegate to customize the process of performing an
+asynchronous URL load.
+<br><br></p>
+<p>Note that all these will be called on the thread that started
+the asynchronous load operation on the associated FSKConnection
+object.
+</p>
+<p>The following contract governs the delivery of the callbacks
+defined in this interface:
+</p>
+<ul>
+<li>Zero or more <tt>-connection:willSendRequest:redirectResponse:</tt> 
+messages will be sent to the delegate before any other messages in this
+list are sent.
+</li>
+<li>Before receiving a response or processing a redirect,
+<tt>connection:didReceiveAuthenticationChallenge:</tt> may be
+received if authentication is required.
+</li>
+<li>Zero or more <tt>connection:didReceiveResponse:</tt> messages
+will be sent to the delegate before receiving a
+<tt>-connection:didReceiveData:</tt> message. In rare cases, as will
+occur in an HTTP load where the content type of the load data is
+multipart/x-mixed-replace, the delegate will receive more than one
+<tt>connection:didReceiveResponse:</tt> message. In the event this
+occurs, delegates should discard all data previously delivered by
+way of the <tt>-connection:didReceiveData:</tt>, and should be
+prepared to handle the, potentially different, MIME type reported by
+the NSURLResponse. Note that the only case where a response is not
+sent to a delegate is when the protocol implemenation encounters an
+error before a response could be created.
+</li>
+<li>Zero or more <tt>connection:didReceiveData:</tt> messages will
+be sent before and of the following messages are sent to the
+delegate:
+<ul>
+<li>
+<tt>connection:willCacheResponse:</tt>
+</li>
+<li>
+<tt>-connectionDidFinishLoading:</tt>
+</li>
+<li>
+<tt>-connection:didFailWithError:</tt>
+</li>
+</ul>
+</li>
+<li>Zero or one <tt>connection:willCacheResponse:</tt> messages will
+be sent to the delegate after <tt>connection:didReceiveData:</tt>
+are sent but before a <tt>-connectionDidFinishLoading:</tt> message
+is sent.
+</li>
+<li>Unless a FSKConnection receives a <tt>-cancel</tt> message,
+the delegate will receive one and only one of
+<tt>-connectionDidFinishLoading:</tt>, or
+<tt>-connection:didFailWithError:</tt> message, but never
+both. In addition, once either of these callbacks is sent, the
+delegate will receive no further callbacks of any kind for the
+given FSKConnection. 
+</li>
+</ul>
+<hr>
+<br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a><dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didCancelAuthenticationChallenge:" target="_top">-connection:didCancelAuthenticationChallenge:</a></tt></dt>
+<dd>Cancel authentication for a given request
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didFailWithError:" target="_top">-connection:didFailWithError:</a></tt></dt>
+<dd>This method is called when an FSKConnection has
+failed to load successfully.
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didReceiveAuthenticationChallenge:" target="_top">-connection:didReceiveAuthenticationChallenge:</a></tt></dt>
+<dd>Start authentication for a given challenge
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didReceiveResponse:" target="_top">-connection:didReceiveResponse:</a></tt></dt>
+<dd>This method is called when the URL loading system has
+received sufficient load data to construct a NSURLResponse object.
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connectionDidFinishLoading:" target="_top">-connectionDidFinishLoading:</a></tt></dt>
+<dd>This method is called when an FSKConnection has
+finished loading successfully.
+</dd>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didCancelAuthenticationChallenge:;  name=NSObject(FSKConnectionDelegate)::connection:didCancelAuthenticationChallenge: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didCancelAuthenticationChallenge:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="connection:didCancelAuthenticationChallenge:">connection:didCancelAuthenticationChallenge:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>Cancel authentication for a given request
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/connection //apple_ref/occ/clm/connection //apple_ref/occ/intfcm/connection //apple_ref/occ/func/connection //apple_ref/occ/ftmplt/connection //apple_ref/occ/defn/connection //apple_ref/occ/macro/connection" --><font class="function">connection</font><!-- /a -->:(<a href="../../../../Documentation/FSKConnection/Classes/FSKConnection/index.html#//apple_ref/occ/cl/FSKConnection" logicalPath="//apple_ref/occ/cl/FSKConnection" target="_top"><font class="type">FSKConnection</font></a> <font class="type">*</font>)<font class="param">connection</font> 
+        <!-- a logicalPath="//apple_ref/occ/instm/didCancelAuthenticationChallenge //apple_ref/occ/clm/didCancelAuthenticationChallenge //apple_ref/occ/intfcm/didCancelAuthenticationChallenge //apple_ref/occ/func/didCancelAuthenticationChallenge //apple_ref/occ/ftmplt/didCancelAuthenticationChallenge //apple_ref/occ/defn/didCancelAuthenticationChallenge //apple_ref/occ/macro/didCancelAuthenticationChallenge" --><font class="function">didCancelAuthenticationChallenge</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/tdef/NSURLAuthenticationChallenge //apple_ref/occ/tag/NSURLAuthenticationChallenge //apple_ref/occ/econst/NSURLAuthenticationChallenge //apple_ref/occ/struct/NSURLAuthenticationChallenge //apple_ref/occ/clconst/NSURLAuthenticationChallenge" --><font class="type">NSURLAuthenticationChallenge</font><!-- /a --> <font class="type">*</font>)<font class="param">challenge</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>connection</i></code></dt>
+<dd>the connection for which authentication was cancelled</dd>
+<dt><code><i>challenge</i></code></dt>
+<dd>The NSURLAuthenticationChallenge for which to cancel authentication</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didFailWithError:;  name=NSObject(FSKConnectionDelegate)::connection:didFailWithError: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didFailWithError:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="connection:didFailWithError:">connection:didFailWithError:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>This method is called when an FSKConnection has
+failed to load successfully.
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/connection //apple_ref/occ/clm/connection //apple_ref/occ/intfcm/connection //apple_ref/occ/func/connection //apple_ref/occ/ftmplt/connection //apple_ref/occ/defn/connection //apple_ref/occ/macro/connection" --><font class="function">connection</font><!-- /a -->:(<a href="../../../../Documentation/FSKConnection/Classes/FSKConnection/index.html#//apple_ref/occ/cl/FSKConnection" logicalPath="//apple_ref/occ/cl/FSKConnection" target="_top"><font class="type">FSKConnection</font></a> <font class="type">*</font>)<font class="param">connection</font> 
+        <!-- a logicalPath="//apple_ref/occ/instm/didFailWithError //apple_ref/occ/clm/didFailWithError //apple_ref/occ/intfcm/didFailWithError //apple_ref/occ/func/didFailWithError //apple_ref/occ/ftmplt/didFailWithError //apple_ref/occ/defn/didFailWithError //apple_ref/occ/macro/didFailWithError" --><font class="function">didFailWithError</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSError //apple_ref/occ/cl/NSError //apple_ref/occ/tdef/NSError //apple_ref/occ/tag/NSError //apple_ref/occ/econst/NSError //apple_ref/occ/struct/NSError //apple_ref/occ/clconst/NSError" --><font class="type">NSError</font><!-- /a --> <font class="type">*</font>)<font class="param">error</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>connection</i></code></dt>
+<dd>an FSKConnection that has failed to load.</dd>
+<dt><code><i>error</i></code></dt>
+<dd>The error that encapsulates information about what
+caused the load to fail.</dd>
+</dl>
+</blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>See the category description for information regarding
+the contract associated with the delivery of this delegate
+callback.
+</p>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didReceiveAuthenticationChallenge:;  name=NSObject(FSKConnectionDelegate)::connection:didReceiveAuthenticationChallenge: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didReceiveAuthenticationChallenge:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="connection:didReceiveAuthenticationChallenge:">connection:didReceiveAuthenticationChallenge:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>Start authentication for a given challenge
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/connection //apple_ref/occ/clm/connection //apple_ref/occ/intfcm/connection //apple_ref/occ/func/connection //apple_ref/occ/ftmplt/connection //apple_ref/occ/defn/connection //apple_ref/occ/macro/connection" --><font class="function">connection</font><!-- /a -->:(<a href="../../../../Documentation/FSKConnection/Classes/FSKConnection/index.html#//apple_ref/occ/cl/FSKConnection" logicalPath="//apple_ref/occ/cl/FSKConnection" target="_top"><font class="type">FSKConnection</font></a> <font class="type">*</font>)<font class="param">connection</font> 
+        <!-- a logicalPath="//apple_ref/occ/instm/didReceiveAuthenticationChallenge //apple_ref/occ/clm/didReceiveAuthenticationChallenge //apple_ref/occ/intfcm/didReceiveAuthenticationChallenge //apple_ref/occ/func/didReceiveAuthenticationChallenge //apple_ref/occ/ftmplt/didReceiveAuthenticationChallenge //apple_ref/occ/defn/didReceiveAuthenticationChallenge //apple_ref/occ/macro/didReceiveAuthenticationChallenge" --><font class="function">didReceiveAuthenticationChallenge</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/tdef/NSURLAuthenticationChallenge //apple_ref/occ/tag/NSURLAuthenticationChallenge //apple_ref/occ/econst/NSURLAuthenticationChallenge //apple_ref/occ/struct/NSURLAuthenticationChallenge //apple_ref/occ/clconst/NSURLAuthenticationChallenge" --><font class="type">NSURLAuthenticationChallenge</font><!-- /a --> <font class="type">*</font>)<font class="param">challenge</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>connection</i></code></dt>
+<dd>the connection for which authentication is needed</dd>
+<dt><code><i>challenge</i></code></dt>
+<dd>The NSURLAuthenticationChallenge to start authentication for</dd>
+</dl>
+</blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>Call useCredential:forAuthenticationChallenge:,
+continueWithoutCredentialForAuthenticationChallenge: or cancelAuthenticationChallenge: on
+the challenge sender when done.
+</p>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didReceiveResponse:;  name=NSObject(FSKConnectionDelegate)::connection:didReceiveResponse: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connection:didReceiveResponse:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="connection:didReceiveResponse:">connection:didReceiveResponse:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>This method is called when the URL loading system has
+received sufficient load data to construct a NSURLResponse object.
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/connection //apple_ref/occ/clm/connection //apple_ref/occ/intfcm/connection //apple_ref/occ/func/connection //apple_ref/occ/ftmplt/connection //apple_ref/occ/defn/connection //apple_ref/occ/macro/connection" --><font class="function">connection</font><!-- /a -->:(<a href="../../../../Documentation/FSKConnection/Classes/FSKConnection/index.html#//apple_ref/occ/cl/FSKConnection" logicalPath="//apple_ref/occ/cl/FSKConnection" target="_top"><font class="type">FSKConnection</font></a> <font class="type">*</font>)<font class="param">connection</font> 
+        <!-- a logicalPath="//apple_ref/occ/instm/didReceiveResponse //apple_ref/occ/clm/didReceiveResponse //apple_ref/occ/intfcm/didReceiveResponse //apple_ref/occ/func/didReceiveResponse //apple_ref/occ/ftmplt/didReceiveResponse //apple_ref/occ/defn/didReceiveResponse //apple_ref/occ/macro/didReceiveResponse" --><font class="function">didReceiveResponse</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSURLResponse //apple_ref/occ/cl/NSURLResponse //apple_ref/occ/tdef/NSURLResponse //apple_ref/occ/tag/NSURLResponse //apple_ref/occ/econst/NSURLResponse //apple_ref/occ/struct/NSURLResponse //apple_ref/occ/clconst/NSURLResponse" --><font class="type">NSURLResponse</font><!-- /a --> <font class="type">*</font>)<font class="param">response</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>connection</i></code></dt>
+<dd>an FSKConnection instance for which the
+NSURLResponse is now available.</dd>
+<dt><code><i>response</i></code></dt>
+<dd>the NSURLResponse object for the given
+FSKConnection.</dd>
+</dl>
+</blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>The given NSURLResponse is immutable and
+will not be modified by the URL loading system once it is
+presented to the FSKConnectionDelegate by this method.
+</p>
+<p>See the category description for information regarding
+the contract associated with the delivery of this delegate 
+callback.
+</p>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connectionDidFinishLoading:;  name=NSObject(FSKConnectionDelegate)::connectionDidFinishLoading: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKConnectionDelegate)/connectionDidFinishLoading:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="connectionDidFinishLoading:">connectionDidFinishLoading:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>This method is called when an FSKConnection has
+finished loading successfully.
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/connectionDidFinishLoading //apple_ref/occ/clm/connectionDidFinishLoading //apple_ref/occ/intfcm/connectionDidFinishLoading //apple_ref/occ/func/connectionDidFinishLoading //apple_ref/occ/ftmplt/connectionDidFinishLoading //apple_ref/occ/defn/connectionDidFinishLoading //apple_ref/occ/macro/connectionDidFinishLoading" --><font class="function">connectionDidFinishLoading</font><!-- /a -->:(<a href="../../../../Documentation/FSKConnection/Classes/FSKConnection/index.html#//apple_ref/occ/cl/FSKConnection" logicalPath="//apple_ref/occ/cl/FSKConnection" target="_top"><font class="type">FSKConnection</font></a> <font class="type">*</font>)<font class="param">connection</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>connection</i></code></dt>
+<dd>an FSKConnection that has finished loading
+successfully.</dd>
+</dl>
+</blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>See the category description for information regarding
+the contract associated with the delivery of this delegate
+callback.
+</p>
+</dl>
+<p>(Last Updated February 24, 2008)
+</p>
+</body>
+</html>
