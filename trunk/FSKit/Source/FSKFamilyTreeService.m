@@ -63,21 +63,26 @@ NSString * const PERSONA_ENDPOINT = @"persona";
 -(void)searchByFullName:(NSString *)fullName
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
+	NSMutableDictionary *criteriaDict = [NSMutableDictionary dictionaryWithObject:fullName forKey:@"name"];
+	[self searchWithCriteria:criteriaDict];
 }
 
 -(void)searchByFamilyName:(NSString *)familyName givenNames:(NSString *)givenNames
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
+	NSMutableDictionary *criteriaDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:givenNames, @"givenName", familyName, @"familyName"];
+	[self searchWithCriteria:criteriaDict];
 }
 
 -(void)searchWithCriteria:(NSDictionary *)searchCriteria
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
+	[self fetchFamilyTreeData:@"search" path:nil parameters:searchCriteria];
 }
 
 -(void) requestFinished:(NSXMLElement *)response
 {
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, [response name]);
 	if ([_delegate respondsToSelector:@selector(requestFinished:)])
 	{
 		[_delegate requestFinished:response];

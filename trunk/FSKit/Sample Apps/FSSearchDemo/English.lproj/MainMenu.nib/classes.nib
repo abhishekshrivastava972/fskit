@@ -1,0 +1,26 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {doSearch = id; }; 
+            CLASS = MyAppDelegate; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                ruleEditor = PSRuleEditor; 
+                searchResultsTableView = NSTableView; 
+                searchResultsText = NSTextView; 
+                searchTabs = NSTabView; 
+                simpleSearchField = NSSearchField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {
+            ACTIONS = {addRow = id; }; 
+            CLASS = PSRuleEditor; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSBeginsWithPredicateOperatorType</key>
+	<string>begins with</string>
+	<key>NSBetweenPredicateOperatorType</key>
+	<string>is between</string>
+	<key>NSContainsPredicateOperatorType</key>
+	<string>contains</string>
+	<key>NSEndsWithPredicateOperatorType</key>
+	<string>ends with</string>
+	<key>NSEqualToPredicateOperatorType</key>
+	<string>is equal to</string>
+	<key>NSGreaterThanOrEqualToPredicateOperatorType</key>
+	<string>is greater than or equal to</string>
+	<key>NSGreaterThanPredicateOperatorType</key>
+	<string>is greater than</string>
+	<key>NSInPredicateOperatorType</key>
+	<string>is in</string>
+	<key>NSLessThanOrEqualToPredicateOperatorType</key>
+	<string>is less than or equal to</string>
+	<key>NSLessThanPredicateOperatorType</key>
+	<string>is less than</string>
+	<key>NSLikePredicateOperatorType</key>
+	<string>is like</string>
+	<key>NSMatchesPredicateOperatorType</key>
+	<string>matches</string>
+	<key>NSNotEqualToPredicateOperatorType</key>
+	<string>is not equal</string>
+	<key>name</key>
+	<string>Full Name</string>
+	<key>givenName</key>
+	<string>Given Name</string>
+	<key>familyName</key>
+	<string>Family Name</string>
+	<key>father.name</key>
+	<string>Father's Full Name</string>
+	<key>father.givenName</key>
+	<string>Father's Given Name</string>
+	<key>father.familyName</key>
+	<string>Father's Family Name</string>
+	<key>mother.name</key>
+	<string>Mother's Full Name</string>
+	<key>mother.givenName</key>
+	<string>Mother's Given Name</string>
+	<key>mother.familyName</key>
+	<string>Mother's Family Name</string>
+	<key>parent.name</key>
+	<string>Parent's Full Name</string>
+	<key>parent.givenName</key>
+	<string>Parent's Given Name</string>
+	<key>parent.familyName</key>
+	<string>Parent's Family Name</string>
+	<key>child.name</key>
+	<string>Child's Full Name</string>
+	<key>child.givenName</key>
+	<string>Child's Given Name</string>
+	<key>child.familyName</key>
+	<string>Child's Family Name</string>
+	<key>spouse.name</key>
+	<string>Spouse's Full Name</string>
+	<key>spouse.givenName</key>
+	<string>Spouse's Given Name</string>
+	<key>spouse.familyName</key>
+	<string>Spouse's Family Name</string>
+</dict>
+</plist>

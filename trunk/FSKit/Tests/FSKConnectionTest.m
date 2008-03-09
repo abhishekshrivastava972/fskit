@@ -26,6 +26,7 @@
 {
     // Create data structures here.
 	testConnection = [[FSKConnection alloc] init];
+	[testConnection setBaseURLString:kFSAPIDevBaseURLString];
 }
 
 - (void) tearDown
