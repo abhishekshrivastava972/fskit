@@ -27,7 +27,10 @@
     @abstract   <#(description)#>
     @discussion <#(description)#>
 */
-extern NSString *FSAPIServerUrlString;
+//extern NSString *FSAPIServerUrlString;
+extern NSString *kFSAPIProductionBaseURLString;  // Production
+extern NSString *kFSAPIBetaBaseURLString;  // Beta
+extern NSString *kFSAPIDevBaseURLString;  // Development
 
 /*!
     @const 
@@ -44,6 +47,8 @@ extern NSString *FSAPIVersion;
 @interface FSKConnection : NSObject {
 
 	NSURLCredential *credential;
+	
+	NSString *baseURLString;
 
 	NSString *developerKey;
 	NSString *_sessionId;
@@ -72,6 +77,9 @@ extern NSString *FSAPIVersion;
 //						    parameters:(NSDictionary *)dict;
 
 #pragma mark Accessors
+
+- (NSString *)baseURLString;
+- (void)setBaseURLString:(NSString *)value;
 
 /*!
     @method     credential
@@ -223,20 +231,4 @@ extern NSString *FSAPIVersion;
 */
 - (void)connection:(FSKConnection *)connection didFailWithError:(NSError *)error;
 
-@end
-
-
-
-@interface NSString (StringExtras)
-- (NSString *) encodeURLLegally;
-@end
-
-@interface NSDictionary (webFormEncoded)
-/*
-Return the key-value pairs in the dictionary, with the keys and values encoded as query parameters, 
-paired by =, and delimited with &. This is the format for a full set of named parameters in a 
-URL-coded query.
-Original Source: <http://www.mactech.com/articles/mactech/Vol.19/19.03/HTTPMessages/index.html>
-*/
-- (NSString *) webFormEncoded;
 @end

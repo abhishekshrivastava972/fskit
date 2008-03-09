@@ -133,3 +133,17 @@
 - (void)request:(FSKRequest *)request didFailWithError:(FSKError *)error;
 
 @end
+
+@interface NSString (StringExtras)
+- (NSString *) encodeURLLegally;
+@end
+
+@interface NSDictionary (webFormEncoded)
+/*
+ Return the key-value pairs in the dictionary, with the keys and values encoded as query parameters, 
+ paired by =, and delimited with &. This is the format for a full set of named parameters in a 
+ URL-coded query.
+ Original Source: <http://www.mactech.com/articles/mactech/Vol.19/19.03/HTTPMessages/index.html>
+ */
+- (NSString *) webFormEncoded;
+@end

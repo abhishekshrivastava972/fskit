@@ -5,6 +5,8 @@
 - (id)init {
 	self = [super init];
 	connection  = [[[FSKConnection alloc] init] retain];
+//	[connection setBaseURLString:kFSAPIDevBaseURLString];
+	
 	ftService = [[FSKFamilyTreeService familyTreeServiceWithConnection:connection delegate:self] retain];
 	identityService = [[FSKIdentityService identityServiceWithConnection:connection delegate:self] retain];
 	return self;

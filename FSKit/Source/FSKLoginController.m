@@ -145,7 +145,7 @@ static NSString *kDEFAULT_SECURITY_DOMAIN = @"FamilySearch API, Version 1.0"; //
 
 //    NSDictionary *values = [[NSUserDefaultsController sharedUserDefaultsController] values];	
 //    NSString *apiURLString = [values valueForKey: kAPI_URL_DEFAULTS_KEY];
-	NSURL *apiURL = [NSURL URLWithString: FSAPIServerUrlString];	
+//	NSURL *apiURL = [NSURL URLWithString: FSAPIServerUrlString];	
 	
 	/* Write username to defaults */
 //	NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];

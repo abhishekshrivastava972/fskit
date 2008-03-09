@@ -29,7 +29,7 @@
 }
 
 - (NSArray *)fetchTempleList{
-	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", FSAPIServerUrlString, @""]];
+	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", [connection baseURLString], @""]];
 	NSLog(@"url: %@", myURL);
 	NSError* err = nil;
 	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:nil error:&err];
@@ -46,7 +46,7 @@
 //	return [NSArray arrayWithObjects:@"first", @"second", nil];
 }
 - (NSXMLNode *)fetchTempleWithCode:(NSString *)code {
-	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", FSAPIServerUrlString, code]];
+	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", [connection baseURLString], code]];
 	NSLog(@"url: %@", myURL);
 	NSError* err = nil;
 	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:nil error:&err];

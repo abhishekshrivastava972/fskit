@@ -41,12 +41,15 @@
 
 	NSURL *theURL = [self generateFamilySearchURLAtEndpoint:endpoint WithIds:idList parameters:parameters];
 	
-	NSURLRequest *urlRequest = [NSURLRequest requestWithURL:theURL 
+	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:theURL 
 											 cachePolicy:NSURLRequestReloadIgnoringCacheData 
 										 timeoutInterval:0.1];//[aFamilySearchConnection connectionTimeoutInterval]];
 	
-	NSLog(@"connection: %@", [NSURLConnection connectionWithRequest:urlRequest
-								  delegate:self]);
+	[urlRequest addValue:[familySearchConnection userAgentString]	forHTTPHeaderField:@"User-Agent"];
+	
+	NSURLConnection *urlConnection = [NSURLConnection connectionWithRequest:urlRequest
+																	   delegate:self];
+	NSLog(@"connection: %@ headers: %@", urlConnection, [urlRequest allHTTPHeaderFields]);
 }
 
 
@@ -75,7 +78,7 @@
 		[mutableDictionary setValue:[familySearchConnection sessionId] forKey:@"sessionId"];
 	}
 	
-	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@%@", FSAPIServerUrlString, endpoint];
+	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@%@", [familySearchConnection baseURLString], endpoint];
 	if ([idList count] > 0)
 	{
 		[urlString appendFormat:@"/%@", [[idList allObjects] componentsJoinedByString:@","]];
@@ -224,4 +227,71 @@
 }
 
 @end
+
+@implementation NSString(NSStringExtras)
+/*
+	Encode a string legally so it can be turned into an NSURL
+	Original Source: <http://cocoa.karelia.com/Foundation_Categories/NSString/Encode_a_string_leg.m>
+	(See copyright notice at <http://cocoa.karelia.com>)
+	 */
+
+/*"	Fix a URL-encoded string that may have some characters that makes NSURL barf.
+It basicaly re-encodes the string, but ignores escape characters + and %, and also #.
+"*/
+- (NSString *) encodeURLLegally
+{
+	NSString *result = (NSString *) CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef) self, (CFStringRef) @"%+#", NULL,
+																			CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+	return result;
+}
+@end
+
+@implementation NSDictionary(webFormEncoded)
+/*
+ Return the key-value pairs in the dictionary, with the keys and values encoded as query parameters, 
+ paired by =, and delimited with &. This is the format for a full set of named parameters in a 
+ URL-coded query.
+ Original Source: <http://www.mactech.com/articles/mactech/Vol.19/19.03/HTTPMessages/index.html>
+ modified to handle multi-valued keys like view=summary&view=values....
+ */
+- (NSString *) webFormEncoded
+{
+	NSEnumerator *      keys = [self keyEnumerator];
+	NSString *            currKey;
+	NSString *            currObject;
+	NSMutableString *   retval = [NSMutableString
+								  stringWithCapacity: 256];
+	BOOL                     started = NO;
+	while ((currKey = [keys nextObject]) != nil)
+	{
+		//   Chain the key-value pairs, properly escaped, in one string.
+		if (started)
+			[retval appendString: @"&"];
+		else
+			started = YES;
+		
+		currKey = [currKey encodeURLLegally];
+		
+		// modified to handle multi-valued keys as arrays of NSString
+		if ( [[self objectForKey: currKey] isKindOfClass:[NSArray class]] )
+		{
+			NSArray *currList = [self objectForKey: currKey];
+			int i = 0;
+			for ( i = 0 ; i < [currList count] ; i++ )
+			{
+				if (i > 0) [retval appendString:@"&"];
+				currObject = [[currList objectAtIndex:i] encodeURLLegally];
+				[retval appendString: [NSString stringWithFormat:@"%@=%@", currKey, currObject]];
+			}
+		}
+		else
+		{
+			currObject = [[self objectForKey: currKey] encodeURLLegally];
+			[retval appendString: [NSString stringWithFormat:@"%@=%@", currKey, currObject]];
+		}
+	}
+	return retval;
+}
+@end
+
 
