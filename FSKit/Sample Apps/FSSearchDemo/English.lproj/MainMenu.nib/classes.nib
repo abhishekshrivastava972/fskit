@@ -2,7 +2,7 @@
     IBClasses = (
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {doSearch = id; }; 
+            ACTIONS = {doSearch = id; setSimpleSearchCategory = id; }; 
             CLASS = MyAppDelegate; 
             LANGUAGE = ObjC; 
             OUTLETS = {

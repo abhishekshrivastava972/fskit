@@ -10,7 +10,7 @@ NSMutableData *receivedData;
 - (id)init {
 	self = [super init];
 	connection  = [[[FSKConnection alloc] init] retain];
-	//	[connection setBaseURLString:kFSAPIDevBaseURLString];
+	[connection setBaseURLString:kFSAPIDevBaseURLString];
 	
 	ftService = [[FSKFamilyTreeService familyTreeServiceWithConnection:connection delegate:self] retain];
 	identityService = [[FSKIdentityService identityServiceWithConnection:connection delegate:self] retain];
@@ -24,18 +24,30 @@ NSMutableData *receivedData;
 	[super dealloc];
 }
 
-- (IBAction) doSearch: (id) sender
+- (void)performSimpleSearch
 {
-	NSLog(@"doSearch tab:%@", [[searchTabs selectedTabViewItem] identifier]);
-	if ([[[searchTabs selectedTabViewItem] identifier] isEqualToString:@"simple"]) {
-		[self performSimpleSearch];
+	NSLog(@"search menu template: %@ tag: %d", [simpleSearchField stringValue], simpleSearchTag);
+	switch (simpleSearchTag) {
+	case 2:
+		//birthplace
+		[ftService searchWithCriteria:[NSDictionary dictionaryWithObject:[simpleSearchField stringValue] forKey:@"birthPlace"]];
+		break;
+	case 3:
+		//id
+		[ftService readPerson:[simpleSearchField stringValue]];
+		break;
+	case 4:
+		//afn
+		[ftService readPerson:[NSString stringWithFormat:@"afn.%@", [simpleSearchField stringValue]]];
+		break;
+	default:
+		[ftService searchByFullName:[simpleSearchField stringValue]];
+		break;
 	}
-	else if ([[[searchTabs selectedTabViewItem] identifier] isEqualToString:@"form"]) {
-			[self performFormSearch];
-	}
-	else if ([[[searchTabs selectedTabViewItem] identifier] isEqualToString:@"rules"]) {
-		[self performRuleSearch];
-	}
+}
+
+- (void)performFormSearch
+{
 }
 
 - (void)performRuleSearch
@@ -61,6 +73,26 @@ NSMutableData *receivedData;
 	NSLog(@"search queryDict %@", dict);
 	
 	[ftService searchWithCriteria:dict];
+}
+
+- (IBAction) doSearch: (id) sender
+{
+	NSLog(@"doSearch tab:%@", [[searchTabs selectedTabViewItem] identifier]);
+	if ([[[searchTabs selectedTabViewItem] identifier] isEqualToString:@"simple"]) {
+		[self performSimpleSearch];
+	}
+	else if ([[[searchTabs selectedTabViewItem] identifier] isEqualToString:@"form"]) {
+			[self performFormSearch];
+	}
+	else if ([[[searchTabs selectedTabViewItem] identifier] isEqualToString:@"rules"]) {
+		[self performRuleSearch];
+	}
+}
+
+- (IBAction)setSimpleSearchCategory:(id)sender;
+{
+	NSLog(@"search menu category tag: %d", [sender tag]);
+	simpleSearchTag = [sender tag];
 }
 
 - (void)awakeFromNib {	
@@ -168,13 +200,16 @@ NSMutableData *receivedData;
 		NSColor *color = [NSColor grayColor];
 	if (personElement)
 	{
-		NSString *gender = @"Female";//[[[personElement nodesForXPath:@"//gender" error:nil] lastObject] stringValue];
+		NSString *gender = [[[personElement nodesForXPath:@"./*:gender" error:nil] lastObject] stringValue];
+		NSLog(@"person: %@ %@", [personElement name], [personElement nodesForXPath:@"./*" error:nil]);
+		NSLog(@"genderx: %@", [personElement objectsForXQuery:@"./gender" error:nil]);
 		if ([gender isEqualToString:@"Male"]) {
 			color = [NSColor blueColor];
 		} else if ([gender isEqualToString:@"Female"]) {
 			color = [NSColor redColor];
 		}
 	}
+	[image setBackgroundColor:color];
 	
 	int count = 4;
     NSRect rect = { 0,0, 150, 94};
@@ -183,7 +218,7 @@ NSMutableData *receivedData;
     compositeSize.height = rect.size.height;
  NSImage * compositeImage;
     compositeImage = [[NSImage alloc] initWithSize:compositeSize];
-    
+    [compositeImage setBackgroundColor:color];
     [compositeImage lockFocus];
     
         // this image has its own graphics context, so

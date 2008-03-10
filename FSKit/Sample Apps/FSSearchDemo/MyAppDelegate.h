@@ -21,8 +21,10 @@
 	NSXMLDocument *searchResultXML;	
 	
 	NSMutableDictionary *searchForm;
+	int simpleSearchTag;
 }
 
 - (IBAction)doSearch:(id)sender;
+- (IBAction)setSimpleSearchCategory:(id)sender;
 
 @end
