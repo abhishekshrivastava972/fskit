@@ -1,4 +1,12 @@
 
+@interface NSExpression (RuleEditorAdditions)
+-(id)objectValue;
+-(BOOL)shouldCastIntoAttributeType:(NSAttributeType)attributeType;
+@end
+
+@interface NSPopUpButton (RuleEditor)
++ (NSPopUpButton*)plasticButton;
+@end
 
 @class NSEntityDescription;
 
@@ -9,11 +17,13 @@
     int _leftAttributeType;
     int _rightAttributeType;
     NSArray *_views;
-    
+	
 	NSArray *_leftExpressions; 
 	NSArray *_rightExpressions;
 	NSArray *_operators;	
 	NSArray *_compoundTypes;
+	
+	NSDictionary *_formattingDictionary;
 /*	
     struct {
 		unsigned leftIsWildcard:1;
@@ -25,15 +35,16 @@
  */
 }
 
--(int)templateType;
--(NSControl*) _buildRightView;
--(NSPopUpButton*)_buildLeftView;
--(NSPredicate*)_defaultPredicate;
--(NSPopUpButton*)_buildOperatorsView;
--(NSString*)localizedString:(NSString*)str;
--(void)_checkForValidOperators:(NSArray*)operators;
--(void)_checkForValidExpressions:(NSArray*)expressions;
-
+- (int)templateType;
+- (NSControl*) _buildRightView;
+- (NSPopUpButton*)_buildLeftView;
+- (NSPredicate*)_defaultPredicate;
+- (NSPopUpButton*)_buildOperatorsView;
+- (NSString*)localizedString:(NSString*)str;
+- (void)_checkForValidOperators:(NSArray*)operators;
+- (void)_checkForValidExpressions:(NSArray*)expressions;
+- (NSDictionary *)_formattingDictionary;
+- (void)_setFormattingDictionary:(NSDictionary *)dictionary;
 /* returns a positive number if the template can represent the predicate, and zero if it cannot.  The highest match determines which template is responsible for displaying the predicate.  Developers can override this to determine which predicates their custom template handles.  By default, this returns values in the range [0., 1.]
 */
 - (double)matchForPredicate:(NSPredicate *)predicate;

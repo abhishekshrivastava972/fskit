@@ -7,53 +7,54 @@
 //
 
 #import "PSRuleEditor.h"
-#import "PSRuleEditor_SelectDrag.h"
-#import "PSRuleEditorSlice.h"
 #import "PSPredicateEditorRowTemplate.h"
+#import "TreeController.h"
+#import "TreeNode.h"
 
 @interface PSPredicateEditor : PSRuleEditor {
-	NSMutableArray *_allTemplates;
+    NSMutableArray *_allTemplates;
     
-    NSArray *_rootItems;
-    NSArray *_rootHeaderItems;
-    
-    id _predicateTarget;
-    SEL _predicateAction;
+//	NSArray *_rootItems;
+//	NSArray *_rootHeaderItems;
+	TreeController *treecontroller;
+
+//	id _predicateTarget;
+//	SEL _predicateAction;
 	
 	NSCompoundPredicate *_objectValue;
-	NSMutableArray *subpredicates;
- }
- 
-- (void)insertRowAtIndex:(int)rowIndex;
-- (void)removeRowAtIndex:(int)rowIndex;
-- (void)_reloadPredicateForSlice:(id)slice;
-- (void)changeSlicesWithPredicates:(NSArray*)predicates kind:(int)kind indexes:(NSIndexSet*)indexes;
+	id observedObjectForValue;
+	NSString *observedKeyPathForValue;
+	NSValueTransformer *valueTransformer;
+}
+- (void)startObservingChanges;
+- (void)stopObservingChanges;
+
+- (void)_updatePredicate;
+- (void)_reloadPredicateForSlice:(PSRuleEditorSlice*)slice;
+
+- (void)insertNodeWithRootPredicate:(NSCompoundPredicate*)predicate;
+- (void)insertSlicesWithNodes:(NSArray*)nodes indexes:(NSIndexSet*)indexes;
+- (void)removeSlicesWithNodes:(NSArray*)nodes childIndexes:(NSIndexSet*)indexes;
 - (void)observeValueForKeyPath:keyPath ofObject:object change:(NSDictionary *)change context:context;
 - (void)setRowTemplates:(NSArray *)rowTemplates;
 
+- (NSNumber*)compoundTypeForSlice:(PSRuleEditorSlice*)slice;
 - (NSPredicate*)predicateForRow:(int)row;
+- (NSPredicate*)predicateForSlice:(PSRuleEditorSlice*)slice;
 - (PSPredicateEditorRowTemplate*)nextTemplate;
 - (PSPredicateEditorRowTemplate*)templateForPredicate:(NSPredicate *)predicate;
-
-- (NSMutableArray *)subpredicates;
-- (unsigned)countOfSubpredicates;
-- (id)objectInSubpredicatesAtIndex:(unsigned)index;
-- (void)insertObject:(id)obj inSubpredicatesAtIndex:(unsigned)index;
-- (void)insertSubpredicates:(NSArray *)objects atIndexes:(NSIndexSet *)indexes;
-- (void)removeObjectFromSubpredicatesAtIndex:(unsigned)index;
-- (void)removeSubpredicatesAtIndexes:(NSIndexSet*)indexes;
-- (void)replaceObjectInSubpredicatesAtIndex:(unsigned)theIndex withObject:(id)obj;
+- (NSCompoundPredicate*)predicateWithNodes:(NSArray*)childnodes type:(NSCompoundPredicateType)type;
 
 - (NSArray *)rowTemplates;
 - (NSCompoundPredicate *)objectValue;
 - (void)setObjectValue:(NSCompoundPredicate *)value;
 
-/* Sets the NSPredicateEditorRowTemplates for the NSPredicateEditor.  When created, NSPredicateEditor contains a template representing compound predicates; if you wish to keep it, you should take care to include it in this array.
-*/
+	/* Sets the NSPredicateEditorRowTemplates for the NSPredicateEditor.  When created, NSPredicateEditor contains a template representing compound predicates; if you wish to keep it, you should take care to include it in this array.
+	*/
 - (void)setRowTemplates:(NSArray *)rowTemplates;
 
-/* Returns the row templates for this NSPredicateEditor.
-*/
+	/* Returns the row templates for this NSPredicateEditor.
+	*/
 - (NSArray *)rowTemplates;
 
 @end
