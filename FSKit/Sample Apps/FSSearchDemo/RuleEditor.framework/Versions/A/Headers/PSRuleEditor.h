@@ -1,30 +1,30 @@
 // PSRuleEditor.h
 // RuleEditor Framework
- 
+
 // Copyright cacaodev, 2006,2007 cacaodev@gmail.com
 
 
 
 /*!
-  
- <b>Embed RuleEditor framework into your application with Xcode:</b>
- 
- 1/ Create a copy files build phase in your application's target and set the destination to "Frameworks".<br/>
- 2/ Drag the RuleEditor framework to this build phase.<br/>
- 3/ Add RuleEditor framework to your "Link binary with library" build phase.<br/>
- - Add any needed #import <RuleEditor/PSRuleEditor.h> directives to your headers. 
- 
+
+<b>Embed RuleEditor framework into your application with Xcode:</b>
+
+1/ Create a copy files build phase in your application's target and set the destination to "Frameworks".<br/>
+2/ Drag the RuleEditor framework to this build phase.<br/>
+3/ Add RuleEditor framework to your "Link binary with library" build phase.<br/>
+- Add any needed #import <RuleEditor/PSRuleEditor.h> directives to your headers. 
+
  <b>Create a RuleEditor view with Interface Builder:</b>
- 
- 1/ Drag the PSRuleEditor.h file included in the framework to the Nib's window.<br/>
- 2/ Create a Custom NSView where you want.<br/>
- 3/ Set the custom class of your NSView to PSRuleEditor.<br/>
- 
- */
+
+	1/ Drag the PSRuleEditor.h file included in the framework to the Nib's window.<br/>
+	2/ Create a Custom NSView where you want.<br/>
+	3/ Set the custom class of your NSView to PSRuleEditor.<br/>
+
+	*/
 
 
 /*!
-	@header RuleEditor
+@header RuleEditor
 	@class PSRuleEditor
 	@abstract PSRuleEditor Class Reference
 	@discussion A PSRuleEditor is a class that allows the user to create and configure a list of options.  The view has a delegate which offers a tree of choices to the view.  The choices are presented by the view to the user as a row of popup buttons, static text fields, and custom views.  Each row in the list represents a particular path down the tree of choices.  An example of part of a tree of choices and a path through it:
@@ -70,6 +70,8 @@
 
 #define MAX_CRITERIA_COUNT 10
 
+#import "PSRuleEditorSlice.h"
+
 @class PSRuleEditorSlice;
 @class NSPredicate,NSComparisonPredicate,NSExpression,NSCompoundPredicate,NSAnimation,NSViewAnimation;
 
@@ -81,44 +83,44 @@ typedef enum PSRuleEditorNestingMode {
 } PSRuleEditorNestingMode;
 
 @interface PSRuleEditor : NSView {
-	PSRuleEditorNestingMode	_nestingMode;
+	NSPredicate *_predicate;
+    PSRuleEditorNestingMode _nestingMode;
+	
 	id					_delegate;	
-	float				rowHeight;
-	NSMutableIndexSet   *selectedRowIndexes;
-	NSMutableArray		*selectedSlices;
-	NSDictionary		*formattingDictionary;
-	NSString			*formattingStringsFileName;	
-
-	@private
-	NSBundle			*frameworkBundle;
 	NSImage				*plus;
 	NSImage				*minus;
 	NSColor				*rowLightColor;
-	NSColor				*rowDarkColor;	
+	NSColor				*rowDarkColor;
+	
+	float				animDuration;
+	
+	NSMutableIndexSet   *selectedRowIndexes;
+	NSMutableArray		*selectedSlices;
 	NSMutableArray		*slices;
-	NSRect				oldDrawRect, newDrawRect,minFrame;
-	BOOL alternateFirstItem, shouldDraw;
-	float				animDuration;	
-	int dst,src;
-
+	NSDictionary		*formattingDictionary;
+	NSString			*formattingStringsFileName;
+	
+	float rowHeight;
 	// Unimplemented	
 	NSString			*_typeKeyPath;
 	NSString			*_itemsKeyPath;
 	NSString			*_valuesKeyPath;
 	NSString			*_subrowsArrayKeyPath; 
 	
-	
+	BOOL alternateFirstItem, shouldDraw;
 	NSEvent *downEvent;
+	NSRect oldDrawRect, newDrawRect;
+	int dst,src;
+	NSRect minFrame;
 }
-- (BOOL)hasTree;
-- (NSBundle*)frameworkBundle;
+
 - (BOOL)alternateFirstItem;
+- (BOOL)shouldUseHeader;
 - (NSImage*)plus;
 - (NSImage*)minus;
 - (NSDictionary *)formattingDictionary;
 
 - (void)_reloadPredicateForSlice:(id)slice;
-- (NSPredicate*)predicateForSlice:(PSRuleEditorSlice*)slice;
 
 - (PSRuleEditor*)initWithFrame:(NSRect)frame;
 - (void)drawRect:(NSRect)rect;
@@ -130,142 +132,152 @@ typedef enum PSRuleEditorNestingMode {
 - (void)rearrange:(NSKeyValueChange)type newIndexes:(NSIndexSet*)indexes;
 
 - (int)countOfSlices; 
-- (id)objectInSlicesAtIndex:(int)index;
-- (void)insertObject:object inSlicesAtIndex:(int)index;
-- (void)insertSlices:(NSArray *)objects atIndexes:(NSIndexSet *)indexes;
+- (id)objectInSlicesAtIndex:(int)index; 
+- (void)insertObject:(id)anObject inSlicesAtIndex:(int)index; 
 - (void)removeObjectFromSlicesAtIndex:(int)index;
+- (void)insertSlices:(NSArray *)objects atIndexes:(NSIndexSet *)indexes;
 - (void)removeSlicesAtIndexes:(NSIndexSet *)indexes;
 - (void)replaceObjectInSlicesAtIndex:(int)index withObject:(id)anObject; 
 
-- (NSNumber*)compoundTypeForSlice:(PSRuleEditorSlice*)slice;
-/*! 
- @method delegate  
-	@abstract Returns the receiver’s delegate.
-	@result The receiver’s delegate.
- @discussion Clients can call this method to get the delegate for the PSRuleEditor.  PSRuleEditor requires a delegate that implements the required PSRuleEditorDelegateMethods methods to function.
- 
- */
+#pragma mark public methods
+	/*! 
+	@method delegate  
+	@abstract Returns the receiver‚Äôs delegate.
+	@result The receiver‚Äôs delegate.
+	@discussion Clients can call this method to get the delegate for the PSRuleEditor.  PSRuleEditor requires a delegate that implements the required PSRuleEditorDelegateMethods methods to function.
+
+	*/
 - (id)delegate;
-/*! 
- @method setDelegate:  
-	@abstract Sets the receiver’s delegate.
+	/*! 
+	@method setDelegate:  
+	@abstract Sets the receiver‚Äôs delegate.
 	@discussion Clients can call this method to set the delegate for the PSRuleEditor. PSRuleEditor requires a delegate that implements the required PSRuleEditorDelegateMethods methods to function.
 	@param delegate  The delegate for the reciever.
- */
+	*/
 - (void)setDelegate:(id)delegate;
 
-/*!
+	/*!
  @method criteriaForRow:
- @abstract   Returns the currently chosen items for a given row.
- @discussion Clients call this to obtain all of the currently chosen items for the given row.  These are the same items that are returned from the delegate method - ruleEditor: child: forCriterion: withRowType:
- @param row The index of a row in the receiver.
- @result The currently chosen items for row row.
- */
+	 @abstract   Returns the currently chosen items for a given row.
+	 @discussion Clients call this to obtain all of the currently chosen items for the given row.  These are the same items that are returned from the delegate method - ruleEditor: child: forCriterion: withRowType:
+	 @param row The index of a row in the receiver.
+	 @result The currently chosen items for row row.
+	 */
 - (NSArray *)criteriaForRow:(int)row;
 
-/*!
+	/*!
  @method    displayValuesForRow: 
- @abstract   Returns the chosen values for a given row.
- @discussion Clients call this to obtain all of the chosen values (strings, views, or menu items) for row.  These are the same values that are returned from the delegate method - ruleEditor: valueForItem: inRow:
- @param row The index of a row in the receiver.
- @result The chosen values (strings, views, or menu items) for row row.
- */
+	 @abstract   Returns the chosen values for a given row.
+	 @discussion Clients call this to obtain all of the chosen values (strings, views, or menu items) for row.  These are the same values that are returned from the delegate method - ruleEditor: valueForItem: inRow:
+	 @param row The index of a row in the receiver.
+	 @result The chosen values (strings, views, or menu items) for row row.
+	 */
 - (NSArray *)displayValuesForRow:(int)row;
 
-/*!
- @method    formattingDictionary
- @abstract   Returns the formatting dictionary for the receiver.
- @result The formatting dictionary for the receiver.
- */
+	/*!
+	@method    formattingDictionary
+	 @abstract   Returns the formatting dictionary for the receiver.
+	 @result The formatting dictionary for the receiver.
+	 */
 - (NSDictionary *)formattingDictionary;
 
-/*!
- @method    setFormattingDictionary:
- @abstract   Sets the formatting dictionary for the receiver.
- @discussion If you set the formatting dictionary with this method, it sets the current formatting strings file name to nil (see formattingStringsFileName).
- */
+	/*!
+	@method    setFormattingDictionary:
+	 @abstract   Sets the formatting dictionary for the receiver.
+	 @discussion If you set the formatting dictionary with this method, it sets the current formatting strings file name to nil (see formattingStringsFileName).
+	 */
 - (void)setFormattingDictionary:(NSDictionary *)dictionary;
 
-/* Clients can call this to automatically set a formatting dictionary based on the strings file with the given name.  Setting a formatting strings file searches the main bundle, and the bundle containing this nib, for a (possibly localized) strings file resource with the given name, loads it, and sets it as the formatting dictionary.  The resulting dictionary can be obtained with -[NSRuleEditor formattingDictionary].  If you set the formatting dictionary explicitly with -[NSRuleEditor setFormattingDictionary:], then it sets the current formattingStringsFilename to nil */
+	/*!
+@method    formattingStringsFileName:
+	 @abstract   the formatting string file name for the receiver.
+	 @discussion 
+	 */
 - (NSString*)formattingStringsFileName;
+
+	/*!
+	@method    setFormattingStringsFileName:
+	 @abstract   Sets the formatting dictionary for the receiver based on the given file name.
+	 @discussion Clients can call this to automatically set a formatting dictionary based on the strings file with the given name.  Setting a formatting strings file searches the main bundle, and the bundle containing this nib, for a (possibly localized) strings file resource with the given name, loads it, and sets it as the formatting dictionary.  The resulting dictionary can be obtained with -[NSRuleEditor formattingDictionary].  If you set the formatting dictionary explicitly with -[NSRuleEditor setFormattingDictionary:], then it sets the current formattingStringsFilename to nil.
+	 */
 - (void)setFormattingStringsFileName:(NSString *)stringsFileName;
 
-/* Clients call this to set and get the nesting mode for the NSRuleEditor.  This is generally set at view creation time and not modified after.  The default is NSRuleEditorNestingModeCompound. 
-- (void)setNestingMode:(NSRuleEditorNestingMode)mode;
-- (NSRuleEditorNestingMode)nestingMode;
-*/
+	/* Clients call this to set and get the nesting mode for the NSRuleEditor.  This is generally set at view creation time and not modified after.  The default is NSRuleEditorNestingModeCompound. 
+- (void)setNestingMode:(PSRuleEditorNestingMode)mode;
+- (PSRuleEditorNestingMode)nestingMode;
+	*/
 
-/*!
- @method    predicate
- @abstract   Returns the predicate for the receiver.
- @result If the delegate implements ruleEditor:predicatePartsForCriterion:withDisplayValue:inRow:, the predicate for the receiver. If the delegate does not implement ruleEditor:predicatePartsForCriterion:withDisplayValue:inRow:, or if the delegate does not return enough parts to construct a full predicate, returns nil.
- */
+	/*!
+	@method    predicate
+	 @abstract   Returns the predicate for the receiver.
+	 @result If the delegate implements ruleEditor:predicatePartsForCriterion:withDisplayValue:inRow:, the predicate for the receiver. If the delegate does not implement ruleEditor:predicatePartsForCriterion:withDisplayValue:inRow:, or if the delegate does not return enough parts to construct a full predicate, returns nil.
+	 */
 
 - (NSPredicate *)predicate;
 
-/*!
- @method    predicateForRow:
- @abstract   Returns the predicate for the row.
- @result 
- */
+	/*!
+	@method    predicateForRow:
+	 @abstract   Returns the predicate for the row.
+	 @result 
+	 */
 - (NSPredicate*)predicateForRow:(int)row;
 
-/*!
- @method    reloadPredicate
- @abstract   Instructs the receiver to regenerate its predicate by invoking the corresponding delegate method.
- @discussion You typically invoke this method because something has changed (for example, a view's value).
- */
+	/*!
+	@method    reloadPredicate
+	 @abstract   Instructs the receiver to regenerate its predicate by invoking the corresponding delegate method.
+	 @discussion You typically invoke this method because something has changed (for example, a view's value).
+	 */
 - (void)reloadPredicate;
 
-/* Adds "initial" rows, or a row to the end - useful as the target for the outside + button */
+	/* Adds "initial" rows, or a row to the end - useful as the target for the outside + button */
 - (void)addRow:(id)sender;
 
-/*!
- @method	selectedRowIndexes
- @abstract	Returns the indexes of the receiver’s selected rows.
- @result	The indexes of the receiver’s selected rows.
- */
+	/*!
+	@method	selectedRowIndexes
+	 @abstract	Returns the indexes of the receiver‚Äôs selected rows.
+	 @result	The indexes of the receiver‚Äôs selected rows.
+	 */
 - (NSIndexSet *)selectedRowIndexes;
 
- /*!
- @method	numberOfRows
- @abstract	Returns the number of rows in the receiver.
- @result	The number of rows in the receiver.
- */
+	/*!
+	@method	numberOfRows
+	 @abstract	Returns the number of rows in the receiver.
+	 @result	The number of rows in the receiver.
+	 */
 - (void)setSelectedRowIndexes:(NSMutableIndexSet *)value;
 
 - (int)numberOfRows;
 
-/*!
- @method	insertRowAtIndex:   
- @abstract	Adds a new row of a given type at a given location.
- @param		rowIndex The index at which the new row should be inserted. rowIndex must be greater than parentRow, and must specify a row that does not fall amongst the children of some other parent.
- @discussion If parentRow is greater than or equal to rowIndex, or if rowIndex would fall amongst the children of some other parent, an NSInvalidArgumentException is raised.
- */
+	/*!
+	@method	insertRowAtIndex:   
+	 @abstract	Adds a new row of a given type at a given location.
+	 @param		rowIndex The index at which the new row should be inserted. rowIndex must be greater than parentRow, and must specify a row that does not fall amongst the children of some other parent.
+	 @discussion If parentRow is greater than or equal to rowIndex, or if rowIndex would fall amongst the children of some other parent, an NSInvalidArgumentException is raised.
+	 */
 - (void)insertRowAtIndex:(int)rowIndex;
 
-/*!
+	/*!
  @method	removeRowAtIndex:  
- @abstract	Removes the row at a given index.
- @param		rowIndex The index of a row in the receiver.
- @discussion Any subrows of the deleted row are adopted by the parent of the deleted row, or are made root rows.
- 
- This method raises an NSRangeException if rowIndex is equal to or larger than the number of rows in the receiver, or less than 0.
- */
+	 @abstract	Removes the row at a given index.
+	 @param		rowIndex The index of a row in the receiver.
+	 @discussion Any subrows of the deleted row are adopted by the parent of the deleted row, or are made root rows.
+	 
+	 This method raises an NSRangeException if rowIndex is equal to or larger than the number of rows in the receiver, or less than 0.
+	 */
 - (void)removeRowAtIndex:(int)rowIndex;
-/*!
- @method	rowHeight
- @abstract	Returns the row height for the receiver.
- @result	The row height for the receiver.
- */
+	/*!
+	@method	rowHeight
+	 @abstract	Returns the row height for the receiver.
+	 @result	The row height for the receiver.
+	 */
 - (float)rowHeight;
 
-/*!
- @method		setRowHeight:    
- @abstract		Sets the row height for the receiver.
- @param			height The row height for the receiver.
- @discussion	This method changes the receiver's frame and marks it for redisplay.
- */
+	/*!
+	@method		setRowHeight:    
+	 @abstract		Sets the row height for the receiver.
+	 @param			height The row height for the receiver.
+	 @discussion	This method changes the receiver's frame and marks it for redisplay.
+	 */
 - (void)setRowHeight:(float)height;
 
 
@@ -276,7 +288,7 @@ typedef enum PSRuleEditorNestingMode {
 /* -- Required delegate methods -- */
 
 /*!
- @method		ruleEditor:numberOfChildrenForCriterion:withRowType:  
+@method		ruleEditor:numberOfChildrenForCriterion:withRowType:  
  @abstract		Returns the number of child items of a given criterion.
  @discussion	Implementation of this method is required.
  @result		The number of child items of criterion. If criterion is nil, return the number of root criteria.
@@ -285,97 +297,95 @@ typedef enum PSRuleEditorNestingMode {
  */
 - (int)ruleEditor:(PSRuleEditor *)editor numberOfChildrenForCriterion:(id)criterion withRowType:(int)rowType;
 
-/*!
+	/*!
  @method   ruleEditor:child:forCriterion:withRowType:
- @abstract   Return the child of a given item at a given index.
- @discussion Implementation of this method is required.
- @result The child of the given item at index. If criterion is nil, returns the root criterion for the row type rowType at index.
- @param editor The rule editor that sent the message.
- @param index
- @param criterion
- */
+	 @abstract   Return the child of a given item at a given index.
+	 @discussion Implementation of this method is required.
+	 @result The child of the given item at index. If criterion is nil, returns the root criterion for the row type rowType at index.
+	 @param editor The rule editor that sent the message.
+	 @param index
+	 @param criterion
+	 */
 - (id)ruleEditor:(PSRuleEditor *)editor child:(int)index forCriterion:(id)criterion withRowType:(int)rowType;
 
-/*!
+	/*!
  @method   ruleEditor:displayValueForCriterion:inRow:
- @abstract   Returns the value for a given criterion.
- @discussion The value should be an instance of NSString, NSView, or NSMenuItem. If the value is an NSView or NSMenuItem, you must ensure it is unique for every invocation of this method; that is, do not return a particular instance of NSView or NSMenuItem more than once.
- @result The value for criterion.
- @param editor The rule editor that sent the message.
- @param criterion The criterion for which the value is required.
- */
+	 @abstract   Returns the value for a given criterion.
+	 @discussion The value should be an instance of NSString, NSView, or NSMenuItem. If the value is an NSView or NSMenuItem, you must ensure it is unique for every invocation of this method; that is, do not return a particular instance of NSView or NSMenuItem more than once.
+	 @result The value for criterion.
+	 @param editor The rule editor that sent the message.
+	 @param criterion The criterion for which the value is required.
+	 */
 - (id)ruleEditor:(PSRuleEditor *)editor displayValueForCriterion:(id)criterion inRow:(int)row;
 
-/* -- Optional delegate methods -- */
+	/* -- Optional delegate methods -- */
 
-/*!
+	/*!
  @method ruleEditor:predicatePartsForCriterion:withDisplayValue:inRow:
- @abstract Returns a dictionary representing the parts of the predicate determined by the given criterion and value.
- @discussion  Implementation of this method is optional.
- @result  A dictionary representing the parts of the predicate determined by the given criterion and value. The keys of the dictionary should be the string constants specified in “Predicate part keys” with corresponding appropriate values.
- @param editor  The rule editor that sent the message.
- @param criterion The criterion for which the predicate parts are required.
- @param value 
- @param row The row number of criterion.
- */
+	 @abstract Returns a dictionary representing the parts of the predicate determined by the given criterion and value.
+	 @discussion  Implementation of this method is optional.
+	 @result  A dictionary representing the parts of the predicate determined by the given criterion and value. The keys of the dictionary should be the string constants specified in ‚ÄúPredicate part keys‚Äù with corresponding appropriate values.
+	 @param editor  The rule editor that sent the message.
+	 @param criterion The criterion for which the predicate parts are required.
+	 @param value 
+	 @param row The row number of criterion.
+	 */
 - (NSDictionary *)ruleEditor:(PSRuleEditor *)editor predicatePartsForCriterion:(id)criterion withDisplayValue:(id)value inRow:(int)row;
 
-/*!
+	/*!
  @method ruleEditorRowsDidChange:
- @abstract Notifies the receiver that a rule editor’s rows changed.
- @param notification A PSRuleEditorRowsDidChangeNotification notification. 
- @discussion If this method is implemented, PSRuleEditor automatically registers its delegate to receive PSRuleEditorRowsDidChangeNotification notifications to this method.
- 
- */
+	 @abstract Notifies the receiver that a rule editor‚Äôs rows changed.
+	 @param notification A PSRuleEditorRowsDidChangeNotification notification. 
+	 @discussion If this method is implemented, PSRuleEditor automatically registers its delegate to receive PSRuleEditorRowsDidChangeNotification notifications to this method.
+	 
+	 */
 - (void)ruleEditorRowsDidChange:(NSNotification *)notification;
 
 @end
 
 /*!
- @const PSRuleEditorPredicateLeftExpression
+@const PSRuleEditorPredicateLeftExpression
  @abstract The corresponding value is an NSExpression object representing the left expression in the predicate.
  @discussion This value is required for a non-nil comparison predicate.
  */
 extern NSString * const PSRuleEditorPredicateLeftExpression;
 /*!
- @const PSRuleEditorPredicateRightExpression
+@const PSRuleEditorPredicateRightExpression
  @abstract The corresponding value is an NSExpression object representing the right expression in the predicate.
  @discussion This value is required for a non-nil comparison predicate.
  */
 extern NSString * const PSRuleEditorPredicateRightExpression;
 /*! 
- @const PSRuleEditorPredicateComparisonModifier
- @abstract The corresponding value is an NSNumber object representing a NSComparisonPredicateModifier constant the of the predicate.
- @discussion This value is optional—if not specified, NSDirectPredicateModifier is assumed.
- */
+@const PSRuleEditorPredicateComparisonModifier
+@abstract The corresponding value is an NSNumber object representing a NSComparisonPredicateModifier constant the of the predicate.
+@discussion This value is optional‚Äîif not specified, NSDirectPredicateModifier is assumed.
+*/
 extern NSString * const PSRuleEditorPredicateComparisonModifier;
 
 /*!
- @const PSRuleEditorPredicateOptions
+@const PSRuleEditorPredicateOptions
  @abstract The corresponding value is an NSNumber object representing a NSComparisonPredicateOptions bitfield.
  @discussion If no value is specified, 0 (no options) is assumed.
  */
 extern NSString * const PSRuleEditorPredicateOptions;
 
 /*!
- @const PSRuleEditorPredicateOperatorType
+@const PSRuleEditorPredicateOperatorType
  @abstract The corresponding value is an NSNumber object representing a NSPredicateOperatorType constant.
  @discussion This value is required for a non-nil comparison predicate.
  */
 extern NSString * const PSRuleEditorPredicateOperatorType;
 
 /*!
- @const PSRuleEditorPredicateCustomSelector
+@const PSRuleEditorPredicateCustomSelector
  @abstract The corresponding value is an NSString object representing a custom selector.
  @discussion If specified, this overrides the operator type, options, and comparison modifier.
  */
 extern NSString * const PSRuleEditorPredicateCustomSelector;
 
 /*!
- @const PSRuleEditorRowsDidChangeNotification
+@const PSRuleEditorRowsDidChangeNotification
  @abstract Posted to the default notification center whenever the view's rows change.
  @discussion The object is the PSRuleEditor; there is no userInfo
  */
-extern NSString *const PSRuleEditorRowsDidChangeNotification ;
-
-
+NSString *const PSRuleEditorRowsDidChangeNotification ;
