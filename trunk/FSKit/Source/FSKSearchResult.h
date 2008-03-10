@@ -12,9 +12,10 @@
 @interface FSKSearchResult : NSObject {
 	NSNumber *score;
 //	FSKPersonSummary *person;
-	NSArray *parents;
-	NSArray *spouses;
-	NSArray *children;
+//	FSKPersonSummary *father;
+//	FSKPersonSummary *mother;
+	NSArray *spouses; // of FSKPersonSummary
+	NSArray *children; // of FSKPersonSummary
 }
 
 @end
