@@ -11,10 +11,10 @@
 #import "FSKConnection.h"
 
 
-@interface FSKFamilyTreeService : FSKServiceBase {
+@interface FSKPersonService : FSKServiceBase {
 }
 
-+ (FSKFamilyTreeService *)familyTreeServiceWithConnection:(FSKConnection *)familySearchConnection delegate:theDelegate;
++ (FSKPersonService *)personServiceWithConnection:(FSKConnection *)familySearchConnection delegate:theDelegate;
 
 - (void)readPerson:(NSString *)personId;
 - (void)readPersons:(NSSet *)personIds; // of NSString

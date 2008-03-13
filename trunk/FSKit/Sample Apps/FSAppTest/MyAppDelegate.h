@@ -6,7 +6,7 @@
 @interface MyAppDelegate : NSObject
 {
 	FSKConnection *connection;
-	FSKFamilyTreeService *ftService;
+	FSKPersonService *personService;
 	FSKIdentityService *identityService;
 	NSXMLDocument *theDocument;
 

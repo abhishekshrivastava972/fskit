@@ -11,7 +11,7 @@
 #import "FSKRequest.h"
 #import "FSKResponse.h"
 
-#import "FSKFamilyTreeService.h"
+#import "FSKPersonService.h"
 
 #import "FSKAuthoritiesService.h"
 

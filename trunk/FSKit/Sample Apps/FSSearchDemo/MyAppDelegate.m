@@ -11,15 +11,17 @@ NSMutableData *receivedData;
 	self = [super init];
 	connection  = [[[FSKConnection alloc] init] retain];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
+	[connection setDeveloperKey:@"My_Developer_Key"];
+	[connection setUserAgentString:@"My Cool App/1.0" override:NO];
 	
-	ftService = [[FSKFamilyTreeService familyTreeServiceWithConnection:connection delegate:self] retain];
+	personService = [[FSKPersonService personServiceWithConnection:connection delegate:self] retain];
 	identityService = [[FSKIdentityService identityServiceWithConnection:connection delegate:self] retain];
 	return self;
 }
 
 - (void)dealloc {
 	[connection release];
-	[ftService release];
+	[personService release];
 	[identityService release];
 	[super dealloc];
 }
@@ -30,24 +32,25 @@ NSMutableData *receivedData;
 	switch (simpleSearchTag) {
 	case 2:
 		//birthplace
-		[ftService searchWithCriteria:[NSDictionary dictionaryWithObject:[simpleSearchField stringValue] forKey:@"birthPlace"]];
+		[personService searchWithCriteria:[NSDictionary dictionaryWithObject:[simpleSearchField stringValue] forKey:@"birthPlace"]];
 		break;
 	case 3:
 		//id
-		[ftService readPerson:[simpleSearchField stringValue]];
+		[personService readPerson:[simpleSearchField stringValue]];
 		break;
 	case 4:
 		//afn
-		[ftService readPerson:[NSString stringWithFormat:@"afn.%@", [simpleSearchField stringValue]]];
+		[personService readPerson:[NSString stringWithFormat:@"afn.%@", [simpleSearchField stringValue]]];
 		break;
 	default:
-		[ftService searchByFullName:[simpleSearchField stringValue]];
+		[personService searchByFullName:[simpleSearchField stringValue]];
 		break;
 	}
 }
 
 - (void)performFormSearch
 {
+	NSLog(@"form vals: %@", [form content]);
 }
 
 - (void)performRuleSearch
@@ -55,7 +58,7 @@ NSMutableData *receivedData;
 	[ruleEditor reloadPredicate];
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	NSArray *predicates = [[ruleEditor predicate] subpredicates];
-	unsigned int	predCount = [predicates count];
+	unsigned int predCount = [predicates count];
 	unsigned int index = 0;
 	for( ;index < predCount; index += 1)
 	{
@@ -72,7 +75,7 @@ NSMutableData *receivedData;
 	[dict setValue:@"15" forKey:@"maxResults"];
 	NSLog(@"search queryDict %@", dict);
 	
-	[ftService searchWithCriteria:dict];
+	[personService searchWithCriteria:dict];
 }
 
 - (IBAction) doSearch: (id) sender
@@ -144,11 +147,11 @@ NSMutableData *receivedData;
 	
 	
 	// Set predicate
-	NSData *preddata = 	[defs objectForKey:@"objectValue"];
-	if(preddata){
-		NSCompoundPredicate *pred = [NSKeyedUnarchiver unarchiveObjectWithData:preddata];
-		//		[predicateEditor setObjectValue:pred];
-	}	
+//	NSData *preddata = 	[defs objectForKey:@"objectValue"];
+//	if(preddata){
+//		NSCompoundPredicate *pred = [NSKeyedUnarchiver unarchiveObjectWithData:preddata];
+//		//		[predicateEditor setObjectValue:pred];
+//	}	
 	
 	/* CONFIGURE RULE EDITOR*/
 	
@@ -272,13 +275,17 @@ NSBezierPath * path = [NSBezierPath bezierPathWithRect:rect];
 
 - (void)requestFinished:(FSKResponse *)response
 {
-	NSLog(@"request:didReturnReponse");
-	NSError *error;
-	NSAttributedString *	styledText = [[NSAttributedString alloc] initWithString: [response XMLStringWithOptions:NSXMLNodePrettyPrint]];
-//	[[[document valueForKey:@"resultsText"] textStorage] setAttributedString: styledText];
-//	[[[document valueForKey:@"searchResultsText"] textStorage] setAttributedString: styledText];		
-//	[document setValue:responseXML forKey:@"searchResultXML"];
-	[[searchResultsText textStorage] setAttributedString:styledText];
+	NSLog(@"%s", _cmd);
+	NSXMLDocument *doc;
+	if ([response isKindOfClass:[NSXMLDocument class]])
+	{
+		doc = response;
+	} else
+	{
+		doc = [response xmlDocument];
+	}
+	NSAttributedString *	styledText = [[NSAttributedString alloc] initWithString: [doc XMLStringWithOptions:NSXMLNodePrettyPrint]];
+	[[searchResultsText textStorage] setAttributedString:[styledText autorelease]];
 	[self setValue:[response retain] forKey:@"searchResultXML"];
 }
 

@@ -9,6 +9,7 @@
 #import "FSKRequest.h"
 
 @implementation FSKRequest
+
 -(id) initWithFamilySearchConnection:(FSKConnection *)aFamilySearchConnection 
 					   delegate:(id)aDelegate 
 					   selector:(SEL)aSelector
@@ -65,6 +66,89 @@
 									parameters:parameters];
 }
 
+/*!
+    @method     
+    @abstract   Makes a request to a FamilySearch REST API with the provided parameters
+    @discussion Uses a URL of the following format <baseURL>/<endpoint>/<version>/<module>/<path>?<parameter1=value1>&<parameter2=value2>
+	where the parameters and values are key-value pairs in the provided parameter dictionary
+*/
+//-(void)fetchFamilySearchDataAtEndpoint:(NSString *)endpoint 
+//							 WithIds:(NSSet *)idList
+//						  parameters:(NSDictionary *)dict
+//{
+//	NSLog(@"%s %@ %@ %@", __PRETTY_FUNCTION__, endpoint, idList, dict);
+//	if (!dict)
+//	{
+//		dict = [[[NSMutableDictionary alloc] init] autorelease];
+//	}
+//	[dict setValue:[self sessionId] forKey:@"sessionId"];
+//	NSString *queryString = @"";
+//	if (dict && [dict count] > 0)
+//	{
+//		queryString = [NSString stringWithFormat:@"?%@", [dict webFormEncoded]];
+//	}
+//	NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@%@", FSAPIServerUrlString, endpoint, [[idList allObjects] componentsJoinedByString:@","], queryString];
+//	
+//	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString] 
+//											 cachePolicy:NSURLRequestReloadIgnoringCacheData 
+//										 timeoutInterval:[self connectionTimeoutInterval]];
+//	
+//	[responseDataCache setObject:[[NSMutableData alloc] init] forKey:[[NSURLConnection connectionWithRequest:request
+//								  delegate:self] description]];
+//}
+
+
+//	return [self fetchFamilySearchData:[NSURL URLWithString:urlString]];
+//}
+
+//-(id)fetchFamilySearchData:(NSURL *)theURL
+//{
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, theURL);
+//	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:theURL 
+//												cachePolicy:NSURLRequestReloadIgnoringCacheData
+//											timeoutInterval:[self connectionTimeoutInterval]];
+//	[urlRequest addValue:[self userAgentString]	forHTTPHeaderField:@"User-Agent"];
+//	NSHTTPURLResponse *xmlResponse;  //not used right now
+//	NSError *fetchError; //also not used
+//	NSData *responseData = [NSURLConnection sendSynchronousRequest:urlRequest
+//												 returningResponse:&xmlResponse
+//															 error:&fetchError];
+//	NSLog(@"\nresponse(%d): %@\nheaders:%@\nerror: %@\ndata:%@", [xmlResponse statusCode], [xmlResponse URL], [xmlResponse allHeaderFields], fetchError, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
+//														   options:nil
+//															 error:nil];
+//	return [returnXML autorelease];
+//	
+//	
+//}
+
+//-(id)postFamilySearchData:(NSURL *)theURL withData:(NSData *)theData ofType:(NSString *)contentType
+//{
+//	NSLog(@"%s, %@", __PRETTY_FUNCTION__, theURL);
+//	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:theURL 
+//												cachePolicy:NSURLRequestReloadIgnoringCacheData
+//											timeoutInterval:[self connectionTimeoutInterval]];
+//	[urlRequest setHTTPMethod:@"POST"];
+//	[urlRequest setHTTPBody:theData];
+//	[urlRequest addValue:[self userAgentString]	forHTTPHeaderField:@"User-Agent"];
+//	if (contentType) {
+//		[urlRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
+//	}
+//	NSLog(@"request headers: %@", [urlRequest allHTTPHeaderFields]);
+//	NSHTTPURLResponse *xmlResponse;  //not used right now
+//	NSError *fetchError; //also not used
+//	NSData *responseData = [NSURLConnection sendSynchronousRequest:urlRequest
+//												 returningResponse:&xmlResponse
+//															 error:&fetchError];
+//	NSLog(@"\nresponse(%d): %@\nheaders:%@\nerror: %@\ndata:%@", [xmlResponse statusCode], [xmlResponse URL], [xmlResponse allHeaderFields], fetchError, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
+//														   options:nil
+//															 error:nil];
+//	return [returnXML autorelease];
+//}
+
+
+
 -(NSURL *)generateFamilySearchURLAtEndpoint:(NSString *)endpoint 
 								    WithIds:(NSSet *)idList
                                  parameters:(NSDictionary *)parameters
@@ -79,7 +163,7 @@
 	}
 	
 	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@%@", [familySearchConnection baseURLString], endpoint];
-	if ([idList count] > 0)
+	if (idList && [idList count] > 0)
 	{
 		[urlString appendFormat:@"/%@", [[idList allObjects] componentsJoinedByString:@","]];
 	}
@@ -105,6 +189,45 @@
         _delegate = value;
     }
 }
+
+@end
+
+#pragma mark -
+#pragma mark Delegate Methods
+
+@implementation NSObject (FSKRequestDelegate)
+
+- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+{
+	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
+//	[self handleAuthenticationChallenge:challenge];
+}
+
+- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
+{
+	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, request);
+	return [NSApp mainWindow];
+}
+
+- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+{
+	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
+}
+
+- (void)request:(FSKRequest *)request didReturnResponse:(FSKResponse *)response;
+{
+	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, response);
+}
+
+- (void)request:(FSKRequest *)request didFailWithError:(FSKError *)error;
+{
+	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, error);
+}
+
+@end
+
+#pragma mark -
+@implementation FSKRequest(PrivateMethods)
 
 #pragma mark NSURLConnection delegate methods
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -160,12 +283,13 @@
 	//
 	// there are several ways to handle authentication from least to most involvement;
 	// 1. use the default keychain (we would never get here)
-	// 2. use our own custom keychain (not worry about it now)
+	// 2. use our own custom keychain (consider implementing later)
 	// 3. use the provided credentials in the connection
-	// 4. have the app delegate handle the authentication event directly
-	// 5. pop up a dialog/sheet and ask the user for credentials
+	// 4. have the request delegate handle the authentication event directly
+	// 5. have the connection delegate handle the authentication event directly
+	// 6. pop up a dialog/sheet and ask the user for credentials
 	// 
-	// in the end we need the challenge cancelled or provided with credentials  
+	// in the end we need the challenge either cancelled or provided with credentials  
 	
 	// 3. use provided credential
 	if ([familySearchConnection credential])
@@ -174,14 +298,21 @@
 		return;
 	}
 
-	// 4. have the app delegate handle it
+	// 4. have the request delegate handle it
     if ([_delegate respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
 	{
 		[_delegate request:self didReceiveAuthenticationChallenge:challenge];
 		return;
     }
 	
-	// 5. do it ourselves
+	// 5. have the connection delegate handle it
+    if ([[familySearchConnection delegate] respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
+	{
+		[[familySearchConnection delegate] request:self didReceiveAuthenticationChallenge:challenge];
+		return;
+    }
+
+	// 6. do it ourselves
 	// until I know what to do, just cancel
 	[[challenge sender] cancelAuthenticationChallenge:challenge];
 //	[self handleAuthenticationChallenge:challenge];
@@ -195,38 +326,6 @@
 @end
 
 #pragma mark -
-#pragma mark Delegate Methods
-
-@implementation NSObject (FSKRequestDelegate)
-
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
-//	[self handleAuthenticationChallenge:challenge];
-}
-
-- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, request);
-	return [NSApp mainWindow];
-}
-
-- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
-}
-
-- (void)request:(FSKRequest *)request didReturnResponse:(FSKResponse *)response;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, response);
-}
-
-- (void)request:(FSKRequest *)request didFailWithError:(FSKError *)error;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, error);
-}
-
-@end
 
 @implementation NSString(NSStringExtras)
 /*

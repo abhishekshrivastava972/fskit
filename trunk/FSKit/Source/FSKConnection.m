@@ -34,89 +34,6 @@ NSString *userAgentString = @"test";
 	[responseDataCache release];
 	[super dealloc];
 }
-
-
-/*!
-    @method     
-    @abstract   Makes a request to a FamilySearch REST API with the provided parameters
-    @discussion Uses a URL of the following format <baseURL>/<endpoint>/<version>/<module>/<path>?<parameter1=value1>&<parameter2=value2>
-	where the parameters and values are key-value pairs in the provided parameter dictionary
-*/
-//-(void)fetchFamilySearchDataAtEndpoint:(NSString *)endpoint 
-//							 WithIds:(NSSet *)idList
-//						  parameters:(NSDictionary *)dict
-//{
-//	NSLog(@"%s %@ %@ %@", __PRETTY_FUNCTION__, endpoint, idList, dict);
-//	if (!dict)
-//	{
-//		dict = [[[NSMutableDictionary alloc] init] autorelease];
-//	}
-//	[dict setValue:[self sessionId] forKey:@"sessionId"];
-//	NSString *queryString = @"";
-//	if (dict && [dict count] > 0)
-//	{
-//		queryString = [NSString stringWithFormat:@"?%@", [dict webFormEncoded]];
-//	}
-//	NSString *urlString = [NSString stringWithFormat:@"%@/%@/%@%@", FSAPIServerUrlString, endpoint, [[idList allObjects] componentsJoinedByString:@","], queryString];
-//	
-//	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString] 
-//											 cachePolicy:NSURLRequestReloadIgnoringCacheData 
-//										 timeoutInterval:[self connectionTimeoutInterval]];
-//	
-//	[responseDataCache setObject:[[NSMutableData alloc] init] forKey:[[NSURLConnection connectionWithRequest:request
-//								  delegate:self] description]];
-//}
-
-
-//	return [self fetchFamilySearchData:[NSURL URLWithString:urlString]];
-//}
-
-//-(id)fetchFamilySearchData:(NSURL *)theURL
-//{
-//	NSLog(@"%s %@", __PRETTY_FUNCTION__, theURL);
-//	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:theURL 
-//												cachePolicy:NSURLRequestReloadIgnoringCacheData
-//											timeoutInterval:[self connectionTimeoutInterval]];
-//	[urlRequest addValue:[self userAgentString]	forHTTPHeaderField:@"User-Agent"];
-//	NSHTTPURLResponse *xmlResponse;  //not used right now
-//	NSError *fetchError; //also not used
-//	NSData *responseData = [NSURLConnection sendSynchronousRequest:urlRequest
-//												 returningResponse:&xmlResponse
-//															 error:&fetchError];
-//	NSLog(@"\nresponse(%d): %@\nheaders:%@\nerror: %@\ndata:%@", [xmlResponse statusCode], [xmlResponse URL], [xmlResponse allHeaderFields], fetchError, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
-//														   options:nil
-//															 error:nil];
-//	return [returnXML autorelease];
-//	
-//	
-//}
-
-//-(id)postFamilySearchData:(NSURL *)theURL withData:(NSData *)theData ofType:(NSString *)contentType
-//{
-//	NSLog(@"%s, %@", __PRETTY_FUNCTION__, theURL);
-//	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:theURL 
-//												cachePolicy:NSURLRequestReloadIgnoringCacheData
-//											timeoutInterval:[self connectionTimeoutInterval]];
-//	[urlRequest setHTTPMethod:@"POST"];
-//	[urlRequest setHTTPBody:theData];
-//	[urlRequest addValue:[self userAgentString]	forHTTPHeaderField:@"User-Agent"];
-//	if (contentType) {
-//		[urlRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
-//	}
-//	NSLog(@"request headers: %@", [urlRequest allHTTPHeaderFields]);
-//	NSHTTPURLResponse *xmlResponse;  //not used right now
-//	NSError *fetchError; //also not used
-//	NSData *responseData = [NSURLConnection sendSynchronousRequest:urlRequest
-//												 returningResponse:&xmlResponse
-//															 error:&fetchError];
-//	NSLog(@"\nresponse(%d): %@\nheaders:%@\nerror: %@\ndata:%@", [xmlResponse statusCode], [xmlResponse URL], [xmlResponse allHeaderFields], fetchError, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
-//														   options:nil
-//															 error:nil];
-//	return [returnXML autorelease];
-//}
-
 	
 - (NSString *)baseURLString {
 	return [[baseURLString retain] autorelease];
@@ -203,7 +120,7 @@ NSString *userAgentString = @"test";
 }
 
 - (NSString *)userAgentString {
-	return userAgentString;
+	return @"FSKit/0.1";//userAgentString;
 }
 
 - (id)delegate {
@@ -238,7 +155,6 @@ NSString *userAgentString = @"test";
    [self release];
 }
 
-//0.6 suggestion to pass connection error.  Thanks Adam.
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);

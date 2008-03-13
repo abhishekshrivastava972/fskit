@@ -6,18 +6,21 @@
 //  Copyright 2008 Logan Allred. All rights reserved.
 //
 
-#import "FSKFamilyTreeService.h"
+#import "FSKPersonService.h"
+#import "FSKResponse.h"
+#import "FSKPersonResponse.h"
+#import "FSKPersonSearchRequest.h"
 
 NSString * const PERSON_ENDPOINT  = @"person";
 NSString * const SEARCH_ENDPOINT = @"search";
 NSString * const USER_ENDPOINT = @"user";
 NSString * const PERSONA_ENDPOINT = @"persona";
 
-@implementation FSKFamilyTreeService
+@implementation FSKPersonService
 
-+ (FSKFamilyTreeService *)familyTreeServiceWithConnection:(FSKConnection *)familySearchConnection delegate:theDelegate;
++ (FSKPersonService *)personServiceWithConnection:(FSKConnection *)familySearchConnection delegate:theDelegate;
 {
-	return [[[FSKFamilyTreeService alloc] initWithConnection:familySearchConnection delegate:theDelegate] autorelease];
+	return [[[FSKPersonService alloc] initWithConnection:familySearchConnection delegate:theDelegate] autorelease];
 }
 
 - (id)initWithConnection:(FSKConnection *)familySearchConnection delegate:(id)theDelegate;
@@ -36,17 +39,17 @@ NSString * const PERSONA_ENDPOINT = @"persona";
 	[super dealloc];
 }
 
--(void)fetchFamilyTreeData:(NSString *)module path:(NSSet *)idList parameters:(NSDictionary *)parameterDict
-{
-	NSLog(@"%s, %@, %@, %@", __PRETTY_FUNCTION__, module, idList, parameterDict);
-	[self makeFamilySearchRequest:module idList:idList parameters:parameterDict];
-//	return nil;
-}
-
 -(void)fetchPersonDataWithIds:(NSSet *)idList parameters:(NSDictionary *)parameterDict
 {
 	NSLog(@"%s, %@, %@", __PRETTY_FUNCTION__, idList, parameterDict);
-	[self fetchFamilyTreeData:@"person" path:idList parameters:parameterDict];
+	[self makeFamilySearchRequest:@"person" 
+		idList:idList 
+		parameters:parameterDict];
+//	[FSKPersonReadRequest fetchPersonDataWithIds:idList 
+//		parameters:parameterDict 
+//		connection:self 
+//		delegate:self selector:@selector(handleResponse:)];
+	
 }
 
 
@@ -77,15 +80,17 @@ NSString * const PERSONA_ENDPOINT = @"persona";
 -(void)searchWithCriteria:(NSDictionary *)searchCriteria
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-	[self fetchFamilyTreeData:@"search" path:nil parameters:searchCriteria];
+	[self makeFamilySearchRequest:@"familytree/v1/search" idList:nil parameters:searchCriteria];
+//	[FSKPersonSearchRequest fetchSearchResultsWithCriteria:searchCriteria connection:connection delegate:_delegate selector:@selector(requestFinished:)];
+//	[self fetchPersonDataWithIds:nil parameters:searchCriteria];
 }
 
--(void) requestFinished:(NSXMLElement *)response
+-(void) requestFinished:(FSKResponse *)response
 {
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, [response name]);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, [response description]);
 	if ([_delegate respondsToSelector:@selector(requestFinished:)])
 	{
-		[_delegate requestFinished:response];
+		[_delegate requestFinished:(FSKPersonResponse *)response];
 	}
 }
 

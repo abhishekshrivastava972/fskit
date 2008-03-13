@@ -7,7 +7,7 @@
 @interface MyAppDelegate : NSObject
 {
 	FSKConnection *connection;
-	FSKFamilyTreeService *ftService;
+	FSKPersonService *personService;
 	FSKIdentityService *identityService;
 	
     IBOutlet NSTabView *searchTabs;
@@ -21,6 +21,7 @@
 	NSXMLDocument *searchResultXML;	
 	
 	NSMutableDictionary *searchForm;
+	IBOutlet NSObjectController *form;
 	int simpleSearchTag;
 }
 

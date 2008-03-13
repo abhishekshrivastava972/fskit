@@ -8,6 +8,7 @@
 
 #import "FSKServiceBase.h"
 #import "FSKRequest.h"
+#import "FSKIdentityService.h"
 
 @implementation FSKServiceBase
 - (id)initWithConnection:(FSKConnection *)familySearchConnection delegate:(id)theDelegate
@@ -27,7 +28,9 @@
 	[super dealloc];
 }
 
--(void) makeFamilySearchRequest:(NSString *)endpoint idList:(NSSet *)idList parameters:(NSDictionary *)parameterDict;
+-(void) makeFamilySearchRequest:(NSString *)endpoint
+						 idList:(NSSet *)idList 
+						 parameters:(NSDictionary *)parameterDict;
 {
 	[FSKRequest fetchFamilySearchData:[NSString stringWithFormat:@"%@/%@/%@", moduleName, versionString, endpoint] 
 							  WithIds:idList 
@@ -40,11 +43,19 @@
 -(void) requestFinished:(NSXMLElement *)response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
+	if ([connection needsAuthentication])
+	{
+		[[FSKIdentityService identityServiceWithConnection:connection delegate:self] login];
+	}
 }
 
 -(void) requestFailed:(NSError *)error
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+	if ([connection needsAuthentication])
+	{
+		[[FSKIdentityService identityServiceWithConnection:connection delegate:self] login];
+	}
 }
 
 @end

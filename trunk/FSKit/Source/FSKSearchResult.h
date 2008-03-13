@@ -7,15 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "FSKPersonSummary.h"
 
 @interface FSKSearchResult : NSObject {
 	NSNumber *score;
-//	FSKPersonSummary *person;
-//	FSKPersonSummary *father;
-//	FSKPersonSummary *mother;
+	NSString *refId;
+	FSKPersonSummary *person;
+	FSKPersonSummary *father;
+	FSKPersonSummary *mother;
 	NSArray *spouses; // of FSKPersonSummary
 	NSArray *children; // of FSKPersonSummary
 }
+
++ (id)searchResultFromXML:(NSXMLElement *)searchElement;
+- (id)initWithXML:(NSXMLElement *)searchElement;
+
 
 @end
