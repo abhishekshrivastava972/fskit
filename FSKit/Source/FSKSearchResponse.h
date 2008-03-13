@@ -11,7 +11,9 @@
 
 @interface FSKSearchResponse : FSKResponse {
 	int interestingResultsCount;
-	
+	NSArray *searchResults; // of FSKSearchResult
 }
+
+- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
 
 @end

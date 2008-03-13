@@ -13,11 +13,23 @@
 
 /*!
     @class
-    @abstract    <#(brief description)#>
-    @discussion  <#(comprehensive description)#>
+    @abstract    Base class for all FamilySearch Request types
+    @discussion  Provides common functionality for all FamilySearch request types
+	including handling the NSURLRequest and constructing the base response. While
+	can be used directly, it is typically more convenient to use one of the subclasses
+	for the specific type of request you need.
+	
+	A FamilySearch request consists of:
+	  [baseURL]/[endpoint]/[resource id(s)]?[parameters]
+	The baseURL is retrieved from the FSKConnection.
+	The endpoint consists of:
+	  [module]/[version]/[request]
+	  
+	The resource ids and parameters are not needed for some requests
+	
 */
-
-@interface FSKRequest : NSObject {
+@interface FSKRequest : NSObject
+{
 	FSKConnection *familySearchConnection;
 	id _delegate;
 	SEL _selector;
@@ -38,6 +50,16 @@
 -(NSURL *)generateFamilySearchURLAtEndpoint:(NSString *)endpoint 
 								    WithIds:(NSSet *)idList
                                  parameters:(NSDictionary *)parameters;
+
+//#pragma mark Request Methods
+
+	//synchronous requests
+//-(id)fetchFamilySearchData:(NSURL *)theURL;
+//-(id)postFamilySearchData:(NSURL *)theURL withData:(NSData *)theData ofType:(NSString *)contentType;
+//
+//-(void)fetchFamilySearchDataAtEndpoint:(NSString *)endpoint 
+//							   WithIds:(NSSet *)idList
+//						    parameters:(NSDictionary *)dict;
 								 
 #pragma mark Accessors
 - (id)delegate;
@@ -76,36 +98,6 @@
 */
 @interface NSObject (FSKRequestDelegate)
 
-/*!
-    @method request:didReceiveAuthenticationChallenge:
-    @abstract Start authentication for a given challenge
-    @discussion Call useCredential:forAuthenticationChallenge:,
-    continueWithoutCredentialForAuthenticationChallenge: or cancelAuthenticationChallenge: on
-    the challenge sender when done.
-    @param request the request for which authentication is needed
-    @param challenge The NSURLAuthenticationChallenge to start authentication for
-*/
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-
-/*!
-    @method windowForAuthenticationSheet:    
-    @abstract   Provides the window to attach the authentication sheet to
-    @discussion If you implement this delegate method, you can choose which window will have
-	the authentication sheet attached to it during an authentication challenge. If you do not
-	implement this method, by default the sheet will attempt to attach to [NSApp mainWindow].
-	If you return nil, the authentication will be performed with an application modal dialog
-	instead of a sheet.
-*/
-- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
-
-/*!
-    @method request:didCancelAuthenticationChallenge:
-    @abstract Cancel authentication for a given request
-    @param request the request for which authentication was cancelled
-    @param challenge The NSURLAuthenticationChallenge for which to cancel authentication
-*/
-- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-
 /*! 
     @method request:didReturnResponse:   
     @abstract This method is called when an FSKRequest has
@@ -131,6 +123,45 @@
     caused the load to fail.
 */
 - (void)request:(FSKRequest *)request didFailWithError:(FSKError *)error;
+
+
+/*!
+	It is recommended to use the FSKConnectionDelegate options for these to centralize
+	your authentication across many types of requests
+*/
+
+/*!
+	It is recommended to use the FSKConnectionDelegate version of this if possible
+    @method request:didReceiveAuthenticationChallenge:
+    @abstract Start authentication for a given challenge
+    @discussion Call useCredential:forAuthenticationChallenge:,
+    continueWithoutCredentialForAuthenticationChallenge: or cancelAuthenticationChallenge: on
+    the challenge sender when done.
+    @param request the request for which authentication is needed
+    @param challenge The NSURLAuthenticationChallenge to start authentication for
+*/
+- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+
+/*!
+	It is recommended to use the FSKConnectionDelegate version of this if possible
+    @method windowForAuthenticationSheet:    
+    @abstract   Provides the window to attach the authentication sheet to
+    @discussion If you implement this delegate method, you can choose which window will have
+	the authentication sheet attached to it during an authentication challenge. If you do not
+	implement this method, by default the sheet will attempt to attach to [NSApp mainWindow].
+	If you return nil, the authentication will be performed with an application modal dialog
+	instead of a sheet.
+*/
+- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
+
+/*!
+	It is recommended to use the FSKConnectionDelegate version of this if possible
+    @method request:didCancelAuthenticationChallenge:
+    @abstract Cancel authentication for a given request
+    @param request the request for which authentication was cancelled
+    @param challenge The NSURLAuthenticationChallenge for which to cancel authentication
+*/
+- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 @end
 

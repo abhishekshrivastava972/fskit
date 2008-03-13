@@ -7,8 +7,36 @@
 //
 
 #import "FSKSearchResponse.h"
-
+#import "FSKSearchResult.h"
 
 @implementation FSKSearchResponse
+
+- (void)parseSearchResponse:(NSXMLElement *)searchesElement
+{
+	interestingResultsCount = [[[searchesElement attributeForName:@"count"] objectValue] intValue];
+	NSMutableArray *theResults = [[NSMutableArray array] retain];
+	NSEnumerator *enumerator = [[searchesElement elementsForName:@"search"] objectEnumerator];
+	NSXMLElement *searchElement;
+	while (searchElement = [enumerator nextObject]) {
+		[theResults addObject:[FSKSearchResult searchResultFromXML:searchElement]];
+	}
+	searchResults = [NSArray arrayWithArray:theResults];
+}
+	
+- (id)initWithXML:(NSXMLDocument *)theXmlDocument
+{
+    if ((self = [super initWithXML:theXmlDocument]) != nil) 
+	{ 
+		[self parseSearchResponse:[[xmlDocument rootElement] firstElementWithName:@"searches"]];
+	}
+	
+	return self;	
+}
+
+- (void)dealloc
+{
+	[searchResults release];
+	[super dealloc];
+}
 
 @end

@@ -17,8 +17,8 @@
 	NSString *version;
 	NSString *deprecatedValue;
 	BOOL deprecated;
-	NSArrayController *results;
-	NSArrayController *errors;
+	NSArray *results; // of id (Request-specific)
+	NSArray *errors; // of FSKError
 	BOOL hasErrors;
 	BOOL hasResults;
 }
@@ -26,7 +26,6 @@
 - (id)initWithXML:(NSXMLDocument *)xmlDocument;
 
 - (NSXMLDocument *)xmlDocument;
-//- (void)setXmlDocument:(NSXMLDocument *)value;
 
 - (int)statusCode;
 
@@ -37,7 +36,6 @@
 - (BOOL)deprecated;
 
 - (NSArrayController *)results;
-//- (void)setResults:(NSArrayController *)value;
 
 - (NSArrayController *)errors;
 

@@ -5,16 +5,16 @@
 - (id)init {
 	self = [super init];
 	connection  = [[[FSKConnection alloc] init] retain];
-//	[connection setBaseURLString:kFSAPIDevBaseURLString];
+	[connection setBaseURLString:kFSAPIDevBaseURLString];
 	
-	ftService = [[FSKFamilyTreeService familyTreeServiceWithConnection:connection delegate:self] retain];
+	personService = [[FSKPersonService personServiceWithConnection:connection delegate:self] retain];
 	identityService = [[FSKIdentityService identityServiceWithConnection:connection delegate:self] retain];
 	return self;
 }
 
 - (void)dealloc {
 	[connection release];
-	[ftService release];
+	[personService release];
 	[super dealloc];
 }
 
@@ -44,10 +44,10 @@
 {
 	NSLog(@"%s", _cmd);
 
-	[ftService readPerson:@"me"];
-	[ftService readPersons:[NSSet setWithObjects:@"MMMM-MMD",@"me",@"KW3B-NK3",@"KW3B-NKH",@"KW3B-NK7",@"ZZZZ-ZZZ",@"ABCD-EFG",nil]];
-	[ftService readPerson:@"ZZZZ-ZZZ"];
-	[ftService readPerson:@"ABCD-EFG"];
+	[personService readPerson:@"me"];
+	[personService readPersons:[NSSet setWithObjects:@"MMMM-MMD",@"me",@"KW3B-NK3",@"KW3B-NKH",@"KW3B-NK7",@"ZZZZ-ZZZ",@"ABCD-EFG",nil]];
+	[personService readPerson:@"ZZZZ-ZZZ"];
+	[personService readPerson:@"ABCD-EFG"];
 }
 
 - (NSXMLDocument *)theDocument
