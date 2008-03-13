@@ -5,7 +5,34 @@
 FSKit is an Objective-C library to help developers connect and use the [http://familysearch.org/ FamilySearch.org]  [http://devnet.familysearch.org/articles/apis/ web service APIs]
 
 = Getting Started =
-Until a proper tutorial is written, look at the FSAppTest application in the Sample Apps folder.
+  # Get API reference access & developer key from [http://devnet.familysearch.org/support/roadmap-for-new-developers/ FamilySearch DevNet]
+  # [http://developer.apple.com/documentation/MacOSX/Conceptual/BPFrameworks/Tasks/CreatingFrameworks.html#//apple_ref/doc/uid/20002258-106880-BAJJBIEF Link your application to FSKit Framework]
+  # Import FSKit     #import <FSKit/FSKit.h
+  # Create a connection
+{{{
+ FSKConnection *connection  = [[[FSKConnection alloc] init] retain];
+[connection setBaseURLString:kFSAPIDevBaseURLString];
+[connection setDeveloperKey:@"NNNN-NNNN-NNNN-NNNN-NNNN"];
+[connection setUserAgentString:@"My Cool App/1.0" override:NO];
+}}}
+  # Make a request
+{{{
+FSKPersonService *Service = [[FSKPersonService
+    personServiceWithConnection:connection 
+    delegate:self] retain];
+[personService readPerson:[simpleSearchField stringValue]];
+
+[FSKPersonSearchRequest 
+    fetchSearchResultsWithCriteria:parameters connection:familySearchConnection 
+    delegate:_delegate  selector:_selector];
+}}}
+  # Handle the response by overriding these 2 methods in your delegate
+{{{
+- (void)request:(FSKRequest *)request 
+    didReturnResponse:(FSKResponse *)response;
+- (void)request:(FSKRequest *)request 
+    didFailWithError:(FSKError *)error;
+}}}
 
 = Details =
 
