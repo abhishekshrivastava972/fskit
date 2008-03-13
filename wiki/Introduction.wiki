@@ -7,7 +7,10 @@ FSKit is an Objective-C library to help developers connect and use the [http://f
 = Getting Started =
   # Get API reference access & developer key from [http://devnet.familysearch.org/support/roadmap-for-new-developers/ FamilySearch DevNet]
   # [http://developer.apple.com/documentation/MacOSX/Conceptual/BPFrameworks/Tasks/CreatingFrameworks.html#//apple_ref/doc/uid/20002258-106880-BAJJBIEF Link your application to FSKit Framework]
-  # Import FSKit     #import <FSKit/FSKit.h
+  # Import FSKit 
+{{{
+#import <FSKit/FSKit.h>
+}}}
   # Create a connection
 {{{
  FSKConnection *connection  = [[[FSKConnection alloc] init] retain];
