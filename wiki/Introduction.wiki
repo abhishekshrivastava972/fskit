@@ -15,18 +15,18 @@ FSKit is an Objective-C library to help developers connect and use the [http://f
 {{{
  FSKConnection *connection  = [[[FSKConnection alloc] init] retain];
 [connection setBaseURLString:kFSAPIDevBaseURLString];
-[connection setDeveloperKey:@"NNNN-NNNN-NNNN-NNNN-NNNN"];
+[connection setDeveloperKey:@"MMMM-MMMM-MMMM-MMMM-MMMM-MMMM-MMMM-MMMM"];
 [connection setUserAgentString:@"My Cool App/1.0" override:NO];
 }}}
   # Make a request
 {{{
-FSKPersonService *Service = [[FSKPersonService
+FSKPersonService *personService = [[FSKPersonService
     personServiceWithConnection:connection 
     delegate:self] retain];
 [personService readPerson:[simpleSearchField stringValue]];
 
 [FSKPersonSearchRequest 
-    fetchSearchResultsWithCriteria:parameters connection:familySearchConnection 
+    fetchSearchResultsWithCriteria:parameters connection:connection 
     delegate:_delegate  selector:_selector];
 }}}
   # Handle the response by overriding these 2 methods in your delegate
