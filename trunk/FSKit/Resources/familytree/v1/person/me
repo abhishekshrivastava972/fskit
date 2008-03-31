@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?> 
+  <familytree version="1.0.20080101" 
+  statusCode="200" statusMessage="OK" 
+  xmlns="http://api.familysearch.org/familytree/v1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://api.familysearch.org/ 
+   familytree/v1/schema"> 
+<persons> 
+ <person id="N9CR-1M7" version="789056" 
+   modified="2006-10-02T21:46:40"> 
+    <summary> 
+     <name> 
+      <fullText>Joseph Smith, Jr.</fullText> 
+       <pieces> 
+        <piece type="Given"> 
+         <value>Joseph</value> 
+         </piece> 
+         <piece type="Family"> 
+          <value>Smith</value> 
+         </piece> 
+         <piece type="Suffix"> 
+          <value>Jr.</value> 
+         </piece> 
+        </pieces> 
+       </name> 
+       <gender>Male</gender> 
+       <events> 
+        <event scope="person" type="Birth"> 
+         <date>23 Dec 1805</date> 
+         <place>Sharon, Windsor, Vermont</place> 
+        </event> 
+        <event scope="person" type="Death"> 
+         <date>27 Jun 1844</date> 
+         <place>Carthage Jail, Hancock, Illinois</place> 
+        </event> 
+        <event scope="couple" type="Marriage"> 
+         <date>27 Jun 1844</date> 
+         <place>Carthage Jail, Hancock, Illinois</place> 
+        </event> 
+       </events> 
+       <parents additional="false"> 
+        <parent role="father" ref="VBQ9-TR9D-S"/> 
+        <parent role="mother" ref="YFQ9-TR9D-S"/> 
+       </parents> 
+       <spouses additional="false"> 
+        <spouse ref="XNR5-S77"/> 
+       </spouses> 
+       <children additional="false"> 
+        <child ref="G6R5-S77"/> 
+        <child ref="B6R5-S77"/> 
+        <child ref="Q6R5-S77"/> 
+       </children> 
+      </summary> 
+	  <values> 
+	   <gender id="12368"> 
+	    <gender>Male</gender> 
+	     <assertions> 
+	      <assertion ref="123456789" contributor="123678" 
+	       version="4321" modified="..." disputing="true"/> 
+	      <assertion ref="345678912" contributor="764302" 
+	       version="4321" modified="..."/> 
+	     </assertions> 
+	    </gender> 
+	    <name type="Name"> 
+	     <name><fullText>Joseph Smith, Jr.</fullText></name> 
+	     <assertions> 
+	      <assertion ref="123456789" contributor="123678" 
+	       version="4321" modified="..." disputing="true"/> 
+	      <assertion ref="345678912" contributor="764302" 
+	       version="4321" modified="..."/> 
+	     </assertions> 
+	    <notes> 
+	     <note id="9748234" assertion="287349837"> 
+	      ... 
+	     </note> 
+	     <note id="309840923" assertion="959387823"> 
+	      ... </note> 
+	    </notes> 
+	    <citations> 
+	     <citation id="38708197341" assertion="9830948209384"> 
+	      ... </citation> 
+	     <citation id="87187398471" assertion="923809483209"> 
+	       ... </citation> 
+	    </citations> 
+	   </name> 
+	  </values>
+	</person> 
+    </persons> 
+</familytree>
