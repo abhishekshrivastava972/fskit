@@ -1,17 +1,17 @@
-#import "MyAppDelegate.h"
+#import "FSSearchDemoDelegate.h"
 #import "RuleDelegate.h"
 #import "ImageTextCell.h"
 #import "SFHFRatingCell.h"
 
 NSMutableData *receivedData;
 
-@implementation MyAppDelegate
+@implementation FSSearchDemoDelegate
 
 - (id)init {
 	self = [super init];
 	connection  = [[[FSKConnection alloc] init] retain];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
-	[connection setDeveloperKey:@"My_Developer_Key"];
+	[connection setDeveloperKey:@"NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN"];
 	[connection setUserAgentString:@"My Cool App/1.0" override:NO];
 	
 	personService = [[FSKPersonService personServiceWithConnection:connection delegate:self] retain];
@@ -57,7 +57,7 @@ NSMutableData *receivedData;
 {
 	[ruleEditor reloadPredicate];
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-	NSArray *predicates = [[ruleEditor predicate] subpredicates];
+	NSArray *predicates = [(NSCompoundPredicate *)[ruleEditor predicate] subpredicates];
 	unsigned int predCount = [predicates count];
 	unsigned int index = 0;
 	for( ;index < predCount; index += 1)

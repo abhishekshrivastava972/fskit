@@ -15,7 +15,11 @@
 {
     if ((self = [super initWithXML:theXmlDocument]) != nil) 
 	{ 
-
+//	NSLog(@"login results:\n%@", [xmlDocument XMLStringWithOptions:NSXMLNodePrettyPrint]);
+////	NSLog(@"session doc: %@ %@ %@", [xmlDocument rootElement], [xmlDocument nodesForXPath:@"." error:nil], [[[xmlDocument nodesForXPath:@"./session" error:nil] lastObject] attributeForName:@"version"]);
+//	NSXMLElement *rootNode = [xmlDocument rootElement];
+//	NSLog(@"root node: %@ %@ %@", [[[rootNode nodesForXPath:@"//session/@id" error:nil] lastObject] stringValue], [rootNode nodesForXPath:@"//session/@id" error:nil], [[rootNode attributeForName:@"version"] stringValue]);
+//	sessionId = [[[rootNode nodesForXPath:@"//session/@id" error:nil] lastObject] stringValue];
 	}
 	
 	return self;	

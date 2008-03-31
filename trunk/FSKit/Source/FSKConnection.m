@@ -7,6 +7,8 @@
 //
 
 #import "FSKConnection.h"
+#import "FSKDefaultAuthenticationDelegate.h"
+#import "FSKIdentityService.h"
 
 NSString *kFSAPIProductionBaseURLString = @"https://api.familysearch.org/";  // Production
 NSString *kFSAPIBetaBaseURLString = @"https://apibeta.familysearch.org/";  // Beta
@@ -18,12 +20,15 @@ NSString *FSAPIVersion = @"v1";
 NSString *userAgentString = @"test";
 
 - (id)init {
-	self = [super init]; 
-
-	baseURLString = kFSAPIProductionBaseURLString;
-	[self setConnectionTimeoutInterval:5.0];
-	userAgentString = [[NSString stringWithFormat:@"%@/%@", FSKitAgent, FSKitVersion] retain];
-	responseDataCache = [[[NSMutableDictionary alloc] init] retain];
+	if ((self = [super init]))
+	{ 
+		baseURLString = kFSAPIProductionBaseURLString;
+		[self setConnectionTimeoutInterval:5.0];
+		userAgentString = [[NSString stringWithFormat:@"%@/%@", FSKitAgent, FSKitVersion] retain];
+		responseDataCache = [[[NSMutableDictionary alloc] init] retain];
+		requestQueue = [[[NSMutableArray alloc] init] retain];
+		_delegate = [[FSKDefaultAuthenticationDelegate alloc] init];
+	}
 	return self;
 }
 
@@ -32,6 +37,7 @@ NSString *userAgentString = @"test";
 	[credential release];
 	[userAgentString release];
 	[responseDataCache release];
+	[requestQueue release];
 	[super dealloc];
 }
 	
@@ -95,6 +101,13 @@ NSString *userAgentString = @"test";
     if (needsAuthentication != value)
 	{
         needsAuthentication = value;
+		NSLog(@" processing requestQueue");
+		FSKRequest *request;
+		NSEnumerator *enumerator = [requestQueue objectEnumerator];
+		while (request = [enumerator nextObject]) {
+			[request reissueRequest];
+		}
+		[requestQueue removeAllObjects];
     }
 }
 
@@ -131,36 +144,49 @@ NSString *userAgentString = @"test";
 	_delegate = value;
 }
 
+- (void)handleAuthenticationForRequest:(FSKRequest *)request
+{
+	NSLog(@"%s", __PRETTY_FUNCTION__);
+	if ([request isKindOfClass:[FSKIdentityRequest class]])
+	{
+		[request responseWithXML:[request responseData]];
+	}
+	else
+	{
+		[requestQueue addObject:request];
+		[[[FSKIdentityService identityServiceWithConnection:self delegate:_delegate] retain] login];
+	}
+}
 
 @end
 
 @implementation FSKConnection(PrivateMethods)
 
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, data);
-	[[responseDataCache objectForKey:[connection description]] appendData:data];
-}
-
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{	
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, connection);
-	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:[responseDataCache objectForKey:[connection description]]
-														   options:nil
-															 error:nil];
-    SEL _selector = @selector(requestFinished:);																	
-	if([_delegate respondsToSelector:_selector])
-		[_delegate performSelector:_selector withObject:returnXML];
-
-   [self release];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
-	if([_delegate respondsToSelector:@selector(asyncRequestFailed:)])
-		[_delegate performSelector:@selector(asyncRequestFailed:) withObject:error];
-}
+//-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+//{
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, data);
+//	[[responseDataCache objectForKey:[connection description]] appendData:data];
+//}
+//
+//-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+//{	
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, connection);
+//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:[responseDataCache objectForKey:[connection description]]
+//														   options:nil
+//															 error:nil];
+//    SEL _selector = @selector(requestFinished:);																	
+//	if([_delegate respondsToSelector:_selector])
+//		[_delegate performSelector:_selector withObject:returnXML];
+//
+//   [self release];
+//}
+//
+//- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+//{
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+//	if([_delegate respondsToSelector:@selector(asyncRequestFailed:)])
+//		[_delegate performSelector:@selector(asyncRequestFailed:) withObject:error];
+//}
 
 
 

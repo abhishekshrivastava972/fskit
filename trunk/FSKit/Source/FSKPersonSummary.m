@@ -7,7 +7,7 @@
 //
 
 #import "FSKPersonSummary.h"
-
+#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKPersonSummary
 

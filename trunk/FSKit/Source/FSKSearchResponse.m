@@ -8,6 +8,7 @@
 
 #import "FSKSearchResponse.h"
 #import "FSKSearchResult.h"
+#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKSearchResponse
 

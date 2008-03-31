@@ -7,7 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-//#import "FSKRequest.h"
+
+/*!
+    @class
+    @abstract    <#(brief description)#>
+    @discussion  <#(comprehensive description)#>
+*/
+
+@class FSKRequest;
 
 /*!
     @defined 
@@ -56,6 +63,7 @@ extern NSString *FSAPIVersion;
 	NSTimeInterval connectionTimeoutInterval;
 	id _delegate;	
 	NSMutableDictionary *responseDataCache;
+	NSMutableArray *requestQueue;
 }
 
 /*!
@@ -97,6 +105,8 @@ extern NSString *FSAPIVersion;
 - (id)delegate;
 - (void)setDelegate:(id)value;
 
+
+- (void)handleAuthenticationForRequest:(FSKRequest *)request;
 @end
 
 #pragma mark -
@@ -125,7 +135,7 @@ extern NSString *FSAPIVersion;
     @param request the request for which authentication is needed
     @param challenge The NSURLAuthenticationChallenge to start authentication for
 */
-//- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 /*!
     @method windowForAuthenticationSheet:    
@@ -136,7 +146,7 @@ extern NSString *FSAPIVersion;
 	If you return nil, the authentication will be performed with an application modal dialog
 	instead of a sheet.
 */
-//- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
+- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
 
 /*!
     @method request:didCancelAuthenticationChallenge:
@@ -144,6 +154,6 @@ extern NSString *FSAPIVersion;
     @param request the request for which authentication was cancelled
     @param challenge The NSURLAuthenticationChallenge for which to cancel authentication
 */
-//- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 @end

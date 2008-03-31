@@ -26,18 +26,20 @@ NSString *kPersonEndpoint = @"person";
 				 delegate:(id)aDelegate 
 				 selector:(SEL)aSelector
 {
-	[FSKRequest fetchFamilySearchData:[NSString stringWithFormat:@"familytree/v1/%@", kPersonEndpoint] 
-							WithIds:idList 
-							parameters:parameters 
-							connection:aFamilySearchConnection 
-							delegate:aDelegate 
-							selector:aSelector];
+	FSKPersonReadRequest *request = [[[self alloc] initWithFamilySearchConnection:aFamilySearchConnection delegate:aDelegate selector:aSelector] autorelease];
+	[request sendPersonReadRequestWithIds:idList parameters:parameters];
 }
 
 - (void)sendPersonReadRequestWithIds:(NSSet *)idList parameters:(NSDictionary *)parameters;
 {
-	[FSKPersonReadRequest fetchPersonDataWithIds:idList parameters:parameters connection:familySearchConnection delegate:_delegate selector:_selector];
+	[self fetchFamilySearchDataAtEndpoint:@"familytree/v1/person" WithIds:idList parameters:parameters];
 }
 
+- (FSKPersonResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+{
+	NSLog(@"%s", __PRETTY_FUNCTION__);	
+	FSKPersonResponse *response = [[FSKPersonResponse alloc] initWithXML:xmlDoc];
+	return [response autorelease];
+}
 
 @end

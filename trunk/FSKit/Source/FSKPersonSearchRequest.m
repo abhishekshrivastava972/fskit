@@ -27,17 +27,20 @@ NSString *kSearchEndpoint = @"search";
 				 delegate:(id)aDelegate 
 				 selector:(SEL)aSelector
 {
-	[FSKRequest fetchFamilySearchData:[NSString stringWithFormat:@"familytree/v1/%@", kSearchEndpoint] 
-							WithIds:nil 
-							parameters:parameters 
-							connection:aFamilySearchConnection 
-							delegate:aDelegate 
-							selector:aSelector];
+	FSKPersonSearchRequest *request = [[[self alloc] initWithFamilySearchConnection:aFamilySearchConnection delegate:aDelegate selector:aSelector] autorelease];
+	[request sendSearchRequestWithCriteria:parameters];
 }				 
 
 - (void)sendSearchRequestWithCriteria:(NSDictionary *)parameters
 {
 	[FSKPersonSearchRequest fetchSearchResultsWithCriteria:parameters connection:familySearchConnection delegate:_delegate selector:_selector];
 }
+
+- (FSKSearchResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+{
+	FSKSearchResponse *response = [[FSKSearchResponse alloc] initWithXML:xmlDoc];
+	return response;
+}
+
 
 @end

@@ -17,6 +17,13 @@
 #endif
 
 @class PSRuleEditor;
+
+
+/*!
+    @class
+    @abstract    <#(brief description)#>
+    @discussion  <#(comprehensive description)#>
+*/
 @interface RuleDelegate : NSObject {
 	NSArray *operators;
 	NSDictionary *rootChildren;	

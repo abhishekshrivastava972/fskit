@@ -9,6 +9,7 @@
 #import "FSKServiceBase.h"
 #import "FSKRequest.h"
 #import "FSKIdentityService.h"
+#import "FSKPersonReadRequest.h"
 
 @implementation FSKServiceBase
 - (id)initWithConnection:(FSKConnection *)familySearchConnection delegate:(id)theDelegate
@@ -32,12 +33,7 @@
 						 idList:(NSSet *)idList 
 						 parameters:(NSDictionary *)parameterDict;
 {
-	[FSKRequest fetchFamilySearchData:[NSString stringWithFormat:@"%@/%@/%@", moduleName, versionString, endpoint] 
-							  WithIds:idList 
-						   parameters:parameterDict 
-						   connection:connection
-							 delegate:self 
-							 selector:@selector(requestFinished:)];
+	[FSKPersonReadRequest fetchPersonDataWithIds:idList parameters:parameterDict connection:connection delegate:self selector:@selector(requestFinished:)];
 }
 
 -(void) requestFinished:(NSXMLElement *)response

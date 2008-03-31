@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "FSKRequest.h"
 #import "FSKConnection.h"
+#import "FSKPersonResponse.h"
 
 @interface FSKPersonReadRequest : FSKRequest {
 
@@ -25,5 +26,7 @@
 				 selector:(SEL)aSelector;
 
 - (void)sendPersonReadRequestWithIds:(NSSet *)idList parameters:(NSDictionary *)parameters;
+
+- (FSKPersonResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
 
 @end

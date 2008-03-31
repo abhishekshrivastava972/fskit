@@ -14,17 +14,23 @@
 					   delegate:(id)aDelegate 
 					   selector:(SEL)aSelector
 {
-	self = [super init];
-	familySearchConnection = aFamilySearchConnection;
-	_delegate = aDelegate;// ? aDelegate : self;
-	_selector = aSelector? aSelector : @selector(request:didReturnResponse:);
-	responseData = [[NSMutableData alloc] init];
+	if ((self = [super init]))
+	{ 
+		familySearchConnection = [aFamilySearchConnection retain];
+		_delegate = aDelegate;// ? aDelegate : self;
+		_selector = aSelector? aSelector : @selector(request:didReturnResponse:);
+		responseData = [[[NSMutableData alloc] init] retain];
+	}
 	return self;
 }
 
 -(void)dealloc
 {
+	[familySearchConnection release];
 	[responseData release];
+	[_endpoint release];
+	[_idList release];
+	[_parameters release];
 	[super dealloc];
 }
 
@@ -51,15 +57,19 @@
 	NSURLConnection *urlConnection = [NSURLConnection connectionWithRequest:urlRequest
 																	   delegate:self];
 	NSLog(@"connection: %@ headers: %@", urlConnection, [urlRequest allHTTPHeaderFields]);
+	
+	_endpoint = [endpoint retain];
+	_idList = [idList retain];
+	_parameters = [parameters retain];
 }
 
 
 +(void)fetchFamilySearchData:(NSString *)endpoint WithIds:(NSSet *)idList parameters:(NSDictionary *)parameters connection:aFamilySearchConnection delegate:(id)aDelegate selector:(SEL)aSelector
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-	FSKRequest *fsRequest = [[FSKRequest alloc] initWithFamilySearchConnection:aFamilySearchConnection
+	FSKRequest *fsRequest = [[[FSKRequest alloc] initWithFamilySearchConnection:aFamilySearchConnection
 													 delegate:aDelegate
-													 selector:aSelector];
+													 selector:aSelector] retain];
 
 	[fsRequest fetchFamilySearchDataAtEndpoint:endpoint
 									   WithIds:idList
@@ -162,7 +172,7 @@
 		[mutableDictionary setValue:[familySearchConnection sessionId] forKey:@"sessionId"];
 	}
 	
-	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@%@", [familySearchConnection baseURLString], endpoint];
+	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@/%@", [familySearchConnection baseURLString], endpoint];
 	if (idList && [idList count] > 0)
 	{
 		[urlString appendFormat:@"/%@", [[idList allObjects] componentsJoinedByString:@","]];
@@ -175,6 +185,19 @@
 	return [NSURL URLWithString:[[urlString encodeURLLegally] autorelease]];
 }
 
+- (FSKResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+{
+	NSLog(@"%s", __PRETTY_FUNCTION__);
+	FSKResponse *response = [[FSKResponse alloc] initWithXML:xmlDoc];
+	return [response autorelease];
+}
+
+- (void)reissueRequest
+{
+	[responseData release];
+	responseData = [[[NSMutableData alloc] init] retain];
+	[self fetchFamilySearchDataAtEndpoint:_endpoint WithIds:_idList parameters:_parameters];
+}
 
 #pragma mark Accessors
 - (id)delegate
@@ -197,22 +220,22 @@
 
 @implementation NSObject (FSKRequestDelegate)
 
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
-//	[self handleAuthenticationChallenge:challenge];
-}
-
-- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, request);
-	return [NSApp mainWindow];
-}
-
-- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
-}
+//- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+//{
+//	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
+////	[self handleAuthenticationChallenge:challenge];
+//}
+//
+//- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
+//{
+//	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, request);
+//	return [NSApp mainWindow];
+//}
+//
+//- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+//{
+//	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
+//}
 
 - (void)request:(FSKRequest *)request didReturnResponse:(FSKResponse *)response;
 {
@@ -228,11 +251,16 @@
 
 #pragma mark -
 @implementation FSKRequest(PrivateMethods)
+- (void)handleLogin:(id)obj
+{
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, obj);
+}
 
 #pragma mark NSURLConnection delegate methods
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
 	NSLog(@"%s %@ %d %@ headers:\n%@", __PRETTY_FUNCTION__, response, [(NSHTTPURLResponse*)response statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[(NSHTTPURLResponse*)response statusCode]], [(NSHTTPURLResponse*)response allHeaderFields]);
+	NSLog(@"length:%d", [response expectedContentLength]);
 	if ([(NSHTTPURLResponse*)response statusCode] == 401)
 	{
 		[familySearchConnection setNeedsAuthentication:YES];
@@ -247,7 +275,7 @@
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {	
-	NSLog(@"%s", __PRETTY_FUNCTION__);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, connection);
 	NSError *error = nil;
 	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
 														   options:nil
@@ -257,13 +285,20 @@
 	{
 		NSLog(@"Error parsing XML: %@", error);
 	}
-
-	if([_delegate respondsToSelector:_selector])
+	
+	FSKResponse *response = [self responseWithXML:[returnXML autorelease]];
+	
+	if ([response statusCode] != 200 && [familySearchConnection needsAuthentication])
 	{
-		[_delegate performSelector:_selector withObject:returnXML];
+		[familySearchConnection handleAuthenticationForRequest:self];
 	}
 
-   [self release];
+	else if([_delegate respondsToSelector:_selector])
+	{
+		[_delegate performSelector:_selector withObject:response];
+	}
+
+	//[connection autorelease];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -273,6 +308,7 @@
 	{
 		[_delegate request:self didFailWithError:[[FSKError alloc] initWithError:error]];
 	}
+	[connection release];
 }
 
 -(void)connection:(NSURLConnection *)connection

@@ -14,7 +14,9 @@
 						   delegate:(id)aDelegate 
 						   selector:(SEL)aSelector
 {
-	self = [super initWithFamilySearchConnection:aFamilySearchConnection delegate:aDelegate selector:aSelector];
+	if (self = [super initWithFamilySearchConnection:aFamilySearchConnection delegate:aDelegate selector:aSelector]) {
+        // your initialization code goes here
+    }
 	return self;
 }											 
 
@@ -25,17 +27,23 @@
 				 delegate:(id)aDelegate 
 				 selector:(SEL)aSelector
 {
-	[FSKRequest fetchFamilySearchData:[NSString stringWithFormat:@"identity/v1/%@", endpoint] 
+	FSKIdentityRequest *request = [[[self alloc] initWithFamilySearchConnection:aFamilySearchConnection delegate:aDelegate selector:aSelector] autorelease];
+	[request fetchFamilySearchDataAtEndpoint:[NSString stringWithFormat:@"identity/v1/%@", endpoint] 
 							WithIds:idList 
-							parameters:parameters 
-							connection:aFamilySearchConnection 
-							delegate:aDelegate 
-							selector:aSelector];
+							parameters:parameters];
 }
+
+- (FSKIdentityResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+{
+	NSLog(@"%s", __PRETTY_FUNCTION__);
+	FSKIdentityResponse *response = [[FSKIdentityResponse alloc] initWithXML:xmlDoc];
+	return [response autorelease];
+}
+
 
 - (void)sendLoginRequest
 {
-	[FSKIdentityRequest fetchIdentityData:@"login" WithIds:nil parameters:nil connection:familySearchConnection delegate:_delegate selector:_selector];
+	[FSKIdentityRequest fetchIdentityData:@"login" WithIds:nil parameters:[NSDictionary dictionaryWithObjectsAndKeys:[familySearchConnection developerKey], @"key", nil] connection:familySearchConnection delegate:_delegate selector:_selector];
 }
 
 - (void)sendLogoutRequest

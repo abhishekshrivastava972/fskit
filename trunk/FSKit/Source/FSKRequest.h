@@ -35,6 +35,9 @@
 	SEL _selector;
 	NSMutableData *responseData;
 
+	NSString *_endpoint;
+	NSSet *_idList;
+	NSDictionary *_parameters;
 }
 
 -(id)initWithFamilySearchConnection:(FSKConnection *)aFamilySearchConnection 
@@ -46,10 +49,14 @@
 -(void)fetchFamilySearchDataAtEndpoint:(NSString *)endpoint 
 							 WithIds:(NSSet *)idList
 						  parameters:(NSDictionary *)parameters;
+						  
+- (void)reissueRequest;						  
 								 
 -(NSURL *)generateFamilySearchURLAtEndpoint:(NSString *)endpoint 
 								    WithIds:(NSSet *)idList
                                  parameters:(NSDictionary *)parameters;
+								 
+- (FSKResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;								 
 
 //#pragma mark Request Methods
 
@@ -107,7 +114,7 @@
     callback.
     @param request an FSKRequest that has finished loading
     successfully.
-	@param responseXML an NSXMLDocument that contains the
+	@param response an FSKResponse that contains the
 */
 - (void)request:(FSKRequest *)request didReturnResponse:(FSKResponse *)response;
 
@@ -140,7 +147,7 @@
     @param request the request for which authentication is needed
     @param challenge The NSURLAuthenticationChallenge to start authentication for
 */
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+//- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 /*!
 	It is recommended to use the FSKConnectionDelegate version of this if possible
@@ -152,7 +159,7 @@
 	If you return nil, the authentication will be performed with an application modal dialog
 	instead of a sheet.
 */
-- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
+//- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
 
 /*!
 	It is recommended to use the FSKConnectionDelegate version of this if possible
@@ -161,14 +168,24 @@
     @param request the request for which authentication was cancelled
     @param challenge The NSURLAuthenticationChallenge for which to cancel authentication
 */
-- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+//- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 @end
 
+/*!
+    @category
+    @abstract    <#(brief description)#>
+    @discussion  <#(comprehensive description)#>
+*/
 @interface NSString (StringExtras)
 - (NSString *) encodeURLLegally;
 @end
 
+/*!
+    @category
+    @abstract    <#(brief description)#>
+    @discussion  <#(comprehensive description)#>
+*/
 @interface NSDictionary (webFormEncoded)
 /*
  Return the key-value pairs in the dictionary, with the keys and values encoded as query parameters, 

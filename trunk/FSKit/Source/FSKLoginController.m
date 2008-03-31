@@ -312,6 +312,10 @@ static NSString *kDEFAULT_SECURITY_DOMAIN = @"FamilySearch API, Version 1.0"; //
     if ([[NSApplication sharedApplication] runModalForWindow:loginPanel] == 0) {
         credential = [NSURLCredential credentialWithUser:[signInNameField stringValue] password:[passwordField stringValue] persistence:([remember state] == NSOnState) ? NSURLCredentialPersistenceForSession : NSURLCredentialPersistenceForSession];
     }
+	else
+	{
+		[[chall sender] cancelAuthenticationChallenge:chall];		
+	}
 
 	[[chall sender] useCredential:credential forAuthenticationChallenge:chall];
 //    [callback performSelector:selector withObject:chall withObject:credential];
@@ -331,23 +335,15 @@ static NSString *kDEFAULT_SECURITY_DOMAIN = @"FamilySearch API, Version 1.0"; //
 
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void  *)contextInfo
 {
-    NSURLCredential *credential = nil;
-    NSURLAuthenticationChallenge *chall;
-
-    //ASSERT(usingSheet);
-    //ASSERT(challenge1 != nil);
-
     if (returnCode == 0) {
-        credential = [NSURLCredential credentialWithUser:[signInNameField stringValue] password:[passwordField stringValue] persistence:([remember state] == NSOnState) ? NSURLCredentialPersistenceForSession : NSURLCredentialPersistenceForSession];
+        [[_challenge sender] useCredential:[NSURLCredential credentialWithUser:[signInNameField stringValue] password:[passwordField stringValue] persistence:([remember state] == NSOnState) ? NSURLCredentialPersistenceForSession : NSURLCredentialPersistenceForSession] forAuthenticationChallenge:_challenge];
     }
+	else
+	{
+		[[_challenge sender] cancelAuthenticationChallenge:_challenge];
+	}
 
-    // We take this tricky approach to nilling out and releasing the challenge
-    // because the callback below might remove our last ref.
-    chall = _challenge;
-    _challenge = nil;
-	[[chall sender] useCredential:credential forAuthenticationChallenge:chall];
-//    [callback performSelector:selector withObject:chall withObject:credential];
-    [chall release];
+    [_challenge release];
 }
 
 @end
