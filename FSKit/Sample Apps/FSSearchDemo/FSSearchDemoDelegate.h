@@ -4,7 +4,7 @@
 #import <RuleEditor/PSRuleEditor.h>
 #import <FSKit/FSKit.h>
 
-@interface MyAppDelegate : NSObject
+@interface FSSearchDemoDelegate : NSObject
 {
 	FSKConnection *connection;
 	FSKPersonService *personService;

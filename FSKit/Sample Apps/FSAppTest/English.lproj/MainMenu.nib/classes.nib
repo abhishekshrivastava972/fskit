@@ -13,7 +13,7 @@
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
-			<string>MyAppDelegate</string>
+			<string>FSAppTestDelegate</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>

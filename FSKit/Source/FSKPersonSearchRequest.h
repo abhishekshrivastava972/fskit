@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "FSKRequest.h"
+#import "FSKSearchResponse.h"
 
 @interface FSKPersonSearchRequest : FSKRequest {
 
@@ -23,5 +24,7 @@
 				 selector:(SEL)aSelector;
 
 - (void)sendSearchRequestWithCriteria:(NSDictionary *)parameters;
+
+- (FSKSearchResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
 
 @end

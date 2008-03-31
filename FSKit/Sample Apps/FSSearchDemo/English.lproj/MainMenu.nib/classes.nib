@@ -6,6 +6,25 @@
 	<array>
 		<dict>
 			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>addRow</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>PSRuleEditor</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSView</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>NSLevelIndicator</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
@@ -25,7 +44,7 @@
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
-			<string>MyAppDelegate</string>
+			<string>FSSearchDemoDelegate</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
@@ -67,25 +86,6 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>addRow</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>PSRuleEditor</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSView</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>

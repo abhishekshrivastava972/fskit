@@ -8,7 +8,6 @@
 
 #import "FSKIdentityService.h"
 #import "FSKIdentityResponse.h"
-#import "FSKLoginController.h"
 
 NSString * const LOGIN_ENDPOINT  = @"login";
 NSString * const LOGOUT_ENDPOINT = @"logout";
@@ -51,56 +50,31 @@ NSString * const LOGOUT_ENDPOINT = @"logout";
 
 }
 
--(void) requestFinished:(NSXMLElement *)response
-{
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
-}
-
--(void) requestFailed:(NSError *)error
-{
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
-}
+//-(void) requestFinished:(NSXMLElement *)response
+//{
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
+//}
+//
+//-(void) requestFailed:(NSError *)error
+//{
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
+//}
 
 @end
 
 @implementation FSKIdentityService(PrivateMethods)
-- (void)handleLoginResponse:(NSXMLDocument *)responseXML
+- (void)handleLoginResponse:(FSKIdentityResponse *)response
 {
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, responseXML);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
 
-	NSLog(@"login results:\n%@", [responseXML XMLStringWithOptions:NSXMLNodePrettyPrint]);
-//	NSLog(@"session doc: %@ %@ %@", [responseXML rootElement], [responseXML nodesForXPath:@"." error:nil], [[[responseXML nodesForXPath:@"./session" error:nil] lastObject] attributeForName:@"version"]);
-	NSXMLElement *rootNode = [responseXML rootElement];
-	NSLog(@"root node: %@ %@ %@", [[[rootNode nodesForXPath:@"//session/@id" error:nil] lastObject] stringValue], [rootNode nodesForXPath:@"//session/@id" error:nil], [[rootNode attributeForName:@"version"] stringValue]);
-	
-	FSKIdentityResponse *response = [[FSKIdentityResponse alloc] initWithXML:responseXML];
 	[connection setSessionId:[response sessionId]]; 
-}
-
-- (void)handleAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-	if ([challenge previousFailureCount] < 3)
+	[connection setNeedsAuthentication:NO];
+	
+	if ([_delegate respondsToSelector:@selector(request:didReturnResponse:)])
 	{
-		// set default value, allow app delegate to override
-		NSWindow *window = [NSApp mainWindow];
-		if ([_delegate respondsToSelector:@selector(windowForAuthenticationSheet:)])
-		{
-			window = [_delegate windowForAuthenticationSheet:(FSKRequest *)self];
-		}
-		
-		FSKLoginController *loginController = [[FSKLoginController alloc] init];
-		[loginController startAuthentication:challenge window:window];
-	} else
-	{
-		// If we don't have a valid credential, or have already failed auth 3x...
-		[[challenge sender] cancelAuthenticationChallenge:challenge];
+		[_delegate request:nil didReturnResponse:response];
 	}
-}
-
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-{
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
-	[self handleAuthenticationChallenge:challenge];
+	
 }
 
 -(void)fetchIdentityData:(NSString *)module path:(NSSet *)idList parameters:(NSDictionary *)parameterDict

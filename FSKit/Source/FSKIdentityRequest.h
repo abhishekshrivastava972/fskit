@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "FSKRequest.h"
-
+#import "FSKIdentityResponse.h"
 
 @interface FSKIdentityRequest : FSKRequest {
 
@@ -24,6 +24,8 @@
 			   connection:aFamilySearchConnection 
 				 delegate:(id)aDelegate 
 				 selector:(SEL)aSelector;
+
+- (FSKIdentityResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
 
 - (void)sendLoginRequest;
 

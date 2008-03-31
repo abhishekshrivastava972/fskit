@@ -3,7 +3,7 @@
 #import <Cocoa/Cocoa.h>
 #import <FSKit/FSKit.h>
 
-@interface MyAppDelegate : NSObject
+@interface FSAppTestDelegate : NSObject
 {
 	FSKConnection *connection;
 	FSKPersonService *personService;

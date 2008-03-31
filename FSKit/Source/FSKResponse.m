@@ -45,7 +45,7 @@
 {
 	if (statusCode == INT_MIN)
 	{
-		statusCode = [[[xmlDocument nodesForXPath:@"/node()/@statusCode" error:nil] lastObject] intValue];
+		statusCode = [[[[xmlDocument nodesForXPath:@"/node()/@statusCode" error:nil] lastObject] stringValue] intValue];
 	}
     return statusCode;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "FSKSearchResult.h"
-
+#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKSearchResult
 
@@ -23,9 +23,9 @@
 	refId = [[searchElement attributeForName:@"ref"] stringValue];
 	score = [searchElement firstValueForName:@"score"];
 	NSXMLElement *personElement = [searchElement firstElementWithName:@"person"];
-	person = [FSKPersonSummary createFromXML:[searchElement firstElementWithName:@"person"]];
-	father = [FSKPersonSummary createFromXML:[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Father']" error:nil]];
-	mother = [FSKPersonSummary createFromXML:[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Mother']" error:nil]];
+	person = [FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstElementWithName:@"person"]];
+	father = [FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Father']" error:nil]];
+	mother = [FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Mother']" error:nil]];
 }
 
 - (id)initWithXML:(NSXMLElement *)searchElement

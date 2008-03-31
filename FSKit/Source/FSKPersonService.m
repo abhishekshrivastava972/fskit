@@ -8,6 +8,7 @@
 
 #import "FSKPersonService.h"
 #import "FSKResponse.h"
+#import "FSKPersonReadRequest.h"
 #import "FSKPersonResponse.h"
 #import "FSKPersonSearchRequest.h"
 
@@ -15,6 +16,7 @@ NSString * const PERSON_ENDPOINT  = @"person";
 NSString * const SEARCH_ENDPOINT = @"search";
 NSString * const USER_ENDPOINT = @"user";
 NSString * const PERSONA_ENDPOINT = @"persona";
+NSString * const FAMILYTREE_MODULE = @"familytree";
 
 @implementation FSKPersonService
 
@@ -27,7 +29,7 @@ NSString * const PERSONA_ENDPOINT = @"persona";
 {
     if ((self = [super initWithConnection:familySearchConnection delegate:theDelegate]) != nil) 
 	{ 
-		moduleName = @"familytree";
+		moduleName = FAMILYTREE_MODULE;
 		versionString = @"v1";
 	}
 	
@@ -42,13 +44,13 @@ NSString * const PERSONA_ENDPOINT = @"persona";
 -(void)fetchPersonDataWithIds:(NSSet *)idList parameters:(NSDictionary *)parameterDict
 {
 	NSLog(@"%s, %@, %@", __PRETTY_FUNCTION__, idList, parameterDict);
-	[self makeFamilySearchRequest:@"person" 
-		idList:idList 
-		parameters:parameterDict];
-//	[FSKPersonReadRequest fetchPersonDataWithIds:idList 
-//		parameters:parameterDict 
-//		connection:self 
-//		delegate:self selector:@selector(handleResponse:)];
+//	[self makeFamilySearchRequest:@"person" 
+//		idList:idList 
+//		parameters:parameterDict];
+	[FSKPersonReadRequest fetchPersonDataWithIds:idList 
+		parameters:parameterDict 
+		connection:connection 
+		delegate:self selector:@selector(requestFinished:)];
 	
 }
 
@@ -73,24 +75,24 @@ NSString * const PERSONA_ENDPOINT = @"persona";
 -(void)searchByFamilyName:(NSString *)familyName givenNames:(NSString *)givenNames
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-	NSMutableDictionary *criteriaDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:givenNames, @"givenName", familyName, @"familyName"];
+	NSMutableDictionary *criteriaDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:givenNames, @"givenName", familyName, @"familyName", nil];
 	[self searchWithCriteria:criteriaDict];
 }
 
 -(void)searchWithCriteria:(NSDictionary *)searchCriteria
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-	[self makeFamilySearchRequest:@"familytree/v1/search" idList:nil parameters:searchCriteria];
-//	[FSKPersonSearchRequest fetchSearchResultsWithCriteria:searchCriteria connection:connection delegate:_delegate selector:@selector(requestFinished:)];
+//	[self makeFamilySearchRequest:@"familytree/v1/search" idList:nil parameters:searchCriteria];
+	[FSKPersonSearchRequest fetchSearchResultsWithCriteria:searchCriteria connection:connection delegate:_delegate selector:@selector(requestFinished:)];
 //	[self fetchPersonDataWithIds:nil parameters:searchCriteria];
 }
 
 -(void) requestFinished:(FSKResponse *)response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, [response description]);
-	if ([_delegate respondsToSelector:@selector(requestFinished:)])
+	if ([_delegate respondsToSelector:@selector(request:didReturnResponse:)])
 	{
-		[_delegate requestFinished:(FSKPersonResponse *)response];
+		[_delegate request:nil didReturnResponse:response];
 	}
 }
 

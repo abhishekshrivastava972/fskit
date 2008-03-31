@@ -11,6 +11,11 @@
 #import "FSKConnection.h"
 #import "FSKIdentityRequest.h"
 
+/*!
+    @class
+    @abstract    <#(brief description)#>
+    @discussion  <#(comprehensive description)#>
+*/
 
 @interface FSKIdentityService : FSKServiceBase {
 }
