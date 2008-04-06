@@ -54,8 +54,8 @@
 	
 	[urlRequest addValue:[familySearchConnection userAgentString]	forHTTPHeaderField:@"User-Agent"];
 	
-	NSURLConnection *urlConnection = [NSURLConnection connectionWithRequest:urlRequest
-																	   delegate:self];
+	NSURLConnection *urlConnection = [[NSURLConnection connectionWithRequest:urlRequest
+																	   delegate:self] retain];
 	NSLog(@"connection: %@ headers: %@", urlConnection, [urlRequest allHTTPHeaderFields]);
 	
 	_endpoint = [endpoint retain];
@@ -298,7 +298,7 @@
 		[_delegate performSelector:_selector withObject:response];
 	}
 
-	//[connection autorelease];
+	[connection autorelease];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -308,7 +308,7 @@
 	{
 		[_delegate request:self didFailWithError:[[FSKError alloc] initWithError:error]];
 	}
-	[connection release];
+	[connection autorelease];
 }
 
 -(void)connection:(NSURLConnection *)connection

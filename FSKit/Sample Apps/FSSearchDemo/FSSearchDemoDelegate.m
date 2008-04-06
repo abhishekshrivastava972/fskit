@@ -2,6 +2,7 @@
 #import "RuleDelegate.h"
 #import "ImageTextCell.h"
 #import "SFHFRatingCell.h"
+#import "FSKSharedDefines.h"
 
 NSMutableData *receivedData;
 
@@ -11,8 +12,8 @@ NSMutableData *receivedData;
 	self = [super init];
 	connection  = [[[FSKConnection alloc] init] retain];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
-	[connection setDeveloperKey:@"NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN"];
-	[connection setUserAgentString:@"My Cool App/1.0" override:NO];
+	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
+	[connection setUserAgentString:@"FSKitSearchDemo/1.0" override:NO];
 	
 	personService = [[FSKPersonService personServiceWithConnection:connection delegate:self] retain];
 	identityService = [[FSKIdentityService identityServiceWithConnection:connection delegate:self] retain];

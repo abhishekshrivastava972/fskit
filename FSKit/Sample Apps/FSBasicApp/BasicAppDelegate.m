@@ -1,4 +1,5 @@
 #import "BasicAppDelegate.h"
+#import "FSKSharedDefines.h"
 
 @implementation BasicAppDelegate
 - (id)init
@@ -23,11 +24,11 @@
 	// Create a connection
 	connection  = [[[FSKConnection alloc] init] retain];
 //	[connection setBaseURLString:@"http://localhost/~logan/"];
-//	[connection setBaseURLString:[[NSBundle mainBundle] resourcePath]];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
 //	[connection setBaseURLString:kFSAPIProductionBaseURLString];
-	[connection setDeveloperKey:@"NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN"];
-	[connection setUserAgentString:@"My Basic App/1.0" override:NO];
+	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
+	NSLog(@"key: %@", kFSK_DEVELOPER_KEY);
+	[connection setUserAgentString:@"FSKit BasicApp/1.0" override:NO];
 	// Make a request
 	personService = [[FSKPersonService
 		personServiceWithConnection:connection 

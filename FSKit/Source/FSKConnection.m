@@ -126,14 +126,14 @@ NSString *userAgentString = @"test";
 		newAgentString = @"";
 	}
 	if (override) {
-		userAgentString = [@"" stringByAppendingString:newAgentString];
+		userAgentString = [[@"" stringByAppendingString:newAgentString] retain];
 	} else {
-		userAgentString = [[newAgentString stringByAppendingFormat:@" %@/%@", FSKitAgent, FSKitVersion] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		userAgentString = [[[newAgentString stringByAppendingFormat:@" %@/%@", FSKitAgent, FSKitVersion] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] retain];
 	}
 }
 
 - (NSString *)userAgentString {
-	return @"FSKit/0.1";//userAgentString;
+	return userAgentString;
 }
 
 - (id)delegate {
