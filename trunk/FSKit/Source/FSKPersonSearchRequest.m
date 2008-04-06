@@ -33,7 +33,7 @@ NSString *kSearchEndpoint = @"search";
 
 - (void)sendSearchRequestWithCriteria:(NSDictionary *)parameters
 {
-	[FSKPersonSearchRequest fetchSearchResultsWithCriteria:parameters connection:familySearchConnection delegate:_delegate selector:_selector];
+	[self fetchFamilySearchDataAtEndpoint:@"familytree/v1/search" WithIds:nil parameters:parameters];
 }
 
 - (FSKSearchResponse *)responseWithXML:(NSXMLDocument *)xmlDoc

@@ -1,12 +1,12 @@
 #import "FSAppTestDelegate.h"
-
+#import "FSKSharedDefines.h"
 
 @implementation FSAppTestDelegate
 - (id)init {
 	self = [super init];
 	connection  = [[[FSKConnection alloc] init] retain];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
-	[connection setDeveloperKey:@"NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN"];
+	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
 	[connection setUserAgentString:@"FSAppTest/1.0" override:NO];
 	
 	personService = [[FSKPersonService personServiceWithConnection:connection delegate:self] retain];
