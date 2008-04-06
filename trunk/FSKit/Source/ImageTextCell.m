@@ -25,6 +25,19 @@
     return cell;
 }
 
+- (void)setObjectValue:(id <NSCopying>)object {
+    id oldObjectValue = [self objectValue];
+    if (object != oldObjectValue) {
+        [object retain];
+        [oldObjectValue release];
+        [super setObjectValue:[NSValue valueWithNonretainedObject:object]];
+    }
+}
+
+- (id)objectValue {
+    return [[super objectValue] nonretainedObjectValue];
+}
+
 - (void) setIconKeyPath: (NSString*) path {
 	[iconKeyPath autorelease];
 	iconKeyPath = [path retain];

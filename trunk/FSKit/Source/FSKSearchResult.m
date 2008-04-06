@@ -20,12 +20,12 @@
 
 - (void)parseXML:(NSXMLElement *)searchElement
 {
-	refId = [[searchElement attributeForName:@"ref"] stringValue];
-	score = [searchElement firstValueForName:@"score"];
+	refId = [[[searchElement attributeForName:@"ref"] stringValue] retain];
+	score = [[searchElement firstValueForName:@"score"] retain];
 	NSXMLElement *personElement = [searchElement firstElementWithName:@"person"];
-	person = [FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstElementWithName:@"person"]];
-	father = [FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Father']" error:nil]];
-	mother = [FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Mother']" error:nil]];
+	person = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstElementWithName:@"person"]] retain];
+	father = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Father']" error:nil]] retain];
+	mother = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Mother']" error:nil]] retain];
 }
 
 - (id)initWithXML:(NSXMLElement *)searchElement
@@ -34,6 +34,7 @@
 	{
         // Begin parsing
         [self parseXML:searchElement];
+		score2 = 10;
     }
     
     return self;

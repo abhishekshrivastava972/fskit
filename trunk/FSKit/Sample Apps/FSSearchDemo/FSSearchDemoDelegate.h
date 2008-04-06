@@ -3,6 +3,7 @@
 #import <Cocoa/Cocoa.h>
 #import <RuleEditor/PSRuleEditor.h>
 #import <FSKit/FSKit.h>
+#import "RuleDelegate.h"
 
 @interface FSSearchDemoDelegate : NSObject
 {
@@ -17,8 +18,10 @@
 	IBOutlet PSRuleEditor *ruleEditor;
 	//    IBOutlet NSButton *searchButton;
 	//	IBOutlet PSPredicateEditor *predicateEditor;
+	RuleDelegate *ruleDelegate;
 	
-	NSXMLDocument *searchResultXML;	
+	NSXMLDocument *searchResultXML;
+	FSKSearchResponse *lastResponse;
 	
 	NSMutableDictionary *searchForm;
 	IBOutlet NSObjectController *form;

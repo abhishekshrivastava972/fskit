@@ -19,10 +19,10 @@
 
 - (void)parseXML:(NSXMLElement *)personElement
 {
-	personId = [[personElement attributeForName:@"ref"] stringValue];
-	name = [personElement firstValueForName:@"score"];
-	gender = [personElement firstValueForName:@"score"];
-	NSXMLElement *birthElement = [personElement firstElementWithName:@"birth"];
+	personId = [[[personElement attributeForName:@"ref"] stringValue] retain];
+	name = [[personElement firstValueForXPath:@"*:name/*:form/*:fullText" error:nil] retain];
+	gender = [[personElement firstValueForName:@"gender"] retain];
+	NSXMLElement *birthElement = [[personElement firstElementWithName:@"birth"] retain];
 }
 
 - (id)initWithXML:(NSXMLElement *)personElement
