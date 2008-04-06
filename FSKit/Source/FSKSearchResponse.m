@@ -40,4 +40,8 @@
 	[super dealloc];
 }
 
+- (NSArray *)searchResults
+{
+	return [[searchResults retain] autorelease];
+}
 @end

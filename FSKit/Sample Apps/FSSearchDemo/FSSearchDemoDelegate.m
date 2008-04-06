@@ -1,5 +1,4 @@
 #import "FSSearchDemoDelegate.h"
-#import "RuleDelegate.h"
 #import "ImageTextCell.h"
 #import "SFHFRatingCell.h"
 #import "FSKSharedDefines.h"
@@ -21,6 +20,8 @@ NSMutableData *receivedData;
 }
 
 - (void)dealloc {
+	[ruleDelegate release];
+	[lastResponse release];
 	[connection release];
 	[personService release];
 	[identityService release];
@@ -52,6 +53,7 @@ NSMutableData *receivedData;
 - (void)performFormSearch
 {
 	NSLog(@"form vals: %@", [form content]);
+	[personService searchWithCriteria:[form content]];
 }
 
 - (void)performRuleSearch
@@ -156,8 +158,8 @@ NSMutableData *receivedData;
 	
 	/* CONFIGURE RULE EDITOR*/
 	
-	id delegate = [[RuleDelegate alloc] init];
-	[ruleEditor setDelegate:delegate];
+	ruleDelegate = [[[RuleDelegate alloc] init] retain];
+	[ruleEditor setDelegate:ruleDelegate];
 	//	[predicateEditor setDelegate:delegate];
 	
 	[ruleEditor setFormattingStringsFileName:@"format.plist"];
@@ -170,19 +172,17 @@ NSMutableData *receivedData;
 	[ruleEditor addRow:self];
 	[ruleEditor addRow:self];
 	
-	
 	// appList is a NSTableView object
 	NSTableColumn* column = [[searchResultsTableView tableColumns] objectAtIndex:1];
 	ImageTextCell* cell = [[[ImageTextCell alloc] init] autorelease];
 	[column setDataCell: cell];
 	[cell setDataDelegate: self];
-	//	[cell setPrimaryTextKeyPath: @"nextNode.nextSibling.nextSibling.stringValue"];
-	//	[cell setSecondaryTextKeyPath: @"nextNode.nextSibling.nextSibling.XMLString"];
-	//	[cell setIconKeyPath: @"icon"];
-	return;
+//	[cell setPrimaryTextKeyPath: @"name"];
+//	[cell setSecondaryTextKeyPath: @"personId"];
+//	[cell setIconKeyPath: @"icon"];
 	
 	// Set rating cell
-	SFHFRatingCell *starCell = [[SFHFRatingCell alloc] initImageCell: [NSImage imageNamed: @"star"]];
+	SFHFRatingCell *starCell = [[[SFHFRatingCell alloc] initImageCell: [NSImage imageNamed: @"star"]] autorelease];
 	[starCell setContinuous: YES];
 	[starCell setHighlightedImage: [NSImage imageNamed: @"star_highlighted"]];
 //	[starCell setPlaceholderImage: [NSImage imageNamed: @"star_placeholder"]];
@@ -199,95 +199,44 @@ NSMutableData *receivedData;
 #pragma mark Custom Cell data delegate methods
 
 - (NSImage*) iconForCell: (ImageTextCell*) cell data: (NSObject*) data {
-	NSXMLElement *personElement = [data valueForKeyPath:@"nextNode.nextSibling"];
-	NSImage *image = [NSImage imageNamed:@"Users.tiff"];// [appInfo icon];
-		NSColor *color = [NSColor grayColor];
-	if (personElement)
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, data);
+	if (data)
 	{
-		NSString *gender = [[[personElement nodesForXPath:@"./*:gender" error:nil] lastObject] stringValue];
-		NSLog(@"person: %@ %@", [personElement name], [personElement nodesForXPath:@"./*" error:nil]);
-		NSLog(@"genderx: %@", [personElement objectsForXQuery:@"./gender" error:nil]);
+		NSString *gender = [data valueForKeyPath:@"gender"];//[[[personElement nodesForXPath:@"./*:gender" error:nil] lastObject] stringValue];
 		if ([gender isEqualToString:@"Male"]) {
-			color = [NSColor blueColor];
+			return [NSImage imageNamed:@"user_icon_male.png"];
 		} else if ([gender isEqualToString:@"Female"]) {
-			color = [NSColor redColor];
+			return [NSImage imageNamed:@"user_icon_female.png"];
 		}
 	}
-	[image setBackgroundColor:color];
-	
-	int count = 4;
-    NSRect rect = { 0,0, 150, 94};
-    NSSize compositeSize;
-    compositeSize.width = (rect.size.width * count);
-    compositeSize.height = rect.size.height;
- NSImage * compositeImage;
-    compositeImage = [[NSImage alloc] initWithSize:compositeSize];
-    [compositeImage setBackgroundColor:color];
-    [compositeImage lockFocus];
-    
-        // this image has its own graphics context, so
-        // we need to specify high interpolation again	
-        [[NSGraphicsContext currentContext]
-            setImageInterpolation: NSImageInterpolationHigh];
-    
-        int i;
-    
-        for ( i = 0; i < count; i++ )
-        {
-            [image setFlipped:YES];
-    
-            [image drawInRect: rect
-                     fromRect: NSZeroRect
-                    operation: NSCompositeSourceOver
-                     fraction: 0.2];
-NSBezierPath * path = [NSBezierPath bezierPathWithRect:rect];
-[path setLineWidth:3];
-[color set];
-[path stroke];    
-            rect.origin.x += rect.size.width; // move right
-        }
-    
-    [compositeImage unlockFocus];
-    	return compositeImage;
+
+	return [NSImage imageNamed:@"Users.tiff"];
 }
+
 - (NSString*) primaryTextForCell: (ImageTextCell*) cell data: (NSObject*) data {
-	NSXMLElement *personElement = [data valueForKeyPath:@"nextNode.nextSibling"];
-	if (personElement)
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, [data class]);
+	if (data)
 	{
-		return [NSString stringWithFormat:@"%@ (%@)", [personElement valueForKeyPath:@"nextNode.stringValue"], [[personElement attributeForName:@"ref"] stringValue]];
+		return [data valueForKeyPath:@"name"];
 	} else
 	{
 		return @"No results";
 	}
 }
+
 - (NSString*) secondaryTextForCell: (ImageTextCell*) cell data: (NSObject*) data {
-	NSXMLElement *personElement = [data valueForKeyPath:@"nextNode.nextSibling"];
-	NSError *theError;
-	NSArray *birthElements = [personElement nodesForXPath:@"./*/*[@type='Birth']" error:&theError];
-	NSLog(@"personElement %@ birth %@ (%d) error: %@", personElement, birthElements, [birthElements count], [theError localizedDescription]);
-	if (!birthElements || [birthElements count] < 1) {
-		NSLog(@"error: %@", [theError localizedDescription]);
-		return @"No birth information";
-	}
-	NSLog(@"0: %@", [birthElements objectAtIndex:0]);
-	//NSLog(@"1: %@", [birthElements objectAtIndex:1]);
-	return [NSString stringWithFormat:@"born %@ in %@", [[birthElements objectAtIndex:0] valueForKeyPath:@"nextNode.stringValue"], [[birthElements objectAtIndex:0] valueForKeyPath:@"nextNode.nextSibling.stringValue"]];
+//	NSLog(@"%s %@", __PRETTY_FUNCTION__, data);
+	return [data valueForKeyPath:@"personId"];
 }
 
 - (void)requestFinished:(FSKResponse *)response
 {
 	NSLog(@"%s", _cmd);
-	NSXMLDocument *doc;
-	if ([response isKindOfClass:[NSXMLDocument class]])
-	{
-		doc = response;
-	} else
-	{
-		doc = [response xmlDocument];
-	}
-	NSAttributedString *	styledText = [[NSAttributedString alloc] initWithString: [doc XMLStringWithOptions:NSXMLNodePrettyPrint]];
+	[self setValue:[response retain] forKey:@"lastResponse"];
+	
+	NSXMLDocument *doc = [response xmlDocument];
+	NSAttributedString *styledText = [[NSAttributedString alloc] initWithString: [doc XMLStringWithOptions:NSXMLNodePrettyPrint]];
 	[[searchResultsText textStorage] setAttributedString:[styledText autorelease]];
-	[self setValue:[response retain] forKey:@"searchResultXML"];
 }
 
 @end

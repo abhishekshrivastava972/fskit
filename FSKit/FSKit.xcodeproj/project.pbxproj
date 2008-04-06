@@ -96,6 +96,8 @@
 		02810DD20D4995E5003E36B7 /* FSKLoginController.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810DD00D4995E5003E36B7 /* FSKLoginController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02810DD30D4995E5003E36B7 /* FSKLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810DD10D4995E5003E36B7 /* FSKLoginController.m */; };
 		02810E0E0D49B146003E36B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		0283293D0DA95CE300C8B5BF /* user_icon_female.png in Resources */ = {isa = PBXBuildFile; fileRef = 0283293B0DA95CE300C8B5BF /* user_icon_female.png */; };
+		0283293E0DA95CE300C8B5BF /* user_icon_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 0283293C0DA95CE300C8B5BF /* user_icon_male.png */; };
 		029BE8A70CDDFF3D0096B9F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		029C31640D7AF77500746CA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 029C315D0D7AF77500746CA6 /* InfoPlist.strings */; };
 		029C31660D7AF77500746CA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029C31620D7AF77500746CA6 /* Info.plist */; };
@@ -303,6 +305,8 @@
 		02810DD00D4995E5003E36B7 /* FSKLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKLoginController.h; sourceTree = "<group>"; };
 		02810DD10D4995E5003E36B7 /* FSKLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKLoginController.m; sourceTree = "<group>"; };
 		0283255C0DA859FC00C8B5BF /* FSKSharedDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSharedDefines.h; sourceTree = "<group>"; };
+		0283293B0DA95CE300C8B5BF /* user_icon_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_female.png; path = FSSearchDemo/user_icon_female.png; sourceTree = "<group>"; };
+		0283293C0DA95CE300C8B5BF /* user_icon_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_male.png; path = FSSearchDemo/user_icon_male.png; sourceTree = "<group>"; };
 		029C314C0D7AF71400746CA6 /* FSSearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSSearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029C31520D7AF71400746CA6 /* FSSearchDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FSSearchDemo-Info.plist"; sourceTree = "<group>"; };
 		029C315E0D7AF77500746CA6 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -553,6 +557,8 @@
 		029C31370D7AF6C600746CA6 /* FSSearchDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0283293B0DA95CE300C8B5BF /* user_icon_female.png */,
+				0283293C0DA95CE300C8B5BF /* user_icon_male.png */,
 				02E2AF170D81937600CB1B6E /* RuleEditor.framework */,
 				02E2AEDD0D81927100CB1B6E /* ImageTextCell.m */,
 				02E2AEDE0D81927100CB1B6E /* ImageTextCell.h */,
@@ -969,6 +975,8 @@
 				02E2AE630D81900000CB1B6E /* criteria.plist in Resources */,
 				02E2B1090D824BEF00CB1B6E /* star_highlighted.tif in Resources */,
 				02E2B10A0D824BEF00CB1B6E /* star.tif in Resources */,
+				0283293D0DA95CE300C8B5BF /* user_icon_female.png in Resources */,
+				0283293E0DA95CE300C8B5BF /* user_icon_male.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

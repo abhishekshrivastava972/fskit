@@ -16,4 +16,6 @@
 
 - (id)initWithXML:(NSXMLDocument *)theXmlDocument;
 
+- (NSArray *)searchResults;
+
 @end
