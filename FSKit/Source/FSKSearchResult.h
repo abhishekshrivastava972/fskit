@@ -11,7 +11,6 @@
 
 @interface FSKSearchResult : NSObject {
 	NSNumber *score;
-	int score2;
 	NSString *refId;
 	FSKPersonSummary *person;
 	FSKPersonSummary *father;

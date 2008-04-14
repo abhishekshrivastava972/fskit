@@ -4,6 +4,9 @@
 @interface BasicAppDelegate : NSObject {
 	FSKConnection *connection;
 	FSKPersonService *personService;
+	
+	FSKPersonResponse *lastResponse;
+	FSKError *lastError;
 }
 
 - (void)request:(FSKRequest *)request 

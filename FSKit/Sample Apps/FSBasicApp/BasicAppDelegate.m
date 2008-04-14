@@ -47,12 +47,15 @@
     didReturnResponse:(FSKResponse *)response
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
+	[self setValue:[response retain] forKey:@"lastResponse"];
+	NSLog(@" summ: %@", [self valueForKeyPath:@"lastResponse.summary.name"]);
 }
 	
 - (void)request:(FSKRequest *)request 
     didFailWithError:(FSKError *)error
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
+	[self setValue:[error retain] forKey:@"lastError"];
 }
 
 @end

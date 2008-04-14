@@ -107,7 +107,7 @@ NSMutableData *receivedData;
 	// [predicateEditor bind:@"objectValue" toObject:predicatesController withKeyPath:@"selection.predicate" options:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:0],NSConditionallySetsEditableBindingOption,nil]];
 	
 	//	[predicateEditor setFormattingStringsFileName:@"format"];
-	NSUserDefaults *defs= [NSUserDefaults standardUserDefaults];	
+	//  NSUserDefaults *defs= [NSUserDefaults standardUserDefaults];	
 	
 	/* CONFIGURE PREDICATE EDITOR*/	
 	//	[predicateEditor setRowHeight:25];

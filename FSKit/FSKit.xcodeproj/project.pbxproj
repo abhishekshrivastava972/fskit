@@ -129,6 +129,12 @@
 		02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02F1A07B0D4CEED70047B392 /* MIT-License.rtf */; };
 		02F1A07F0D4CEED70047B392 /* NSData+RSHexDump.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F1A07C0D4CEED70047B392 /* NSData+RSHexDump.h */; };
 		02F1A0800D4CEED70047B392 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
+		02F527380DB27D7200DC9063 /* FSKEventSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F527360DB27D7200DC9063 /* FSKEventSummary.h */; };
+		02F527390DB27D7200DC9063 /* FSKEventSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F527370DB27D7200DC9063 /* FSKEventSummary.m */; };
+		02F5273C0DB27E0900DC9063 /* FSKDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F5273A0DB27E0900DC9063 /* FSKDate.h */; };
+		02F5273D0DB27E0900DC9063 /* FSKDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F5273B0DB27E0900DC9063 /* FSKDate.m */; };
+		02F527400DB27E6700DC9063 /* FSKPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F5273E0DB27E6700DC9063 /* FSKPlace.h */; };
+		02F527410DB27E6700DC9063 /* FSKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F5273F0DB27E6700DC9063 /* FSKPlace.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		B404B7760D88152B005D7186 /* FSKPersonReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B404B7740D88152B005D7186 /* FSKPersonReadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B404B7770D88152B005D7186 /* FSKPersonReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B404B7750D88152B005D7186 /* FSKPersonReadRequest.m */; };
@@ -354,6 +360,12 @@
 		02F1A07B0D4CEED70047B392 /* MIT-License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "MIT-License.rtf"; sourceTree = "<group>"; };
 		02F1A07C0D4CEED70047B392 /* NSData+RSHexDump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+RSHexDump.h"; sourceTree = "<group>"; };
 		02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+RSHexDump.m"; sourceTree = "<group>"; };
+		02F527360DB27D7200DC9063 /* FSKEventSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEventSummary.h; sourceTree = "<group>"; };
+		02F527370DB27D7200DC9063 /* FSKEventSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKEventSummary.m; sourceTree = "<group>"; };
+		02F5273A0DB27E0900DC9063 /* FSKDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDate.h; sourceTree = "<group>"; };
+		02F5273B0DB27E0900DC9063 /* FSKDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDate.m; sourceTree = "<group>"; };
+		02F5273E0DB27E6700DC9063 /* FSKPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPlace.h; sourceTree = "<group>"; };
+		02F5273F0DB27E6700DC9063 /* FSKPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPlace.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -540,6 +552,12 @@
 				023A77170D84753900CD028D /* FSKSearchResult.m */,
 				B4DF9CAE0D85A15E00D7073B /* FSKPersonSummary.h */,
 				B4DF9CAF0D85A15E00D7073B /* FSKPersonSummary.m */,
+				02F527360DB27D7200DC9063 /* FSKEventSummary.h */,
+				02F527370DB27D7200DC9063 /* FSKEventSummary.m */,
+				02F5273A0DB27E0900DC9063 /* FSKDate.h */,
+				02F5273B0DB27E0900DC9063 /* FSKDate.m */,
+				02F5273E0DB27E6700DC9063 /* FSKPlace.h */,
+				02F5273F0DB27E6700DC9063 /* FSKPlace.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -816,6 +834,9 @@
 				B404B7760D88152B005D7186 /* FSKPersonReadRequest.h in Headers */,
 				B49CAE2E0D884662003852A5 /* FSKPersonSearchRequest.h in Headers */,
 				02117E320D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h in Headers */,
+				02F527380DB27D7200DC9063 /* FSKEventSummary.h in Headers */,
+				02F5273C0DB27E0900DC9063 /* FSKDate.h in Headers */,
+				02F527400DB27E6700DC9063 /* FSKPlace.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1098,6 +1119,9 @@
 				B485A1BE0D87C07C001822A5 /* FSKFamilyService.m in Sources */,
 				B404B7770D88152B005D7186 /* FSKPersonReadRequest.m in Sources */,
 				02117E330D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m in Sources */,
+				02F527390DB27D7200DC9063 /* FSKEventSummary.m in Sources */,
+				02F5273D0DB27E0900DC9063 /* FSKDate.m in Sources */,
+				02F527410DB27E6700DC9063 /* FSKPlace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
