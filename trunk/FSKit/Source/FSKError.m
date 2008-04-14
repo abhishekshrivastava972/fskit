@@ -13,7 +13,10 @@
 
 - (id)initWithError:(NSError *)error
 {
-	self = [super initWithDomain:[error domain]	code:[error code] userInfo:[error userInfo]];
+	if (self = [super initWithDomain:[error domain]	code:[error code] userInfo:[error userInfo]])
+	{
+		
+	}
 	
 	return self;
 }

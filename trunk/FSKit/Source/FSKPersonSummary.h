@@ -7,13 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+@class FSKEventSummary;
 
 @interface FSKPersonSummary : NSObject {
 	NSString *personId;
 	NSString *name;
 	NSString *gender;
 	NSString *birthdate;
+	
+	FSKEventSummary *birthEvent;
+	FSKEventSummary *christeningEvent;
+	FSKEventSummary *deathEvent;
+	FSKEventSummary *burialEvent;
 }
 
 + (FSKPersonSummary *)createFromXML:(NSXMLElement *)personElement;

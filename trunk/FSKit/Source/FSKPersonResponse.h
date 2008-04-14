@@ -13,4 +13,8 @@
 	NSArray *persons; // of FSKPerson
 }
 
+- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+
+- (NSArray *)personList;
+
 @end
