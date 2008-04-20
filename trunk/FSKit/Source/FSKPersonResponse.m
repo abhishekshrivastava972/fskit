@@ -2,12 +2,13 @@
 //  FSKPersonResponse.m
 //  FSKit
 //
-//  Created by Demo Account on 3/10/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Created by Logan Allred on 3/10/08.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import "FSKPersonResponse.h"
 #import "FSKPersonSummary.h"
+#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKPersonResponse
 

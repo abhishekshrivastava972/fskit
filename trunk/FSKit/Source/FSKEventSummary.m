@@ -3,12 +3,13 @@
 //  FSKit
 //
 //  Created by Logan Allred on 4/13/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import "FSKEventSummary.h"
 #import "FSKDate.h"
 #import "FSKPlace.h"
+#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKEventSummary
 
@@ -21,10 +22,10 @@
 - (void)parseXML:(NSXMLElement *)eventElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, eventElement);
-	date = [[FSKDate createFromXML:[eventElement firstElementWithName:@"date"]] retain];
-	place = [[FSKPlace createFromXML:[eventElement firstElementWithName:@"place"]] retain];
-	type = [[[eventElement attributeForName:@"type"] stringValue] retain];
-	scope = [[[eventElement attributeForName:@"scope"] stringValue] retain];
+	[self setValue:[[FSKDate createFromXML:[eventElement firstElementWithName:@"date"]] retain] forKey:@"date"];
+	[self setValue:[[FSKPlace createFromXML:[eventElement firstElementWithName:@"place"]] retain] forKey:@"place"];
+	[self setValue:[[[eventElement attributeForName:@"type"] stringValue] retain] forKey:@"type"];
+	[self setValue:[[[eventElement attributeForName:@"scope"] stringValue] retain] forKey:@"scope"];
 }
 
 - (id)initWithXML:(NSXMLElement *)eventElement

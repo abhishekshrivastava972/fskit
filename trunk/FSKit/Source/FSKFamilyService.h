@@ -2,8 +2,8 @@
 //  FSKFamilyService.h
 //  FSKit
 //
-//  Created by Demo Account on 3/12/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Created by Logan Allred on 3/12/08.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

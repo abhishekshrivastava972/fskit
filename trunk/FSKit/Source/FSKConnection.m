@@ -149,7 +149,7 @@ NSString *userAgentString = @"test";
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 	if ([request isKindOfClass:[FSKIdentityRequest class]])
 	{
-		[request responseWithXML:[request responseData]];
+		[request responseWithXML:[request valueForKey:@"responseData"]];
 	}
 	else
 	{
