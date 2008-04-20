@@ -3,10 +3,11 @@
 //  FSKit
 //
 //  Created by Logan Allred on 4/13/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import "FSKPlace.h"
+#import "NSXMLElement+BExtensions.h"
 
 
 @implementation FSKPlace
@@ -20,9 +21,9 @@
 - (void)parseXML:(NSXMLElement *)placeElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, placeElement);
-	original = [[placeElement firstValueForName:@"original"] retain];
-	normalizedPlaceId = [[[[placeElement firstElementWithName:@"normalized"] attributeForName:@"ref"] stringValue] retain];
-	normalizedPlaceName = [[placeElement firstValueForName:@"normalized"] retain];
+	[self setValue:[[placeElement firstValueForName:@"original"] retain] forKey:@"original"];
+	[self setValue:[[[[placeElement firstElementWithName:@"normalized"] attributeForName:@"ref"] stringValue] retain] forKey:@"normalizedPlaceId"];
+	[self setValue:[[placeElement firstValueForName:@"normalized"] retain] forKey:@"normalizedPlaceName"];
 }
 
 - (id)initWithXML:(NSXMLElement *)placeElement

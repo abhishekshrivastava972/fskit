@@ -3,10 +3,11 @@
 //  FSKit
 //
 //  Created by Logan Allred on 4/13/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import "FSKDate.h"
+#import "NSXMLElement+BExtensions.h"
 
 
 @implementation FSKDate
@@ -20,10 +21,10 @@
 - (void)parseXML:(NSXMLElement *)dateElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, dateElement);
-	original = [[dateElement firstValueForName:@"original"] retain];
-	normalized = [[dateElement firstValueForName:@"normalized"] retain];
-	earliestAstro = [[dateElement firstValueForXPath:@"*:astro/*:earliest" error:nil] retain];
-	latestAstro = [[dateElement firstValueForXPath:@"*:astro/*:latest" error:nil] retain];
+	[self setValue:[[dateElement firstValueForName:@"original"] retain] forKey:@"original"];
+	[self setValue:[[dateElement firstValueForName:@"normalized"] retain] forKey:@"normalized"];
+	[self setValue:[[dateElement firstValueForXPath:@"*:astro/*:earliest" error:nil] retain] forKey:@"earliestAstro"];
+	[self setValue:[[dateElement firstValueForXPath:@"*:astro/*:latest" error:nil] retain] forKey:@"latestAstro"];
 }
 
 - (id)initWithXML:(NSXMLElement *)dateElement

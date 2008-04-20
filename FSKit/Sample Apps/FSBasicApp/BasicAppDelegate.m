@@ -22,7 +22,7 @@
 {	
 
 	// Create a connection
-	connection  = [[[FSKConnection alloc] init] retain];
+	[self setValue:[[[FSKConnection alloc] init] retain] forKey:@"connection"];
 //	[connection setBaseURLString:@"http://localhost/~logan/"];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
 //	[connection setBaseURLString:kFSAPIProductionBaseURLString];
@@ -33,7 +33,8 @@
 	personService = [[FSKPersonService
 		personServiceWithConnection:connection 
 		delegate:self] retain];
-	[personService readPerson:@"me"];
+//	[personService readPerson:@"me"];
+	[personService readPerson:@"KW31-V8M"];
 
 //	[FSKPersonSearchRequest 
 //		fetchSearchResultsWithCriteria:[NSDictionary dictionaryWithObjectsAndKeys:@"Smith", @"familyName", @"William", "givenNames", nil] 

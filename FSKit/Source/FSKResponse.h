@@ -35,8 +35,8 @@
 
 - (BOOL)deprecated;
 
-- (NSArrayController *)results;
+- (NSArray *)results;
 
-- (NSArrayController *)errors;
+- (NSArray *)errors;
 
 @end

@@ -10,13 +10,31 @@
 
 
 @implementation FSKResponse
+- (void)parseXml
+{
+	@try {
+		statusCode = [[[[xmlDocument nodesForXPath:@"/node()/@statusCode" error:nil] lastObject] stringValue] intValue];
+		statusMessage = [[[xmlDocument nodesForXPath:@"/node()/@statusMessage" error:nil] lastObject] stringValue];
+		version = [[[xmlDocument nodesForXPath:@"/node()/@version" error:nil] lastObject] stringValue];
+		deprecatedValue = [[[xmlDocument nodesForXPath:@"/node()/@deprecated" error:nil] lastObject] stringValue];
+		deprecated = (@"true" == deprecatedValue);
+		errors = [[NSArray array] retain];
+		results = [[NSArray array] retain];
+	}
+	@catch (NSException * e) {
+		NSLog(@"%s exception: %@", __PRETTY_FUNCTION__, e);
+	}
+	@finally {
+		// TODO
+	}
+}
 
 - (id)initWithXML:(NSXMLDocument *)theXmlDocument;
 {
     if ((self = [super init]) != nil) 
 	{
 		xmlDocument = [theXmlDocument retain];
-		statusCode = INT_MIN;
+		[self parseXml];
 	}
 	
 	return self;
@@ -34,63 +52,32 @@
     return [[xmlDocument retain] autorelease];
 }
 
-//- (void)setXmlDocument:(NSXMLDocument *)value {
-//    if (xmlDocument != value) {
-//        [xmlDocument release];
-//        xmlDocument = [value copy];
-//    }
-//}
-
 - (int)statusCode
 {
-	if (statusCode == INT_MIN)
-	{
-		statusCode = [[[[xmlDocument nodesForXPath:@"/node()/@statusCode" error:nil] lastObject] stringValue] intValue];
-	}
     return statusCode;
 }
 
 - (NSString *)statusMessage
 {
-	if (!statusMessage)
-	{
-		statusMessage = [[[xmlDocument nodesForXPath:@"/node()/@statusMessage" error:nil] lastObject] stringValue];
-	}
     return [[statusMessage retain] autorelease];
 }
 
 - (NSString *)version
 {
-	if (!version)
-	{
-		version = [[[xmlDocument nodesForXPath:@"/node()/@version" error:nil] lastObject] stringValue];
-	}
     return [[version retain] autorelease];
 }
 
 - (BOOL)deprecated
 {
-	if (!deprecatedValue)
-	{
-		deprecatedValue = [[[xmlDocument nodesForXPath:@"/node()/@deprecated" error:nil] lastObject] stringValue];
-		deprecated = (@"true" == deprecatedValue);
-	}
     return deprecated;
 }
 
-- (NSArrayController *)results
+- (NSArray *)results
 {
     return [[results retain] autorelease];
 }
 
-//- (void)setResults:(NSArrayController *)value {
-//    if (results != value) {
-//        [results release];
-//        results = [value copy];
-//    }
-//}
-
-- (NSArrayController *)errors
+- (NSArray *)errors
 {
     return [[errors retain] autorelease];
 }
