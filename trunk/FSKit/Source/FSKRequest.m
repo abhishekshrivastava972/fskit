@@ -35,9 +35,8 @@
 }
 
 /*!
-    @method     
-    @abstract   Makes a request to a FamilySearch REST API with the provided parameters
-    @discussion Uses a URL of the following format <baseURL>/<endpoint>/<version>/<module>/<path>?<parameter1=value1>&<parameter2=value2>
+    @brief   Makes a request to a FamilySearch REST API with the provided parameters
+    @details Uses a URL of the following format @code <baseURL>/<endpoint>/<version>/<module>/<path>?<parameter1=value1>&<parameter2=value2> @endcode
 	where the parameters and values are key-value pairs in the provided parameter dictionary
 */
 -(void)fetchFamilySearchDataAtEndpoint:(NSString *)endpoint 
@@ -50,7 +49,7 @@
 	
 	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:theURL 
 											 cachePolicy:NSURLRequestReloadIgnoringCacheData 
-										 timeoutInterval:0.1];//[aFamilySearchConnection connectionTimeoutInterval]];
+											 timeoutInterval:[familySearchConnection connectionTimeoutInterval]];
 	
 	[urlRequest addValue:[familySearchConnection userAgentString]	forHTTPHeaderField:@"User-Agent"];
 	
@@ -77,9 +76,8 @@
 }
 
 /*!
-    @method     
-    @abstract   Makes a request to a FamilySearch REST API with the provided parameters
-    @discussion Uses a URL of the following format <baseURL>/<endpoint>/<version>/<module>/<path>?<parameter1=value1>&<parameter2=value2>
+    @brief   Makes a request to a FamilySearch REST API with the provided parameters
+    @details Uses a URL of the following format @code <baseURL>/<endpoint>/<version>/<module>/<path>?<parameter1=value1>&<parameter2=value2> @endcode
 	where the parameters and values are key-value pairs in the provided parameter dictionary
 */
 //-(void)fetchFamilySearchDataAtEndpoint:(NSString *)endpoint 

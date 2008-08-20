@@ -26,6 +26,8 @@
 //	[connection setBaseURLString:@"http://localhost/~logan/"];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
 //	[connection setBaseURLString:kFSAPIProductionBaseURLString];
+//	[connection setBaseURLString:kFSAPIBetaBaseURLString];
+//	[connection setBaseURLString:@"https://api.usys.org/"];
 	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
 	NSLog(@"key: %@", kFSK_DEVELOPER_KEY);
 	[connection setUserAgentString:@"FSKit BasicApp/1.0" override:NO];
@@ -33,8 +35,8 @@
 	personService = [[FSKPersonService
 		personServiceWithConnection:connection 
 		delegate:self] retain];
-//	[personService readPerson:@"me"];
-	[personService readPerson:@"KW31-V8M"];
+	[personService readPerson:@"me"];
+//	[personService readPerson:@"KW31-V8M"];
 
 //	[FSKPersonSearchRequest 
 //		fetchSearchResultsWithCriteria:[NSDictionary dictionaryWithObjectsAndKeys:@"Smith", @"familyName", @"William", "givenNames", nil] 
@@ -50,6 +52,10 @@
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 	[self setValue:[response retain] forKey:@"lastResponse"];
 	NSLog(@" summ: %@", [self valueForKeyPath:@"lastResponse.summary.name"]);
+	if ([lastResponse errors])
+	{
+		[self setValue:[lastResponse errors] forKey:@"lastError"];
+	}
 }
 	
 - (void)request:(FSKRequest *)request 

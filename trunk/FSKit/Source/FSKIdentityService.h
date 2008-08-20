@@ -12,9 +12,8 @@
 #import "FSKIdentityRequest.h"
 
 /*!
-    @class
-    @abstract    <#(brief description)#>
-    @discussion  <#(comprehensive description)#>
+    @brief    <#(brief description)#>
+    @details  <#(comprehensive description)#>
 */
 
 @interface FSKIdentityService : FSKServiceBase {
@@ -24,9 +23,8 @@
 - (id)initWithConnection:(FSKConnection *)familySearchConnection delegate:(id)theDelegate;
 
 /*!
-    @method     login
-    @abstract   (brief description)
-    @discussion (comprehensive description)
+    @brief   (brief description)
+    @details (comprehensive description)
 */
 - (void)login;
 - (void)loginWithCredential:(NSURLCredential *)credential;

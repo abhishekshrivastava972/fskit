@@ -7,7 +7,7 @@
 //
 
 #import "FSKPersonResponse.h"
-#import "FSKPersonSummary.h"
+#import "FSKPerson.h"
 #import "NSXMLElement+BExtensions.h"
 
 @implementation FSKPersonResponse
@@ -18,7 +18,7 @@
 	NSEnumerator *enumerator = [[personsElement elementsForName:@"person"] objectEnumerator];
 	NSXMLElement *personElement;
 	while (personElement = [enumerator nextObject]) {
-		[theResults addObject:[FSKPersonSummary createFromXML:personElement]];
+		[theResults addObject:[FSKPerson createFromXML:personElement]];
 	}
 	persons = [theResults retain];
 }
@@ -46,7 +46,13 @@
 
 - (FSKPersonSummary *)summary
 {
-NSLog(@"fskpersresp summary %d %@", [persons count], [persons lastObject]);
+NSLog(@"fskpersresp summary %d %@", [persons count], [[persons lastObject] summary]);
+	return [[persons lastObject] summary];
+}
+
+- (FSKPerson *)person
+{
+	NSLog(@"fskpersresp person %d %@", [persons count], [persons lastObject]);
 	return [persons lastObject];
 }
 

@@ -9,47 +9,42 @@
 #import <Cocoa/Cocoa.h>
 
 /*!
-    @class
-    @abstract    <#(brief description)#>
-    @discussion  <#(comprehensive description)#>
+    @brief    FSKRequest brief
+    @details  FSKRequest details
 */
 
 @class FSKRequest;
 
 /*!
-    @defined 
-    @abstract   <#(description)#>
-    @discussion <#(description)#>
+    @brief   <#(description)#>
+    @details <#(description)#>
 */
 #define FSKitVersion @"0.1"
 
 /*!
-    @defined 
-    @abstract   <#(description)#>
-    @discussion <#(description)#>
+    @brief   <#(description)#>
+    @details <#(description)#>
 */
 #define FSKitAgent @"FSKit"
 
 /*!
-    @const 
-    @abstract   <#(description)#>
-    @discussion <#(description)#>
+    @brief   <#(description)#>
+    @details <#(description)#>
 */
 extern NSString *kFSAPIProductionBaseURLString;  // Production
 extern NSString *kFSAPIBetaBaseURLString;  // Beta
 extern NSString *kFSAPIDevBaseURLString;  // Development
 
 /*!
-    @const 
-    @abstract   <#(description)#>
-    @discussion <#(description)#>
+    @brief   <#(description)#>
+    @details <#(description)#>
 */
 extern NSString *FSAPIVersion;
 
 /*!
     @class	FSKConnection
-    @abstract    Stores details needed to make connections to the FamilySearch web services, including authentication
-	@discussion  (comprehensive description)
+    @brief    Stores details needed to make connections to the FamilySearch web services, including authentication
+	@details  (comprehensive description)
 */
 @interface FSKConnection : NSObject {
 
@@ -67,9 +62,8 @@ extern NSString *FSAPIVersion;
 }
 
 /*!
-	@method     init
-	@abstract   (brief description)
-	@discussion (comprehensive description)
+	@brief   (brief description)
+	@details (comprehensive description)
 */
 - (id)init;
 
@@ -79,13 +73,15 @@ extern NSString *FSAPIVersion;
 - (void)setBaseURLString:(NSString *)value;
 
 /*!
-    @method     credential
-    @abstract   <#(brief description)#>
-    @discussion <#(comprehensive description)#>
+    @brief   <#(brief description)#>
+    @details <#(comprehensive description)#>
 */
 - (NSURLCredential *)credential;
 - (void)setCredential:(NSURLCredential *)value;
 
+/**
+ * Stores the developer key for this session, only used for login requests, but is required
+ */
 - (NSString *)developerKey;
 - (void)setDeveloperKey:(NSString *)value;
 
@@ -127,9 +123,8 @@ extern NSString *FSAPIVersion;
 @interface NSObject (FSKConnectionDelegate)
 
 /*!
-    @method request:didReceiveAuthenticationChallenge:
-    @abstract Start authentication for a given challenge
-    @discussion Call useCredential:forAuthenticationChallenge:,
+    @brief Start authentication for a given challenge
+    @details Call useCredential:forAuthenticationChallenge:,
     continueWithoutCredentialForAuthenticationChallenge: or cancelAuthenticationChallenge: on
     the challenge sender when done.
     @param request the request for which authentication is needed
@@ -138,9 +133,8 @@ extern NSString *FSAPIVersion;
 - (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 /*!
-    @method windowForAuthenticationSheet:    
-    @abstract   Provides the window to attach the authentication sheet to
-    @discussion If you implement this delegate method, you can choose which window will have
+    @brief   Provides the window to attach the authentication sheet to
+    @details If you implement this delegate method, you can choose which window will have
 	the authentication sheet attached to it during an authentication challenge. If you do not
 	implement this method, by default the sheet will attempt to attach to [NSApp mainWindow].
 	If you return nil, the authentication will be performed with an application modal dialog
@@ -149,8 +143,7 @@ extern NSString *FSAPIVersion;
 - (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
 
 /*!
-    @method request:didCancelAuthenticationChallenge:
-    @abstract Cancel authentication for a given request
+    @brief Cancel authentication for a given request
     @param request the request for which authentication was cancelled
     @param challenge The NSURLAuthenticationChallenge for which to cancel authentication
 */
