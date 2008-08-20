@@ -32,6 +32,8 @@
 	if (!cachedPerson)
 	{
 		// fetch and put in cache
+		cachedPerson = [[FSKPerson alloc] init];
+		[cachedPerson setValue:personId forKey:@"personId"]; 
 	}
 	
 	return cachedPerson;

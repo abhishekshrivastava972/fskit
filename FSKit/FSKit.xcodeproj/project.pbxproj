@@ -28,6 +28,7 @@
 			buildConfigurationList = 02EEFE7D0CA6B55A007006DE /* Build configuration list for PBXAggregateTarget "Documentation" */;
 			buildPhases = (
 				02EEFE7B0CA6B53C007006DE /* ShellScript */,
+				02AA167F0E3C87EA00BA4890 /* ShellScript */,
 			);
 			dependencies = (
 			);
@@ -98,6 +99,16 @@
 		02810E0E0D49B146003E36B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		0283293D0DA95CE300C8B5BF /* user_icon_female.png in Resources */ = {isa = PBXBuildFile; fileRef = 0283293B0DA95CE300C8B5BF /* user_icon_female.png */; };
 		0283293E0DA95CE300C8B5BF /* user_icon_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 0283293C0DA95CE300C8B5BF /* user_icon_male.png */; };
+		0294DB580E5719550022DBFB /* FSKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB560E5719550022DBFB /* FSKEvent.h */; };
+		0294DB590E5719550022DBFB /* FSKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB570E5719550022DBFB /* FSKEvent.m */; };
+		0294DB5C0E57196A0022DBFB /* FSKFact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB5A0E57196A0022DBFB /* FSKFact.h */; };
+		0294DB5D0E57196A0022DBFB /* FSKFact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB5B0E57196A0022DBFB /* FSKFact.m */; };
+		0294DB610E57198B0022DBFB /* FSKAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB5F0E57198B0022DBFB /* FSKAssertion.h */; };
+		0294DB620E57198B0022DBFB /* FSKAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB600E57198B0022DBFB /* FSKAssertion.m */; };
+		0294DB650E57383D0022DBFB /* FSKUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB630E57383D0022DBFB /* FSKUser.h */; };
+		0294DB660E57383D0022DBFB /* FSKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB640E57383D0022DBFB /* FSKUser.m */; };
+		0294DB690E57387A0022DBFB /* FSKContributor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB670E57387A0022DBFB /* FSKContributor.h */; };
+		0294DB6A0E57387A0022DBFB /* FSKContributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB680E57387A0022DBFB /* FSKContributor.m */; };
 		029BE8A70CDDFF3D0096B9F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		029C31640D7AF77500746CA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 029C315D0D7AF77500746CA6 /* InfoPlist.strings */; };
 		029C31660D7AF77500746CA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029C31620D7AF77500746CA6 /* Info.plist */; };
@@ -106,6 +117,8 @@
 		029C323B0D7AF80200746CA6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		029C323C0D7AF80200746CA6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
 		029C32580D7AF9E100746CA6 /* FSSearchDemoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029C32570D7AF9E100746CA6 /* FSSearchDemoDelegate.m */; };
+		02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */; };
+		02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */; };
 		02D2CD320CC3127B0013D298 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
 		02D2CD460CC3139D0013D298 /* FSKConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */; };
 		02E2AE080D817F6900CB1B6E /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 02E2AE060D817F6900CB1B6E /* MainMenu.nib */; };
@@ -294,8 +307,9 @@
 		0263A9AC0D96AFCD00F3D51B /* BasicAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAppDelegate.m; sourceTree = "<group>"; };
 		0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = LoginPanel.nib; sourceTree = SOURCE_ROOT; };
 		026D89230D3A93E70046406A /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
+		026FC3F70E3CFB1900BD33C5 /* doxygen.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doxygen.config; sourceTree = "<group>"; };
 		027148670D7099D000072118 /* FSAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		027148690D7099D100072118 /* FSAppTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FSAppTest-Info.plist"; sourceTree = "<group>"; };
+		027148690D7099D100072118 /* FSAppTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSAppTest-Info.plist"; sourceTree = "<group>"; };
 		02714A390D7200EE00072118 /* FSKPersonRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonRepository.h; sourceTree = "<group>"; };
 		02714A3A0D7200EE00072118 /* FSKPersonRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonRepository.m; sourceTree = "<group>"; };
 		02714A4C0D720B2900072118 /* FSKPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPerson.h; sourceTree = "<group>"; };
@@ -313,23 +327,35 @@
 		0283255C0DA859FC00C8B5BF /* FSKSharedDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSharedDefines.h; sourceTree = "<group>"; };
 		0283293B0DA95CE300C8B5BF /* user_icon_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_female.png; path = FSSearchDemo/user_icon_female.png; sourceTree = "<group>"; };
 		0283293C0DA95CE300C8B5BF /* user_icon_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_male.png; path = FSSearchDemo/user_icon_male.png; sourceTree = "<group>"; };
+		0294DB560E5719550022DBFB /* FSKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEvent.h; sourceTree = "<group>"; };
+		0294DB570E5719550022DBFB /* FSKEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKEvent.m; sourceTree = "<group>"; };
+		0294DB5A0E57196A0022DBFB /* FSKFact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFact.h; sourceTree = "<group>"; };
+		0294DB5B0E57196A0022DBFB /* FSKFact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKFact.m; sourceTree = "<group>"; };
+		0294DB5F0E57198B0022DBFB /* FSKAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAssertion.h; sourceTree = "<group>"; };
+		0294DB600E57198B0022DBFB /* FSKAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKAssertion.m; sourceTree = "<group>"; };
+		0294DB630E57383D0022DBFB /* FSKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUser.h; sourceTree = "<group>"; };
+		0294DB640E57383D0022DBFB /* FSKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUser.m; sourceTree = "<group>"; };
+		0294DB670E57387A0022DBFB /* FSKContributor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributor.h; sourceTree = "<group>"; };
+		0294DB680E57387A0022DBFB /* FSKContributor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributor.m; sourceTree = "<group>"; };
 		029C314C0D7AF71400746CA6 /* FSSearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSSearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		029C31520D7AF71400746CA6 /* FSSearchDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FSSearchDemo-Info.plist"; sourceTree = "<group>"; };
+		029C31520D7AF71400746CA6 /* FSSearchDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSSearchDemo-Info.plist"; sourceTree = "<group>"; };
 		029C315E0D7AF77500746CA6 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		029C31610D7AF77500746CA6 /* FSSearchDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSSearchDemo_Prefix.pch; path = FSSearchDemo/FSSearchDemo_Prefix.pch; sourceTree = "<group>"; };
-		029C31620D7AF77500746CA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Info.plist; path = FSSearchDemo/Info.plist; sourceTree = "<group>"; };
+		029C31620D7AF77500746CA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FSSearchDemo/Info.plist; sourceTree = "<group>"; };
 		029C31630D7AF77500746CA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FSSearchDemo/main.m; sourceTree = "<group>"; };
 		029C32560D7AF9E100746CA6 /* FSSearchDemoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSSearchDemoDelegate.h; path = FSSearchDemo/FSSearchDemoDelegate.h; sourceTree = "<group>"; };
 		029C32570D7AF9E100746CA6 /* FSSearchDemoDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSSearchDemoDelegate.m; path = FSSearchDemo/FSSearchDemoDelegate.m; sourceTree = "<group>"; };
+		02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonDetail.h; sourceTree = "<group>"; };
+		02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonDetail.m; sourceTree = "<group>"; };
 		02BA97F80D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		02BA97FA0D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		02BA97FC0D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = "English.lproj/MainMenu~.nib"; sourceTree = "<group>"; };
 		02BA98000D7068CF00DC6E04 /* FSAppTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppTest_Prefix.pch; sourceTree = "<group>"; };
-		02BA98010D7068CF00DC6E04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		02BA98010D7068CF00DC6E04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BA98020D7068CF00DC6E04 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		02BA98050D7068CF00DC6E04 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = version.plist; sourceTree = "<group>"; };
+		02BA98050D7068CF00DC6E04 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
 		02D2CD2C0CC311600013D298 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
+		02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		02D2CD440CC3139D0013D298 /* FSKConnectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKConnectionTest.h; path = Tests/FSKConnectionTest.h; sourceTree = "<group>"; };
 		02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSKConnectionTest.m; path = Tests/FSKConnectionTest.m; sourceTree = "<group>"; };
 		02E2AE070D817F6900CB1B6E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = FSSearchDemo/English.lproj/MainMenu.nib; sourceTree = "<group>"; };
@@ -371,7 +397,7 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* FSKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKit_Prefix.pch; path = ../FSKit_Prefix.pch; sourceTree = "<group>"; };
-		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* FSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B404B7740D88152B005D7186 /* FSKPersonReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonReadRequest.h; sourceTree = "<group>"; };
 		B404B7750D88152B005D7186 /* FSKPersonReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonReadRequest.m; sourceTree = "<group>"; };
@@ -454,6 +480,7 @@
 				02439C5F0D4393BC00F50EBD /* Family Tree */,
 				02439C5D0D43939C00F50EBD /* Authorities */,
 				02439C5E0D4393AA00F50EBD /* Temple */,
+				02A9ACEE0E46F0A400311AC0 /* Reservation */,
 				02439C610D43941500F50EBD /* Record Search */,
 			);
 			name = Requests;
@@ -552,12 +579,24 @@
 				023A77170D84753900CD028D /* FSKSearchResult.m */,
 				B4DF9CAE0D85A15E00D7073B /* FSKPersonSummary.h */,
 				B4DF9CAF0D85A15E00D7073B /* FSKPersonSummary.m */,
+				02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */,
+				02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */,
 				02F527360DB27D7200DC9063 /* FSKEventSummary.h */,
 				02F527370DB27D7200DC9063 /* FSKEventSummary.m */,
 				02F5273A0DB27E0900DC9063 /* FSKDate.h */,
 				02F5273B0DB27E0900DC9063 /* FSKDate.m */,
 				02F5273E0DB27E6700DC9063 /* FSKPlace.h */,
 				02F5273F0DB27E6700DC9063 /* FSKPlace.m */,
+				0294DB560E5719550022DBFB /* FSKEvent.h */,
+				0294DB570E5719550022DBFB /* FSKEvent.m */,
+				0294DB5A0E57196A0022DBFB /* FSKFact.h */,
+				0294DB5B0E57196A0022DBFB /* FSKFact.m */,
+				0294DB5F0E57198B0022DBFB /* FSKAssertion.h */,
+				0294DB600E57198B0022DBFB /* FSKAssertion.m */,
+				0294DB630E57383D0022DBFB /* FSKUser.h */,
+				0294DB640E57383D0022DBFB /* FSKUser.m */,
+				0294DB670E57387A0022DBFB /* FSKContributor.h */,
+				0294DB680E57387A0022DBFB /* FSKContributor.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -611,6 +650,13 @@
 			path = FSSearchDemo/English.lproj;
 			sourceTree = "<group>";
 		};
+		02A9ACEE0E46F0A400311AC0 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Reservation;
+			sourceTree = "<group>";
+		};
 		02BA97F30D70687900DC6E04 /* Sample Apps */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +696,7 @@
 		02EEFE810CA6B5B3007006DE /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				026FC3F70E3CFB1900BD33C5 /* doxygen.config */,
 				02EEFE820CA6B5B3007006DE /* headerDoc2HTML.config */,
 				02EEFE830CA6B5B3007006DE /* toctemplate.html */,
 				02EEFE840CA6B5B3007006DE /* Framework.hdoc */,
@@ -837,6 +884,12 @@
 				02F527380DB27D7200DC9063 /* FSKEventSummary.h in Headers */,
 				02F5273C0DB27E0900DC9063 /* FSKDate.h in Headers */,
 				02F527400DB27E6700DC9063 /* FSKPlace.h in Headers */,
+				02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */,
+				0294DB580E5719550022DBFB /* FSKEvent.h in Headers */,
+				0294DB5C0E57196A0022DBFB /* FSKFact.h in Headers */,
+				0294DB610E57198B0022DBFB /* FSKAssertion.h in Headers */,
+				0294DB650E57383D0022DBFB /* FSKUser.h in Headers */,
+				0294DB690E57387A0022DBFB /* FSKContributor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,6 +1074,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02AA167F0E3C87EA00BA4890 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#  Build the doxygen documentation for the project and load the docset into Xcode.\n\n#  Use the following to adjust the value of the $DOXYGEN_PATH User-Defined Setting:\n#    Binary install location: /Applications/Doxygen.app/Contents/Resources/doxygen\n#    Source build install location: /usr/local/bin/doxygen\n\n#  If the config file doesn't exist, run 'doxygen -g $SOURCE_ROOT/doxygen.config' to \n#   a get default file.\n\nif ! [ -f $SOURCE_ROOT/doxygen.config ] \nthen \n  echo doxygen config file does not exist\n  $DOXYGEN_PATH -g $SOURCE_ROOT/doxygen.config\nfi\n\n#  Append the proper input/output directories and docset info to the config file.\n#  This works even though values are assigned higher up in the file. Easier than sed.\n\ncp $SOURCE_ROOT/doxygen.config $TEMP_DIR/doxygen.config\n\necho \"INPUT = $SOURCE_ROOT\" >> $TEMP_DIR/doxygen.config\necho \"OUTPUT_DIRECTORY = $SOURCE_ROOT/DoxygenDocs.docset\" >> $TEMP_DIR/doxygen.config\necho \"GENERATE_DOCSET        = YES\" >> $TEMP_DIR/doxygen.config\necho \"DOCSET_BUNDLE_ID       = com.googlecode.fskit.FSKit\" >> $TEMP_DIR/doxygen.config\n\n#  Run doxygen on the updated config file.\n#  Note: doxygen creates a Makefile that does most of the heavy lifting.\n\n$DOXYGEN_PATH $TEMP_DIR/doxygen.config\n\n#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.\n\nmake -C $SOURCE_ROOT/DoxygenDocs.docset/html install\n\n#  Construct a temporary applescript file to tell Xcode to load a docset.\n\nrm -f $TEMP_DIR/loadDocSet.scpt\n\necho \"tell application \\\"Xcode\\\"\" >> $TEMP_DIR/loadDocSet.scpt\necho \"load documentation set with path \\\"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/com.googlecode.fskit.FSKit.docset\\\"\" >> $TEMP_DIR/loadDocSet.scpt\necho \"end tell\" >> $TEMP_DIR/loadDocSet.scpt\n\n#  Run the load-docset applescript command.\n\nosascript $TEMP_DIR/loadDocSet.scpt\n\n~/projects/Tools/doxyclean/doxyclean.py -h -i $SOURCE_ROOT/DoxygenDocs.docset/xml -o Documentation\nexit 0";
+		};
 		02D2CD2A0CC311600013D298 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1045,7 +1111,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# shell script goes here\nmkdir -p $BUILT_PRODUCTS_DIR/Documentation\ncd $SRCROOT/Source\nheaderdoc2html -o $BUILT_PRODUCTS_DIR/Documentation $SRCROOT/Source/*.h\nheaderdoc2html -o $BUILT_PRODUCTS_DIR/Documentation $SRCROOT/Source/Framework.hdoc\ngatherheaderdoc $BUILT_PRODUCTS_DIR/Documentation index.html\nexit 0\n";
+			shellScript = "exit 0\n# shell script goes here\nmkdir -p $BUILT_PRODUCTS_DIR/Documentation\ncd $SRCROOT/Source\nheaderdoc2html -o $BUILT_PRODUCTS_DIR/Documentation $SRCROOT/Source/*.h\nheaderdoc2html -o $BUILT_PRODUCTS_DIR/Documentation $SRCROOT/Source/Framework.hdoc\ngatherheaderdoc $BUILT_PRODUCTS_DIR/Documentation index.html\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1122,6 +1188,12 @@
 				02F527390DB27D7200DC9063 /* FSKEventSummary.m in Sources */,
 				02F5273D0DB27E0900DC9063 /* FSKDate.m in Sources */,
 				02F527410DB27E6700DC9063 /* FSKPlace.m in Sources */,
+				02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */,
+				0294DB590E5719550022DBFB /* FSKEvent.m in Sources */,
+				0294DB5D0E57196A0022DBFB /* FSKFact.m in Sources */,
+				0294DB620E57198B0022DBFB /* FSKAssertion.m in Sources */,
+				0294DB660E57383D0022DBFB /* FSKUser.m in Sources */,
+				0294DB6A0E57387A0022DBFB /* FSKContributor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1289,6 +1361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				DOXYGEN_PATH = /Applications/Doxygen.app/Contents/Resources/doxygen;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1661,6 +1734,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				DOXYGEN_PATH = /Applications/Doxygen.app/Contents/Resources/doxygen;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1672,6 +1746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				DOXYGEN_PATH = /Applications/Doxygen.app/Contents/Resources/doxygen;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Documentation;

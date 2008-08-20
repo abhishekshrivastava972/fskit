@@ -141,16 +141,15 @@ typedef enum PSRuleEditorNestingMode {
 
 #pragma mark public methods
 	/*! 
-	@method delegate  
-	@abstract Returns the receiver‚Äôs delegate.
-	@result The receiver‚Äôs delegate.
+	@abstract Returns the receiver's delegate.
+	@result The receiver's delegate.
 	@discussion Clients can call this method to get the delegate for the PSRuleEditor.  PSRuleEditor requires a delegate that implements the required PSRuleEditorDelegateMethods methods to function.
 
 	*/
 - (id)delegate;
 	/*! 
 	@method setDelegate:  
-	@abstract Sets the receiver‚Äôs delegate.
+	@abstract Sets the receiver's delegate.
 	@discussion Clients can call this method to set the delegate for the PSRuleEditor. PSRuleEditor requires a delegate that implements the required PSRuleEditorDelegateMethods methods to function.
 	@param delegate  The delegate for the reciever.
 	*/
@@ -234,8 +233,8 @@ typedef enum PSRuleEditorNestingMode {
 
 	/*!
 	@method	selectedRowIndexes
-	 @abstract	Returns the indexes of the receiver‚Äôs selected rows.
-	 @result	The indexes of the receiver‚Äôs selected rows.
+	 @abstract	Returns the indexes of the receiver's selected rows.
+	 @result	The indexes of the receiver's selected rows.
 	 */
 - (NSIndexSet *)selectedRowIndexes;
 
@@ -334,7 +333,7 @@ typedef enum PSRuleEditorNestingMode {
 
 	/*!
  @method ruleEditorRowsDidChange:
-	 @abstract Notifies the receiver that a rule editor‚Äôs rows changed.
+	 @abstract Notifies the receiver that a rule editor's rows changed.
 	 @param notification A PSRuleEditorRowsDidChangeNotification notification. 
 	 @discussion If this method is implemented, PSRuleEditor automatically registers its delegate to receive PSRuleEditorRowsDidChangeNotification notifications to this method.
 	 

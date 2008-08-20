@@ -39,6 +39,7 @@ NSString *kPersonEndpoint = @"person";
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);	
 	FSKPersonResponse *response = [[FSKPersonResponse alloc] initWithXML:xmlDoc];
+	NSLog(@"response code: %d message: %@", [response statusCode], [response statusMessage]);	
 	return [response autorelease];
 }
 

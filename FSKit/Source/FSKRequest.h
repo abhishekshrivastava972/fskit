@@ -12,9 +12,8 @@
 #import "FSKError.h"
 
 /*!
-    @class
-    @abstract    Base class for all FamilySearch Request types
-    @discussion  Provides common functionality for all FamilySearch request types
+    @brief    Base class for all FamilySearch Request types
+    @details  Provides common functionality for all FamilySearch request types
 	including handling the NSURLRequest and constructing the base response. While
 	can be used directly, it is typically more convenient to use one of the subclasses
 	for the specific type of request you need.
@@ -106,10 +105,9 @@
 @interface NSObject (FSKRequestDelegate)
 
 /*! 
-    @method request:didReturnResponse:   
-    @abstract This method is called when an FSKRequest has
+    @brief This method is called when an FSKRequest has
     finished loading successfully.
-    @discussion See the category description for information regarding
+    @details See the category description for information regarding
     the contract associated with the delivery of this delegate
     callback.
     @param request an FSKRequest that has finished loading
@@ -119,10 +117,9 @@
 - (void)request:(FSKRequest *)request didReturnResponse:(FSKResponse *)response;
 
 /*! 
-    @method request:didFailWithError:   
-    @abstract This method is called when an FSKRequest has
+    @brief This method is called when an FSKRequest has
     failed to load successfully.
-    @discussion See the category description for information regarding
+    @details See the category description for information regarding
     the contract associated with the delivery of this delegate
     callback.
     @param request an FSKRequest that has failed to load.
@@ -139,9 +136,8 @@
 
 /*!
 	It is recommended to use the FSKConnectionDelegate version of this if possible
-    @method request:didReceiveAuthenticationChallenge:
-    @abstract Start authentication for a given challenge
-    @discussion Call useCredential:forAuthenticationChallenge:,
+    @brief Start authentication for a given challenge
+    @details Call useCredential:forAuthenticationChallenge:,
     continueWithoutCredentialForAuthenticationChallenge: or cancelAuthenticationChallenge: on
     the challenge sender when done.
     @param request the request for which authentication is needed
@@ -151,9 +147,8 @@
 
 /*!
 	It is recommended to use the FSKConnectionDelegate version of this if possible
-    @method windowForAuthenticationSheet:    
-    @abstract   Provides the window to attach the authentication sheet to
-    @discussion If you implement this delegate method, you can choose which window will have
+    @brief   Provides the window to attach the authentication sheet to
+    @details If you implement this delegate method, you can choose which window will have
 	the authentication sheet attached to it during an authentication challenge. If you do not
 	implement this method, by default the sheet will attempt to attach to [NSApp mainWindow].
 	If you return nil, the authentication will be performed with an application modal dialog
@@ -163,8 +158,7 @@
 
 /*!
 	It is recommended to use the FSKConnectionDelegate version of this if possible
-    @method request:didCancelAuthenticationChallenge:
-    @abstract Cancel authentication for a given request
+    @brief Cancel authentication for a given request
     @param request the request for which authentication was cancelled
     @param challenge The NSURLAuthenticationChallenge for which to cancel authentication
 */
@@ -173,18 +167,16 @@
 @end
 
 /*!
-    @category
-    @abstract    <#(brief description)#>
-    @discussion  <#(comprehensive description)#>
+    @brief    <#(brief description)#>
+    @details  <#(comprehensive description)#>
 */
 @interface NSString (StringExtras)
 - (NSString *) encodeURLLegally;
 @end
 
 /*!
-    @category
-    @abstract    <#(brief description)#>
-    @discussion  <#(comprehensive description)#>
+    @brief    <#(brief description)#>
+    @details  <#(comprehensive description)#>
 */
 @interface NSDictionary (webFormEncoded)
 /*
