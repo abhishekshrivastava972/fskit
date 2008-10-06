@@ -6,7 +6,7 @@
 //  Copyright (c) 2004 Sci-Fi Hi-Fi. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 
 @interface SFHFRatingCell : NSActionCell <NSCopying, NSCoding> {

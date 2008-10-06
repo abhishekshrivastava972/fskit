@@ -1,0 +1,34 @@
+//
+//  FSKIdentityRequest.h
+//  FSKit
+//
+//  Created by Logan Allred on 1/23/08.
+//  Copyright 2008 Logan Allred. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "FSKRequest.h"
+#import "FSKIdentityResponse.h"
+
+@interface FSKIdentityRequest : FSKRequest {
+
+}
+
+- (id)initWithFamilySearchConnection:(FSKConnection *)aFamilySearchConnection 
+							delegate:(id)aDelegate 
+							selector:(SEL)aSelector;
+
++ (void)fetchIdentityData:(NSString *)endpoint 
+				  WithIds:(NSSet *)idList 
+			   parameters:(NSDictionary *)parameters 
+			   connection:aFamilySearchConnection 
+				 delegate:(id)aDelegate 
+				 selector:(SEL)aSelector;
+
+- (FSKIdentityResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
+
+- (void)sendLoginRequest;
+
+- (void)sendLogoutRequest;
+
+@end
