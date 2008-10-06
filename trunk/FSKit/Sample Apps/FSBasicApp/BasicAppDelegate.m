@@ -1,5 +1,6 @@
 #import "BasicAppDelegate.h"
 #import "FSKSharedDefines.h"
+#import "FSKUserRepository.h"
 
 @implementation BasicAppDelegate
 - (id)init
@@ -20,17 +21,20 @@
 
 - (void)awakeFromNib
 {	
-
 	// Create a connection
 	[self setValue:[[[FSKConnection alloc] init] retain] forKey:@"connection"];
 //	[connection setBaseURLString:@"http://localhost/~logan/"];
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
 //	[connection setBaseURLString:kFSAPIProductionBaseURLString];
 //	[connection setBaseURLString:kFSAPIBetaBaseURLString];
-//	[connection setBaseURLString:@"https://api.usys.org/"];
+//	[connection setBaseURLString:@"http://10.72.36.32:8080"];
 	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
 	NSLog(@"key: %@", kFSK_DEVELOPER_KEY);
 	[connection setUserAgentString:@"FSKit BasicApp/1.0" override:NO];
+	
+	// get the me user from the user repository
+	[self takeValue:[[[FSKUserRepository instanceWithConnection:connection] userForId:@"me"] retain] forKey:@"meUser"];
+	
 	// Make a request
 	personService = [[FSKPersonService
 		personServiceWithConnection:connection 

@@ -1,9 +1,11 @@
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <FSKit/FSKit.h>
 
 @interface BasicAppDelegate : NSObject {
 	FSKConnection *connection;
 	FSKPersonService *personService;
+	
+	FSKUser *meUser;
 	
 	FSKPersonResponse *lastResponse;
 	FSKError *lastError;

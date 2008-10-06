@@ -23,18 +23,25 @@
 #import "FSKIdentityRequest.h"
 #import "FSKPersonReadRequest.h"
 #import "FSKPersonSearchRequest.h"
+#import "FSKUserReadRequest.h"
 
 // responses
 #import "FSKIdentityResponse.h"
 #import "FSKPersonResponse.h"
 #import "FSKSearchResponse.h"
+#import "FSKUserResponse.h"
 
 // model
+#import "FSKUser.h"
 #import "FSKPerson.h"
 #import "FSKFamily.h"
 #import "FSKCouple.h"
 #import "FSKPersonSummary.h"
+#import "FSKEventSummary.h"
 #import "FSKSearchResult.h"
+#import "FSKDate.h"
+#import "FSKPlace.h"
 
 // repositories
 #import "FSKPersonRepository.h"
+#import "FSKUserRepository.h"

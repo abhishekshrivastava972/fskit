@@ -1,6 +1,6 @@
 /* MyAppDelegate */
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <FSKit/FSKit.h>
 
 @interface FSAppTestDelegate : NSObject

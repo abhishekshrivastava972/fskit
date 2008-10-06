@@ -9,7 +9,7 @@
 //	http://gigliwood.com/weblog/Cocoa/Better_description_.html
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 @interface NSData (RSHexDump)
 

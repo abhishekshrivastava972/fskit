@@ -1,6 +1,6 @@
 /* MyAppDelegate */
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <RuleEditor/PSRuleEditor.h>
 #import <FSKit/FSKit.h>
 #import "RuleDelegate.h"
