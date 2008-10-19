@@ -8,6 +8,7 @@
  */
 
 #if TARGET_OS_IPHONE
+#import "TouchXML.h"
 #define NSXMLDocument CXMLDocument 
 #define NSXMLElement CXMLElement 
 #define NSXMLNode CXMLNode

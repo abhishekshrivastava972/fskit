@@ -68,7 +68,7 @@ extern NSString *FSAPIVersion;
 */
 - (id)init;
 
-+ (id)sharedInstance;
++ (id)sharedConnection;
 
 #pragma mark Accessors
 

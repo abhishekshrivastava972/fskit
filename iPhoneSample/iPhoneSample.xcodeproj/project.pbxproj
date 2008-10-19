@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0210A7F70E9809C400748795 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0210A7F60E9809C400748795 /* SignInView.xib */; };
+		0210A7FF0E980B0F00748795 /* AuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0210A7FE0E980B0F00748795 /* AuthenticationController.m */; };
+		02C85BAA0EAB83460032CEBE /* FSKAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B560EAB83440032CEBE /* FSKAssertion.m */; };
+		02C85BAB0EAB83460032CEBE /* FSKAuthoritiesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B580EAB83440032CEBE /* FSKAuthoritiesService.m */; };
+		02C85BAC0EAB83460032CEBE /* FSKConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B5A0EAB83440032CEBE /* FSKConnection.m */; };
+		02C85BAD0EAB83460032CEBE /* FSKContributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B5C0EAB83440032CEBE /* FSKContributor.m */; };
+		02C85BAE0EAB83460032CEBE /* FSKCouple.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B5E0EAB83440032CEBE /* FSKCouple.m */; };
+		02C85BAF0EAB83460032CEBE /* FSKDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B600EAB83440032CEBE /* FSKDate.m */; };
+		02C85BB00EAB83460032CEBE /* FSKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B620EAB83440032CEBE /* FSKError.m */; };
+		02C85BB10EAB83460032CEBE /* FSKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B640EAB83440032CEBE /* FSKEvent.m */; };
+		02C85BB20EAB83460032CEBE /* FSKEventSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B660EAB83440032CEBE /* FSKEventSummary.m */; };
+		02C85BB30EAB83460032CEBE /* FSKFact.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B680EAB83440032CEBE /* FSKFact.m */; };
+		02C85BB40EAB83460032CEBE /* FSKFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B6A0EAB83440032CEBE /* FSKFamily.m */; };
+		02C85BB50EAB83460032CEBE /* FSKFamilyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B6C0EAB83440032CEBE /* FSKFamilyService.m */; };
+		02C85BB60EAB83460032CEBE /* FSKIdentityRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B6E0EAB83440032CEBE /* FSKIdentityRequest.m */; };
+		02C85BB70EAB83460032CEBE /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B700EAB83440032CEBE /* FSKIdentityResponse.m */; };
+		02C85BB80EAB83460032CEBE /* FSKIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B720EAB83440032CEBE /* FSKIdentityService.m */; };
+		02C85BB90EAB83460032CEBE /* FSKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B740EAB83440032CEBE /* FSKPerson.m */; };
+		02C85BBA0EAB83460032CEBE /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B760EAB83440032CEBE /* FSKPersonDetail.m */; };
+		02C85BBB0EAB83460032CEBE /* FSKPersonReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B780EAB83440032CEBE /* FSKPersonReadRequest.m */; };
+		02C85BBC0EAB83460032CEBE /* FSKPersonRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B7A0EAB83440032CEBE /* FSKPersonRepository.m */; };
+		02C85BBD0EAB83460032CEBE /* FSKPersonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B7C0EAB83440032CEBE /* FSKPersonResponse.m */; };
+		02C85BBE0EAB83460032CEBE /* FSKPersonSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B7E0EAB83440032CEBE /* FSKPersonSearchRequest.m */; };
+		02C85BBF0EAB83460032CEBE /* FSKPersonService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B800EAB83440032CEBE /* FSKPersonService.m */; };
+		02C85BC00EAB83460032CEBE /* FSKPersonSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B820EAB83440032CEBE /* FSKPersonSummary.m */; };
+		02C85BC10EAB83460032CEBE /* FSKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B840EAB83440032CEBE /* FSKPlace.m */; };
+		02C85BC20EAB83460032CEBE /* FSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B860EAB83440032CEBE /* FSKRequest.m */; };
+		02C85BC30EAB83460032CEBE /* FSKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B880EAB83440032CEBE /* FSKResponse.m */; };
+		02C85BC40EAB83460032CEBE /* FSKSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B8A0EAB83440032CEBE /* FSKSearchResponse.m */; };
+		02C85BC50EAB83460032CEBE /* FSKSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B8C0EAB83440032CEBE /* FSKSearchResult.m */; };
+		02C85BC60EAB83460032CEBE /* FSKServiceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B8E0EAB83440032CEBE /* FSKServiceBase.m */; };
+		02C85BC70EAB83460032CEBE /* FSKTempleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B900EAB83440032CEBE /* FSKTempleService.m */; };
+		02C85BC80EAB83460032CEBE /* FSKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B920EAB83440032CEBE /* FSKUser.m */; };
+		02C85BC90EAB83460032CEBE /* FSKUserReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B940EAB83440032CEBE /* FSKUserReadRequest.m */; };
+		02C85BCA0EAB83460032CEBE /* FSKUserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B960EAB83440032CEBE /* FSKUserRepository.m */; };
+		02C85BCB0EAB83460032CEBE /* FSKUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B980EAB83440032CEBE /* FSKUserResponse.m */; };
+		02C85BCC0EAB83460032CEBE /* NSXMLElement+BExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B9A0EAB83440032CEBE /* NSXMLElement+BExtensions.m */; };
+		02C85BCE0EAB83460032CEBE /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B9E0EAB83440032CEBE /* CXMLDocument.m */; };
+		02C85BCF0EAB83460032CEBE /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA00EAB83440032CEBE /* CXMLDocument_PrivateExtensions.m */; };
+		02C85BD00EAB83460032CEBE /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA20EAB83440032CEBE /* CXMLElement.m */; };
+		02C85BD10EAB83460032CEBE /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA40EAB83440032CEBE /* CXMLNode.m */; };
+		02C85BD20EAB83460032CEBE /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA60EAB83440032CEBE /* CXMLNode_PrivateExtensions.m */; };
+		02C85BD30EAB83460032CEBE /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */; };
+		1D3623260D0F684500981E51 /* iPhoneSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
+		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
+		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0210A7F60E9809C400748795 /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SignInView.xib; path = Classes/SignInView.xib; sourceTree = "<group>"; };
+		0210A7FD0E980B0F00748795 /* AuthenticationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationController.h; sourceTree = "<group>"; };
+		0210A7FE0E980B0F00748795 /* AuthenticationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationController.m; sourceTree = "<group>"; };
+		02C85B550EAB83440032CEBE /* FSKAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAssertion.h; sourceTree = "<group>"; };
+		02C85B560EAB83440032CEBE /* FSKAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKAssertion.m; sourceTree = "<group>"; };
+		02C85B570EAB83440032CEBE /* FSKAuthoritiesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAuthoritiesService.h; sourceTree = "<group>"; };
+		02C85B580EAB83440032CEBE /* FSKAuthoritiesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKAuthoritiesService.m; sourceTree = "<group>"; };
+		02C85B590EAB83440032CEBE /* FSKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKConnection.h; sourceTree = "<group>"; };
+		02C85B5A0EAB83440032CEBE /* FSKConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKConnection.m; sourceTree = "<group>"; };
+		02C85B5B0EAB83440032CEBE /* FSKContributor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributor.h; sourceTree = "<group>"; };
+		02C85B5C0EAB83440032CEBE /* FSKContributor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributor.m; sourceTree = "<group>"; };
+		02C85B5D0EAB83440032CEBE /* FSKCouple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKCouple.h; sourceTree = "<group>"; };
+		02C85B5E0EAB83440032CEBE /* FSKCouple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKCouple.m; sourceTree = "<group>"; };
+		02C85B5F0EAB83440032CEBE /* FSKDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDate.h; sourceTree = "<group>"; };
+		02C85B600EAB83440032CEBE /* FSKDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDate.m; sourceTree = "<group>"; };
+		02C85B610EAB83440032CEBE /* FSKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKError.h; sourceTree = "<group>"; };
+		02C85B620EAB83440032CEBE /* FSKError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKError.m; sourceTree = "<group>"; };
+		02C85B630EAB83440032CEBE /* FSKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEvent.h; sourceTree = "<group>"; };
+		02C85B640EAB83440032CEBE /* FSKEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKEvent.m; sourceTree = "<group>"; };
+		02C85B650EAB83440032CEBE /* FSKEventSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEventSummary.h; sourceTree = "<group>"; };
+		02C85B660EAB83440032CEBE /* FSKEventSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKEventSummary.m; sourceTree = "<group>"; };
+		02C85B670EAB83440032CEBE /* FSKFact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFact.h; sourceTree = "<group>"; };
+		02C85B680EAB83440032CEBE /* FSKFact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKFact.m; sourceTree = "<group>"; };
+		02C85B690EAB83440032CEBE /* FSKFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFamily.h; sourceTree = "<group>"; };
+		02C85B6A0EAB83440032CEBE /* FSKFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKFamily.m; sourceTree = "<group>"; };
+		02C85B6B0EAB83440032CEBE /* FSKFamilyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFamilyService.h; sourceTree = "<group>"; };
+		02C85B6C0EAB83440032CEBE /* FSKFamilyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKFamilyService.m; sourceTree = "<group>"; };
+		02C85B6D0EAB83440032CEBE /* FSKIdentityRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityRequest.h; sourceTree = "<group>"; };
+		02C85B6E0EAB83440032CEBE /* FSKIdentityRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityRequest.m; sourceTree = "<group>"; };
+		02C85B6F0EAB83440032CEBE /* FSKIdentityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityResponse.h; sourceTree = "<group>"; };
+		02C85B700EAB83440032CEBE /* FSKIdentityResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityResponse.m; sourceTree = "<group>"; };
+		02C85B710EAB83440032CEBE /* FSKIdentityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityService.h; sourceTree = "<group>"; };
+		02C85B720EAB83440032CEBE /* FSKIdentityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityService.m; sourceTree = "<group>"; };
+		02C85B730EAB83440032CEBE /* FSKPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPerson.h; sourceTree = "<group>"; };
+		02C85B740EAB83440032CEBE /* FSKPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPerson.m; sourceTree = "<group>"; };
+		02C85B750EAB83440032CEBE /* FSKPersonDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonDetail.h; sourceTree = "<group>"; };
+		02C85B760EAB83440032CEBE /* FSKPersonDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonDetail.m; sourceTree = "<group>"; };
+		02C85B770EAB83440032CEBE /* FSKPersonReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonReadRequest.h; sourceTree = "<group>"; };
+		02C85B780EAB83440032CEBE /* FSKPersonReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonReadRequest.m; sourceTree = "<group>"; };
+		02C85B790EAB83440032CEBE /* FSKPersonRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonRepository.h; sourceTree = "<group>"; };
+		02C85B7A0EAB83440032CEBE /* FSKPersonRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonRepository.m; sourceTree = "<group>"; };
+		02C85B7B0EAB83440032CEBE /* FSKPersonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonResponse.h; sourceTree = "<group>"; };
+		02C85B7C0EAB83440032CEBE /* FSKPersonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonResponse.m; sourceTree = "<group>"; };
+		02C85B7D0EAB83440032CEBE /* FSKPersonSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonSearchRequest.h; sourceTree = "<group>"; };
+		02C85B7E0EAB83440032CEBE /* FSKPersonSearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonSearchRequest.m; sourceTree = "<group>"; };
+		02C85B7F0EAB83440032CEBE /* FSKPersonService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonService.h; sourceTree = "<group>"; };
+		02C85B800EAB83440032CEBE /* FSKPersonService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonService.m; sourceTree = "<group>"; };
+		02C85B810EAB83440032CEBE /* FSKPersonSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonSummary.h; sourceTree = "<group>"; };
+		02C85B820EAB83440032CEBE /* FSKPersonSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonSummary.m; sourceTree = "<group>"; };
+		02C85B830EAB83440032CEBE /* FSKPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPlace.h; sourceTree = "<group>"; };
+		02C85B840EAB83440032CEBE /* FSKPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPlace.m; sourceTree = "<group>"; };
+		02C85B850EAB83440032CEBE /* FSKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKRequest.h; sourceTree = "<group>"; };
+		02C85B860EAB83440032CEBE /* FSKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKRequest.m; sourceTree = "<group>"; };
+		02C85B870EAB83440032CEBE /* FSKResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKResponse.h; sourceTree = "<group>"; };
+		02C85B880EAB83440032CEBE /* FSKResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKResponse.m; sourceTree = "<group>"; };
+		02C85B890EAB83440032CEBE /* FSKSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSearchResponse.h; sourceTree = "<group>"; };
+		02C85B8A0EAB83440032CEBE /* FSKSearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKSearchResponse.m; sourceTree = "<group>"; };
+		02C85B8B0EAB83440032CEBE /* FSKSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSearchResult.h; sourceTree = "<group>"; };
+		02C85B8C0EAB83440032CEBE /* FSKSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKSearchResult.m; sourceTree = "<group>"; };
+		02C85B8D0EAB83440032CEBE /* FSKServiceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKServiceBase.h; sourceTree = "<group>"; };
+		02C85B8E0EAB83440032CEBE /* FSKServiceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKServiceBase.m; sourceTree = "<group>"; };
+		02C85B8F0EAB83440032CEBE /* FSKTempleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKTempleService.h; sourceTree = "<group>"; };
+		02C85B900EAB83440032CEBE /* FSKTempleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKTempleService.m; sourceTree = "<group>"; };
+		02C85B910EAB83440032CEBE /* FSKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUser.h; sourceTree = "<group>"; };
+		02C85B920EAB83440032CEBE /* FSKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUser.m; sourceTree = "<group>"; };
+		02C85B930EAB83440032CEBE /* FSKUserReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserReadRequest.h; sourceTree = "<group>"; };
+		02C85B940EAB83440032CEBE /* FSKUserReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserReadRequest.m; sourceTree = "<group>"; };
+		02C85B950EAB83440032CEBE /* FSKUserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserRepository.h; sourceTree = "<group>"; };
+		02C85B960EAB83440032CEBE /* FSKUserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserRepository.m; sourceTree = "<group>"; };
+		02C85B970EAB83440032CEBE /* FSKUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserResponse.h; sourceTree = "<group>"; };
+		02C85B980EAB83440032CEBE /* FSKUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserResponse.m; sourceTree = "<group>"; };
+		02C85B990EAB83440032CEBE /* NSXMLElement+BExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+BExtensions.h"; sourceTree = "<group>"; };
+		02C85B9A0EAB83440032CEBE /* NSXMLElement+BExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+BExtensions.m"; sourceTree = "<group>"; };
+		02C85B9D0EAB83440032CEBE /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		02C85B9E0EAB83440032CEBE /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		02C85B9F0EAB83440032CEBE /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		02C85BA00EAB83440032CEBE /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		02C85BA10EAB83440032CEBE /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		02C85BA20EAB83440032CEBE /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		02C85BA30EAB83440032CEBE /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		02C85BA40EAB83440032CEBE /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		02C85BA50EAB83440032CEBE /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		02C85BA60EAB83440032CEBE /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		02C85BA70EAB83440032CEBE /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		02C85BA90EAB83440032CEBE /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		02C85BF60EAB867B0032CEBE /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* iPhoneSampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneSampleAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneSampleAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* iPhoneSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		28A0AB4B0D9B1048005BE974 /* iPhoneSample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneSample_Prefix.pch; sourceTree = "<group>"; };
+		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02C85B530EAB83440032CEBE /* fskit */ = {
+			isa = PBXGroup;
+			children = (
+				02C85B540EAB83440032CEBE /* Common */,
+				02C85B9C0EAB83440032CEBE /* TouchXML */,
+			);
+			name = fskit;
+			path = externals/fskit;
+			sourceTree = "<group>";
+		};
+		02C85B540EAB83440032CEBE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				02C85BF60EAB867B0032CEBE /* FSKit.h */,
+				02C85B550EAB83440032CEBE /* FSKAssertion.h */,
+				02C85B560EAB83440032CEBE /* FSKAssertion.m */,
+				02C85B570EAB83440032CEBE /* FSKAuthoritiesService.h */,
+				02C85B580EAB83440032CEBE /* FSKAuthoritiesService.m */,
+				02C85B590EAB83440032CEBE /* FSKConnection.h */,
+				02C85B5A0EAB83440032CEBE /* FSKConnection.m */,
+				02C85B5B0EAB83440032CEBE /* FSKContributor.h */,
+				02C85B5C0EAB83440032CEBE /* FSKContributor.m */,
+				02C85B5D0EAB83440032CEBE /* FSKCouple.h */,
+				02C85B5E0EAB83440032CEBE /* FSKCouple.m */,
+				02C85B5F0EAB83440032CEBE /* FSKDate.h */,
+				02C85B600EAB83440032CEBE /* FSKDate.m */,
+				02C85B610EAB83440032CEBE /* FSKError.h */,
+				02C85B620EAB83440032CEBE /* FSKError.m */,
+				02C85B630EAB83440032CEBE /* FSKEvent.h */,
+				02C85B640EAB83440032CEBE /* FSKEvent.m */,
+				02C85B650EAB83440032CEBE /* FSKEventSummary.h */,
+				02C85B660EAB83440032CEBE /* FSKEventSummary.m */,
+				02C85B670EAB83440032CEBE /* FSKFact.h */,
+				02C85B680EAB83440032CEBE /* FSKFact.m */,
+				02C85B690EAB83440032CEBE /* FSKFamily.h */,
+				02C85B6A0EAB83440032CEBE /* FSKFamily.m */,
+				02C85B6B0EAB83440032CEBE /* FSKFamilyService.h */,
+				02C85B6C0EAB83440032CEBE /* FSKFamilyService.m */,
+				02C85B6D0EAB83440032CEBE /* FSKIdentityRequest.h */,
+				02C85B6E0EAB83440032CEBE /* FSKIdentityRequest.m */,
+				02C85B6F0EAB83440032CEBE /* FSKIdentityResponse.h */,
+				02C85B700EAB83440032CEBE /* FSKIdentityResponse.m */,
+				02C85B710EAB83440032CEBE /* FSKIdentityService.h */,
+				02C85B720EAB83440032CEBE /* FSKIdentityService.m */,
+				02C85B730EAB83440032CEBE /* FSKPerson.h */,
+				02C85B740EAB83440032CEBE /* FSKPerson.m */,
+				02C85B750EAB83440032CEBE /* FSKPersonDetail.h */,
+				02C85B760EAB83440032CEBE /* FSKPersonDetail.m */,
+				02C85B770EAB83440032CEBE /* FSKPersonReadRequest.h */,
+				02C85B780EAB83440032CEBE /* FSKPersonReadRequest.m */,
+				02C85B790EAB83440032CEBE /* FSKPersonRepository.h */,
+				02C85B7A0EAB83440032CEBE /* FSKPersonRepository.m */,
+				02C85B7B0EAB83440032CEBE /* FSKPersonResponse.h */,
+				02C85B7C0EAB83440032CEBE /* FSKPersonResponse.m */,
+				02C85B7D0EAB83440032CEBE /* FSKPersonSearchRequest.h */,
+				02C85B7E0EAB83440032CEBE /* FSKPersonSearchRequest.m */,
+				02C85B7F0EAB83440032CEBE /* FSKPersonService.h */,
+				02C85B800EAB83440032CEBE /* FSKPersonService.m */,
+				02C85B810EAB83440032CEBE /* FSKPersonSummary.h */,
+				02C85B820EAB83440032CEBE /* FSKPersonSummary.m */,
+				02C85B830EAB83440032CEBE /* FSKPlace.h */,
+				02C85B840EAB83440032CEBE /* FSKPlace.m */,
+				02C85B850EAB83440032CEBE /* FSKRequest.h */,
+				02C85B860EAB83440032CEBE /* FSKRequest.m */,
+				02C85B870EAB83440032CEBE /* FSKResponse.h */,
+				02C85B880EAB83440032CEBE /* FSKResponse.m */,
+				02C85B890EAB83440032CEBE /* FSKSearchResponse.h */,
+				02C85B8A0EAB83440032CEBE /* FSKSearchResponse.m */,
+				02C85B8B0EAB83440032CEBE /* FSKSearchResult.h */,
+				02C85B8C0EAB83440032CEBE /* FSKSearchResult.m */,
+				02C85B8D0EAB83440032CEBE /* FSKServiceBase.h */,
+				02C85B8E0EAB83440032CEBE /* FSKServiceBase.m */,
+				02C85B8F0EAB83440032CEBE /* FSKTempleService.h */,
+				02C85B900EAB83440032CEBE /* FSKTempleService.m */,
+				02C85B910EAB83440032CEBE /* FSKUser.h */,
+				02C85B920EAB83440032CEBE /* FSKUser.m */,
+				02C85B930EAB83440032CEBE /* FSKUserReadRequest.h */,
+				02C85B940EAB83440032CEBE /* FSKUserReadRequest.m */,
+				02C85B950EAB83440032CEBE /* FSKUserRepository.h */,
+				02C85B960EAB83440032CEBE /* FSKUserRepository.m */,
+				02C85B970EAB83440032CEBE /* FSKUserResponse.h */,
+				02C85B980EAB83440032CEBE /* FSKUserResponse.m */,
+				02C85B990EAB83440032CEBE /* NSXMLElement+BExtensions.h */,
+				02C85B9A0EAB83440032CEBE /* NSXMLElement+BExtensions.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		02C85B9C0EAB83440032CEBE /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				02C85B9D0EAB83440032CEBE /* CXMLDocument.h */,
+				02C85B9E0EAB83440032CEBE /* CXMLDocument.m */,
+				02C85B9F0EAB83440032CEBE /* CXMLDocument_PrivateExtensions.h */,
+				02C85BA00EAB83440032CEBE /* CXMLDocument_PrivateExtensions.m */,
+				02C85BA10EAB83440032CEBE /* CXMLElement.h */,
+				02C85BA20EAB83440032CEBE /* CXMLElement.m */,
+				02C85BA30EAB83440032CEBE /* CXMLNode.h */,
+				02C85BA40EAB83440032CEBE /* CXMLNode.m */,
+				02C85BA50EAB83440032CEBE /* CXMLNode_PrivateExtensions.h */,
+				02C85BA60EAB83440032CEBE /* CXMLNode_PrivateExtensions.m */,
+				02C85BA70EAB83440032CEBE /* CXMLNode_XPathExtensions.h */,
+				02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */,
+				02C85BA90EAB83440032CEBE /* TouchXML.h */,
+			);
+			path = TouchXML;
+			sourceTree = "<group>";
+		};
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				28216C950DB411BC00E5133A /* FirstViewController.h */,
+				28216C960DB411BC00E5133A /* FirstViewController.m */,
+				1D3623240D0F684500981E51 /* iPhoneSampleAppDelegate.h */,
+				1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */,
+				0210A7FD0E980B0F00748795 /* AuthenticationController.h */,
+				0210A7FE0E980B0F00748795 /* AuthenticationController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iPhoneSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* iPhoneSample */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = iPhoneSample;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				02C85B530EAB83440032CEBE /* fskit */,
+				28A0AB4B0D9B1048005BE974 /* iPhoneSample_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0210A7F60E9809C400748795 /* SignInView.xib */,
+				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
+				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iPhoneSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iPhoneSample" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPhoneSample;
+			productName = iPhoneSample;
+			productReference = 1D6058910D05DD3D006BFB54 /* iPhoneSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPhoneSample" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* iPhoneSample */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iPhoneSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
+				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
+				0210A7F70E9809C400748795 /* SignInView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* iPhoneSampleAppDelegate.m in Sources */,
+				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
+				0210A7FF0E980B0F00748795 /* AuthenticationController.m in Sources */,
+				02C85BAA0EAB83460032CEBE /* FSKAssertion.m in Sources */,
+				02C85BAB0EAB83460032CEBE /* FSKAuthoritiesService.m in Sources */,
+				02C85BAC0EAB83460032CEBE /* FSKConnection.m in Sources */,
+				02C85BAD0EAB83460032CEBE /* FSKContributor.m in Sources */,
+				02C85BAE0EAB83460032CEBE /* FSKCouple.m in Sources */,
+				02C85BAF0EAB83460032CEBE /* FSKDate.m in Sources */,
+				02C85BB00EAB83460032CEBE /* FSKError.m in Sources */,
+				02C85BB10EAB83460032CEBE /* FSKEvent.m in Sources */,
+				02C85BB20EAB83460032CEBE /* FSKEventSummary.m in Sources */,
+				02C85BB30EAB83460032CEBE /* FSKFact.m in Sources */,
+				02C85BB40EAB83460032CEBE /* FSKFamily.m in Sources */,
+				02C85BB50EAB83460032CEBE /* FSKFamilyService.m in Sources */,
+				02C85BB60EAB83460032CEBE /* FSKIdentityRequest.m in Sources */,
+				02C85BB70EAB83460032CEBE /* FSKIdentityResponse.m in Sources */,
+				02C85BB80EAB83460032CEBE /* FSKIdentityService.m in Sources */,
+				02C85BB90EAB83460032CEBE /* FSKPerson.m in Sources */,
+				02C85BBA0EAB83460032CEBE /* FSKPersonDetail.m in Sources */,
+				02C85BBB0EAB83460032CEBE /* FSKPersonReadRequest.m in Sources */,
+				02C85BBC0EAB83460032CEBE /* FSKPersonRepository.m in Sources */,
+				02C85BBD0EAB83460032CEBE /* FSKPersonResponse.m in Sources */,
+				02C85BBE0EAB83460032CEBE /* FSKPersonSearchRequest.m in Sources */,
+				02C85BBF0EAB83460032CEBE /* FSKPersonService.m in Sources */,
+				02C85BC00EAB83460032CEBE /* FSKPersonSummary.m in Sources */,
+				02C85BC10EAB83460032CEBE /* FSKPlace.m in Sources */,
+				02C85BC20EAB83460032CEBE /* FSKRequest.m in Sources */,
+				02C85BC30EAB83460032CEBE /* FSKResponse.m in Sources */,
+				02C85BC40EAB83460032CEBE /* FSKSearchResponse.m in Sources */,
+				02C85BC50EAB83460032CEBE /* FSKSearchResult.m in Sources */,
+				02C85BC60EAB83460032CEBE /* FSKServiceBase.m in Sources */,
+				02C85BC70EAB83460032CEBE /* FSKTempleService.m in Sources */,
+				02C85BC80EAB83460032CEBE /* FSKUser.m in Sources */,
+				02C85BC90EAB83460032CEBE /* FSKUserReadRequest.m in Sources */,
+				02C85BCA0EAB83460032CEBE /* FSKUserRepository.m in Sources */,
+				02C85BCB0EAB83460032CEBE /* FSKUserResponse.m in Sources */,
+				02C85BCC0EAB83460032CEBE /* NSXMLElement+BExtensions.m in Sources */,
+				02C85BCE0EAB83460032CEBE /* CXMLDocument.m in Sources */,
+				02C85BCF0EAB83460032CEBE /* CXMLDocument_PrivateExtensions.m in Sources */,
+				02C85BD00EAB83460032CEBE /* CXMLElement.m in Sources */,
+				02C85BD10EAB83460032CEBE /* CXMLNode.m in Sources */,
+				02C85BD20EAB83460032CEBE /* CXMLNode_PrivateExtensions.m in Sources */,
+				02C85BD30EAB83460032CEBE /* CXMLNode_XPathExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iPhoneSample_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = iPhoneSample;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iPhoneSample_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = iPhoneSample;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				OTHER_LDFLAGS = "-lxml2";
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iPhoneSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPhoneSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
