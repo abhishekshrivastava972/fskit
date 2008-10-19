@@ -8,7 +8,7 @@
 
 #import "FSKConnection.h"
 #import "FSKIdentityService.h"
-#if TARGET_OS_MAC
+#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE))
 #import "FSKDefaultAuthenticationDelegate.h"
 #endif
 
@@ -30,7 +30,7 @@ NSString *userAgentString = @"test";
 		userAgentString = [[NSString stringWithFormat:@"%@/%@", FSKitAgent, FSKitVersion] retain];
 		responseDataCache = [[[NSMutableDictionary alloc] init] retain];
 		requestQueue = [[[NSMutableArray alloc] init] retain];
-#if TARGET_OS_MAC
+#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE))
 		_delegate = [[FSKDefaultAuthenticationDelegate alloc] init];
 #endif
 	}
@@ -57,7 +57,7 @@ NSString *userAgentString = @"test";
 	
 	return sharedInstance;
 }
-	
+
 - (NSString *)baseURLString {
 	return [[baseURLString retain] autorelease];
 }
@@ -68,8 +68,8 @@ NSString *userAgentString = @"test";
 		baseURLString = [value copy];
 	}
 }
-	
-	
+
+
 - (NSURLCredential *)credential {
     return [[credential retain] autorelease];
 }
