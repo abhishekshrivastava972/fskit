@@ -81,7 +81,6 @@
 		0263AB190D96BD4D00F3D51B /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
 		0263AB290D96BE4C00F3D51B /* FSKPersonSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B49CAE2D0D884662003852A5 /* FSKPersonSearchRequest.m */; };
 		0268F14D0D7FAFDA00CD2F19 /* LoginPanel.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */; };
-		026D89240D3A93E70046406A /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 026D89230D3A93E70046406A /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		027148710D709A1600072118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA98020D7068CF00DC6E04 /* main.m */; };
 		027148720D709A1700072118 /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BA98050D7068CF00DC6E04 /* version.plist */; };
 		027148740D709A1800072118 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BA98010D7068CF00DC6E04 /* Info.plist */; };
@@ -138,6 +137,7 @@
 		02A3A8540E6B1DF800A45179 /* FSCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A8520E6B1DF800A45179 /* FSCommandLine.m */; };
 		02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */; };
+		02C85BE90EAB84090032CEBE /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; };
 		02D2CD320CC3127B0013D298 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
 		02D2CD460CC3139D0013D298 /* FSKConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */; };
 		02E2AE080D817F6900CB1B6E /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 02E2AE060D817F6900CB1B6E /* MainMenu.nib */; };
@@ -332,7 +332,6 @@
 		0263A9AB0D96AFCD00F3D51B /* BasicAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAppDelegate.h; sourceTree = "<group>"; };
 		0263A9AC0D96AFCD00F3D51B /* BasicAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAppDelegate.m; sourceTree = "<group>"; };
 		0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = LoginPanel.nib; path = Resources/LoginPanel.nib; sourceTree = SOURCE_ROOT; };
-		026D89230D3A93E70046406A /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
 		026FC3F70E3CFB1900BD33C5 /* doxygen.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doxygen.config; sourceTree = "<group>"; };
 		027148670D7099D000072118 /* FSAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027148690D7099D100072118 /* FSAppTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSAppTest-Info.plist"; sourceTree = "<group>"; };
@@ -407,6 +406,7 @@
 		02BA98010D7068CF00DC6E04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BA98020D7068CF00DC6E04 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02BA98050D7068CF00DC6E04 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
+		02C85BE80EAB84090032CEBE /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
 		02D2CD2C0CC311600013D298 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		02D2CD440CC3139D0013D298 /* FSKConnectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKConnectionTest.h; path = Tests/FSKConnectionTest.h; sourceTree = "<group>"; };
@@ -540,6 +540,7 @@
 		020E9AD60E9965FA00E38F75 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				02C85BE80EAB84090032CEBE /* FSKit.h */,
 				02433DAC0C9DE06D00FE5892 /* FSKConnection.h */,
 				02433DAD0C9DE06D00FE5892 /* FSKConnection.m */,
 				B4DF9D4F0D864C0C00D7073B /* Services */,
@@ -909,7 +910,6 @@
 				020E9AD60E9965FA00E38F75 /* Common */,
 				020E9AD00E99643600E38F75 /* Cocoa */,
 				028A391F0E626C6D0007B2F0 /* iPhone */,
-				026D89230D3A93E70046406A /* FSKit.h */,
 				02810DCF0D499597003E36B7 /* UI */,
 			);
 			name = Classes;
@@ -988,7 +988,6 @@
 				02433DD90C9DE49C00FE5892 /* FSKPersonService.h in Headers */,
 				02433DDF0C9DE4BB00FE5892 /* FSKAuthoritiesService.h in Headers */,
 				02433DE50C9DE4C400FE5892 /* FSKTempleService.h in Headers */,
-				026D89240D3A93E70046406A /* FSKit.h in Headers */,
 				02439C700D43949300F50EBD /* FSKRequest.h in Headers */,
 				02810C1E0D4427C2003E36B7 /* FSKIdentityService.h in Headers */,
 				02810C5F0D477585003E36B7 /* FSKIdentityRequest.h in Headers */,
@@ -1022,6 +1021,7 @@
 				028A356E0E6195E30007B2F0 /* FSKUserReadRequest.h in Headers */,
 				028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */,
 				028A35C30E61A14C0007B2F0 /* FSKUserRepository.h in Headers */,
+				02C85BE90EAB84090032CEBE /* FSKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
