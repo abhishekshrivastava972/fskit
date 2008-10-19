@@ -46,7 +46,7 @@ NSString *userAgentString = @"test";
 	[super dealloc];
 }
 
-+ (id)sharedInstance
++ (id)sharedConnection
 {
 	static id sharedInstance = nil;
 	
