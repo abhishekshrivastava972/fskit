@@ -53,9 +53,9 @@
 	
 	NSURL *theURL = [self generateFamilySearchURLAtEndpoint:_endpoint WithIds:_idList parameters:_parameters];
 	
-	NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:theURL 
+	NSMutableURLRequest *urlRequest = [[NSMutableURLRequest requestWithURL:theURL 
 											 cachePolicy:NSURLRequestReloadIgnoringCacheData 
-											 timeoutInterval:[familySearchConnection connectionTimeoutInterval]];
+														   timeoutInterval:[familySearchConnection connectionTimeoutInterval]] retain];
 	
 	[urlRequest addValue:[familySearchConnection userAgentString] forHTTPHeaderField:@"User-Agent"];
 	

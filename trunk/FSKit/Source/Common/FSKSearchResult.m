@@ -22,7 +22,7 @@
 {
 	refId = [[[searchElement attributeForName:@"ref"] stringValue] retain];
 	score = [[searchElement firstValueForName:@"score"] retain];
-	person = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstElementWithName:@"person"]] retain];
+	person = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"person/assertions" error:nil]] retain];
 	father = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Father']" error:nil]] retain];
 	mother = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[@role='Mother']" error:nil]] retain];
 
