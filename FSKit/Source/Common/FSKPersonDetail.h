@@ -10,10 +10,17 @@
 
 
 @interface FSKPersonDetail : NSObject {
-	NSArray *assertions; // of FSKAssertion
-	NSArray *spouses;
-	NSArray *children;
-	NSArray *families;
+	NSArray *nameAssertions; // of FSKAssertion
+	NSArray *genderAssertions; // of FSKAssertion
+	NSArray *eventAssertions; // of FSKAssertion
+	NSArray *characteristicAssertions; // of FSKAssertion
+	NSArray *ordinanceAssertions; // of FSKAssertion
+	NSArray *spouses; // of FSKPerson
+	NSArray *children; // of FSKPerson
+	NSArray *families; // of FSKFamily
 }
+
++ (FSKPersonDetail *)createFromXML:(NSXMLElement *)personElement;
+- (id)initWithXML:(NSXMLElement *)personElement;
 
 @end

@@ -22,14 +22,14 @@
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, personSummaryElement);
 
-	[self setValue:[[personSummaryElement firstValueForXPath:@"*:name/*:form/*:fullText" error:nil] retain] forKey:@"name"];
-	[self setValue:[[personSummaryElement firstValueForName:@"gender"] retain] forKey:@"gender"];
+	[self setValue:[[personSummaryElement firstValueForXPath:@"*:names/*:name/*:value/*:forms/*:form/*:fullText/text()" error:nil] retain] forKey:@"name"];
+	[self setValue:[[personSummaryElement firstValueForXPath:@"*:genders/*:gender/*:value/*:type" error:nil] retain] forKey:@"gender"];
 
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event[@type='Birth']" error:nil]] retain] forKey:@"birthEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event/*:value[@type='Birth']" error:nil]] retain] forKey:@"birthEvent"];
 	[self setValue:[birthEvent valueForKeyPath:@"date.original"] forKey:@"birthdate"];
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event[@type='Christening']" error:nil]] retain] forKey:@"christeningEvent"];
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event[@type='Death']" error:nil]] retain] forKey:@"deathEvent"];
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event[@type='Burial']" error:nil]] retain] forKey:@"burialEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event/*:value[@type='Christening']" error:nil]] retain] forKey:@"christeningEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event/*:value[@type='Death']" error:nil]] retain] forKey:@"deathEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./*:events/*:event/*:value[@type='Burial']" error:nil]] retain] forKey:@"burialEvent"];
 }
 
 - (id)initWithXML:(NSXMLElement *)personElement

@@ -7,18 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FSKConnection.h"
-#import "FSKUser.h"
+//#import "FSKConnection.h"
+//#import "FSKUser.h"
 
 @interface FSKUserRepository : NSObject {
-	FSKConnection *connection;
+//	FSKConnection *connection;
+//	NSMutableDictionary *cache;
+	id connection;
 	NSMutableDictionary *cache;
 }
 
-+ (FSKUserRepository*)instanceWithConnection:(FSKConnection *)aConnection;
-
-- (id)initWithConnection:(FSKConnection *)aConnection;
-
-- (FSKUser *)userForId:(NSString *)userId;
+//+ (FSKUserRepository*)instanceWithConnection:(FSKConnection *)aConnection;
+//
+//- (id)initWithConnection:(FSKConnection *)aConnection;
+//
+//- (FSKUser *)userForId:(NSString *)userId;
 
 @end

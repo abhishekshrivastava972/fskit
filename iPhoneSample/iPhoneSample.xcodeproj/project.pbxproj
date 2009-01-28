@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020ABCFA0EAC542B0015DAC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020ABCF90EAC542B0015DAC8 /* CoreGraphics.framework */; };
 		0210A7F70E9809C400748795 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0210A7F60E9809C400748795 /* SignInView.xib */; };
 		0210A7FF0E980B0F00748795 /* AuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0210A7FE0E980B0F00748795 /* AuthenticationController.m */; };
 		02C85BAA0EAB83460032CEBE /* FSKAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B560EAB83440032CEBE /* FSKAssertion.m */; };
@@ -50,6 +51,8 @@
 		02C85BD10EAB83460032CEBE /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA40EAB83440032CEBE /* CXMLNode.m */; };
 		02C85BD20EAB83460032CEBE /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA60EAB83440032CEBE /* CXMLNode_PrivateExtensions.m */; };
 		02C85BD30EAB83460032CEBE /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */; };
+		02F99B430EE300C700146B6E /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F99B420EE300C700146B6E /* PersonViewController.m */; };
+		02F99B450EE3019200146B6E /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F99B440EE3019200146B6E /* PersonView.xib */; };
 		1D3623260D0F684500981E51 /* iPhoneSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -60,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		020ABCF90EAC542B0015DAC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0210A7F60E9809C400748795 /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SignInView.xib; path = Classes/SignInView.xib; sourceTree = "<group>"; };
 		0210A7FD0E980B0F00748795 /* AuthenticationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationController.h; sourceTree = "<group>"; };
 		0210A7FE0E980B0F00748795 /* AuthenticationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationController.m; sourceTree = "<group>"; };
@@ -147,6 +151,9 @@
 		02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
 		02C85BA90EAB83440032CEBE /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		02C85BF60EAB867B0032CEBE /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
+		02F99B410EE300C700146B6E /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		02F99B420EE300C700146B6E /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		02F99B440EE3019200146B6E /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iPhoneSampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneSampleAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneSampleAppDelegate.m; sourceTree = "<group>"; };
@@ -168,6 +175,7 @@
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				020ABCFA0EAC542B0015DAC8 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +299,8 @@
 				1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */,
 				0210A7FD0E980B0F00748795 /* AuthenticationController.h */,
 				0210A7FE0E980B0F00748795 /* AuthenticationController.m */,
+				02F99B410EE300C700146B6E /* PersonViewController.h */,
+				02F99B420EE300C700146B6E /* PersonViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -332,6 +342,7 @@
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
+				02F99B440EE3019200146B6E /* PersonView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				020ABCF90EAC542B0015DAC8 /* CoreGraphics.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 			);
@@ -390,6 +402,7 @@
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 				0210A7F70E9809C400748795 /* SignInView.xib in Resources */,
+				02F99B450EE3019200146B6E /* PersonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +458,7 @@
 				02C85BD10EAB83460032CEBE /* CXMLNode.m in Sources */,
 				02C85BD20EAB83460032CEBE /* CXMLNode_PrivateExtensions.m in Sources */,
 				02C85BD30EAB83460032CEBE /* CXMLNode_XPathExtensions.m in Sources */,
+				02F99B430EE300C700146B6E /* PersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

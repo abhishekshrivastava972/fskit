@@ -10,17 +10,35 @@
 
 
 @implementation AuthenticationController
-- (IBAction)hideLogin:(id)sender 
+
+@synthesize challenge;
+
+- (IBAction)cancel:(id)sender 
 {
 	NSLog(@"%s %@", _cmd, self.parentViewController);
 
+	[challenge.sender cancelAuthenticationChallenge:challenge];
 	[self.parentViewController dismissModalViewControllerAnimated:YES];
 }
+
+- (IBAction)authenticate:(id)sender 
+{
+	NSURLCredential *credential = [NSURLCredential credentialWithUser:usernameField.text password:passwordField.text persistence:NSURLCredentialPersistenceForSession];
+	[self.parentViewController dismissModalViewControllerAnimated:YES];	
+
+	[self performSelector:@selector(sendCredential:) withObject:credential afterDelay:0.5];
+}
+
+- (void)sendCredential:(NSURLCredential *)credential
+{
+	[[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 		// Initialization code
-		
+		self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	}
 	return self;
 }
@@ -33,7 +51,7 @@
 
 // If you need to do additional setup after loading the view, override viewDidLoad.
 - (void)viewDidLoad {
-	
+	[usernameField becomeFirstResponder];
 }
 
 
@@ -52,6 +70,5 @@
 - (void)dealloc {
 	[super dealloc];
 }
-
 
 @end
