@@ -14,12 +14,12 @@
 
 - (NSString *)fullName
 {
-	return @"Full Name goes here";
+	return [summary name];
 }
 
 - (NSString *)gender
 {
-	return @"Gender goes here";
+	return [summary gender];
 }
 
 - (FSKEventSummary *)birthEvent
