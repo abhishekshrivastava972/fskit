@@ -30,7 +30,7 @@ NSString * const FAMILYTREE_MODULE = @"familytree";
     if ((self = [super initWithConnection:familySearchConnection delegate:theDelegate]) != nil) 
 	{ 
 		moduleName = FAMILYTREE_MODULE;
-		versionString = @"v1";
+		versionString = @"v2";
 	}
 	
 	return self;
@@ -56,7 +56,7 @@ NSString * const FAMILYTREE_MODULE = @"familytree";
 
 
 - (void)readPersons:(NSSet *)personIds {
-	[self fetchPersonDataWithIds:personIds parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"summary", @"values", nil], @"view", nil]];
+	[self fetchPersonDataWithIds:personIds parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"summary", nil], @"view", nil]];
 }
 
 - (void)readPerson:(NSString *)personId {

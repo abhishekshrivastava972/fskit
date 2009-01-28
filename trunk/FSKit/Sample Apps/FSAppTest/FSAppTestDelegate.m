@@ -46,8 +46,8 @@
 {
 	NSLog(@"%s", _cmd);
 
-	[personService readPerson:@"me"];
-	[personService readPersons:[NSSet setWithObjects:@"MMMM-MMD",@"me",@"KW3B-NK3",@"KW3B-NKH",@"KW3B-NK7",@"ZZZZ-ZZZ",@"ABCD-EFG",nil]];
+	[personService readPerson:@""];
+	[personService readPersons:[NSSet setWithObjects:@"MMMM-MMD",@"KW3B-NK3",@"KW3B-NKH",@"KW3B-NK7",@"ZZZZ-ZZZ",@"ABCD-EFG",nil]];
 	[personService readPerson:@"ZZZZ-ZZZ"];
 	[personService readPerson:@"ABCD-EFG"];
 }

@@ -11,4 +11,34 @@
 
 @implementation FSKPersonDetail
 
++ (FSKPersonDetail *)createFromXML:(NSXMLElement *)personElement
+{
+    id result = [[self alloc] initWithXML:personElement];
+    return [result autorelease];
+}
+
+- (void)parseXML:(NSXMLElement *)personElement
+{
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, personElement);
+	
+	NSEnumerator *enumerator = [[personElement children] objectEnumerator];
+	NSXMLNode *assertionNode;
+	while(assertionNode = [enumerator nextObject])
+	{
+		NSLog(@"%@", assertionNode);
+//		FSKAssertion *assertion = [FSKAssertion in
+	}
+}
+
+- (id)initWithXML:(NSXMLElement *)personElement
+{
+    if ((self = [super init]) != nil) 
+	{
+        // Begin parsing
+        [self parseXML:personElement];
+    }
+    
+    return self;
+}
+
 @end

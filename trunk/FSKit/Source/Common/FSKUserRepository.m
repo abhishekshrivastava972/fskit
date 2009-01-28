@@ -76,29 +76,31 @@ static FSKUserRepository *sharedInstance = nil;
 	[super dealloc];
 }
 
-- (FSKUser *)userForId:(NSString *)userId
+//- (FSKUser *)userForId:(NSString *)userId
+- (id)userForId:(NSString *)userId
 {
-	FSKUser *cachedUser = [cache objectForKey:userId];
-	if (!cachedUser)
-	{
-		// fetch and put in cache
-		cachedUser = [[FSKUser alloc] init];
-		[cachedUser setValue:userId forKey:@"userId"];
-		
-		[FSKUserReadRequest fetchUserDataWithIds:[NSSet setWithObject:userId] parameters:nil connection:connection delegate:self selector:@selector(request:didReturnResponse:)]; 
-	}
-	
-	return cachedUser;
+//	FSKUser *cachedUser = [cache objectForKey:userId];
+//	if (!cachedUser)
+//	{
+//		// fetch and put in cache
+//		cachedUser = [[FSKUser alloc] init];
+//		[cachedUser setValue:userId forKey:@"userId"];
+//		
+//		[FSKUserReadRequest fetchUserDataWithIds:[NSSet setWithObject:userId] parameters:nil connection:connection delegate:self selector:@selector(request:didReturnResponse:)]; 
+//	}
+//	
+//	return cachedUser;
+	return nil;
 }
 
 - (void)request:(FSKRequest *)request 
 didReturnResponse:(FSKResponse *)response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
-	FSKUserResponse *userResponse = (FSKUserResponse *)response;
-	FSKUser *responseUser = [[userResponse userList] lastObject];
-	FSKUser *cachedUser = [cache objectForKey:[responseUser userId]];
-	[cache setObject:responseUser forKey:[[userResponse valueForKey:@"requestedIds"] lastObject]];
+//	FSKUserResponse *userResponse = (FSKUserResponse *)response;
+//	FSKUser *responseUser = [[userResponse userList] lastObject];
+//	FSKUser *cachedUser = [cache objectForKey:[responseUser userId]];
+//	[cache setObject:responseUser forKey:[[userResponse valueForKey:@"requestedIds"] lastObject]];
 }
 
 - (void)request:(FSKRequest *)request 

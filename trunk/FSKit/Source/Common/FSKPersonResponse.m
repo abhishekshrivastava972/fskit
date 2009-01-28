@@ -47,7 +47,7 @@
 - (FSKPersonSummary *)summary
 {
 NSLog(@"fskpersresp summary %d %@", [persons count], [[persons lastObject] summary]);
-	return [[persons lastObject] summary];
+	return [[self person] summary];
 }
 
 - (FSKPerson *)person

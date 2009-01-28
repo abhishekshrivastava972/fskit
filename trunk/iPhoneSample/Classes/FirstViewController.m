@@ -11,6 +11,19 @@
 #import "TouchXML.h"
 
 @implementation FirstViewController
+enum Sections {
+    kHeaderSection = 0,
+    kTitleSection,
+    kAuthorSection,
+    kBodySection,
+    NUM_SECTIONS
+};
+
+enum HeaderSectionRows {
+    kHeaderSectionCopyrightRow = 0,
+    kHeaderSectionPublisherRow,
+    NUM_HEADER_SECTION_ROWS
+};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -33,7 +46,7 @@
 //	 [identityService loginWithCredential:[NSURLCredential credentialWithUser:@"api-user-1009" password:@"f8cc" persistence:NSURLCredentialPersistenceForSession]];
 	  
 	 FSKPersonService *personService = [[FSKPersonService
-										 personServiceWithConnection:[FSKConnection sharedInstance] 
+										 personServiceWithConnection:[FSKConnection sharedConnection] 
 										 delegate:self] retain];
 	 [personService readPerson:@"me"];
 	 
@@ -65,7 +78,7 @@ didFailWithError:(FSKError *)error
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 

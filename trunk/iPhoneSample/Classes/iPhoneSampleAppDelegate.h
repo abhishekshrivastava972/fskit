@@ -21,6 +21,6 @@
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UITabBarController *tabBarController;
 
-- (IBAction)showSignInView:(id)sender;
+//- (IBAction)showSignInView:(id)sender;
 
 @end

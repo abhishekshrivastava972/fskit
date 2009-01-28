@@ -8,6 +8,7 @@
 
 #import "FSKPerson.h"
 #import "NSXMLElement+BExtensions.h"
+#import "NSCalendarDate+ISO8601Parsing.h"
 
 @implementation FSKPerson
 
@@ -54,18 +55,27 @@
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, personElement);
 	[self setValue:[[[personElement attributeForName:@"id"] stringValue] retain] forKey:@"personId"];
+	NSXMLElement *propertiesElement = [personElement firstElementWithName:@"properties"];
+
+	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"living"] boolValue]] forKey:@"living"];
+	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"modifiable"] boolValue]] forKey:@"modifiable"];
+	[self setValue:[[NSCalendarDate calendarDateWithString:[propertiesElement firstValueForName:@"modified"]] retain] forKey:@"modified"];
+	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsChild"] boolValue]] forKey:@"multipleFamiliesAsChild"];
+	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsParent"] boolValue]] forKey:@"multipleFamiliesAsParent"];
 	
 	// On a Person Read, the summary information is in a <summary> element, but
 	// on a Person Search, the summary information are direct children of the person
 	// element, so we'll check for the intermediate summary element and fallback
 	// to the person element if it's not there
-	NSXMLElement *summaryElement = [personElement firstElementWithName:@"summary"];
+	NSXMLElement *summaryElement = [personElement firstElementWithName:@"assertions"];
 	if (!summaryElement)
 	{
 		[self setValue:[[[personElement attributeForName:@"ref"] stringValue] retain] forKey:@"personId"];
 		summaryElement = personElement;
 	}
 	summary = [[FSKPersonSummary createFromXML:summaryElement] retain];
+	[summary setValue:personId forKey:@"personId"];
+	detail = [[FSKPersonDetail createFromXML:summaryElement] retain];
 	
 }
 

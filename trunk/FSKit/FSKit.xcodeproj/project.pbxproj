@@ -49,6 +49,12 @@
 		0229C1C80E901CE4005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
 		0229C1C90E901CE4005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
 		0229C1CA0E901CE5005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
+		02326AB20F2F10E200C964A7 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02326A980F2F10E200C964A7 /* LICENSE.txt */; };
+		02326AB40F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 02326A9A0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h */; };
+		02326AB50F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 02326A9B0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m */; };
+		02326AB70F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 02326A9D0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h */; };
+		02326AB80F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 02326A9E0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m */; };
+		02326ABA0F2F10E200C964A7 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02326AA00F2F10E200C964A7 /* README.txt */; };
 		023A76670D845D4D00CD028D /* SearchForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 023A76650D845D4D00CD028D /* SearchForm.h */; };
 		023A76680D845D4D00CD028D /* SearchForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A76660D845D4D00CD028D /* SearchForm.m */; };
 		023A770D0D84731100CD028D /* FSKSearchResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 023A770B0D84731100CD028D /* FSKSearchResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -137,7 +143,7 @@
 		02A3A8540E6B1DF800A45179 /* FSCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A8520E6B1DF800A45179 /* FSCommandLine.m */; };
 		02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */; };
-		02C85BE90EAB84090032CEBE /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; };
+		02C85BE90EAB84090032CEBE /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02D2CD320CC3127B0013D298 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
 		02D2CD460CC3139D0013D298 /* FSKConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */; };
 		02E2AE080D817F6900CB1B6E /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 02E2AE060D817F6900CB1B6E /* MainMenu.nib */; };
@@ -300,6 +306,12 @@
 /* Begin PBXFileReference section */
 		02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDefaultAuthenticationDelegate.h; sourceTree = "<group>"; };
 		02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDefaultAuthenticationDelegate.m; sourceTree = "<group>"; };
+		02326A980F2F10E200C964A7 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		02326A9A0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendarDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
+		02326A9B0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendarDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
+		02326A9D0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendarDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
+		02326A9E0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendarDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
+		02326AA00F2F10E200C964A7 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		023A76650D845D4D00CD028D /* SearchForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchForm.h; path = FSSearchDemo/SearchForm.h; sourceTree = "<group>"; };
 		023A76660D845D4D00CD028D /* SearchForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchForm.m; path = FSSearchDemo/SearchForm.m; sourceTree = "<group>"; };
 		023A770B0D84731100CD028D /* FSKSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSearchResponse.h; sourceTree = "<group>"; };
@@ -557,6 +569,19 @@
 			children = (
 			);
 			name = SampleData;
+			sourceTree = "<group>";
+		};
+		02326A970F2F10E200C964A7 /* ISO-8601-parser-0.4 */ = {
+			isa = PBXGroup;
+			children = (
+				02326A980F2F10E200C964A7 /* LICENSE.txt */,
+				02326A9A0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h */,
+				02326A9B0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m */,
+				02326A9D0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h */,
+				02326A9E0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m */,
+				02326AA00F2F10E200C964A7 /* README.txt */,
+			);
+			path = "ISO-8601-parser-0.4";
 			sourceTree = "<group>";
 		};
 		02439C5B0D43936B00F50EBD /* Requests */ = {
@@ -939,6 +964,7 @@
 			children = (
 				B4DF9CCF0D85F21200D7073B /* NSXMLElement+BExtensions.h */,
 				B4DF9CD00D85F21200D7073B /* NSXMLElement+BExtensions.m */,
+				02326A970F2F10E200C964A7 /* ISO-8601-parser-0.4 */,
 				02F1A07A0D4CEED60047B392 /* NSData+RSHexDump */,
 				32DBCF5E0370ADEE00C91783 /* FSKit_Prefix.pch */,
 			);
@@ -983,6 +1009,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02C85BE90EAB84090032CEBE /* FSKit.h in Headers */,
 				02433DB00C9DE06D00FE5892 /* FSKConnection.h in Headers */,
 				02433DD30C9DE45500FE5892 /* FSKServiceBase.h in Headers */,
 				02433DD90C9DE49C00FE5892 /* FSKPersonService.h in Headers */,
@@ -1021,7 +1048,8 @@
 				028A356E0E6195E30007B2F0 /* FSKUserReadRequest.h in Headers */,
 				028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */,
 				028A35C30E61A14C0007B2F0 /* FSKUserRepository.h in Headers */,
-				02C85BE90EAB84090032CEBE /* FSKit.h in Headers */,
+				02326AB40F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h in Headers */,
+				02326AB70F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1218,6 +1246,8 @@
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 				02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */,
 				0268F14D0D7FAFDA00CD2F19 /* LoginPanel.nib in Resources */,
+				02326AB20F2F10E200C964A7 /* LICENSE.txt in Resources */,
+				02326ABA0F2F10E200C964A7 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1365,6 +1395,8 @@
 				028A356F0E6195E30007B2F0 /* FSKUserReadRequest.m in Sources */,
 				028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */,
 				028A35C40E61A14C0007B2F0 /* FSKUserRepository.m in Sources */,
+				02326AB50F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m in Sources */,
+				02326AB80F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1500,6 +1532,7 @@
 		020438B90D5EBD7C00A309AC /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -2043,6 +2076,7 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -2060,6 +2094,7 @@
 					ppc,
 					i386,
 				);
+				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;

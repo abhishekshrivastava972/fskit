@@ -33,7 +33,7 @@ NSString *kUserEndpoint = @"user";
 
 - (void)sendUserReadRequestWithIds:(NSSet *)idList parameters:(NSDictionary *)parameters;
 {
-	[self fetchFamilySearchDataAtEndpoint:@"familytree/v1/user" WithIds:idList parameters:parameters];
+	[self fetchFamilySearchDataAtEndpoint:@"familytree/v2/user" WithIds:idList parameters:parameters];
 }
 
 - (FSKUserResponse *)responseWithXML:(NSXMLDocument *)xmlDoc

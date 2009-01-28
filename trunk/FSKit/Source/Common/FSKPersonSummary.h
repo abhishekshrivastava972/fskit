@@ -10,6 +10,7 @@
 @class FSKEventSummary, FSKCouple;
 
 @interface FSKPersonSummary : NSObject {
+	NSString *personId;
 	NSString *name;
 	NSString *gender;
 	NSString *birthdate;

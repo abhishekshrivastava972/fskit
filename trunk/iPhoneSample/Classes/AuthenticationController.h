@@ -10,9 +10,15 @@
 
 
 @interface AuthenticationController : UIViewController {
-
+	IBOutlet UITextField *usernameField;
+	IBOutlet UITextField *passwordField;
+	
+	NSURLAuthenticationChallenge *challenge;
 }
 
-- (IBAction)hideLogin:(id)sender;
+@property (nonatomic, retain) NSURLAuthenticationChallenge *challenge;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)authenticate:(id)sender;
 
 @end

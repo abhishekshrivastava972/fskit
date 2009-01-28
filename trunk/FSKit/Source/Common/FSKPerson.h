@@ -15,6 +15,12 @@
 	NSString *version;
 	NSString *personId;
 	
+	BOOL living;
+	BOOL modifiable;
+	NSCalendarDate *modified;
+	BOOL multipleFamiliesAsChild;
+	BOOL multipleFamiliesAsParent;
+	
 	FSKPersonSummary *summary;
 	FSKPersonDetail *detail;
 }
