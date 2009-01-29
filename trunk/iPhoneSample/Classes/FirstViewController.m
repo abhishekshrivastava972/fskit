@@ -48,7 +48,7 @@ enum HeaderSectionRows {
 	 FSKPersonService *personService = [[FSKPersonService
 										 personServiceWithConnection:[FSKConnection sharedConnection] 
 										 delegate:self] retain];
-	 [personService readPerson:@"me"];
+	 [personService readPerson:@""];
 	 
 //	 [FSKPersonSearchRequest 
 //	  fetchSearchResultsWithCriteria:nil connection:connection 
