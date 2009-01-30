@@ -49,12 +49,6 @@
 		0229C1C80E901CE4005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
 		0229C1C90E901CE4005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
 		0229C1CA0E901CE5005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
-		02326AB20F2F10E200C964A7 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02326A980F2F10E200C964A7 /* LICENSE.txt */; };
-		02326AB40F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 02326A9A0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h */; };
-		02326AB50F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 02326A9B0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m */; };
-		02326AB70F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 02326A9D0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h */; };
-		02326AB80F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 02326A9E0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m */; };
-		02326ABA0F2F10E200C964A7 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 02326AA00F2F10E200C964A7 /* README.txt */; };
 		023A76670D845D4D00CD028D /* SearchForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 023A76650D845D4D00CD028D /* SearchForm.h */; };
 		023A76680D845D4D00CD028D /* SearchForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A76660D845D4D00CD028D /* SearchForm.m */; };
 		023A770D0D84731100CD028D /* FSKSearchResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 023A770B0D84731100CD028D /* FSKSearchResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,6 +68,8 @@
 		02439C700D43949300F50EBD /* FSKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02439C6D0D43949200F50EBD /* FSKRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02439C710D43949300F50EBD /* FSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02439C6E0D43949200F50EBD /* FSKRequest.m */; };
 		0249D2F70DA0FCA7005BF5A3 /* FSAppTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249D2F60DA0FCA7005BF5A3 /* FSAppTestDelegate.m */; };
+		0256776F0F3351480032079F /* FSKUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256776D0F3351480032079F /* FSKUtils.h */; };
+		025677700F3351480032079F /* FSKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0256776E0F3351480032079F /* FSKUtils.m */; };
 		02596CEE0D4D6E7E00AB8632 /* FSKIdentityResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02596CEF0D4D6E7E00AB8632 /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */; };
 		0263A9A20D96ADAC00F3D51B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0263A99B0D96ADAC00F3D51B /* InfoPlist.strings */; };
@@ -306,12 +302,6 @@
 /* Begin PBXFileReference section */
 		02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDefaultAuthenticationDelegate.h; sourceTree = "<group>"; };
 		02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDefaultAuthenticationDelegate.m; sourceTree = "<group>"; };
-		02326A980F2F10E200C964A7 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		02326A9A0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendarDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
-		02326A9B0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendarDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
-		02326A9D0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendarDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
-		02326A9E0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendarDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
-		02326AA00F2F10E200C964A7 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		023A76650D845D4D00CD028D /* SearchForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchForm.h; path = FSSearchDemo/SearchForm.h; sourceTree = "<group>"; };
 		023A76660D845D4D00CD028D /* SearchForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchForm.m; path = FSSearchDemo/SearchForm.m; sourceTree = "<group>"; };
 		023A770B0D84731100CD028D /* FSKSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSearchResponse.h; sourceTree = "<group>"; };
@@ -332,6 +322,8 @@
 		02439C6E0D43949200F50EBD /* FSKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKRequest.m; sourceTree = "<group>"; };
 		0249D2F50DA0FCA7005BF5A3 /* FSAppTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppTestDelegate.h; sourceTree = "<group>"; };
 		0249D2F60DA0FCA7005BF5A3 /* FSAppTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppTestDelegate.m; sourceTree = "<group>"; };
+		0256776D0F3351480032079F /* FSKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUtils.h; sourceTree = "<group>"; };
+		0256776E0F3351480032079F /* FSKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUtils.m; sourceTree = "<group>"; };
 		02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityResponse.h; sourceTree = "<group>"; };
 		02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityResponse.m; sourceTree = "<group>"; };
 		0263A97F0D96ACBB00F3D51B /* FSBasicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSBasicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -560,7 +552,6 @@
 				B4DF9D470D863D6500D7073B /* Core */,
 				02714A320D72009200072118 /* Repositories */,
 				02714A490D720B1000072118 /* Model */,
-				02326A970F2F10E200C964A7 /* ISO-8601-parser-0.4 */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -570,19 +561,6 @@
 			children = (
 			);
 			name = SampleData;
-			sourceTree = "<group>";
-		};
-		02326A970F2F10E200C964A7 /* ISO-8601-parser-0.4 */ = {
-			isa = PBXGroup;
-			children = (
-				02326A980F2F10E200C964A7 /* LICENSE.txt */,
-				02326A9A0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h */,
-				02326A9B0F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m */,
-				02326A9D0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h */,
-				02326A9E0F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m */,
-				02326AA00F2F10E200C964A7 /* README.txt */,
-			);
-			path = "ISO-8601-parser-0.4";
 			sourceTree = "<group>";
 		};
 		02439C5B0D43936B00F50EBD /* Requests */ = {
@@ -981,6 +959,8 @@
 				02F19E5F0D4B82410047B392 /* FSKResponse.m */,
 				02F19E620D4B84DA0047B392 /* FSKError.h */,
 				02F19E630D4B84DA0047B392 /* FSKError.m */,
+				0256776D0F3351480032079F /* FSKUtils.h */,
+				0256776E0F3351480032079F /* FSKUtils.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1048,8 +1028,7 @@
 				028A356E0E6195E30007B2F0 /* FSKUserReadRequest.h in Headers */,
 				028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */,
 				028A35C30E61A14C0007B2F0 /* FSKUserRepository.h in Headers */,
-				02326AB40F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.h in Headers */,
-				02326AB70F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.h in Headers */,
+				0256776F0F3351480032079F /* FSKUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,8 +1225,6 @@
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 				02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */,
 				0268F14D0D7FAFDA00CD2F19 /* LoginPanel.nib in Resources */,
-				02326AB20F2F10E200C964A7 /* LICENSE.txt in Resources */,
-				02326ABA0F2F10E200C964A7 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1395,8 +1372,7 @@
 				028A356F0E6195E30007B2F0 /* FSKUserReadRequest.m in Sources */,
 				028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */,
 				028A35C40E61A14C0007B2F0 /* FSKUserRepository.m in Sources */,
-				02326AB50F2F10E200C964A7 /* NSCalendarDate+ISO8601Parsing.m in Sources */,
-				02326AB80F2F10E200C964A7 /* NSCalendarDate+ISO8601Unparsing.m in Sources */,
+				025677700F3351480032079F /* FSKUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
