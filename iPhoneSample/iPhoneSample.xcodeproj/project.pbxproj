@@ -14,6 +14,7 @@
 		024BBAAD0F312D6C00BCDE25 /* NSCalendarDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 024BBAA80F312D6C00BCDE25 /* NSCalendarDate+ISO8601Parsing.m */; };
 		024BBAAE0F312D6C00BCDE25 /* NSCalendarDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 024BBAAA0F312D6C00BCDE25 /* NSCalendarDate+ISO8601Unparsing.m */; };
 		024BBAAF0F312D6C00BCDE25 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 024BBAAB0F312D6C00BCDE25 /* README.txt */; };
+		0287E2DD0F335B860036C28E /* FSKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0287E2DC0F335B860036C28E /* FSKUtils.m */; };
 		02C85BAA0EAB83460032CEBE /* FSKAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B560EAB83440032CEBE /* FSKAssertion.m */; };
 		02C85BAB0EAB83460032CEBE /* FSKAuthoritiesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B580EAB83440032CEBE /* FSKAuthoritiesService.m */; };
 		02C85BAC0EAB83460032CEBE /* FSKConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B5A0EAB83440032CEBE /* FSKConnection.m */; };
@@ -77,6 +78,8 @@
 		024BBAA90F312D6C00BCDE25 /* NSCalendarDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendarDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
 		024BBAAA0F312D6C00BCDE25 /* NSCalendarDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendarDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
 		024BBAAB0F312D6C00BCDE25 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		0287E2DB0F335B860036C28E /* FSKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUtils.h; sourceTree = "<group>"; };
+		0287E2DC0F335B860036C28E /* FSKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUtils.m; sourceTree = "<group>"; };
 		02C85B550EAB83440032CEBE /* FSKAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAssertion.h; sourceTree = "<group>"; };
 		02C85B560EAB83440032CEBE /* FSKAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKAssertion.m; sourceTree = "<group>"; };
 		02C85B570EAB83440032CEBE /* FSKAuthoritiesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAuthoritiesService.h; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 		02C85B540EAB83440032CEBE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0287E2DB0F335B860036C28E /* FSKUtils.h */,
+				0287E2DC0F335B860036C28E /* FSKUtils.m */,
 				02C85BF60EAB867B0032CEBE /* FSKit.h */,
 				02C85B550EAB83440032CEBE /* FSKAssertion.h */,
 				02C85B560EAB83440032CEBE /* FSKAssertion.m */,
@@ -487,6 +492,7 @@
 				02F99B430EE300C700146B6E /* PersonViewController.m in Sources */,
 				024BBAAD0F312D6C00BCDE25 /* NSCalendarDate+ISO8601Parsing.m in Sources */,
 				024BBAAE0F312D6C00BCDE25 /* NSCalendarDate+ISO8601Unparsing.m in Sources */,
+				0287E2DD0F335B860036C28E /* FSKUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
