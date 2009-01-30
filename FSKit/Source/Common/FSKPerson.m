@@ -8,7 +8,7 @@
 
 #import "FSKPerson.h"
 #import "NSXMLElement+BExtensions.h"
-#import "NSCalendarDate+ISO8601Parsing.h"
+#import "FSKUtils.h"
 
 @implementation FSKPerson
 
@@ -59,7 +59,7 @@
 
 	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"living"] boolValue]] forKey:@"living"];
 	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"modifiable"] boolValue]] forKey:@"modifiable"];
-	[self setValue:[[NSCalendarDate calendarDateWithString:[propertiesElement firstValueForName:@"modified"]] retain] forKey:@"modified"];
+	[self setValue:[[FSKUtils dateFromISO8601String:[propertiesElement firstValueForName:@"modified"]] retain] forKey:@"modified"];
 	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsChild"] boolValue]] forKey:@"multipleFamiliesAsChild"];
 	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsParent"] boolValue]] forKey:@"multipleFamiliesAsParent"];
 	
