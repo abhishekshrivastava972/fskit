@@ -17,7 +17,7 @@
 	
 	BOOL living;
 	BOOL modifiable;
-	NSCalendarDate *modified;
+	NSDate *modified;
 	BOOL multipleFamiliesAsChild;
 	BOOL multipleFamiliesAsParent;
 	
