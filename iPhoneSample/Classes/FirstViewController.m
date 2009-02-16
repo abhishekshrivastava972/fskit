@@ -8,7 +8,6 @@
 
 #import "FirstViewController.h"
 #import "FSKit.h"
-#import "TouchXML.h"
 
 @implementation FirstViewController
 enum Sections {
@@ -66,6 +65,8 @@ didReturnResponse:(FSKResponse *)response
 	personIdLabel.text = [[resp person] personId];
 	nameLabel.text = [[resp person] fullName];
 //	birthLabel.text = [[resp summary] birthdate];
+		[treeView setRootPerson:[resp person]];
+		[treeView setNeedsDisplay];
 	}
 }
 - (void)request:(FSKRequest *)request 

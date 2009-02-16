@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class TreeView;
 
 @interface FirstViewController : UIViewController {
     IBOutlet UILabel *birthLabel;
     IBOutlet UILabel *nameLabel;
     IBOutlet UILabel *personIdLabel;
+    IBOutlet TreeView *treeView;
 }
 @end
