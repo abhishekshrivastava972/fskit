@@ -46,14 +46,16 @@
 		02C85BCA0EAB83460032CEBE /* FSKUserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B960EAB83440032CEBE /* FSKUserRepository.m */; };
 		02C85BCB0EAB83460032CEBE /* FSKUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B980EAB83440032CEBE /* FSKUserResponse.m */; };
 		02C85BCC0EAB83460032CEBE /* NSXMLElement+BExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B9A0EAB83440032CEBE /* NSXMLElement+BExtensions.m */; };
-		02C85BCE0EAB83460032CEBE /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85B9E0EAB83440032CEBE /* CXMLDocument.m */; };
-		02C85BCF0EAB83460032CEBE /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA00EAB83440032CEBE /* CXMLDocument_PrivateExtensions.m */; };
-		02C85BD00EAB83460032CEBE /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA20EAB83440032CEBE /* CXMLElement.m */; };
-		02C85BD10EAB83460032CEBE /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA40EAB83440032CEBE /* CXMLNode.m */; };
-		02C85BD20EAB83460032CEBE /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA60EAB83440032CEBE /* CXMLNode_PrivateExtensions.m */; };
-		02C85BD30EAB83460032CEBE /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */; };
 		02F99B430EE300C700146B6E /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F99B420EE300C700146B6E /* PersonViewController.m */; };
 		02F99B450EE3019200146B6E /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F99B440EE3019200146B6E /* PersonView.xib */; };
+		02FCCCF70F485B9200AFDB51 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCCED0F485B9200AFDB51 /* DDXMLDocument.m */; };
+		02FCCCF80F485B9200AFDB51 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCCEF0F485B9200AFDB51 /* DDXMLElement.m */; };
+		02FCCCF90F485B9200AFDB51 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCCF10F485B9200AFDB51 /* DDXMLElementAdditions.m */; };
+		02FCCCFA0F485B9200AFDB51 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCCF30F485B9200AFDB51 /* DDXMLNode.m */; };
+		02FCCCFB0F485B9200AFDB51 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCCF60F485B9200AFDB51 /* NSStringAdditions.m */; };
+		02FCCF930F48DB8C00AFDB51 /* RoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCF920F48DB8C00AFDB51 /* RoundedRectView.m */; };
+		02FCCF9C0F48E15E00AFDB51 /* TreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCF9B0F48E15E00AFDB51 /* TreeView.m */; };
+		02FCD1B90F49ABD600AFDB51 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */; };
 		1D3623260D0F684500981E51 /* iPhoneSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -140,23 +142,28 @@
 		02C85B980EAB83440032CEBE /* FSKUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserResponse.m; sourceTree = "<group>"; };
 		02C85B990EAB83440032CEBE /* NSXMLElement+BExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+BExtensions.h"; sourceTree = "<group>"; };
 		02C85B9A0EAB83440032CEBE /* NSXMLElement+BExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+BExtensions.m"; sourceTree = "<group>"; };
-		02C85B9D0EAB83440032CEBE /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
-		02C85B9E0EAB83440032CEBE /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
-		02C85B9F0EAB83440032CEBE /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
-		02C85BA00EAB83440032CEBE /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
-		02C85BA10EAB83440032CEBE /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
-		02C85BA20EAB83440032CEBE /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
-		02C85BA30EAB83440032CEBE /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
-		02C85BA40EAB83440032CEBE /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
-		02C85BA50EAB83440032CEBE /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
-		02C85BA60EAB83440032CEBE /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
-		02C85BA70EAB83440032CEBE /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
-		02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
-		02C85BA90EAB83440032CEBE /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		02C85BF60EAB867B0032CEBE /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
 		02F99B410EE300C700146B6E /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
 		02F99B420EE300C700146B6E /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		02F99B440EE3019200146B6E /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
+		02FCCCEB0F485B9200AFDB51 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		02FCCCEC0F485B9200AFDB51 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		02FCCCED0F485B9200AFDB51 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		02FCCCEE0F485B9200AFDB51 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		02FCCCEF0F485B9200AFDB51 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		02FCCCF00F485B9200AFDB51 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		02FCCCF10F485B9200AFDB51 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		02FCCCF20F485B9200AFDB51 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		02FCCCF30F485B9200AFDB51 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		02FCCCF40F485B9200AFDB51 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
+		02FCCCF50F485B9200AFDB51 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		02FCCCF60F485B9200AFDB51 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		02FCCF910F48DB8C00AFDB51 /* RoundedRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedRectView.h; sourceTree = "<group>"; };
+		02FCCF920F48DB8C00AFDB51 /* RoundedRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedRectView.m; sourceTree = "<group>"; };
+		02FCCF9A0F48E15E00AFDB51 /* TreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeView.h; sourceTree = "<group>"; };
+		02FCCF9B0F48E15E00AFDB51 /* TreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeView.m; sourceTree = "<group>"; };
+		02FCD1B70F49ABD600AFDB51 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iPhoneSampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneSampleAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneSampleAppDelegate.m; sourceTree = "<group>"; };
@@ -188,8 +195,10 @@
 		02C85B530EAB83440032CEBE /* fskit */ = {
 			isa = PBXGroup;
 			children = (
+				02FCD1B70F49ABD600AFDB51 /* RegexKitLite.h */,
+				02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */,
+				02FCCCEA0F485B7300AFDB51 /* KissXML */,
 				02C85B540EAB83440032CEBE /* Common */,
-				02C85B9C0EAB83440032CEBE /* TouchXML */,
 			);
 			name = fskit;
 			path = externals/fskit;
@@ -275,24 +284,23 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		02C85B9C0EAB83440032CEBE /* TouchXML */ = {
+		02FCCCEA0F485B7300AFDB51 /* KissXML */ = {
 			isa = PBXGroup;
 			children = (
-				02C85B9D0EAB83440032CEBE /* CXMLDocument.h */,
-				02C85B9E0EAB83440032CEBE /* CXMLDocument.m */,
-				02C85B9F0EAB83440032CEBE /* CXMLDocument_PrivateExtensions.h */,
-				02C85BA00EAB83440032CEBE /* CXMLDocument_PrivateExtensions.m */,
-				02C85BA10EAB83440032CEBE /* CXMLElement.h */,
-				02C85BA20EAB83440032CEBE /* CXMLElement.m */,
-				02C85BA30EAB83440032CEBE /* CXMLNode.h */,
-				02C85BA40EAB83440032CEBE /* CXMLNode.m */,
-				02C85BA50EAB83440032CEBE /* CXMLNode_PrivateExtensions.h */,
-				02C85BA60EAB83440032CEBE /* CXMLNode_PrivateExtensions.m */,
-				02C85BA70EAB83440032CEBE /* CXMLNode_XPathExtensions.h */,
-				02C85BA80EAB83440032CEBE /* CXMLNode_XPathExtensions.m */,
-				02C85BA90EAB83440032CEBE /* TouchXML.h */,
+				02FCCCEB0F485B9200AFDB51 /* DDXML.h */,
+				02FCCCEC0F485B9200AFDB51 /* DDXMLDocument.h */,
+				02FCCCED0F485B9200AFDB51 /* DDXMLDocument.m */,
+				02FCCCEE0F485B9200AFDB51 /* DDXMLElement.h */,
+				02FCCCEF0F485B9200AFDB51 /* DDXMLElement.m */,
+				02FCCCF00F485B9200AFDB51 /* DDXMLElementAdditions.h */,
+				02FCCCF10F485B9200AFDB51 /* DDXMLElementAdditions.m */,
+				02FCCCF20F485B9200AFDB51 /* DDXMLNode.h */,
+				02FCCCF30F485B9200AFDB51 /* DDXMLNode.m */,
+				02FCCCF40F485B9200AFDB51 /* DDXMLPrivate.h */,
+				02FCCCF50F485B9200AFDB51 /* NSStringAdditions.h */,
+				02FCCCF60F485B9200AFDB51 /* NSStringAdditions.m */,
 			);
-			path = TouchXML;
+			path = KissXML;
 			sourceTree = "<group>";
 		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
@@ -306,6 +314,10 @@
 				0210A7FE0E980B0F00748795 /* AuthenticationController.m */,
 				02F99B410EE300C700146B6E /* PersonViewController.h */,
 				02F99B420EE300C700146B6E /* PersonViewController.m */,
+				02FCCF910F48DB8C00AFDB51 /* RoundedRectView.h */,
+				02FCCF920F48DB8C00AFDB51 /* RoundedRectView.m */,
+				02FCCF9A0F48E15E00AFDB51 /* TreeView.h */,
+				02FCCF9B0F48E15E00AFDB51 /* TreeView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -457,14 +469,16 @@
 				02C85BCA0EAB83460032CEBE /* FSKUserRepository.m in Sources */,
 				02C85BCB0EAB83460032CEBE /* FSKUserResponse.m in Sources */,
 				02C85BCC0EAB83460032CEBE /* NSXMLElement+BExtensions.m in Sources */,
-				02C85BCE0EAB83460032CEBE /* CXMLDocument.m in Sources */,
-				02C85BCF0EAB83460032CEBE /* CXMLDocument_PrivateExtensions.m in Sources */,
-				02C85BD00EAB83460032CEBE /* CXMLElement.m in Sources */,
-				02C85BD10EAB83460032CEBE /* CXMLNode.m in Sources */,
-				02C85BD20EAB83460032CEBE /* CXMLNode_PrivateExtensions.m in Sources */,
-				02C85BD30EAB83460032CEBE /* CXMLNode_XPathExtensions.m in Sources */,
 				02F99B430EE300C700146B6E /* PersonViewController.m in Sources */,
 				0287E2DD0F335B860036C28E /* FSKUtils.m in Sources */,
+				02FCCCF70F485B9200AFDB51 /* DDXMLDocument.m in Sources */,
+				02FCCCF80F485B9200AFDB51 /* DDXMLElement.m in Sources */,
+				02FCCCF90F485B9200AFDB51 /* DDXMLElementAdditions.m in Sources */,
+				02FCCCFA0F485B9200AFDB51 /* DDXMLNode.m in Sources */,
+				02FCCCFB0F485B9200AFDB51 /* NSStringAdditions.m in Sources */,
+				02FCCF930F48DB8C00AFDB51 /* RoundedRectView.m in Sources */,
+				02FCCF9C0F48E15E00AFDB51 /* TreeView.m in Sources */,
+				02FCD1B90F49ABD600AFDB51 /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +521,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-licucore",
+					"-lxml2",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos2.0;
 			};
@@ -522,7 +539,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-licucore",
+					"-lxml2",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos2.0;
 			};
