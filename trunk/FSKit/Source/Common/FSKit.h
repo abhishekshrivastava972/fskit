@@ -7,11 +7,11 @@
  *
  */
 
-#if TARGET_OS_IPHONE
-#import "TouchXML.h"
-#define NSXMLDocument CXMLDocument 
-#define NSXMLElement CXMLElement 
-#define NSXMLNode CXMLNode
+#if defined(TARGET_IPHONE_SIMULATOR) || defined(TARGET_OS_IPHONE)
+#import "DDXML.h"
+#define NSXMLDocument DDXMLDocument 
+#define NSXMLElement DDXMLElement 
+#define NSXMLNode DDXMLNode
 #endif
 
 #import "FSKConnection.h"
