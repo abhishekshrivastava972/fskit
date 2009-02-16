@@ -14,7 +14,7 @@
 
 - (void)parseSearchResponse:(NSXMLElement *)searchesElement
 {
-	interestingResultsCount = [[[searchesElement attributeForName:@"count"] objectValue] intValue];
+	interestingResultsCount = [[[searchesElement attributeForName:@"count"] stringValue] intValue];
 	NSMutableArray *theResults = [[NSMutableArray array] retain];
 	NSEnumerator *enumerator = [[searchesElement elementsForName:@"search"] objectEnumerator];
 	NSXMLElement *searchElement;

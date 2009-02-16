@@ -15,8 +15,8 @@
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, errorElement);
 	NSMutableDictionary *info = [[NSMutableDictionary dictionary] retain];
-	[self setValue:[[[errorElement attributeForName:@"code"] objectValue] retain] forKey:@"code"];
-	[info setValue:[[[errorElement attributeForName:@"fsapi-v1:level"] objectValue] retain] forKey:@"level"];
+	[self setValue:[[[errorElement attributeForName:@"code"] stringValue] retain] forKey:@"code"];
+	[info setValue:[[[errorElement attributeForName:@"fsapi-v1:level"] stringValue] retain] forKey:@"level"];
 	
 	[info setValue:[[errorElement firstValueForName:@"fsapi-v1:details"] retain] forKey:@"details"];
 	[info setValue:[[errorElement firstValueForName:@"fsapi-v1:message"] retain] forKey:@"message"];

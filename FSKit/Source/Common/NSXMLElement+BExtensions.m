@@ -29,7 +29,7 @@
 }
 
 - (id)firstValueForName:(NSString *)name{
-	return [[self firstElementWithName:name] objectValue];
+	return [[self firstElementWithName:name] stringValue];
 }
 
 - (NSXMLNode *)firstNodeForXPath:(NSString *)xpath error:(NSError **)error{	
@@ -39,12 +39,12 @@
 
 - (id)firstValueForXPath:(NSString *)xpath error:(NSError **)error{
 	NSXMLNode *node = [self firstNodeForXPath:xpath error:error];
-	return [node valueForKey:@"objectValue"];
+	return [node valueForKey:@"stringValue"];
 }
 
 - (id)valuesForXPath:(NSString *)xpath error:(NSError **)error{
 	NSArray *nodes = [self nodesForXPath:xpath error:error];
 	if (![nodes count]) return nil;
-	return [nodes valueForKey:@"objectValue"];
+	return [nodes valueForKey:@"stringValue"];
 }
 @end
