@@ -3,8 +3,8 @@
 //
 
 #ifdef __OBJC__
-	#import <Foundation/Foundation.h>
-	#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #endif
 
 #if defined(TARGET_IPHONE_SIMULATOR) || defined(TARGET_OS_IPHONE)
@@ -16,4 +16,5 @@
 #define NSXMLDocument DDXMLDocument 
 #define NSXMLElement DDXMLElement 
 #define NSXMLNode DDXMLNode
+#define NSXMLNodePrettyPrint DDXMLNodePrettyPrint
 #endif
