@@ -23,8 +23,8 @@
 	refId = [[[searchElement attributeForName:@"id"] stringValue] retain];
 	score = [[searchElement firstValueForName:@"score"] retain];
 	person = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"person/assertions" error:nil]] retain];
-	father = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[1]/assertions" error:nil]] retain];
-	mother = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"./*:parents/*:parent[2]/assertions" error:nil]] retain];
+	father = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"parents/parent[1]/assertions" error:nil]] retain];
+	mother = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"parents/parent[2]/assertions" error:nil]] retain];
 
 	NSMutableArray *spouseArray = [NSMutableArray array];
 	NSEnumerator *spouseList = [[[searchElement firstElementWithName:@"spouse"] elementsForName:@"child"] objectEnumerator];

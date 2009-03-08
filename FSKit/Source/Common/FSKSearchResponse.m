@@ -14,7 +14,9 @@
 
 - (void)parseSearchResponse:(NSXMLElement *)searchesElement
 {
-	interestingResultsCount = [[[searchesElement attributeForName:@"count"] stringValue] intValue];
+	totalCount = [[[searchesElement attributeForName:@"count"] stringValue] intValue];
+	closeMatchesCount = [[[searchesElement attributeForName:@"close"] stringValue] intValue];
+	partialMatchesCount = [[[searchesElement attributeForName:@"partial"] stringValue] intValue];
 	NSMutableArray *theResults = [[NSMutableArray array] retain];
 	NSEnumerator *enumerator = [[searchesElement elementsForName:@"search"] objectEnumerator];
 	NSXMLElement *searchElement;
@@ -44,4 +46,15 @@
 {
 	return [[searchResults retain] autorelease];
 }
+
+- (NSArray *)closeMatches
+{
+	return [searchResults subarrayWithRange:NSMakeRange(0, MIN(closeMatchesCount, totalCount))];
+}
+
+- (NSArray *)partialMatches
+{
+	return [searchResults subarrayWithRange:NSMakeRange(closeMatchesCount, MIN(partialMatchesCount, totalCount)-closeMatchesCount)];;
+}
+
 @end

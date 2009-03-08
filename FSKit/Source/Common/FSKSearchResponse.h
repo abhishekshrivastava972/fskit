@@ -10,12 +10,16 @@
 #import "FSKResponse.h"
 
 @interface FSKSearchResponse : FSKResponse {
-	int interestingResultsCount;
+	int totalCount;
+	int partialMatchesCount;
+	int closeMatchesCount;
 	NSArray *searchResults; // of FSKSearchResult
 }
 
 - (id)initWithXML:(NSXMLDocument *)theXmlDocument;
 
 - (NSArray *)searchResults;
+- (NSArray *)closeMatches;
+- (NSArray *)partialMatches;
 
 @end

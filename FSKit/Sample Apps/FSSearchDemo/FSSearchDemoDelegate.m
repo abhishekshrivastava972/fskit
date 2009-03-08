@@ -229,9 +229,10 @@ NSMutableData *receivedData;
 	return [data valueForKeyPath:@"personId"];
 }
 
-- (void)requestFinished:(FSKResponse *)response
+- (void)request:(FSKRequest *)request 
+didReturnResponse:(FSKResponse *)response
 {
-	NSLog(@"%s", _cmd);
+	NSLog(@"%s", __PRETTY_FUNCTION__);
 	[self setValue:[response retain] forKey:@"lastResponse"];
 	
 	NSXMLDocument *doc = [response xmlDocument];
