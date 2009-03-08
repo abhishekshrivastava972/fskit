@@ -21,7 +21,7 @@
 	while (searchElement = [enumerator nextObject]) {
 		[theResults addObject:[FSKSearchResult searchResultFromXML:searchElement]];
 	}
-	searchResults = [NSArray arrayWithArray:theResults];
+	searchResults = [[NSArray arrayWithArray:theResults] retain];
 }
 	
 - (id)initWithXML:(NSXMLDocument *)theXmlDocument

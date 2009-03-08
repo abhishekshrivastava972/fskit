@@ -23,6 +23,7 @@
 - (void)searchByFullName:(NSString *)fullName;
 - (void)searchByFamilyName:(NSString *)familyName givenNames:(NSString *)givenNames;
 - (void)searchWithCriteria:(NSDictionary *)searchCriteria;
+- (void)readPedigree:(NSString *)personId ancestorGenerations:(int)ancestors descendantGenerations:(int)descendants;
 
 
 @end

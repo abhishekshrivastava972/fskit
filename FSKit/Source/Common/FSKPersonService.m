@@ -11,6 +11,7 @@
 #import "FSKPersonReadRequest.h"
 #import "FSKPersonResponse.h"
 #import "FSKPersonSearchRequest.h"
+#import "FSKPedigreeRequest.h"
 
 NSString * const PERSON_ENDPOINT  = @"person";
 NSString * const SEARCH_ENDPOINT = @"search";
@@ -93,9 +94,16 @@ NSString * const FAMILYTREE_MODULE = @"familytree";
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 //	[self makeFamilySearchRequest:@"familytree/v1/search" idList:nil parameters:searchCriteria];
-	[FSKPersonSearchRequest fetchSearchResultsWithCriteria:searchCriteria connection:connection delegate:_delegate selector:@selector(requestFinished:)];
+	[FSKPersonSearchRequest fetchSearchResultsWithCriteria:searchCriteria connection:connection delegate:self selector:@selector(requestFinished:)];
 //	[self fetchPersonDataWithIds:nil parameters:searchCriteria];
 }
+
+- (void)readPedigree:(NSString *)personId ancestorGenerations:(int)ancestors descendantGenerations:(int)descendants
+{
+	NSLog(@"%s", __PRETTY_FUNCTION__);
+	[FSKPedigreeRequest fetchPedigreeForId:personId ancestors:ancestors descendants:descendants connection:connection delegate:self selector:@selector(requestFinished:)];
+}
+
 
 -(void) requestFinished:(FSKResponse *)response
 {

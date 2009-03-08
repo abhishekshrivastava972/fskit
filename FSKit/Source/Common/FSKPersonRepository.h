@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FSKRepositoryBase.h"
 
 @class FSKPerson;
 
-@interface FSKPersonRepository : NSObject {
+@interface FSKPersonRepository : FSKRepositoryBase {
 	NSMutableDictionary *cache;
 }
 - (id)init;
