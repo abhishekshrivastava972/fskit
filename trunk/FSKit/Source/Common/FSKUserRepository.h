@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FSKRepositoryBase.h"
 //#import "FSKConnection.h"
 //#import "FSKUser.h"
 
-@interface FSKUserRepository : NSObject {
+@interface FSKUserRepository : FSKRepositoryBase {
 //	FSKConnection *connection;
 //	NSMutableDictionary *cache;
 	id connection;

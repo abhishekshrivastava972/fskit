@@ -57,11 +57,14 @@
 	[self setValue:[[[personElement attributeForName:@"id"] stringValue] retain] forKey:@"personId"];
 	NSXMLElement *propertiesElement = [personElement firstElementWithName:@"properties"];
 
-	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"living"] boolValue]] forKey:@"living"];
-	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"modifiable"] boolValue]] forKey:@"modifiable"];
-	[self setValue:[[FSKUtils dateFromISO8601String:[propertiesElement firstValueForName:@"modified"]] retain] forKey:@"modified"];
-	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsChild"] boolValue]] forKey:@"multipleFamiliesAsChild"];
-	[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsParent"] boolValue]] forKey:@"multipleFamiliesAsParent"];
+	if (propertiesElement)
+	{
+		[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"living"] boolValue]] forKey:@"living"];
+		[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"modifiable"] boolValue]] forKey:@"modifiable"];
+		[self setValue:[[FSKUtils dateFromISO8601String:[propertiesElement firstValueForName:@"modified"]] retain] forKey:@"modified"];
+		[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsChild"] boolValue]] forKey:@"multipleFamiliesAsChild"];
+		[self setValue:[NSNumber numberWithBool:[[propertiesElement firstValueForName:@"multipleFamiliesAsParent"] boolValue]] forKey:@"multipleFamiliesAsParent"];
+	}
 	
 	// On a Person Read, the summary information is in a <summary> element, but
 	// on a Person Search, the summary information are direct children of the person
