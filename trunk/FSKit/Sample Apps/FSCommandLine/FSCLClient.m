@@ -210,6 +210,7 @@ didFailWithError:(FSKError *)error
 		[self printPersonSummary:[result father]];
 		NSLog(@"Mother: ");
 		[self printPersonSummary:[result mother]];
+		NSLog(@"Children: %d", [[result children] count]);
 		NSLog(@"=================");
 	}
 	NSLog(@"*****************");

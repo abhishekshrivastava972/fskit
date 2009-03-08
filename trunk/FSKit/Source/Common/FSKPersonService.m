@@ -78,7 +78,7 @@ NSString * const FAMILYTREE_MODULE = @"familytree";
 
 -(void)searchByFullName:(NSString *)fullName
 {
-	NSLog(@"%s", __PRETTY_FUNCTION__);
+	NSLog(@"%s: %@", __PRETTY_FUNCTION__, fullName);
 	NSMutableDictionary *criteriaDict = [NSMutableDictionary dictionaryWithObject:fullName forKey:@"name"];
 	[self searchWithCriteria:criteriaDict];
 }
