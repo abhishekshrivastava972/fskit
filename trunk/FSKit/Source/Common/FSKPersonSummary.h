@@ -15,6 +15,9 @@
 	NSString *gender;
 	NSString *birthdate;
 	
+	NSString *minBirthYear;
+	NSString *maxDeathYear;
+	
 	FSKEventSummary *birthEvent;
 	FSKEventSummary *christeningEvent;
 	FSKEventSummary *deathEvent;
@@ -34,6 +37,8 @@
 
 + (FSKPersonSummary *)createFromXML:(NSXMLElement *)personElement;
 - (id)initWithXML:(NSXMLElement *)personElement;
+
+- (NSString *)lifespanString;
 
 - (NSString *)name;
 - (void)setName:(NSString *)value;
