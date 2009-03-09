@@ -10,6 +10,7 @@
 #import "AuthenticationController.h"
 
 #define kFSK_DEVELOPER_KEY @"WCQY-7J1Q-GKVV-7DNM-SQ5M-9Q5H-JX3H-CMJK"
+static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_session_id";
 
 @implementation iPhoneSampleAppDelegate
 
@@ -28,6 +29,11 @@
 	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
 	[connection setUserAgentString:@"FSKit iPhone Sample App/1.0" override:NO];
 	[connection setDelegate:self];
+	[connection setSessionId:[[NSUserDefaults standardUserDefaults] stringForKey:CURRENT_SESSION_ID_KEY]];
+	[connection addObserver:self
+				 forKeyPath:@"sessionId"
+				    options:(NSKeyValueObservingOptionNew)
+					context:NULL];
 	
 // use this code to save the sessionId to disk	
 //	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -48,7 +54,21 @@
 - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
 }
 */
-
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqual:@"sessionId"]) {
+		[[NSUserDefaults standardUserDefaults] setObject:[change objectForKey:NSKeyValueChangeNewKey] forKey:CURRENT_SESSION_ID_KEY];
+    }
+    // be sure to call the super implementation
+    // if the superclass implements it
+//    [super observeValueForKeyPath:keyPath
+//						 ofObject:object
+//						   change:change
+//						  context:context];
+}
 
 - (void)dealloc {
 	[authenticationController release];
