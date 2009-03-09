@@ -39,6 +39,9 @@
 	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Christening']" error:nil]] retain] forKey:@"christeningEvent"];
 	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Death']" error:nil]] retain] forKey:@"deathEvent"];
 	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Burial']" error:nil]] retain] forKey:@"burialEvent"];
+	
+	[self setValue:[personSummaryElement firstValueForName:@"minBirthYear"] forKey:@"minBirthYear"];
+	[self setValue:[personSummaryElement firstValueForName:@"maxDeathYear"] forKey:@"maxDeathYear"];
 }
 
 - (id)initWithXML:(NSXMLElement *)personElement
@@ -50,6 +53,11 @@
     }
     
     return self;
+}
+
+- (NSString *)lifespanString;
+{
+	return [NSString stringWithFormat:@"(%@-%@)", minBirthYear, maxDeathYear];
 }
 
 - (NSString *)name {
