@@ -11,7 +11,7 @@
 //#import "FSKConnection.h"
 //#import "FSKUser.h"
 
-@interface FSKUserRepository : FSKRepositoryBase {
+@interface FSKContributorRepository : FSKRepositoryBase {
 //	FSKConnection *connection;
 //	NSMutableDictionary *cache;
 	id connection;

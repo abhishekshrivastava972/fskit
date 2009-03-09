@@ -10,24 +10,10 @@
 #import "FSKContributor.h"
 
 @interface FSKUser : FSKContributor {
-	NSString *name;
-	NSString *fullName;
-	NSString *email;
-	NSString *phone;
-	NSMutableArray *aliases;
-	
-	// postalAddress
-	NSString *address1;
-	NSString *address2;
-	NSString *address3;
-	NSString *address4;
-	NSString *street1;
-	NSString *street2;
-	NSString *street3;
-	NSString *city;
-	NSString *province;
-	NSString *country;
-	NSString *postalCode;
+	NSString *preferredName;
+	NSString *accessNumber;
+	NSArray *permissions; // of NSString?
+	NSDictionary *preferences;
 }
 
 - (NSString *)userId;

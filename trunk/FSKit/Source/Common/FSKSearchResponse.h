@@ -13,10 +13,16 @@
 	int totalCount;
 	int partialMatchesCount;
 	int closeMatchesCount;
+	NSString *contextId;
 	NSArray *searchResults; // of FSKSearchResult
 }
 
 - (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+
+- (int)totalCount;
+- (int)partialMatchesCount;
+- (int)closeMatchesCount;
+- (NSString *)contextId;
 
 - (NSArray *)searchResults;
 - (NSArray *)closeMatches;

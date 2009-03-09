@@ -123,8 +123,8 @@
 		028A356F0E6195E30007B2F0 /* FSKUserReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A356D0E6195E30007B2F0 /* FSKUserReadRequest.m */; };
 		028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A35700E6195F10007B2F0 /* FSKUserResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35710E6195F10007B2F0 /* FSKUserResponse.m */; };
-		028A35C30E61A14C0007B2F0 /* FSKUserRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A35C10E61A14C0007B2F0 /* FSKUserRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		028A35C40E61A14C0007B2F0 /* FSKUserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35C20E61A14C0007B2F0 /* FSKUserRepository.m */; };
+		028A35C30E61A14C0007B2F0 /* FSKContributorRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		028A35C40E61A14C0007B2F0 /* FSKContributorRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */; };
 		0294DB580E5719550022DBFB /* FSKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB560E5719550022DBFB /* FSKEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0294DB590E5719550022DBFB /* FSKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB570E5719550022DBFB /* FSKEvent.m */; };
 		0294DB5C0E57196A0022DBFB /* FSKFact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB5A0E57196A0022DBFB /* FSKFact.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -165,6 +165,10 @@
 		02E2B1060D824BDA00CB1B6E /* SFHFRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2B1040D824BDA00CB1B6E /* SFHFRatingCell.m */; };
 		02E2B1090D824BEF00CB1B6E /* star_highlighted.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E2B1070D824BEF00CB1B6E /* star_highlighted.tif */; };
 		02E2B10A0D824BEF00CB1B6E /* star.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E2B1080D824BEF00CB1B6E /* star.tif */; };
+		02E58ADB0F64B5F200049C62 /* FSKContributorReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E58AD70F64B5F200049C62 /* FSKContributorReadRequest.h */; };
+		02E58ADC0F64B5F200049C62 /* FSKContributorReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */; };
+		02E58ADD0F64B5F200049C62 /* FSKContributorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */; };
+		02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */; };
 		02F19D0D0D4A236E0047B392 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F19D0C0D4A236E0047B392 /* Security.framework */; };
 		02F19E600D4B82410047B392 /* FSKResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E5E0D4B82410047B392 /* FSKResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02F19E610D4B82410047B392 /* FSKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E5F0D4B82410047B392 /* FSKResponse.m */; };
@@ -380,8 +384,8 @@
 		028A356D0E6195E30007B2F0 /* FSKUserReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserReadRequest.m; sourceTree = "<group>"; };
 		028A35700E6195F10007B2F0 /* FSKUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserResponse.h; sourceTree = "<group>"; };
 		028A35710E6195F10007B2F0 /* FSKUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserResponse.m; sourceTree = "<group>"; };
-		028A35C10E61A14C0007B2F0 /* FSKUserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserRepository.h; sourceTree = "<group>"; };
-		028A35C20E61A14C0007B2F0 /* FSKUserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserRepository.m; sourceTree = "<group>"; };
+		028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributorRepository.h; sourceTree = "<group>"; };
+		028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorRepository.m; sourceTree = "<group>"; };
 		028A39C90E626F430007B2F0 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
 		028A39DA0E6271900007B2F0 /* FSKit_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit_iPhone.h; sourceTree = "<group>"; };
 		0294DB560E5719550022DBFB /* FSKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEvent.h; sourceTree = "<group>"; };
@@ -435,6 +439,10 @@
 		02E2B1040D824BDA00CB1B6E /* SFHFRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFHFRatingCell.m; path = FSSearchDemo/SFHFRatingCell.m; sourceTree = "<group>"; };
 		02E2B1070D824BEF00CB1B6E /* star_highlighted.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = star_highlighted.tif; path = FSSearchDemo/star_highlighted.tif; sourceTree = "<group>"; };
 		02E2B1080D824BEF00CB1B6E /* star.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = star.tif; path = FSSearchDemo/star.tif; sourceTree = "<group>"; };
+		02E58AD70F64B5F200049C62 /* FSKContributorReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributorReadRequest.h; sourceTree = "<group>"; };
+		02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorReadRequest.m; sourceTree = "<group>"; };
+		02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributorResponse.h; sourceTree = "<group>"; };
+		02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorResponse.m; sourceTree = "<group>"; };
 		02EEFE650CA6B341007006DE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		02EEFE660CA6B341007006DE /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
 		02EEFE670CA6B341007006DE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -614,6 +622,10 @@
 		02439C5F0D4393BC00F50EBD /* Family Tree */ = {
 			isa = PBXGroup;
 			children = (
+				02E58AD70F64B5F200049C62 /* FSKContributorReadRequest.h */,
+				02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */,
+				02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */,
+				02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */,
 				023A770B0D84731100CD028D /* FSKSearchResponse.h */,
 				023A770C0D84731100CD028D /* FSKSearchResponse.m */,
 				B4DF9CCA0D85CACD00D7073B /* FSKPersonResponse.h */,
@@ -679,8 +691,8 @@
 			children = (
 				02714A390D7200EE00072118 /* FSKPersonRepository.h */,
 				02714A3A0D7200EE00072118 /* FSKPersonRepository.m */,
-				028A35C10E61A14C0007B2F0 /* FSKUserRepository.h */,
-				028A35C20E61A14C0007B2F0 /* FSKUserRepository.m */,
+				028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */,
+				028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */,
 				024525590F5D4785003548D3 /* FSKRepositoryBase.h */,
 				0245255A0F5D4785003548D3 /* FSKRepositoryBase.m */,
 			);
@@ -1055,13 +1067,15 @@
 				0294DB690E57387A0022DBFB /* FSKContributor.h in Headers */,
 				028A356E0E6195E30007B2F0 /* FSKUserReadRequest.h in Headers */,
 				028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */,
-				028A35C30E61A14C0007B2F0 /* FSKUserRepository.h in Headers */,
+				028A35C30E61A14C0007B2F0 /* FSKContributorRepository.h in Headers */,
 				0256776F0F3351480032079F /* FSKUtils.h in Headers */,
 				024525530F5D45FE003548D3 /* FSKPedigreeRequest.h in Headers */,
 				024525570F5D461E003548D3 /* FSKPedigreeResponse.h in Headers */,
 				0245255B0F5D4785003548D3 /* FSKRepositoryBase.h in Headers */,
 				024525A70F5D745F003548D3 /* FSKPedigree.h in Headers */,
 				0275A05A0F602A16005AF00D /* FSKPersonName.h in Headers */,
+				02E58ADB0F64B5F200049C62 /* FSKContributorReadRequest.h in Headers */,
+				02E58ADD0F64B5F200049C62 /* FSKContributorResponse.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1404,13 +1418,15 @@
 				0294DB6A0E57387A0022DBFB /* FSKContributor.m in Sources */,
 				028A356F0E6195E30007B2F0 /* FSKUserReadRequest.m in Sources */,
 				028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */,
-				028A35C40E61A14C0007B2F0 /* FSKUserRepository.m in Sources */,
+				028A35C40E61A14C0007B2F0 /* FSKContributorRepository.m in Sources */,
 				025677700F3351480032079F /* FSKUtils.m in Sources */,
 				024525540F5D45FE003548D3 /* FSKPedigreeRequest.m in Sources */,
 				024525580F5D461E003548D3 /* FSKPedigreeResponse.m in Sources */,
 				0245255C0F5D4785003548D3 /* FSKRepositoryBase.m in Sources */,
 				024525A80F5D745F003548D3 /* FSKPedigree.m in Sources */,
 				0275A05B0F602A16005AF00D /* FSKPersonName.m in Sources */,
+				02E58ADC0F64B5F200049C62 /* FSKContributorReadRequest.m in Sources */,
+				02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

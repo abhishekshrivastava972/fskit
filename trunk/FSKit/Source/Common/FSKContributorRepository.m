@@ -6,13 +6,13 @@
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
 
-#import "FSKUserRepository.h"
+#import "FSKContributorRepository.h"
 #import "FSKUserReadRequest.h"
 
-@implementation FSKUserRepository
-static FSKUserRepository *sharedInstance = nil;
+@implementation FSKContributorRepository
+static FSKContributorRepository *sharedInstance = nil;
 
-+ (FSKUserRepository*)instanceWithConnection:(FSKConnection *)aConnection
++ (FSKContributorRepository*)instanceWithConnection:(FSKConnection *)aConnection
 {
     @synchronized(self) {
         if (sharedInstance == nil) {
