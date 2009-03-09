@@ -60,6 +60,19 @@
 	return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+	[theTextField resignFirstResponder];
+	if (theTextField == usernameField)
+	{
+		[passwordField becomeFirstResponder];
+	}
+	if(theTextField == passwordField)
+	{
+		[self authenticate:self];
+	}
+	return YES;
+}
+
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
