@@ -31,15 +31,18 @@
 #import "FSKPersonReadRequest.h"
 #import "FSKPersonSearchRequest.h"
 #import "FSKUserReadRequest.h"
+#import "FSKContributorReadRequest.h"
 
 // responses
 #import "FSKIdentityResponse.h"
 #import "FSKPersonResponse.h"
 #import "FSKSearchResponse.h"
 #import "FSKUserResponse.h"
+#import "FSKContributorResponse.h"
 
 // model
 #import "FSKUser.h"
+#import "FSKContributor.h"
 #import "FSKPerson.h"
 #import "FSKFamily.h"
 #import "FSKCouple.h"
@@ -51,4 +54,4 @@
 
 // repositories
 #import "FSKPersonRepository.h"
-#import "FSKUserRepository.h"
+#import "FSKContributorRepository.h"

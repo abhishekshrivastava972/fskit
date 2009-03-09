@@ -55,6 +55,19 @@ NSString * const FAMILYTREE_MODULE = @"familytree";
 	
 }
 
+-(void)fetchContributorDataWithIds:(NSSet *)idList parameters:(NSDictionary *)parameterDict
+{
+	NSLog(@"%s, %@, %@", __PRETTY_FUNCTION__, idList, parameterDict);
+	//	[self makeFamilySearchRequest:@"person" 
+	//		idList:idList 
+	//		parameters:parameterDict];
+	[FSKPersonReadRequest fetchPersonDataWithIds:idList 
+									  parameters:parameterDict 
+									  connection:connection 
+										delegate:self selector:@selector(requestFinished:)];
+	
+}
+
 
 - (void)readPersons:(NSSet *)personIds {
 	[self fetchPersonDataWithIds:personIds parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"summary", nil], @"view", nil]];
@@ -66,14 +79,19 @@ NSString * const FAMILYTREE_MODULE = @"familytree";
 	[self readPersons:[NSSet setWithObject:personId]];
 }
 
-- (void)readUsers:(NSSet *)userIds {
-	[self fetchUserDataWithIds:userIds parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"summary", @"values", nil], @"view", nil]];
+- (void)readUser
+{
+	
 }
 
-- (void)readUser:(NSString *)userId {
+- (void)readContributors:(NSSet *)userIds {
+	[self fetchContributorDataWithIds:userIds parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"summary", @"values", nil], @"view", nil]];
+}
+
+- (void)readContributor:(NSString *)userId {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 	//return 
-	[self readUsers:[NSSet setWithObject:userId]];
+	[self readContributors:[NSSet setWithObject:userId]];
 }
 
 -(void)searchByFullName:(NSString *)fullName

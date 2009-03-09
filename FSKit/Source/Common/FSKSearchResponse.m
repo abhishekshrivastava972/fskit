@@ -57,4 +57,28 @@
 	return [searchResults subarrayWithRange:NSMakeRange(closeMatchesCount, MIN(partialMatchesCount, totalCount)-closeMatchesCount)];;
 }
 
+- (int)totalCount {
+    return totalCount;
+}
+
+- (int)partialMatchesCount {
+    return partialMatchesCount;
+}
+
+- (int)closeMatchesCount {
+    return closeMatchesCount;
+}
+
+- (NSString *)contextId {
+    return [[contextId retain] autorelease];
+}
+
+- (void)setContextId:(NSString *)value {
+    if (contextId != value) {
+        [contextId release];
+        contextId = [value copy];
+    }
+}
+
+
 @end

@@ -33,13 +33,15 @@
 	[connection setUserAgentString:@"FSKit BasicApp/1.0" override:NO];
 	
 	// get the me user from the user repository
-	[self takeValue:[[[FSKUserRepository instanceWithConnection:connection] userForId:@""] retain] forKey:@"meUser"];
+	[self takeValue:[[[FSKContributorRepository instanceWithConnection:connection] userForId:@""] retain] forKey:@"meUser"];
 	
 	// Make a request
 	personService = [[FSKPersonService
 		personServiceWithConnection:connection 
 		delegate:self] retain];
-	[personService readPerson:@""];
+	[personService readPedigree:@"" ancestorGenerations:4 descendantGenerations:2];
+//	[personService readPerson:@""];
+	
 //	[personService readPerson:@"KW31-V8M"];
 
 //	[FSKPersonSearchRequest 

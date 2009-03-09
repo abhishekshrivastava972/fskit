@@ -18,8 +18,9 @@
 
 - (void)readPerson:(NSString *)personId;
 - (void)readPersons:(NSSet *)personIds; // of NSString
-- (void)readUser:(NSString *)userId;
-- (void)readUsers:(NSSet *)userIds; // of NSString
+- (void)readUser;
+- (void)readContributor:(NSString *)userId;
+- (void)readContributors:(NSSet *)userIds; // of NSString
 - (void)searchByFullName:(NSString *)fullName;
 - (void)searchByFamilyName:(NSString *)familyName givenNames:(NSString *)givenNames;
 - (void)searchWithCriteria:(NSDictionary *)searchCriteria;
