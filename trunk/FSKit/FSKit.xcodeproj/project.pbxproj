@@ -169,6 +169,7 @@
 		02E58ADC0F64B5F200049C62 /* FSKContributorReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */; };
 		02E58ADD0F64B5F200049C62 /* FSKContributorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */; };
 		02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */; };
+		02E5903B0F65F69800049C62 /* FSKPersonRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */; };
 		02F19D0D0D4A236E0047B392 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F19D0C0D4A236E0047B392 /* Security.framework */; };
 		02F19E600D4B82410047B392 /* FSKResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E5E0D4B82410047B392 /* FSKResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02F19E610D4B82410047B392 /* FSKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E5F0D4B82410047B392 /* FSKResponse.m */; };
@@ -443,6 +444,8 @@
 		02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorReadRequest.m; sourceTree = "<group>"; };
 		02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributorResponse.h; sourceTree = "<group>"; };
 		02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorResponse.m; sourceTree = "<group>"; };
+		02E590390F65F69800049C62 /* FSKPersonRepositoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonRepositoryTest.h; sourceTree = "<group>"; };
+		02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonRepositoryTest.m; sourceTree = "<group>"; };
 		02EEFE650CA6B341007006DE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		02EEFE660CA6B341007006DE /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
 		02EEFE670CA6B341007006DE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -847,6 +850,8 @@
 			children = (
 				02D2CD440CC3139D0013D298 /* FSKConnectionTest.h */,
 				02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */,
+				02E590390F65F69800049C62 /* FSKPersonRepositoryTest.h */,
+				02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1374,6 +1379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02D2CD460CC3139D0013D298 /* FSKConnectionTest.m in Sources */,
+				02E5903B0F65F69800049C62 /* FSKPersonRepositoryTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

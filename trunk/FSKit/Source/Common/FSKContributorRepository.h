@@ -14,8 +14,6 @@
 @interface FSKContributorRepository : FSKRepositoryBase {
 //	FSKConnection *connection;
 //	NSMutableDictionary *cache;
-	id connection;
-	NSMutableDictionary *cache;
 }
 
 //+ (FSKUserRepository*)instanceWithConnection:(FSKConnection *)aConnection;

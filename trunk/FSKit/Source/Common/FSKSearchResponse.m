@@ -57,16 +57,32 @@
 	return [searchResults subarrayWithRange:NSMakeRange(closeMatchesCount, MIN(partialMatchesCount, totalCount)-closeMatchesCount)];;
 }
 
-- (int)totalCount {
-    return totalCount;
-}
-
-- (int)partialMatchesCount {
+- (int)totalPossibleMatches
+{
     return partialMatchesCount;
 }
 
-- (int)closeMatchesCount {
-    return closeMatchesCount;
+- (int)totalCloseMatches
+{
+	return closeMatchesCount;
+}
+
+- (int)totalPartialMatches
+{
+	return partialMatchesCount - closeMatchesCount;
+}
+
+- (int)totalMatchesInRequest
+{
+	return totalCount;
+}
+
+- (int)partialMatchesInRequest {
+    return MAX(totalCount - closeMatchesCount, 0);
+}
+
+- (int)closeMatchesInRequest {
+    return MIN(closeMatchesCount, totalCount);
 }
 
 - (NSString *)contextId {
