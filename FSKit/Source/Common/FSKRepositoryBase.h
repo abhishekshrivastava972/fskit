@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class FSKConnection;
 
 @interface FSKRepositoryBase : NSObject {
-
+	FSKConnection *connection;
+	NSMutableDictionary *cache;
 }
+
+- (id)initWithConnection:(FSKConnection *)aConnection;
+
+- (id)objectForId:(NSString *)key;
+
+- (int)count;
 
 @end

@@ -19,9 +19,12 @@
 
 - (id)initWithXML:(NSXMLDocument *)theXmlDocument;
 
-- (int)totalCount;
-- (int)partialMatchesCount;
-- (int)closeMatchesCount;
+- (int)totalPossibleMatches;
+- (int)totalCloseMatches;
+- (int)totalPartialMatches;
+- (int)totalMatchesInRequest;
+- (int)partialMatchesInRequest;
+- (int)closeMatchesInRequest;
 - (NSString *)contextId;
 
 - (NSArray *)searchResults;

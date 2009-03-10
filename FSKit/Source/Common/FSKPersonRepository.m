@@ -14,7 +14,7 @@
 {
     if ((self = [super init]) != nil) 
 	{ 
-		cache = [NSMutableDictionary dictionary];
+
 	}
 	
 	return self;
@@ -22,18 +22,24 @@
 
 - (void)dealloc
 {
-	[cache release];
 	[super dealloc];
+}
+
+- (FSKPerson *)createObjectForId:(NSString *)key
+{
+	FSKPerson *cachedPerson = [[FSKPerson alloc] init];
+	[cachedPerson setValue:key forKey:@"personId"];
+	[cache setValue:cachedPerson forKey:key];
+	return cachedPerson;
 }
 
 - (FSKPerson *)personForId:(NSString *)personId
 {
-	FSKPerson *cachedPerson = [cache objectForKey:personId];
+	FSKPerson *cachedPerson = [super objectForId:personId];
 	if (!cachedPerson)
 	{
 		// fetch and put in cache
-		cachedPerson = [[FSKPerson alloc] init];
-		[cachedPerson setValue:personId forKey:@"personId"]; 
+		cachedPerson = [self createObjectForId:personId];
 	}
 	
 	return cachedPerson;

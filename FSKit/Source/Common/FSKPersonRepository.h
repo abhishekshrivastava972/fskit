@@ -12,9 +12,8 @@
 @class FSKPerson;
 
 @interface FSKPersonRepository : FSKRepositoryBase {
-	NSMutableDictionary *cache;
+
 }
-- (id)init;
 
 - (FSKPerson *)personForId:(NSString *)personId;
 
