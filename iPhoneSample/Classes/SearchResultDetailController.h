@@ -14,6 +14,7 @@
 	IBOutlet UILabel *idText;
 	IBOutlet UILabel *birthText;
 	IBOutlet UILabel *nameText;
+	IBOutlet UILabel *starsText;
 }
 
 - (void) setSearchResult:(FSKSearchResult *)searchResult;

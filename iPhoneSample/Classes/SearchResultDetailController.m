@@ -15,7 +15,8 @@
 {
 	[idText setText:[searchResult refId]];
 	[nameText setText:[[searchResult person] name]];
-	[birthText setText:[[searchResult score] stringValue]];
+	[birthText setText:[[searchResult person] birthdate]];
+	[starsText setText:[[searchResult score] stringValue]]; 
 }
 
 /*

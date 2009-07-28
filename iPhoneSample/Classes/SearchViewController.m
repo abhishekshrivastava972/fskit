@@ -130,10 +130,10 @@ didFailWithError:(FSKError *)error
 	NSString *title;
 	switch (section) {
 		case 0:
-			title = [NSString stringWithFormat:@"Close Matches (%d)", [response closeMatchesCount]];
+			title = [NSString stringWithFormat:@"Close Matches (%d)", [response totalCloseMatches]];
 			break;
 		 case 1:
-			title = [NSString stringWithFormat:@"Partial Matches (%d)", [response partialMatchesCount]];
+			title = [NSString stringWithFormat:@"Partial Matches (%d)", [response totalPartialMatches]];
 			break;
 	}
 	return title;
@@ -144,10 +144,10 @@ didFailWithError:(FSKError *)error
 	NSInteger rows = 0;
 	switch (section) {
 		case 0:
-			rows = [response closeMatchesCount];
+			rows = [response totalCloseMatches];
 			break;
 		case 1:
-			rows = [response partialMatchesCount];
+			rows = [response totalPartialMatches];
 			break;
 	}
 	return rows;
