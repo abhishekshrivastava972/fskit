@@ -6,9 +6,9 @@
 //  Copyright __MyCompanyName__ 2008. All rights reserved.
 //
 
-#define NSXMLDocument CXMLDocument 
-#define NSXMLElement CXMLElement 
-#define NSXMLNode CXMLNode
+//#define NSXMLDocument CXMLDocument 
+//#define NSXMLElement CXMLElement 
+//#define NSXMLNode CXMLNode
 
 #import <UIKit/UIKit.h>
 
