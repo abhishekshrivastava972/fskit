@@ -2,7 +2,7 @@
 
 = Introduction =
 
-FSKit is an Objective-C library to help developers connect and use the [http://familysearch.org/ FamilySearch.org]  [http://devnet.familysearch.org/articles/apis/ web service APIs]
+FSKit is an Objective-C library to help developers connect and use the [http://new.familysearch.org/ new.FamilySearch.org]  [http://devnet.familysearch.org/articles/apis/ web service APIs]
 
 = Getting Started =
   # Get API reference access & developer key from [http://devnet.familysearch.org/support/roadmap-for-new-developers/ FamilySearch DevNet]
