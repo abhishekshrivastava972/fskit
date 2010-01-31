@@ -2,7 +2,7 @@
 
 = Introduction =
 
-The new FamilySearch API uses OAuth authentication 1.0a. This requires that the user be redirected to a web browser to enter their credentials. Once the new FamilySearch site has authenticated the user, they will issue a browser redirect to either a custom URL scheme, or to an embedded web server to inform the calling application of the authorized token needed to make API requests.
+The new !FamilySearch API uses [http://oauth.net/ OAuth] authentication 1.0a. This requires that the user be redirected to a web browser to enter their credentials. Once the new FamilySearch site has authenticated the user, they will issue a browser redirect to either a custom URL scheme, or to an embedded web server to inform the calling application of the authorized token needed to make API requests.
 
 = Details =
 
