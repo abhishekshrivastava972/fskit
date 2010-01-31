@@ -1,0 +1,13 @@
+#summary How to handle OAuth authentication for new FamilySearch
+
+= Introduction =
+
+The new FamilySearch API uses OAuth authentication 1.0a. This requires that the user be redirected to a web browser to enter their credentials. Once the new FamilySearch site has authenticated the user, they will issue a browser redirect to either a custom URL scheme, or to an embedded web server to inform the calling application of the authorized token needed to make API requests.
+
+= Details =
+
+By default, FSKit will use the embedded web server to receive the results of the authentication. If you would like to use a custom URL scheme instead, register it like this:
+TODO: provide details
+
+The authorized token will automatically be saved in the default keychain. If you would like to modify this behavior, you may do:
+TODO: provide details
