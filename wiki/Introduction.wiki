@@ -2,10 +2,10 @@
 
 = Introduction =
 
-FSKit is an Objective-C library to help developers connect and use the [http://new.familysearch.org/ new.FamilySearch.org]  [http://devnet.familysearch.org/articles/apis/ web service APIs]
+FSKit is an Objective-C library to help developers connect and use the [http://new.familysearch.org/ new.FamilySearch.org]  [https://devnet.familysearch.org/docs/api-overview/ web service APIs]
 
 = Getting Started =
-  # Get API reference access & developer key from [http://devnet.familysearch.org/support/roadmap-for-new-developers/ FamilySearch DevNet]
+  # Get API reference access & developer key from [https://devnet.familysearch.org/docs/getting-started/ FamilySearch DevNet]
   # [http://developer.apple.com/documentation/MacOSX/Conceptual/BPFrameworks/Tasks/CreatingFrameworks.html#//apple_ref/doc/uid/20002258-106880-BAJJBIEF Link your application to FSKit Framework]
   # Import FSKit 
 {{{
@@ -46,6 +46,7 @@ FSKPersonService *personService = [[FSKPersonService
 == Topics ==
 
 === Authentication ===
-Each end user needs an account on the [https://new.familysearch.org/ new FamilySearch.org site]. When a request is made that requires authentication, FSKit has several ways of handling this:
-  * By default, FSKit will present an authentication sheet attached to the main window of the application if it is known, or a modal dialog if the main window cannot be discovered
-  * The application may register an authentication delegate that will provide FSKit with the necessary credential
+Each end user needs an account on the [https://new.familysearch.org/ new FamilySearch.org site]. When a request is made that requires authentication, FSKit will attempt to authenticate using OAuth. OAuth requires that the user visit a web page to authenticate, and there are 2 ways to be notified of the result:
+* register a URL scheme handler
+* use an embedded web server
+Both are supported by FSKit, find out the details on the [Authentication] page.
