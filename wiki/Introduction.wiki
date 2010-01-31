@@ -47,6 +47,6 @@ FSKPersonService *personService = [[FSKPersonService
 
 === Authentication ===
 Each end user needs an account on the [https://new.familysearch.org/ new FamilySearch.org site]. When a request is made that requires authentication, FSKit will attempt to authenticate using OAuth. OAuth requires that the user visit a web page to authenticate, and there are 2 ways to be notified of the result:
-* register a URL scheme handler
-* use an embedded web server
+  * register a URL scheme handler
+  * use an embedded web server
 Both are supported by FSKit, find out the details on the [Authentication] page.
