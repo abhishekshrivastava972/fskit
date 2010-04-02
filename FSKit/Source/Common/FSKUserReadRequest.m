@@ -36,10 +36,10 @@ NSString *kUserEndpoint = @"user";
 	[self fetchFamilySearchDataAtEndpoint:@"familytree/v2/user" WithIds:idList parameters:parameters];
 }
 
-- (FSKUserResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+- (FSKUserResponse *)responseWithData:(NSData *)data
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);	
-	FSKUserResponse *response = [[FSKUserResponse alloc] initWithXML:xmlDoc];
+	FSKUserResponse *response = [[FSKUserResponse alloc] initWithData:data];
 	NSLog(@"response code: %d message: %@", [response statusCode], [response statusMessage]);	
 	return [response autorelease];
 }

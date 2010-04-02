@@ -7,19 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FSKRepositoryBase.h"
-//#import "FSKConnection.h"
-//#import "FSKUser.h"
+#import "FSKRepository.h"
+#import "FSKConnection.h"
+#import "FSKContributor.h"
+#import "FSKPersonService.h"
 
-@interface FSKContributorRepository : FSKRepositoryBase {
-//	FSKConnection *connection;
-//	NSMutableDictionary *cache;
+@interface FSKContributorRepository : NSObject {
+	FSKRepository *repository;
+	FSKConnection *connection;
+	FSKPersonService *personService;
 }
 
-//+ (FSKUserRepository*)instanceWithConnection:(FSKConnection *)aConnection;
-//
-//- (id)initWithConnection:(FSKConnection *)aConnection;
-//
-//- (FSKUser *)userForId:(NSString *)userId;
++ (FSKContributorRepository*)instanceWithConnection:(FSKConnection *)aConnection;
+
+- (id)initWithConnection:(FSKConnection *)aConnection;
+
+- (FSKContributor *)contributorForId:(NSString *)contributorId;
 
 @end

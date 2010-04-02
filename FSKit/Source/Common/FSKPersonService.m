@@ -70,7 +70,7 @@ NSString * const FAMILYTREE_MODULE = @"familytree";
 
 
 - (void)readPersons:(NSSet *)personIds {
-	[self fetchPersonDataWithIds:personIds parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"summary", nil], @"view", nil]];
+	[self fetchPersonDataWithIds:personIds parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"summary", nil], @"view", @"all", @"families", nil]];
 }
 
 - (void)readPerson:(NSString *)personId {

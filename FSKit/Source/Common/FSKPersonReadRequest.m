@@ -35,10 +35,10 @@ NSString *kPersonEndpoint = @"person";
 	[self fetchFamilySearchDataAtEndpoint:@"familytree/v2/person" WithIds:idList parameters:parameters];
 }
 
-- (FSKPersonResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+- (FSKPersonResponse *)responseWithData:(NSData *)data
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);	
-	FSKPersonResponse *response = [[FSKPersonResponse alloc] initWithXML:xmlDoc];
+	FSKPersonResponse *response = [[FSKPersonResponse alloc] initWithData:data];
 	NSLog(@"response code: %d message: %@", [response statusCode], [response statusMessage]);	
 	return [response autorelease];
 }

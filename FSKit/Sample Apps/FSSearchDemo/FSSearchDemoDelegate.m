@@ -190,7 +190,7 @@ NSMutableData *receivedData;
 	[starCell setMaximumRating: [NSNumber numberWithInt: 5]];
 	NSTableColumn *ratingColumn = [searchResultsTableView tableColumnWithIdentifier:@"rating"];
 	[ratingColumn setDataCell:starCell];
-//	[ratingColumn bind:@"value" toObject: papersController withKeyPath:@"arrangedObjects.rating" options:nil];
+//	[ratingColumn bind:@"value" toObject: papersController withKeyPath:@"arrangedObjects.rating" options:0];
 //	[ratingColumn setSortDescriptorPrototype: [[[NSSortDescriptor alloc] initWithKey: @"rating" ascending: NO] autorelease]];	
 	
 }
@@ -235,7 +235,7 @@ didReturnResponse:(FSKResponse *)response
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 	[self setValue:[response retain] forKey:@"lastResponse"];
 	
-	NSXMLDocument *doc = [response xmlDocument];
+	id<EnunciateXML> doc = [response xmlDocument];
 	NSAttributedString *styledText = [[NSAttributedString alloc] initWithString: [doc XMLStringWithOptions:NSXMLNodePrettyPrint]];
 	[[searchResultsText textStorage] setAttributedString:[styledText autorelease]];
 }

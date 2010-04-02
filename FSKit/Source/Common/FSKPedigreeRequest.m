@@ -30,10 +30,10 @@
 							   parameters:[NSDictionary dictionaryWithObjectsAndKeys:[[NSNumber numberWithInt:ancestors] stringValue], @"ancestors", [[NSNumber numberWithInt:descendants] stringValue], @"descendants", nil]];
 }
 
-- (FSKPedigreeResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+- (FSKPedigreeResponse *)responseWithData:(NSData *)data
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);	
-	FSKPedigreeResponse *response = [[FSKPedigreeResponse alloc] initWithXML:xmlDoc];
+	FSKPedigreeResponse *response = [[FSKPedigreeResponse alloc] initWithData:data];
 	NSLog(@"response code: %d message: %@", [response statusCode], [response statusMessage]);	
 	return [response autorelease];
 }

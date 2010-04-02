@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FSKPersonSummary.h"
 #import "FSKPersonDetail.h"
+#import "familytree.h"
 
 
 @interface FSKPerson : NSObject {
@@ -42,7 +43,7 @@
 
 
 
-+ (FSKPerson *)createFromXML:(NSXMLElement *)personElement;
-- (id)initWithXML:(NSXMLElement *)personElement;
++ (FSKPerson *)createFromXML:(FSFAMILYTREEV2Person *)personElement;
+- (id)initWithXML:(FSFAMILYTREEV2Person *)personElement;
 
 @end

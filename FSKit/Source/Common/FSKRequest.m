@@ -7,6 +7,7 @@
 //
 
 #import "FSKRequest.h"
+#import "identity.h"
 
 @implementation FSKRequest
 
@@ -125,8 +126,8 @@
 //												 returningResponse:&xmlResponse
 //															 error:&fetchError];
 //	NSLog(@"\nresponse(%d): %@\nheaders:%@\nerror: %@\ndata:%@", [xmlResponse statusCode], [xmlResponse URL], [xmlResponse allHeaderFields], fetchError, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
-//														   options:nil
+//	id<EnunciateXML> returnXML = [[NSXMLDocument alloc] initWithData:responseData
+//														   options:0
 //															 error:nil];
 //	return [returnXML autorelease];
 //	
@@ -152,8 +153,8 @@
 //												 returningResponse:&xmlResponse
 //															 error:&fetchError];
 //	NSLog(@"\nresponse(%d): %@\nheaders:%@\nerror: %@\ndata:%@", [xmlResponse statusCode], [xmlResponse URL], [xmlResponse allHeaderFields], fetchError, [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
-//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
-//														   options:nil
+//	id<EnunciateXML> returnXML = [[NSXMLDocument alloc] initWithData:responseData
+//														   options:0
 //															 error:nil];
 //	return [returnXML autorelease];
 //}
@@ -186,10 +187,10 @@
 	return [NSURL URLWithString:[[urlString encodeURLLegally] autorelease]];
 }
 
-- (FSKResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+- (FSKResponse *)responseWithData:(NSData *)data;
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-	FSKResponse *response = [[FSKResponse alloc] initWithXML:xmlDoc];
+	FSKResponse *response = [[FSKResponse alloc] initWithData:data];
 	return [response autorelease];
 }
 
@@ -246,7 +247,7 @@
 
 - (void)request:(FSKRequest *)request didFailWithError:(FSKError *)error;
 {
-	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, error);
+	NSLog(@"FSKRequest %s %@ %@", __PRETTY_FUNCTION__, error, [request valueForKey:@"_endpoint"]);
 }
 
 @end
@@ -263,7 +264,8 @@
 {
 	NSLog(@"%s %@ %d %@ headers:\n%@", __PRETTY_FUNCTION__, response, [(NSHTTPURLResponse*)response statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[(NSHTTPURLResponse*)response statusCode]], [(NSHTTPURLResponse*)response allHeaderFields]);
 	NSLog(@"length:%d", [response expectedContentLength]);
-	if ([(NSHTTPURLResponse*)response statusCode] == 401)
+	_responseCode = [(NSHTTPURLResponse*)response statusCode];
+	if (_responseCode == 401)
 	{
 		[familySearchConnection setNeedsAuthentication:YES];
 	}
@@ -277,18 +279,9 @@
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {	
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, connection);
+	NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, connection, self);
 	NSError *error = nil;
-	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:responseData
-														   options:nil
-															 error:&error];
-
-	if (returnXML == nil || error != nil)
-	{
-		NSLog(@"Error parsing XML: %@", error);
-	}
-	
-	FSKResponse *response = [self responseWithXML:[returnXML autorelease]];
+	FSKResponse *response = [self responseWithData:responseData];
 	if ([response respondsToSelector:@selector(setRequestedIds:)])
 	{
 		[response takeValue:_idList forKey:@"requestedIds"];
@@ -343,14 +336,14 @@
 	// 4. have the request delegate handle it
     if ([_delegate respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
 	{
-		[_delegate request:self didReceiveAuthenticationChallenge:challenge];
+		[_delegate request:self didReceiveAuthenticationURL:challenge];
 		return;
     }
 	
 	// 5. have the connection delegate handle it
     if ([[familySearchConnection delegate] respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
 	{
-		[[familySearchConnection delegate] request:self didReceiveAuthenticationChallenge:challenge];
+		[[familySearchConnection delegate] request:self didReceiveAuthenticationURL:challenge];
 		return;
     }
 

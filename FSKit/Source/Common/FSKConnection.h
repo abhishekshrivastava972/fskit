@@ -36,20 +36,12 @@ extern NSString *kFSAPIBetaBaseURLString;  // Beta
 extern NSString *kFSAPIDevBaseURLString;  // Development
 
 /*!
-    @brief   <#(description)#>
-    @details <#(description)#>
-*/
-extern NSString *FSAPIVersion;
-
-/*!
     @class	FSKConnection
     @brief    Stores details needed to make connections to the FamilySearch web services, including authentication
 	@details  (comprehensive description)
 */
 @interface FSKConnection : NSObject {
 
-	NSURLCredential *credential;
-	
 	NSString *baseURLString;
 
 	NSString *developerKey;
@@ -74,13 +66,6 @@ extern NSString *FSAPIVersion;
 
 - (NSString *)baseURLString;
 - (void)setBaseURLString:(NSString *)value;
-
-/*!
-    @brief   <#(brief description)#>
-    @details <#(comprehensive description)#>
-*/
-- (NSURLCredential *)credential;
-- (void)setCredential:(NSURLCredential *)value;
 
 /**
  * Stores the developer key for this session, only used for login requests, but is required
@@ -133,7 +118,7 @@ extern NSString *FSAPIVersion;
     @param request the request for which authentication is needed
     @param challenge The NSURLAuthenticationChallenge to start authentication for
 */
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url;
 
 /*!
     @brief   Provides the window to attach the authentication sheet to

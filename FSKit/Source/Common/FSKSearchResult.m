@@ -7,49 +7,41 @@
 //
 
 #import "FSKSearchResult.h"
-#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKSearchResult
 
 
-+ (id)searchResultFromXML:(NSXMLElement *)searchElement
++ (id)searchResultFromXML:(FSFAMILYTREEV2SearchResult *)searchElement
 {
     id result = [[self alloc] initWithXML:searchElement];
     return [result autorelease];
 }
 
-- (void)parseXML:(NSXMLElement *)searchElement
-{
-	refId = [[[searchElement attributeForName:@"id"] stringValue] retain];
-	score = [[NSNumber numberWithDouble:[[searchElement firstValueForName:@"score"] doubleValue]] retain];
-	person = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"person/assertions" error:nil]] retain];
-	father = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"parents/parent[1]/assertions" error:nil]] retain];
-	mother = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchElement firstNodeForXPath:@"parents/parent[2]/assertions" error:nil]] retain];
-
-	NSMutableArray *spouseArray = [NSMutableArray array];
-	NSEnumerator *spouseList = [[[searchElement firstElementWithName:@"spouse"] elementsForName:@"child"] objectEnumerator];
-	NSXMLElement *spouseElement;
-	while (spouseElement = [spouseList nextObject]) {
-		[spouseArray addObject:[FSKPersonSummary createFromXML:spouseElement]];
-	}
-	spouses = [spouseArray retain];
-
-	NSMutableArray *childrenArray = [NSMutableArray array];
-	NSEnumerator *childrenList = [[[searchElement firstElementWithName:@"children"] elementsForName:@"child"] objectEnumerator];
-	NSXMLElement *childElement;
-	while (childElement = [childrenList nextObject]) {
-		[childrenArray addObject:[FSKPersonSummary createFromXML:[childElement firstElementWithName:@"assertions"]]];
-	}
-	children = [childrenArray retain];
-	
-}
-
-- (id)initWithXML:(NSXMLElement *)searchElement
+- (id)initWithXML:(FSFAMILYTREEV2SearchResult *)searchResult
 {
     if ((self = [super init]) != nil) 
 	{
-        // Begin parsing
-        [self parseXML:searchElement];
+		refId = [[searchResult id] retain];
+		score = [[NSNumber numberWithDouble:[searchResult score]] retain];
+		person = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchResult firstNodeForXPath:@"person/assertions" error:nil]] retain];
+		father = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchResult firstNodeForXPath:@"parents/parent[1]/assertions" error:nil]] retain];
+		mother = [[FSKPersonSummary createFromXML:(NSXMLElement *)[searchResult firstNodeForXPath:@"parents/parent[2]/assertions" error:nil]] retain];
+		
+		NSMutableArray *spouseArray = [NSMutableArray array];
+		NSEnumerator *spouseList = [[[searchResult firstElementWithName:@"spouse"] elementsForName:@"child"] objectEnumerator];
+		NSXMLElement *spouseElement;
+		while (spouseElement = [spouseList nextObject]) {
+			[spouseArray addObject:[FSKPersonSummary createFromXML:spouseElement]];
+		}
+		spouses = [spouseArray retain];
+		
+		NSMutableArray *childrenArray = [NSMutableArray array];
+		NSEnumerator *childrenList = [[[searchResult firstElementWithName:@"children"] elementsForName:@"child"] objectEnumerator];
+		NSXMLElement *childElement;
+		while (childElement = [childrenList nextObject]) {
+			[childrenArray addObject:[FSKPersonSummary createFromXML:[childElement firstElementWithName:@"assertions"]]];
+		}
+		children = [childrenArray retain];
     }
     
     return self;

@@ -1,6 +1,8 @@
 #import "FSAppTestDelegate.h"
 #import "FSKSharedDefines.h"
 
+#define DEFAULT_CALLBACK_HANDLER YES
+
 @implementation FSAppTestDelegate
 - (id)init {
 	self = [super init];
@@ -17,29 +19,29 @@
 - (void)dealloc {
 	[connection release];
 	[personService release];
+	[identityService release];
 	[super dealloc];
 }
 
+- (void)awakeFromNib
+{
+//	[connection ];
+	[identityService fetchProperties];
+}
+
+
 - (IBAction)login:(id)sender
 {
-	NSLog(@"%s %@ %d", _cmd, [radio selectedCell], [[radio selectedCell] tag]);
+	NSLog(@"%s", _cmd);
 
-	switch ([[radio selectedCell] tag]) {
-		case 0: // panel
-			[identityService login];
-			break;
-		case 1: // default credential
-			[connection setCredential:[NSURLCredential credentialWithUser:@"api-user-1009" password:@"f8cc" persistence:NSURLCredentialPersistenceForSession]];
-			NSLog(@"credential: %@", [connection credential]);
-			[connection setDelegate:self];
-			break;
-		case 2: // username/password
-			[connection setCredential:[NSURLCredential credentialWithUser:[username stringValue] password:[password stringValue] persistence:NSURLCredentialPersistenceForSession]];
-			NSLog(@"credential: %@", [connection credential]);
-			[connection setDelegate:self];
-//			[identityService login];
-			break;
-	}
+	[identityService login];
+}
+
+- (IBAction)logout:(id)sender
+{
+	NSLog(@"%s", _cmd);
+	
+	[identityService logout];
 }
 
 - (IBAction)fetchMe:(id)sender
@@ -52,27 +54,32 @@
 	[personService readPerson:@"ABCD-EFG"];
 }
 
-- (NSXMLDocument *)theDocument
+- (NSURL *)callbackURL
 {
-    return [[theDocument retain] autorelease];
+	if ([customURLCheckbox state] == NSOnState)
+	{
+		return [NSURL URLWithString:@"x-com-mpoauth-mobile://result"];
+	}
+	else {
+		return nil;
+	}
 }
- 
-- (void)setTheDocument:(NSXMLDocument *)newTheDocument
+
+- (void)authenticationDidSuceedWithToken:(NSString *)token
 {
-    if (theDocument != newTheDocument)
-    {
-        [newTheDocument retain];
-        [theDocument release];
-        theDocument = newTheDocument;
-    }
+	sessionId = [token retain];
+	[connection setSessionId:sessionId];
+	[connection setNeedsAuthentication:NO];
+	[identityService pingSession];
 }
+
 @end
 
 @implementation FSAppTestDelegate (PrivateMethods)
--(void) requestFinished:(NSXMLDocument *)response
+-(void) requestFinished:(id<EnunciateXML> )response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
-	[[[myResults textStorage] mutableString] appendString: [response XMLStringWithOptions:NSXMLNodePrettyPrint]];
+	[[[myResults textStorage] mutableString] appendString: [response description]];
 //	results = [response retain];
 	[self setTheDocument:response];
 }
@@ -95,22 +102,4 @@
 	[self requestFailed:error];
 }
 
-
 @end
-
-@implementation NSXMLNode (NSXMLNodeAdditions)
- 
-- (NSString *)displayName {
- 
-    NSString *displayName = [self name];
-    if (!displayName) {
-        displayName = [self stringValue];
-    }
-    return displayName;
-}
- 
-- (BOOL)isLeaf {
- 
-    return [self kind] == NSXMLTextKind ? YES : NO;
-}
- @end

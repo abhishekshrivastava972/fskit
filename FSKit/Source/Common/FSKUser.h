@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FSKContributor.h"
+#import "familytree.h"
 
 @interface FSKUser : FSKContributor {
 	NSString *preferredName;
@@ -22,7 +23,7 @@
 - (void)addAlias:(NSString *)value;
 
 
-+ (FSKUser *)createFromXML:(NSXMLElement *)userElement;
-- (id)initWithXML:(NSXMLElement *)userElement;
++ (FSKUser *)createFromXML:(FSFAMILYTREEV2User *)userElement;
+- (id)initWithXML:(FSFAMILYTREEV2User *)userElement;
 
 @end

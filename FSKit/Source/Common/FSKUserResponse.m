@@ -8,26 +8,22 @@
 
 #import "FSKUserResponse.h"
 #import "FSKUser.h"
-#import "NSXMLElement+BExtensions.h"
+#import "familytree.h"
 
 @implementation FSKUserResponse
 
-- (void)parseUserResponse:(NSXMLElement *)usersElement
+- (id)initWithData:(NSData *)data
 {
-	NSMutableArray *theResults = [NSMutableArray array];
-	NSEnumerator *enumerator = [[usersElement elementsForName:@"user"] objectEnumerator];
-	NSXMLElement *userElement;
-	while (userElement = [enumerator nextObject]) {
-		[theResults addObject:[FSKUser createFromXML:userElement]];
-	}
-	users = [theResults retain];
-}
-
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument
-{
-    if ((self = [super initWithXML:theXmlDocument]) != nil) 
+    if ((self = [super initWithData:data]) != nil) 
 	{ 
-		[self parseUserResponse:[[xmlDocument rootElement] firstElementWithName:@"users"]];
+		FSFAMILYTREEV2FamilyTree *familytree = [FSFAMILYTREEV2FamilyTree readFromXML:data];
+		NSMutableArray *theResults = [NSMutableArray array];
+		NSEnumerator *enumerator = [[familytree users] objectEnumerator];
+		FSFAMILYTREEV2User *userElement;
+		while (userElement = [enumerator nextObject]) {
+			[theResults addObject:[FSKUser createFromXML:userElement]];
+		}
+		users = [theResults retain];
 	}
 	
 	return self;	

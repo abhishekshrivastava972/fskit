@@ -7,18 +7,17 @@
 //
 
 #import "FSKPersonSummary.h"
-#import "NSXMLElement+BExtensions.h"
 #import "FSKEventSummary.h"
 
 @implementation FSKPersonSummary
 
-+ (FSKPersonSummary *)createFromXML:(NSXMLElement *)personElement
++ (FSKPersonSummary *)createFromXML:(FSFAMILYTREEV2SearchPerson *)personElement
 {
     id result = [[self alloc] initWithXML:personElement];
     return [result autorelease];
 }
 
-- (void)parseXML:(NSXMLElement *)personSummaryElement
+- (void)parseXML:(FSFAMILYTREEV2SearchPerson *)personSummaryElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, personSummaryElement);
 	NSXMLElement *nameElement = (NSXMLElement *)[personSummaryElement firstNodeForXPath:@"names/name" error:nil];
@@ -44,7 +43,7 @@
 	[self setValue:[personSummaryElement firstValueForName:@"maxDeathYear"] forKey:@"maxDeathYear"];
 }
 
-- (id)initWithXML:(NSXMLElement *)personElement
+- (id)initWithXML:(FSFAMILYTREEV2SearchPerson *)personElement
 {
     if ((self = [super init]) != nil) 
 	{

@@ -38,9 +38,37 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		020F97A7111E1008001EFA8F /* familytree.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F7A50010CCB523001C2BD3 /* familytree.h */; };
+		020F97A8111E1008001EFA8F /* familytree.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F7A50110CCB523001C2BD3 /* familytree.m */; };
+		020F97A9111E1009001EFA8F /* reservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356711169F3700A0CDB5 /* reservation.h */; };
+		020F97AA111E100A001EFA8F /* reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356811169F3700A0CDB5 /* reservation.m */; };
+		020F97AB111E100A001EFA8F /* temple.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356911169F3700A0CDB5 /* temple.h */; };
+		020F97AC111E100B001EFA8F /* temple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356A11169F3700A0CDB5 /* temple.m */; };
+		020F97B1111E101C001EFA8F /* enunciate_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F97AD111E101C001EFA8F /* enunciate_common.h */; };
+		020F97B2111E101C001EFA8F /* enunciate_common.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F97AE111E101C001EFA8F /* enunciate_common.m */; };
+		020F97B3111E101C001EFA8F /* fsv1.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F97AF111E101C001EFA8F /* fsv1.h */; };
+		020F97B4111E101C001EFA8F /* fsv1.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F97B0111E101C001EFA8F /* fsv1.m */; };
+		020F9990112047BF001EFA8F /* FSKUserProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F998E112047BF001EFA8F /* FSKUserProfile.h */; };
+		020F9991112047BF001EFA8F /* FSKUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F998F112047BF001EFA8F /* FSKUserProfile.m */; };
 		02117E320D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02117E330D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */; };
-		0229C0FB0E8FFEE0005447D2 /* FSCLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A8510E6B1DF800A45179 /* FSCLClient.m */; };
+		022933851115D3CB00A0CDB5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 022933841115D3CB00A0CDB5 /* libxml2.dylib */; };
+		0229349C11160B7800A0CDB5 /* FSKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E630D4B84DA0047B392 /* FSKError.m */; };
+		0229349D11160B7800A0CDB5 /* FSKOAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293416111607F500A0CDB5 /* FSKOAuthHandler.m */; };
+		0229349E11160B7800A0CDB5 /* FSKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0256776E0F3351480032079F /* FSKUtils.m */; };
+		0229349F11160B7800A0CDB5 /* FSKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E620D4B84DA0047B392 /* FSKError.h */; };
+		022934A011160B7800A0CDB5 /* FSKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02439C6D0D43949200F50EBD /* FSKRequest.h */; };
+		022934A111160B7800A0CDB5 /* FSKResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E5E0D4B82410047B392 /* FSKResponse.h */; };
+		022934A211160B7800A0CDB5 /* FSKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E5F0D4B82410047B392 /* FSKResponse.m */; };
+		022934A311160B7800A0CDB5 /* FSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02439C6E0D43949200F50EBD /* FSKRequest.m */; };
+		022934A411160B7800A0CDB5 /* FSKUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256776D0F3351480032079F /* FSKUtils.h */; };
+		022934A511160B7800A0CDB5 /* FSKOAuthHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 02293415111607F500A0CDB5 /* FSKOAuthHandler.h */; };
+		022934A611160B7800A0CDB5 /* SimpleHTTPServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 02293419111607F500A0CDB5 /* SimpleHTTPServer.h */; };
+		022934A711160B7800A0CDB5 /* SimpleHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229341A111607F500A0CDB5 /* SimpleHTTPServer.m */; };
+		022934A811160B7800A0CDB5 /* SimpleHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 02293417111607F500A0CDB5 /* SimpleHTTPConnection.h */; };
+		022934A911160B7800A0CDB5 /* SimpleHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293418111607F500A0CDB5 /* SimpleHTTPConnection.m */; };
+		022935A11116A42000A0CDB5 /* identity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356511169F3700A0CDB5 /* identity.h */; };
+		022935A21116A42100A0CDB5 /* identity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356611169F3700A0CDB5 /* identity.m */; };
 		0229C1BA0E901CAC005447D2 /* NSXMLElement+BExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DF9CD00D85F21200D7073B /* NSXMLElement+BExtensions.m */; };
 		0229C1BB0E901CAC005447D2 /* NSXMLElement+BExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DF9CD00D85F21200D7073B /* NSXMLElement+BExtensions.m */; };
 		0229C1BC0E901CAD005447D2 /* NSXMLElement+BExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DF9CD00D85F21200D7073B /* NSXMLElement+BExtensions.m */; };
@@ -65,19 +93,28 @@
 		02433DE00C9DE4BB00FE5892 /* FSKAuthoritiesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DDE0C9DE4BB00FE5892 /* FSKAuthoritiesService.m */; };
 		02433DE50C9DE4C400FE5892 /* FSKTempleService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02433DE30C9DE4C400FE5892 /* FSKTempleService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02433DE60C9DE4C400FE5892 /* FSKTempleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DE40C9DE4C400FE5892 /* FSKTempleService.m */; };
-		02439C700D43949300F50EBD /* FSKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02439C6D0D43949200F50EBD /* FSKRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02439C710D43949300F50EBD /* FSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02439C6E0D43949200F50EBD /* FSKRequest.m */; };
 		024525530F5D45FE003548D3 /* FSKPedigreeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525510F5D45FE003548D3 /* FSKPedigreeRequest.h */; };
 		024525540F5D45FE003548D3 /* FSKPedigreeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525520F5D45FE003548D3 /* FSKPedigreeRequest.m */; };
 		024525570F5D461E003548D3 /* FSKPedigreeResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525550F5D461E003548D3 /* FSKPedigreeResponse.h */; };
 		024525580F5D461E003548D3 /* FSKPedigreeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525560F5D461E003548D3 /* FSKPedigreeResponse.m */; };
-		0245255B0F5D4785003548D3 /* FSKRepositoryBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525590F5D4785003548D3 /* FSKRepositoryBase.h */; };
-		0245255C0F5D4785003548D3 /* FSKRepositoryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0245255A0F5D4785003548D3 /* FSKRepositoryBase.m */; };
+		0245255B0F5D4785003548D3 /* FSKRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525590F5D4785003548D3 /* FSKRepository.h */; };
+		0245255C0F5D4785003548D3 /* FSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0245255A0F5D4785003548D3 /* FSKRepository.m */; };
 		024525A70F5D745F003548D3 /* FSKPedigree.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525A50F5D745F003548D3 /* FSKPedigree.h */; };
 		024525A80F5D745F003548D3 /* FSKPedigree.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525A60F5D745F003548D3 /* FSKPedigree.m */; };
 		0249D2F70DA0FCA7005BF5A3 /* FSAppTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249D2F60DA0FCA7005BF5A3 /* FSAppTestDelegate.m */; };
-		0256776F0F3351480032079F /* FSKUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256776D0F3351480032079F /* FSKUtils.h */; };
-		025677700F3351480032079F /* FSKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0256776E0F3351480032079F /* FSKUtils.m */; };
+		024AD3B7113BEC6B0016524F /* FSKProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AD3B5113BEC6B0016524F /* FSKProperties.h */; };
+		024AD3B8113BEC6B0016524F /* FSKProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AD3B6113BEC6B0016524F /* FSKProperties.m */; };
+		02538A89114C725600D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B50114C726F00D6750F /* libMPOAuthMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A86114C725600D6750F /* libMPOAuthMobile.a */; };
+		02538B52114C727B00D6750F /* libMPOAuth_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A84114C725600D6750F /* libMPOAuth_s.a */; };
+		02538B54114C728A00D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B57114C72A200D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B59114C72AE00D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B5A114C72B000D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B5C114C72BD00D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538BB5114C7CC500D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538C6E114D347600D6750F /* FSKOAuthAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 02538C6C114D347600D6750F /* FSKOAuthAPI.h */; };
+		02538C6F114D347600D6750F /* FSKOAuthAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 02538C6D114D347600D6750F /* FSKOAuthAPI.m */; };
 		02596CEE0D4D6E7E00AB8632 /* FSKIdentityResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02596CEF0D4D6E7E00AB8632 /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */; };
 		0263A9A20D96ADAC00F3D51B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0263A99B0D96ADAC00F3D51B /* InfoPlist.strings */; };
@@ -125,6 +162,8 @@
 		028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35710E6195F10007B2F0 /* FSKUserResponse.m */; };
 		028A35C30E61A14C0007B2F0 /* FSKContributorRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		028A35C40E61A14C0007B2F0 /* FSKContributorRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */; };
+		0293E1C810D607CE00A49364 /* NSString+URIQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0293E1C610D607CE00A49364 /* NSString+URIQuery.h */; };
+		0293E1C910D607CE00A49364 /* NSString+URIQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0293E1C710D607CE00A49364 /* NSString+URIQuery.m */; };
 		0294DB580E5719550022DBFB /* FSKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB560E5719550022DBFB /* FSKEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0294DB590E5719550022DBFB /* FSKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB570E5719550022DBFB /* FSKEvent.m */; };
 		0294DB5C0E57196A0022DBFB /* FSKFact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB5A0E57196A0022DBFB /* FSKFact.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -143,10 +182,11 @@
 		029C323B0D7AF80200746CA6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		029C323C0D7AF80200746CA6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
 		029C32580D7AF9E100746CA6 /* FSSearchDemoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029C32570D7AF9E100746CA6 /* FSSearchDemoDelegate.m */; };
-		02A3A8470E6B1D1700A45179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A3A8460E6B1D1700A45179 /* Foundation.framework */; };
 		02A3A84B0E6B1D1B00A45179 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
 		02A3A8530E6B1DF800A45179 /* FSCLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A8510E6B1DF800A45179 /* FSCLClient.m */; };
 		02A3A8540E6B1DF800A45179 /* FSCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A8520E6B1DF800A45179 /* FSCommandLine.m */; };
+		02A462191119B22800FD7885 /* authorities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356311169F3700A0CDB5 /* authorities.h */; };
+		02A4621A1119B22800FD7885 /* authorities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356411169F3700A0CDB5 /* authorities.m */; };
 		02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */; };
 		02C85BE90EAB84090032CEBE /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -171,10 +211,6 @@
 		02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */; };
 		02E5903B0F65F69800049C62 /* FSKPersonRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */; };
 		02F19D0D0D4A236E0047B392 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F19D0C0D4A236E0047B392 /* Security.framework */; };
-		02F19E600D4B82410047B392 /* FSKResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E5E0D4B82410047B392 /* FSKResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02F19E610D4B82410047B392 /* FSKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E5F0D4B82410047B392 /* FSKResponse.m */; };
-		02F19E640D4B84DA0047B392 /* FSKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E620D4B84DA0047B392 /* FSKError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02F19E650D4B84DA0047B392 /* FSKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E630D4B84DA0047B392 /* FSKError.m */; };
 		02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02F1A07B0D4CEED70047B392 /* MIT-License.rtf */; };
 		02F1A07F0D4CEED70047B392 /* NSData+RSHexDump.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F1A07C0D4CEED70047B392 /* NSData+RSHexDump.h */; };
 		02F1A0800D4CEED70047B392 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
@@ -285,6 +321,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				02538B54114C728A00D6750F /* MPOAuth.framework in CopyFiles */,
 				0263A9EF0D96BAEE00F3D51B /* FSKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +332,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				02538B5C114C72BD00D6750F /* MPOAuth.framework in CopyFiles */,
 				027149800D709D9E00072118 /* FSKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +343,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				02538B5A114C72B000D6750F /* MPOAuth.framework in CopyFiles */,
 				02E2AF3E0D8193DB00CB1B6E /* RuleEditor.framework in CopyFiles */,
 				02E2AF3F0D8193DB00CB1B6E /* FSKit.framework in CopyFiles */,
 				02E2B1050D824BDA00CB1B6E /* SFHFRatingCell.h in CopyFiles */,
@@ -315,8 +354,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		020F97AD111E101C001EFA8F /* enunciate_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enunciate_common.h; sourceTree = "<group>"; };
+		020F97AE111E101C001EFA8F /* enunciate_common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = enunciate_common.m; sourceTree = "<group>"; };
+		020F97AF111E101C001EFA8F /* fsv1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fsv1.h; sourceTree = "<group>"; };
+		020F97B0111E101C001EFA8F /* fsv1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fsv1.m; sourceTree = "<group>"; };
+		020F998E112047BF001EFA8F /* FSKUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserProfile.h; sourceTree = "<group>"; };
+		020F998F112047BF001EFA8F /* FSKUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserProfile.m; sourceTree = "<group>"; };
 		02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDefaultAuthenticationDelegate.h; sourceTree = "<group>"; };
 		02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDefaultAuthenticationDelegate.m; sourceTree = "<group>"; };
+		0229337F1115D36800A0CDB5 /* libFSKitiPhoneLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFSKitiPhoneLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		022933841115D3CB00A0CDB5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
+		02293415111607F500A0CDB5 /* FSKOAuthHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSKOAuthHandler.h; sourceTree = "<group>"; };
+		02293416111607F500A0CDB5 /* FSKOAuthHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSKOAuthHandler.m; sourceTree = "<group>"; };
+		02293417111607F500A0CDB5 /* SimpleHTTPConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHTTPConnection.h; sourceTree = "<group>"; };
+		02293418111607F500A0CDB5 /* SimpleHTTPConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleHTTPConnection.m; sourceTree = "<group>"; };
+		02293419111607F500A0CDB5 /* SimpleHTTPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHTTPServer.h; sourceTree = "<group>"; };
+		0229341A111607F500A0CDB5 /* SimpleHTTPServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleHTTPServer.m; sourceTree = "<group>"; };
+		0229356311169F3700A0CDB5 /* authorities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authorities.h; sourceTree = "<group>"; };
+		0229356411169F3700A0CDB5 /* authorities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authorities.m; sourceTree = "<group>"; };
+		0229356511169F3700A0CDB5 /* identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = identity.h; sourceTree = "<group>"; };
+		0229356611169F3700A0CDB5 /* identity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = identity.m; sourceTree = "<group>"; };
+		0229356711169F3700A0CDB5 /* reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reservation.h; sourceTree = "<group>"; };
+		0229356811169F3700A0CDB5 /* reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reservation.m; sourceTree = "<group>"; };
+		0229356911169F3700A0CDB5 /* temple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = temple.h; sourceTree = "<group>"; };
+		0229356A11169F3700A0CDB5 /* temple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = temple.m; sourceTree = "<group>"; };
+		0229357311169F4E00A0CDB5 /* authorities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authorities.h; sourceTree = "<group>"; };
+		0229357411169F4E00A0CDB5 /* authorities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authorities.m; sourceTree = "<group>"; };
+		0229357511169F4E00A0CDB5 /* identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = identity.h; sourceTree = "<group>"; };
+		0229357611169F4E00A0CDB5 /* identity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = identity.m; sourceTree = "<group>"; };
+		0229357711169F4E00A0CDB5 /* reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reservation.h; sourceTree = "<group>"; };
+		0229357811169F4E00A0CDB5 /* reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reservation.m; sourceTree = "<group>"; };
+		0229357911169F4E00A0CDB5 /* temple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = temple.h; sourceTree = "<group>"; };
+		0229357A11169F4E00A0CDB5 /* temple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = temple.m; sourceTree = "<group>"; };
 		023A76650D845D4D00CD028D /* SearchForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchForm.h; path = FSSearchDemo/SearchForm.h; sourceTree = "<group>"; };
 		023A76660D845D4D00CD028D /* SearchForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchForm.m; path = FSSearchDemo/SearchForm.m; sourceTree = "<group>"; };
 		023A770B0D84731100CD028D /* FSKSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSearchResponse.h; sourceTree = "<group>"; };
@@ -339,12 +408,19 @@
 		024525520F5D45FE003548D3 /* FSKPedigreeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPedigreeRequest.m; sourceTree = "<group>"; };
 		024525550F5D461E003548D3 /* FSKPedigreeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPedigreeResponse.h; sourceTree = "<group>"; };
 		024525560F5D461E003548D3 /* FSKPedigreeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPedigreeResponse.m; sourceTree = "<group>"; };
-		024525590F5D4785003548D3 /* FSKRepositoryBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKRepositoryBase.h; sourceTree = "<group>"; };
-		0245255A0F5D4785003548D3 /* FSKRepositoryBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKRepositoryBase.m; sourceTree = "<group>"; };
+		024525590F5D4785003548D3 /* FSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKRepository.h; sourceTree = "<group>"; };
+		0245255A0F5D4785003548D3 /* FSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKRepository.m; sourceTree = "<group>"; };
 		024525A50F5D745F003548D3 /* FSKPedigree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPedigree.h; sourceTree = "<group>"; };
 		024525A60F5D745F003548D3 /* FSKPedigree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPedigree.m; sourceTree = "<group>"; };
 		0249D2F50DA0FCA7005BF5A3 /* FSAppTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppTestDelegate.h; sourceTree = "<group>"; };
 		0249D2F60DA0FCA7005BF5A3 /* FSAppTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppTestDelegate.m; sourceTree = "<group>"; };
+		024AD3B5113BEC6B0016524F /* FSKProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKProperties.h; sourceTree = "<group>"; };
+		024AD3B6113BEC6B0016524F /* FSKProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKProperties.m; sourceTree = "<group>"; };
+		02538A84114C725600D6750F /* libMPOAuth_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMPOAuth_s.a; sourceTree = "<group>"; };
+		02538A86114C725600D6750F /* libMPOAuthMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMPOAuthMobile.a; sourceTree = "<group>"; };
+		02538A88114C725600D6750F /* MPOAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MPOAuth.framework; sourceTree = "<group>"; };
+		02538C6C114D347600D6750F /* FSKOAuthAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKOAuthAPI.h; sourceTree = "<group>"; };
+		02538C6D114D347600D6750F /* FSKOAuthAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKOAuthAPI.m; sourceTree = "<group>"; };
 		0256776D0F3351480032079F /* FSKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUtils.h; sourceTree = "<group>"; };
 		0256776E0F3351480032079F /* FSKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUtils.m; sourceTree = "<group>"; };
 		02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityResponse.h; sourceTree = "<group>"; };
@@ -389,6 +465,8 @@
 		028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorRepository.m; sourceTree = "<group>"; };
 		028A39C90E626F430007B2F0 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
 		028A39DA0E6271900007B2F0 /* FSKit_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit_iPhone.h; sourceTree = "<group>"; };
+		0293E1C610D607CE00A49364 /* NSString+URIQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URIQuery.h"; sourceTree = "<group>"; };
+		0293E1C710D607CE00A49364 /* NSString+URIQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URIQuery.m"; sourceTree = "<group>"; };
 		0294DB560E5719550022DBFB /* FSKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEvent.h; sourceTree = "<group>"; };
 		0294DB570E5719550022DBFB /* FSKEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKEvent.m; sourceTree = "<group>"; };
 		0294DB5A0E57196A0022DBFB /* FSKFact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFact.h; sourceTree = "<group>"; };
@@ -408,7 +486,6 @@
 		029C32560D7AF9E100746CA6 /* FSSearchDemoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSSearchDemoDelegate.h; path = FSSearchDemo/FSSearchDemoDelegate.h; sourceTree = "<group>"; };
 		029C32570D7AF9E100746CA6 /* FSSearchDemoDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSSearchDemoDelegate.m; path = FSSearchDemo/FSSearchDemoDelegate.m; sourceTree = "<group>"; };
 		02A3A8410E6B1D0500A45179 /* FSCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FSCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
-		02A3A8460E6B1D1700A45179 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		02A3A8500E6B1DF800A45179 /* FSCLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCLClient.h; sourceTree = "<group>"; };
 		02A3A8510E6B1DF800A45179 /* FSCLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCLClient.m; sourceTree = "<group>"; };
 		02A3A8520E6B1DF800A45179 /* FSCommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCommandLine.m; sourceTree = "<group>"; };
@@ -467,18 +544,10 @@
 		02F5273B0DB27E0900DC9063 /* FSKDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDate.m; sourceTree = "<group>"; };
 		02F5273E0DB27E6700DC9063 /* FSKPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPlace.h; sourceTree = "<group>"; };
 		02F5273F0DB27E6700DC9063 /* FSKPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPlace.m; sourceTree = "<group>"; };
-		02FCCFA70F48E4D100AFDB51 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
-		02FCCFA80F48E4D100AFDB51 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
-		02FCCFA90F48E4D100AFDB51 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
-		02FCCFAA0F48E4D100AFDB51 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
-		02FCCFAB0F48E4D100AFDB51 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
-		02FCCFAC0F48E4D100AFDB51 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
-		02FCCFAD0F48E4D100AFDB51 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
-		02FCCFAE0F48E4D100AFDB51 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
-		02FCCFAF0F48E4D100AFDB51 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
-		02FCCFB00F48E4D100AFDB51 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
-		02FCCFBD0F48E4D100AFDB51 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
-		02FCCFBE0F48E4D100AFDB51 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		02F7A50010CCB523001C2BD3 /* familytree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = familytree.h; sourceTree = "<group>"; };
+		02F7A50110CCB523001C2BD3 /* familytree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = familytree.m; sourceTree = "<group>"; };
+		02F7A50310CCB523001C2BD3 /* familytree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = familytree.h; sourceTree = "<group>"; };
+		02F7A50410CCB523001C2BD3 /* familytree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = familytree.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -501,10 +570,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0229337D1115D36800A0CDB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02538B50114C726F00D6750F /* libMPOAuthMobile.a in Frameworks */,
+				022933851115D3CB00A0CDB5 /* libxml2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0263A97D0D96ACBB00F3D51B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02538B57114C72A200D6750F /* MPOAuth.framework in Frameworks */,
 				0263AB170D96BD4D00F3D51B /* Cocoa.framework in Frameworks */,
 				0263AB180D96BD4D00F3D51B /* AppKit.framework in Frameworks */,
 				0263AB190D96BD4D00F3D51B /* FSKit.framework in Frameworks */,
@@ -515,6 +594,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02538A89114C725600D6750F /* MPOAuth.framework in Frameworks */,
 				027149440D709D5C00072118 /* Cocoa.framework in Frameworks */,
 				0271489F0D709D5800072118 /* AppKit.framework in Frameworks */,
 				0271488C0D709D4D00072118 /* FSKit.framework in Frameworks */,
@@ -525,6 +605,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02538B59114C72AE00D6750F /* MPOAuth.framework in Frameworks */,
 				029C323B0D7AF80200746CA6 /* Cocoa.framework in Frameworks */,
 				029C323C0D7AF80200746CA6 /* AppKit.framework in Frameworks */,
 				029C31860D7AF7F800746CA6 /* FSKit.framework in Frameworks */,
@@ -536,7 +617,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02A3A8470E6B1D1700A45179 /* Foundation.framework in Frameworks */,
+				02538B52114C727B00D6750F /* libMPOAuth_s.a in Frameworks */,
 				02A3A84B0E6B1D1B00A45179 /* FSKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +634,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02538BB5114C7CC500D6750F /* MPOAuth.framework in Frameworks */,
 				02810E0E0D49B146003E36B7 /* Cocoa.framework in Frameworks */,
 				029BE8A70CDDFF3D0096B9F9 /* Foundation.framework in Frameworks */,
 				02F19D0D0D4A236E0047B392 /* Security.framework in Frameworks */,
@@ -574,6 +656,7 @@
 		020E9AD60E9965FA00E38F75 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				02F7A4FE10CCB523001C2BD3 /* enunciate */,
 				02C85BE80EAB84090032CEBE /* FSKit.h */,
 				02433DAC0C9DE06D00FE5892 /* FSKConnection.h */,
 				02433DAD0C9DE06D00FE5892 /* FSKConnection.m */,
@@ -582,6 +665,8 @@
 				B4DF9D470D863D6500D7073B /* Core */,
 				02714A320D72009200072118 /* Repositories */,
 				02714A490D720B1000072118 /* Model */,
+				0293E1C610D607CE00A49364 /* NSString+URIQuery.h */,
+				0293E1C710D607CE00A49364 /* NSString+URIQuery.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -696,8 +781,8 @@
 				02714A3A0D7200EE00072118 /* FSKPersonRepository.m */,
 				028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */,
 				028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */,
-				024525590F5D4785003548D3 /* FSKRepositoryBase.h */,
-				0245255A0F5D4785003548D3 /* FSKRepositoryBase.m */,
+				024525590F5D4785003548D3 /* FSKRepository.h */,
+				0245255A0F5D4785003548D3 /* FSKRepository.m */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -737,6 +822,8 @@
 				024525A60F5D745F003548D3 /* FSKPedigree.m */,
 				0275A0580F602A16005AF00D /* FSKPersonName.h */,
 				0275A0590F602A16005AF00D /* FSKPersonName.m */,
+				020F998E112047BF001EFA8F /* FSKUserProfile.h */,
+				020F998F112047BF001EFA8F /* FSKUserProfile.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -754,7 +841,6 @@
 		028A391F0E626C6D0007B2F0 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				02FCCFA40F48E4D100AFDB51 /* KissXML */,
 				028A39DA0E6271900007B2F0 /* FSKit_iPhone.h */,
 			);
 			path = iPhone;
@@ -877,23 +963,51 @@
 			path = "NSData+RSHexDump";
 			sourceTree = "<group>";
 		};
-		02FCCFA40F48E4D100AFDB51 /* KissXML */ = {
+		02F7A4FE10CCB523001C2BD3 /* enunciate */ = {
 			isa = PBXGroup;
 			children = (
-				02FCCFA70F48E4D100AFDB51 /* DDXML.h */,
-				02FCCFA80F48E4D100AFDB51 /* DDXMLDocument.h */,
-				02FCCFA90F48E4D100AFDB51 /* DDXMLDocument.m */,
-				02FCCFAA0F48E4D100AFDB51 /* DDXMLElement.h */,
-				02FCCFAB0F48E4D100AFDB51 /* DDXMLElement.m */,
-				02FCCFAC0F48E4D100AFDB51 /* DDXMLElementAdditions.h */,
-				02FCCFAD0F48E4D100AFDB51 /* DDXMLElementAdditions.m */,
-				02FCCFAE0F48E4D100AFDB51 /* DDXMLNode.h */,
-				02FCCFAF0F48E4D100AFDB51 /* DDXMLNode.m */,
-				02FCCFB00F48E4D100AFDB51 /* DDXMLPrivate.h */,
-				02FCCFBD0F48E4D100AFDB51 /* NSStringAdditions.h */,
-				02FCCFBE0F48E4D100AFDB51 /* NSStringAdditions.m */,
+				02F7A4FF10CCB523001C2BD3 /* dev */,
+				02F7A50210CCB523001C2BD3 /* prod */,
 			);
-			path = KissXML;
+			path = enunciate;
+			sourceTree = "<group>";
+		};
+		02F7A4FF10CCB523001C2BD3 /* dev */ = {
+			isa = PBXGroup;
+			children = (
+				020F97AD111E101C001EFA8F /* enunciate_common.h */,
+				020F97AE111E101C001EFA8F /* enunciate_common.m */,
+				020F97AF111E101C001EFA8F /* fsv1.h */,
+				020F97B0111E101C001EFA8F /* fsv1.m */,
+				0229356311169F3700A0CDB5 /* authorities.h */,
+				0229356411169F3700A0CDB5 /* authorities.m */,
+				0229356511169F3700A0CDB5 /* identity.h */,
+				0229356611169F3700A0CDB5 /* identity.m */,
+				0229356711169F3700A0CDB5 /* reservation.h */,
+				0229356811169F3700A0CDB5 /* reservation.m */,
+				0229356911169F3700A0CDB5 /* temple.h */,
+				0229356A11169F3700A0CDB5 /* temple.m */,
+				02F7A50010CCB523001C2BD3 /* familytree.h */,
+				02F7A50110CCB523001C2BD3 /* familytree.m */,
+			);
+			path = dev;
+			sourceTree = "<group>";
+		};
+		02F7A50210CCB523001C2BD3 /* prod */ = {
+			isa = PBXGroup;
+			children = (
+				0229357311169F4E00A0CDB5 /* authorities.h */,
+				0229357411169F4E00A0CDB5 /* authorities.m */,
+				0229357511169F4E00A0CDB5 /* identity.h */,
+				0229357611169F4E00A0CDB5 /* identity.m */,
+				0229357711169F4E00A0CDB5 /* reservation.h */,
+				0229357811169F4E00A0CDB5 /* reservation.m */,
+				0229357911169F4E00A0CDB5 /* temple.h */,
+				0229357A11169F4E00A0CDB5 /* temple.m */,
+				02F7A50310CCB523001C2BD3 /* familytree.h */,
+				02F7A50410CCB523001C2BD3 /* familytree.m */,
+			);
+			path = prod;
 			sourceTree = "<group>";
 		};
 		034768DFFF38A50411DB9C8B /* Products */ = {
@@ -905,6 +1019,7 @@
 				029C314C0D7AF71400746CA6 /* FSSearchDemo.app */,
 				0263A97F0D96ACBB00F3D51B /* FSBasicApp.app */,
 				02A3A8410E6B1D0500A45179 /* FSCommandLine */,
+				0229337F1115D36800A0CDB5 /* libFSKitiPhoneLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -928,7 +1043,7 @@
 				027148690D7099D100072118 /* FSAppTest-Info.plist */,
 				029C31520D7AF71400746CA6 /* FSSearchDemo-Info.plist */,
 				0263A9810D96ACBB00F3D51B /* FSBasicApp-Info.plist */,
-				02A3A8460E6B1D1700A45179 /* Foundation.framework */,
+				022933841115D3CB00A0CDB5 /* libxml2.dylib */,
 			);
 			name = FSKit;
 			sourceTree = "<group>";
@@ -970,6 +1085,9 @@
 			children = (
 				02F19D0C0D4A236E0047B392 /* Security.framework */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+				02538A84114C725600D6750F /* libMPOAuth_s.a */,
+				02538A86114C725600D6750F /* libMPOAuthMobile.a */,
+				02538A88114C725600D6750F /* MPOAuth.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -998,6 +1116,8 @@
 		B4DF9D470D863D6500D7073B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				02538C6C114D347600D6750F /* FSKOAuthAPI.h */,
+				02538C6D114D347600D6750F /* FSKOAuthAPI.m */,
 				02439C6D0D43949200F50EBD /* FSKRequest.h */,
 				02439C6E0D43949200F50EBD /* FSKRequest.m */,
 				02F19E5E0D4B82410047B392 /* FSKResponse.h */,
@@ -1006,6 +1126,14 @@
 				02F19E630D4B84DA0047B392 /* FSKError.m */,
 				0256776D0F3351480032079F /* FSKUtils.h */,
 				0256776E0F3351480032079F /* FSKUtils.m */,
+				02293415111607F500A0CDB5 /* FSKOAuthHandler.h */,
+				02293416111607F500A0CDB5 /* FSKOAuthHandler.m */,
+				02293417111607F500A0CDB5 /* SimpleHTTPConnection.h */,
+				02293418111607F500A0CDB5 /* SimpleHTTPConnection.m */,
+				02293419111607F500A0CDB5 /* SimpleHTTPServer.h */,
+				0229341A111607F500A0CDB5 /* SimpleHTTPServer.m */,
+				024AD3B5113BEC6B0016524F /* FSKProperties.h */,
+				024AD3B6113BEC6B0016524F /* FSKProperties.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1030,6 +1158,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0229337B1115D36800A0CDB5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF500486A6940098B216 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1040,12 +1175,9 @@
 				02433DD90C9DE49C00FE5892 /* FSKPersonService.h in Headers */,
 				02433DDF0C9DE4BB00FE5892 /* FSKAuthoritiesService.h in Headers */,
 				02433DE50C9DE4C400FE5892 /* FSKTempleService.h in Headers */,
-				02439C700D43949300F50EBD /* FSKRequest.h in Headers */,
 				02810C1E0D4427C2003E36B7 /* FSKIdentityService.h in Headers */,
 				02810C5F0D477585003E36B7 /* FSKIdentityRequest.h in Headers */,
 				02810DD20D4995E5003E36B7 /* FSKLoginController.h in Headers */,
-				02F19E600D4B82410047B392 /* FSKResponse.h in Headers */,
-				02F19E640D4B84DA0047B392 /* FSKError.h in Headers */,
 				02F1A07F0D4CEED70047B392 /* NSData+RSHexDump.h in Headers */,
 				02596CEE0D4D6E7E00AB8632 /* FSKIdentityResponse.h in Headers */,
 				02714A3B0D7200EE00072118 /* FSKPersonRepository.h in Headers */,
@@ -1073,20 +1205,54 @@
 				028A356E0E6195E30007B2F0 /* FSKUserReadRequest.h in Headers */,
 				028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */,
 				028A35C30E61A14C0007B2F0 /* FSKContributorRepository.h in Headers */,
-				0256776F0F3351480032079F /* FSKUtils.h in Headers */,
 				024525530F5D45FE003548D3 /* FSKPedigreeRequest.h in Headers */,
 				024525570F5D461E003548D3 /* FSKPedigreeResponse.h in Headers */,
-				0245255B0F5D4785003548D3 /* FSKRepositoryBase.h in Headers */,
+				0245255B0F5D4785003548D3 /* FSKRepository.h in Headers */,
 				024525A70F5D745F003548D3 /* FSKPedigree.h in Headers */,
 				0275A05A0F602A16005AF00D /* FSKPersonName.h in Headers */,
 				02E58ADB0F64B5F200049C62 /* FSKContributorReadRequest.h in Headers */,
 				02E58ADD0F64B5F200049C62 /* FSKContributorResponse.h in Headers */,
+				0293E1C810D607CE00A49364 /* NSString+URIQuery.h in Headers */,
+				0229349F11160B7800A0CDB5 /* FSKError.h in Headers */,
+				022934A011160B7800A0CDB5 /* FSKRequest.h in Headers */,
+				022934A111160B7800A0CDB5 /* FSKResponse.h in Headers */,
+				022934A411160B7800A0CDB5 /* FSKUtils.h in Headers */,
+				022934A511160B7800A0CDB5 /* FSKOAuthHandler.h in Headers */,
+				022934A611160B7800A0CDB5 /* SimpleHTTPServer.h in Headers */,
+				022934A811160B7800A0CDB5 /* SimpleHTTPConnection.h in Headers */,
+				022935A11116A42000A0CDB5 /* identity.h in Headers */,
+				02A462191119B22800FD7885 /* authorities.h in Headers */,
+				020F97A7111E1008001EFA8F /* familytree.h in Headers */,
+				020F97A9111E1009001EFA8F /* reservation.h in Headers */,
+				020F97AB111E100A001EFA8F /* temple.h in Headers */,
+				020F97B1111E101C001EFA8F /* enunciate_common.h in Headers */,
+				020F97B3111E101C001EFA8F /* fsv1.h in Headers */,
+				020F9990112047BF001EFA8F /* FSKUserProfile.h in Headers */,
+				024AD3B7113BEC6B0016524F /* FSKProperties.h in Headers */,
+				02538C6E114D347600D6750F /* FSKOAuthAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0229337E1115D36800A0CDB5 /* FSKitiPhoneLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 022933831115D38700A0CDB5 /* Build configuration list for PBXNativeTarget "FSKitiPhoneLib" */;
+			buildPhases = (
+				0229337B1115D36800A0CDB5 /* Headers */,
+				0229337C1115D36800A0CDB5 /* Sources */,
+				0229337D1115D36800A0CDB5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSKitiPhoneLib;
+			productName = FSKitiPhoneLib;
+			productReference = 0229337F1115D36800A0CDB5 /* libFSKitiPhoneLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		0263A97E0D96ACBB00F3D51B /* FSBasicApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0263A9850D96ACBC00F3D51B /* Build configuration list for PBXNativeTarget "FSBasicApp" */;
@@ -1204,6 +1370,9 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "RedBugz Software";
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "FSKit" */;
 			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
@@ -1220,6 +1389,7 @@
 				029C314B0D7AF71400746CA6 /* FSSearchDemo */,
 				0263A97E0D96ACBB00F3D51B /* FSBasicApp */,
 				02A3A8400E6B1D0500A45179 /* FSCommandLine */,
+				0229337E1115D36800A0CDB5 /* FSKitiPhoneLib */,
 			);
 		};
 /* End PBXProject section */
@@ -1325,13 +1495,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0229337C1115D36800A0CDB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0263A97C0D96ACBB00F3D51B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0263A9A50D96ADAC00F3D51B /* main.m in Sources */,
 				0263A9AD0D96AFCD00F3D51B /* BasicAppDelegate.m in Sources */,
-				0229C0FB0E8FFEE0005447D2 /* FSCLClient.m in Sources */,
 				0229C1BC0E901CAD005447D2 /* NSXMLElement+BExtensions.m in Sources */,
 				0229C1CA0E901CE5005447D2 /* NSData+RSHexDump.m in Sources */,
 			);
@@ -1393,12 +1569,9 @@
 				02433DDA0C9DE49C00FE5892 /* FSKPersonService.m in Sources */,
 				02433DE00C9DE4BB00FE5892 /* FSKAuthoritiesService.m in Sources */,
 				02433DE60C9DE4C400FE5892 /* FSKTempleService.m in Sources */,
-				02439C710D43949300F50EBD /* FSKRequest.m in Sources */,
 				02810C1F0D4427C2003E36B7 /* FSKIdentityService.m in Sources */,
 				02810C600D477585003E36B7 /* FSKIdentityRequest.m in Sources */,
 				02810DD30D4995E5003E36B7 /* FSKLoginController.m in Sources */,
-				02F19E610D4B82410047B392 /* FSKResponse.m in Sources */,
-				02F19E650D4B84DA0047B392 /* FSKError.m in Sources */,
 				02F1A0800D4CEED70047B392 /* NSData+RSHexDump.m in Sources */,
 				02596CEF0D4D6E7E00AB8632 /* FSKIdentityResponse.m in Sources */,
 				02714A3C0D7200EE00072118 /* FSKPersonRepository.m in Sources */,
@@ -1425,14 +1598,31 @@
 				028A356F0E6195E30007B2F0 /* FSKUserReadRequest.m in Sources */,
 				028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */,
 				028A35C40E61A14C0007B2F0 /* FSKContributorRepository.m in Sources */,
-				025677700F3351480032079F /* FSKUtils.m in Sources */,
 				024525540F5D45FE003548D3 /* FSKPedigreeRequest.m in Sources */,
 				024525580F5D461E003548D3 /* FSKPedigreeResponse.m in Sources */,
-				0245255C0F5D4785003548D3 /* FSKRepositoryBase.m in Sources */,
+				0245255C0F5D4785003548D3 /* FSKRepository.m in Sources */,
 				024525A80F5D745F003548D3 /* FSKPedigree.m in Sources */,
 				0275A05B0F602A16005AF00D /* FSKPersonName.m in Sources */,
 				02E58ADC0F64B5F200049C62 /* FSKContributorReadRequest.m in Sources */,
 				02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */,
+				0293E1C910D607CE00A49364 /* NSString+URIQuery.m in Sources */,
+				0229349C11160B7800A0CDB5 /* FSKError.m in Sources */,
+				0229349D11160B7800A0CDB5 /* FSKOAuthHandler.m in Sources */,
+				0229349E11160B7800A0CDB5 /* FSKUtils.m in Sources */,
+				022934A211160B7800A0CDB5 /* FSKResponse.m in Sources */,
+				022934A311160B7800A0CDB5 /* FSKRequest.m in Sources */,
+				022934A711160B7800A0CDB5 /* SimpleHTTPServer.m in Sources */,
+				022934A911160B7800A0CDB5 /* SimpleHTTPConnection.m in Sources */,
+				022935A21116A42100A0CDB5 /* identity.m in Sources */,
+				02A4621A1119B22800FD7885 /* authorities.m in Sources */,
+				020F97A8111E1008001EFA8F /* familytree.m in Sources */,
+				020F97AA111E100A001EFA8F /* reservation.m in Sources */,
+				020F97AC111E100B001EFA8F /* temple.m in Sources */,
+				020F97B2111E101C001EFA8F /* enunciate_common.m in Sources */,
+				020F97B4111E101C001EFA8F /* fsv1.m in Sources */,
+				020F9991112047BF001EFA8F /* FSKUserProfile.m in Sources */,
+				024AD3B8113BEC6B0016524F /* FSKProperties.m in Sources */,
+				02538C6F114D347600D6750F /* FSKOAuthAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1568,23 +1758,36 @@
 		020438B90D5EBD7C00A309AC /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Coverage;
 		};
 		020438BA0D5EBD7C00A309AC /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1647,6 +1850,61 @@
 			};
 			name = Coverage;
 		};
+		022933801115D36900A0CDB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				PREBINDING = NO;
+				PRODUCT_NAME = FSKitiPhoneLib;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Debug;
+		};
+		022933811115D36900A0CDB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				PREBINDING = NO;
+				PRODUCT_NAME = FSKitiPhoneLib;
+				SDKROOT = iphoneos3.0;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		022933821115D36900A0CDB5 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				PREBINDING = NO;
+				PRODUCT_NAME = FSKitiPhoneLib;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Coverage;
+		};
 		0263A9820D96ACBB00F3D51B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1654,8 +1912,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1682,6 +1944,13 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1704,6 +1973,13 @@
 		0263A9840D96ACBB00F3D51B /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1726,9 +2002,18 @@
 		0271486B0D7099D200072118 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1736,6 +2021,11 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "FSAppTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1752,12 +2042,27 @@
 		0271486C0D7099D200072118 /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "FSAppTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1774,16 +2079,29 @@
 		0271486D0D7099D200072118 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_GC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "FSAppTest-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1829,13 +2147,17 @@
 		029C31540D7AF71400746CA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1861,12 +2183,17 @@
 		029C31550D7AF71400746CA6 /* Coverage */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1889,14 +2216,18 @@
 		029C31560D7AF71400746CA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
@@ -1921,8 +2252,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1930,7 +2266,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample Apps/FSCommandLine/FSCommandLine_Prefix.pch";
 				INSTALL_PATH = /usr/local/bin;
-				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1944,14 +2285,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample Apps/FSCommandLine/FSCommandLine_Prefix.pch";
 				INSTALL_PATH = /usr/local/bin;
-				ONLY_ACTIVE_ARCH = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -1966,12 +2318,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample Apps/FSCommandLine/FSCommandLine_Prefix.pch";
 				INSTALL_PATH = /usr/local/bin;
-				ONLY_ACTIVE_ARCH = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -2068,9 +2431,17 @@
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2090,12 +2461,17 @@
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -2112,38 +2488,52 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Debug;
 		};
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		022933831115D38700A0CDB5 /* Build configuration list for PBXNativeTarget "FSKitiPhoneLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				022933801115D36900A0CDB5 /* Debug */,
+				022933811115D36900A0CDB5 /* Release */,
+				022933821115D36900A0CDB5 /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0263A9850D96ACBC00F3D51B /* Build configuration list for PBXNativeTarget "FSBasicApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

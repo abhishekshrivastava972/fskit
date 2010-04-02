@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "familytree.h"
+
 @class FSKEventSummary, FSKCouple;
 
 @interface FSKPersonSummary : NSObject {
@@ -35,8 +37,8 @@
 	BOOL hasAdditionalChildren;
 }
 
-+ (FSKPersonSummary *)createFromXML:(NSXMLElement *)personElement;
-- (id)initWithXML:(NSXMLElement *)personElement;
++ (FSKPersonSummary *)createFromXML:(FSFAMILYTREEV2SearchPerson *)personElement;
+- (id)initWithXML:(FSFAMILYTREEV2SearchPerson *)personElement;
 
 - (NSString *)lifespanString;
 

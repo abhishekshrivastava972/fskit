@@ -27,6 +27,6 @@
 
 - (void)sendUserReadRequestWithIds:(NSSet *)idList parameters:(NSDictionary *)parameters;
 
-- (FSKUserResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
+- (FSKUserResponse *)responseWithData:(NSData *)data;
 
 @end

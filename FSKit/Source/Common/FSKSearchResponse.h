@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FSKResponse.h"
+#import "familytree.h"
 
 @interface FSKSearchResponse : FSKResponse {
 	int totalCount;
@@ -15,9 +16,12 @@
 	int closeMatchesCount;
 	NSString *contextId;
 	NSArray *searchResults; // of FSKSearchResult
+	
+	@private
+	FSFAMILYTREEV2FamilyTree *_ft;
 }
 
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+- (id)initWithData:(NSData *)data;
 
 - (int)totalPossibleMatches;
 - (int)totalCloseMatches;

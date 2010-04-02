@@ -8,13 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "FSKResponse.h"
+#import "identity.h"
 
 @interface FSKIdentityResponse : FSKResponse
 {
 	NSString *sessionId;
+	
+	@private
+	FSIDENTITYV2AIdentity *xmlDocument;
 }
 
-- (id)initWithXML:(NSXMLDocument *)xmlDocument;
+- (id)initWithData:(NSData *)data;
+- (FSIDENTITYV2AIdentity *)xmlDocument;
+
 
 - (NSString *)sessionId;
 

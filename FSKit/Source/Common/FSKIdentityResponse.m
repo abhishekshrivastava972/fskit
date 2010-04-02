@@ -11,23 +11,25 @@
 
 @implementation FSKIdentityResponse
 
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument
+- (id)initWithData:(NSData *)data
 {
-    if ((self = [super initWithXML:theXmlDocument]) != nil) 
-	{ 
-//	NSLog(@"login results:\n%@", [xmlDocument XMLStringWithOptions:NSXMLNodePrettyPrint]);
-////	NSLog(@"session doc: %@ %@ %@", [xmlDocument rootElement], [xmlDocument nodesForXPath:@"." error:nil], [[[xmlDocument nodesForXPath:@"./session" error:nil] lastObject] attributeForName:@"version"]);
-//	NSXMLElement *rootNode = [xmlDocument rootElement];
-//	NSLog(@"root node: %@ %@ %@", [[[rootNode nodesForXPath:@"//session/@id" error:nil] lastObject] stringValue], [rootNode nodesForXPath:@"//session/@id" error:nil], [[rootNode attributeForName:@"version"] stringValue]);
-//	sessionId = [[[rootNode nodesForXPath:@"//session/@id" error:nil] lastObject] stringValue];
+    if ((self = [super initWithData:data]) != nil) 
+	{
+		xmlDocument = [[FSIDENTITYV2AIdentity readFromXML:data] retain];
 	}
 	
 	return self;	
 }
 
+- (FSIDENTITYV2AIdentity *)xmlDocument;
+{
+	return [[xmlDocument retain] autorelease];
+}
+
 - (void)dealloc
 {
 	[sessionId release];
+	[xmlDocument release];
 	[super dealloc];
 }
 
@@ -35,7 +37,7 @@
 {
 	if (!sessionId)
 	{
-		sessionId = [[[[xmlDocument nodesForXPath:@"//session/@id" error:nil] lastObject] stringValue] retain];
+		sessionId = [[[[self xmlDocument] session] id] retain];
 	}
 	return [[sessionId retain] autorelease];
 }

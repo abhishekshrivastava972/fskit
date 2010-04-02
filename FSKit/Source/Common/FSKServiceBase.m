@@ -35,6 +35,10 @@
 {
 	[FSKPersonReadRequest fetchPersonDataWithIds:idList parameters:parameterDict connection:connection delegate:self selector:@selector(requestFinished:)];
 }
+-(NSDictionary *)properties
+{
+	return properties;
+}
 
 -(void) requestFinished:(NSXMLElement *)response
 {

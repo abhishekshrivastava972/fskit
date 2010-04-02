@@ -27,6 +27,6 @@
 
 - (void)sendContributorReadRequestWithIds:(NSSet *)idList parameters:(NSDictionary *)parameters;
 
-- (FSKContributorResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
+- (FSKContributorResponse *)responseWithData:(NSData *)data;
 
 @end

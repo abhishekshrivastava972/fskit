@@ -8,29 +8,25 @@
 
 #import "FSKSearchResponse.h"
 #import "FSKSearchResult.h"
-#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKSearchResponse
 
-- (void)parseSearchResponse:(NSXMLElement *)searchesElement
+- (id)initWithData:(NSData *)data
 {
-	totalCount = [[[searchesElement attributeForName:@"count"] stringValue] intValue];
-	closeMatchesCount = [[[searchesElement attributeForName:@"close"] stringValue] intValue];
-	partialMatchesCount = [[[searchesElement attributeForName:@"partial"] stringValue] intValue];
-	NSMutableArray *theResults = [[NSMutableArray array] retain];
-	NSEnumerator *enumerator = [[searchesElement elementsForName:@"search"] objectEnumerator];
-	NSXMLElement *searchElement;
-	while (searchElement = [enumerator nextObject]) {
-		[theResults addObject:[FSKSearchResult searchResultFromXML:searchElement]];
-	}
-	searchResults = [[NSArray arrayWithArray:theResults] retain];
-}
-	
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument
-{
-    if ((self = [super initWithXML:theXmlDocument]) != nil) 
+    if ((self = [super initWithData:data]) != nil) 
 	{ 
-		[self parseSearchResponse:[[xmlDocument rootElement] firstElementWithName:@"searches"]];
+		_ft = [FSFAMILYTREEV2FamilyTree readXML:data];
+		FSFAMILYTREEV2SearchResults *searchResults = [[_ft searches] objectAtIndex:0];
+		totalCount = [searchResults count];
+		closeMatchesCount = [searchResults close];
+		partialMatchesCount = [searchResults partial];
+		NSMutableArray *theResults = [[NSMutableArray array] retain];
+		NSEnumerator *enumerator = [[searchResults results] objectEnumerator];
+		FSFAMILYTREEV2SearchResult *searchElement;
+		while (searchElement = [enumerator nextObject]) {
+			[theResults addObject:[FSKSearchResult searchResultFromXML:searchElement]];
+		}
+		searchResults = [[NSArray arrayWithArray:theResults] retain];
 	}
 	
 	return self;	

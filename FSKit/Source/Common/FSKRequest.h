@@ -32,6 +32,7 @@
 	FSKConnection *familySearchConnection;
 	id _delegate;
 	SEL _selector;
+	int _responseCode;
 	NSMutableData *responseData;
 
 	NSString *_endpoint;
@@ -55,7 +56,7 @@
 								    WithIds:(NSSet *)idList
                                  parameters:(NSDictionary *)parameters;
 								 
-- (FSKResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;								 
+- (FSKResponse *)responseWithData:(NSData *)data;								 
 
 //#pragma mark Request Methods
 

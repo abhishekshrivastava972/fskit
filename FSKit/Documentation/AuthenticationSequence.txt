@@ -1,0 +1,61 @@
+participant User
+participant Browser
+participant Application
+participant FSKConnection
+participant FSKRequest
+participant FSKOAuthHandler
+participant FSKIdentityRequest
+participant FSKProperties
+participant "Public API" as api
+User->Application: request data
+Application->FSKRequest: Data Request
+FSKRequest->api: Request
+note right of api
+  Public API checks cookies for sessionId
+end note
+opt Unauthorized (401)
+  api->FSKRequest: unauthorized response
+  FSKRequest->FSKIdentityRequest: <<create request>>
+  activate FSKIdentityRequest
+  FSKIdentityRequest->FSKProperties: hasProperties?
+  opt hasProperties==false
+    FSKIdentityRequest->api: identity/v2/properties
+    api->FSKIdentityRequest: properties Response
+    FSKIdentityRequest->FSKOAuthHandler: setIdentityProperties
+  end
+  FSKIdentityRequest->FSKOAuthHandler: authenticate
+  FSKOAuthHandler->FSKProperties: getRequestTokenURL
+  FSKOAuthHandler->api: RequestToken Request
+  api->FSKOAuthHandler: RequestToken Response
+  FSKOAuthHandler->FSKProperties: getAuthorizeURL
+  activate Browser
+  FSKOAuthHandler->Browser: Authorize Request
+  Browser->User: Authorize?
+  alt Deny
+    Browser->Application: OAuth Verifier Response
+    destroy Browser
+    Application->FSKOAuthHandler: setVerifier
+    FSKOAuthHandler->FSKProperties: getAccessTokenURL
+    FSKOAuthHandler->api: AccessToken Request
+    api->FSKOAuthHandler: AccessToken Response (Failure)
+    Application->User: Authentication Failure message
+  else Allow
+    Browser->Application: OAuth Verifier Response
+    destroy Browser
+    Application->FSKOAuthHandler: setVerifier
+    FSKOAuthHandler->FSKProperties: getAccessTokenURL
+    FSKOAuthHandler->api: AccessToken Request
+    api->FSKOAuthHandler: AccessToken Response (Success)
+    FSKOAuthHandler->FSKConnection: setSessionId
+    FSKConnection->FSKRequest: hasAuthenticationNotification
+    FSKRequest->api: identity/v2/session
+    api->FSKRequest: session response (set cookie)
+    FSKRequest->api: Resend Original Data Request (with cookie)
+    note right of api
+      Public API checks cookies for sessionId
+    end note
+  end
+end
+api->FSKRequest: Data Response (Success)
+FSKRequest->Application: return data
+Application->User: show data

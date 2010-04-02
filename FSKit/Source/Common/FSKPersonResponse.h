@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "FSKResponse.h"
 
+@class FSKPerson, FSKPersonSummary;
+
 @interface FSKPersonResponse : FSKResponse {
 	NSArray *requestedIds;
 	NSArray *persons; // of FSKPerson
 }
 
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+- (id)initWithData:(NSData *)data;
 
 - (NSArray *)personList;
+- (FSKPerson *)person;
+- (FSKPersonSummary *)personSummary;
 
 @end

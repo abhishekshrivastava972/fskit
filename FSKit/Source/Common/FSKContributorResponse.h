@@ -11,11 +11,11 @@
 
 @interface FSKContributorResponse : FSKResponse {
 	NSArray *requestedIds; // of NSString
-	NSArray *Contributors; // of FSKContributor
+	NSArray *contributors; // of FSKContributor
 }
 
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+- (id)initWithData:(NSData *)data;
 
-- (NSArray *)ContributorList;
+- (NSArray *)contributorList;
 
 @end

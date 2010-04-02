@@ -8,26 +8,22 @@
 
 #import "FSKContributorResponse.h"
 #import "FSKContributor.h"
-#import "NSXMLElement+BExtensions.h"
+#import "familytree.h"
 
 @implementation FSKContributorResponse
 
-- (void)parseContributorResponse:(NSXMLElement *)ContributorsElement
+- (id)initWithData:(NSData *)data
 {
-	NSMutableArray *theResults = [NSMutableArray array];
-	NSEnumerator *enumerator = [[ContributorsElement elementsForName:@"Contributor"] objectEnumerator];
-	NSXMLElement *ContributorElement;
-	while (ContributorElement = [enumerator nextObject]) {
-		[theResults addObject:[FSKContributor createFromXML:ContributorElement]];
-	}
-	Contributors = [theResults retain];
-}
-
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument
-{
-    if ((self = [super initWithXML:theXmlDocument]) != nil) 
+    if ((self = [super initWithData:data]) != nil) 
 	{ 
-		[self parseContributorResponse:[[xmlDocument rootElement] firstElementWithName:@"Contributors"]];
+		FSFAMILYTREEV2FamilyTree *familytree = [FSFAMILYTREEV2FamilyTree readFromXML:data];
+		NSMutableArray *theResults = [NSMutableArray array];
+		NSEnumerator *enumerator = [[familytree contributors] objectEnumerator];
+		FSFAMILYTREEV2Person *contributor;
+		while (contributor = [enumerator nextObject]) {
+			[theResults addObject:[FSKContributor createFromXML:contributor]];
+		}
+		contributors = [theResults retain];		
 	}
 	
 	return self;	
@@ -35,19 +31,19 @@
 
 - (void)dealloc
 {
-	[Contributors release];
+	[contributors release];
 	[super dealloc];
 }
 
 - (NSArray *)ContributorList
 {
-	return [[Contributors retain] autorelease];
+	return [[contributors retain] autorelease];
 }
 
 - (FSKContributor *)Contributor
 {
-	NSLog(@"fskContributorsresp Contributor %d %@", [Contributors count], [Contributors lastObject]);
-	return [Contributors lastObject];
+	NSLog(@"fskcontributorsresp Contributor %d %@", [contributors count], [contributors lastObject]);
+	return [contributors lastObject];
 }
 
 @end

@@ -8,39 +8,19 @@
 
 #import "FSKResponse.h"
 #import "FSKError.h"
-#import "NSXMLElement+BExtensions.h"
+#import "enunciate_common.h"
 
 @implementation FSKResponse
-- (void)parseXml
+- (void)parseData
 {
-	@try {
-		statusCode = [[[[xmlDocument nodesForXPath:@"/node()/@statusCode" error:nil] lastObject] stringValue] intValue];
-		statusMessage = [[[xmlDocument nodesForXPath:@"/node()/@statusMessage" error:nil] lastObject] stringValue];
-		version = [[[xmlDocument nodesForXPath:@"/node()/@version" error:nil] lastObject] stringValue];
-		deprecatedValue = [[[xmlDocument nodesForXPath:@"/node()/@deprecated" error:nil] lastObject] stringValue];
-		deprecated = (@"true" == deprecatedValue);
-		errors = [[NSMutableArray array] retain];
-		NSEnumerator *enumerator = [[xmlDocument nodesForXPath:@"//fsapi-v1:error" error:nil] objectEnumerator];
-		NSXMLElement *errorElement1;
-		while (errorElement1 = [enumerator nextObject]) {
-			[errors addObject:[[FSKError alloc] initWithXML:errorElement1]];
-		}		
-		results = [[NSArray array] retain];
-	}
-	@catch (NSException * e) {
-		NSLog(@"%s exception: %@", __PRETTY_FUNCTION__, e);
-	}
-	@finally {
-		// TODO
-	}
+	// subclasses should override
 }
 
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+- (id)initWithData:(NSData *)data;
 {
     if ((self = [super init]) != nil) 
 	{
-		xmlDocument = [theXmlDocument retain];
-		[self parseXml];
+		[self parseData];
 	}
 	
 	return self;
@@ -48,14 +28,7 @@
 
 - (void)dealloc
 {
-	[xmlDocument release];
 	[super dealloc];
-}
-
-
-- (NSXMLDocument *)xmlDocument
-{
-    return [[xmlDocument retain] autorelease];
 }
 
 - (int)statusCode

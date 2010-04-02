@@ -8,20 +8,16 @@
 	FSKConnection *connection;
 	FSKPersonService *personService;
 	FSKIdentityService *identityService;
-	NSXMLDocument *theDocument;
 
     IBOutlet NSTextView *loginResults;
     IBOutlet NSTextView *myResults;
 	IBOutlet NSTextField *welcomeMessage;
 	IBOutlet NSTextField *sessionId;
-	IBOutlet NSTextField *username;
-	IBOutlet NSTextField *password;
-	IBOutlet NSMatrix *radio;
+	IBOutlet NSButton *customURLCheckbox;
 }
+
 - (IBAction)fetchMe:(id)sender;
 - (IBAction)login:(id)sender;
-
-- (NSXMLDocument *)theDocument;
-- (void)setTheDocument:(NSXMLDocument *)newTheDocument;
+- (IBAction)logout:(id)sender;
 
 @end
