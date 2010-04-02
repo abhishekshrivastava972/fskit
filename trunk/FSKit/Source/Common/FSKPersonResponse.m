@@ -8,26 +8,22 @@
 
 #import "FSKPersonResponse.h"
 #import "FSKPerson.h"
-#import "NSXMLElement+BExtensions.h"
+#import "familytree.h"
 
 @implementation FSKPersonResponse
 
-- (void)parsePersonResponse:(NSXMLElement *)personsElement
+- (id)initWithData:(NSData *)data
 {
-	NSMutableArray *theResults = [NSMutableArray array];
-	NSEnumerator *enumerator = [[personsElement elementsForName:@"person"] objectEnumerator];
-	NSXMLElement *personElement;
-	while (personElement = [enumerator nextObject]) {
-		[theResults addObject:[FSKPerson createFromXML:personElement]];
-	}
-	persons = [theResults retain];
-}
-	
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument
-{
-    if ((self = [super initWithXML:theXmlDocument]) != nil) 
-	{ 
-		[self parsePersonResponse:[[xmlDocument rootElement] firstElementWithName:@"persons"]];
+    if ((self = [super init]) != nil) 
+	{
+		FSFAMILYTREEV2FamilyTree *familytree = [FSFAMILYTREEV2FamilyTree readFromXML:data];
+		NSMutableArray *theResults = [NSMutableArray array];
+		NSEnumerator *enumerator = [[familytree persons] objectEnumerator];
+		FSFAMILYTREEV2Person *personElement;
+		while (personElement = [enumerator nextObject]) {
+			[theResults addObject:[FSKPerson createFromXML:personElement]];
+		}
+		persons = [theResults retain];
 	}
 	
 	return self;	

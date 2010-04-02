@@ -14,7 +14,7 @@
 	NSArray *users; // of FSKUser
 }
 
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument;
+- (id)initWithData:(NSData *)data;
 
 - (NSArray *)userList;
 

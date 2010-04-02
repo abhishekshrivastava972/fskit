@@ -42,7 +42,8 @@ char * getPassword()
 	if ((self = [super init]))
 	{
 		connection  = [[[FSKConnection alloc] init] retain];
-		[connection setBaseURLString:kFSAPIDevBaseURLString];
+		[connection setBaseURLString:@"http://localhost:8080"];
+//		[connection setBaseURLString:kFSAPIDevBaseURLString];
 		[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
 		[connection setUserAgentString:@"FSKit Command Line App/1.0" override:NO];
 		[connection setDelegate:self];
@@ -133,16 +134,23 @@ didFailWithError:(FSKError *)error
 	[self readFromStdin];
 }
 
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-	char buf[MAXLINE] = {0};
-	printf("username: ");
-	fgets(buf, sizeof buf, stdin);
-	chomp(buf);
-	NSString *username = [NSString stringWithCString:buf];
-	NSString *password = [NSString stringWithCString:getPassword()];
-	[[challenge sender] useCredential:[NSURLCredential credentialWithUser:username password:password persistence:NSURLCredentialPersistenceForSession] forAuthenticationChallenge:challenge];
+	NSTask *theProcess;
+	theProcess = [[NSTask alloc] init];
+	
+	[theProcess setLaunchPath:@"/usr/bin/open"];
+	// Path of the shell command we'll execute
+	[theProcess setArguments:
+	 [NSArray arrayWithObject:url]];
+	// Arguments to the command: the name of the
+	// Applications directory
+	
+	[theProcess launch];
+	// Run the command
+	
+	[theProcess release];
 }
 
 @end

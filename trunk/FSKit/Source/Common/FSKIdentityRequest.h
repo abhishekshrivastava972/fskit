@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FSKRequest.h"
 #import "FSKIdentityResponse.h"
+#import "identity.h"
 
 @interface FSKIdentityRequest : FSKRequest {
 
@@ -25,10 +26,12 @@
 				 delegate:(id)aDelegate 
 				 selector:(SEL)aSelector;
 
-- (FSKIdentityResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
+- (FSKIdentityResponse *)responseWithData:(NSData *)data;
 
-- (void)sendLoginRequest;
-
+- (void)sendPropertiesRequest;
+- (void)sendUserProfileRequest;
+- (void)sendUserPermissionRequest;
+- (void)sendSessionPingRequest;
 - (void)sendLogoutRequest;
 
 @end

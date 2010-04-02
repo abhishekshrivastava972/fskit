@@ -32,7 +32,7 @@
 	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", [connection baseURLString], @""]];
 	NSLog(@"url: %@", myURL);
 	NSError* err = nil;
-	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:nil error:&err];
+	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:0 error:&err];
 	if (err) {
 		NSLog(@"Error: %@", err);
 	}
@@ -49,7 +49,7 @@
 	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", [connection baseURLString], code]];
 	NSLog(@"url: %@", myURL);
 	NSError* err = nil;
-	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:nil error:&err];
+	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:0 error:&err];
 	if (err) {
 		NSLog(@"Error: %@", err);
 	}

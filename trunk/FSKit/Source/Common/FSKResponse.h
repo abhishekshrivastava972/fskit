@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "enunciate_common.h"
 
 
 @interface FSKResponse : NSObject 
 {
-	NSXMLDocument *xmlDocument;
 	int statusCode;
 	NSString *statusMessage;
 	NSString *version;
-	NSString *deprecatedValue;
 	BOOL deprecated;
 	NSMutableArray *results; // of id (Request-specific)
 	NSMutableArray *errors; // of FSKError
@@ -23,9 +22,7 @@
 	BOOL hasResults;
 }
 
-- (id)initWithXML:(NSXMLDocument *)xmlDocument;
-
-- (NSXMLDocument *)xmlDocument;
+- (id)initWithData:(NSData *)data;
 
 - (int)statusCode;
 

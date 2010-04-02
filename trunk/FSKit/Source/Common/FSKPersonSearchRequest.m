@@ -36,10 +36,10 @@ NSString *kSearchEndpoint = @"search";
 	[self fetchFamilySearchDataAtEndpoint:@"familytree/v2/search" WithIds:nil parameters:parameters];
 }
 
-- (FSKSearchResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+- (FSKSearchResponse *)responseWithData:(NSData *)data
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);	
-	FSKSearchResponse *response = [[FSKSearchResponse alloc] initWithXML:xmlDoc];
+	FSKSearchResponse *response = [[FSKSearchResponse alloc] initWithData:data];
 	NSLog(@"response code: %d message: %@", [response statusCode], [response statusMessage]);	
 	return [response autorelease];
 }

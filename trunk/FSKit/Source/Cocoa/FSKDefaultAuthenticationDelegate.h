@@ -17,7 +17,7 @@
 
 - (void)initWithConnection:(FSKConnection *)aConnection;
 
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge; 
+- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url; 
 
 - (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 

@@ -27,6 +27,6 @@
 
 - (void)sendPersonReadRequestWithIds:(NSSet *)idList parameters:(NSDictionary *)parameters;
 
-- (FSKPersonResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
+- (FSKPersonResponse *)responseWithData:(NSData *)data;
 
 @end

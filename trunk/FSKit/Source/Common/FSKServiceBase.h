@@ -15,11 +15,13 @@
 	
 	NSString *moduleName;
 	NSString *versionString;
+	NSDictionary *properties;
 }
 
 - (id)initWithConnection:(FSKConnection *)familySearchConnection delegate:(id)theDelegate;
 
 -(void) makeFamilySearchRequest:(NSString *)endpoint idList:(NSSet *)idList parameters:(NSDictionary *)parameterDict;
+-(NSDictionary *)properties;
 
 // delegate methods
 -(void) requestFinished:(NSXMLElement *)response;

@@ -7,7 +7,7 @@
 //
 
 #import "FSKContributorRepository.h"
-#import "FSKUserReadRequest.h"
+#import "FSKContributorReadRequest.h"
 
 @implementation FSKContributorRepository
 static FSKContributorRepository *sharedInstance = nil;
@@ -43,7 +43,7 @@ static FSKContributorRepository *sharedInstance = nil;
     return self;
 }
 
-- (unsigned)retainCount
+- (NSUInteger)retainCount
 {
     return UINT_MAX;  //denotes an object that cannot be released
 }
@@ -61,8 +61,8 @@ static FSKContributorRepository *sharedInstance = nil;
 - (id)initWithConnection:(FSKConnection *)aConnection
 {
     if ((self = [super init]) != nil) 
-	{ 
-		cache = [[NSMutableDictionary dictionary] retain];
+	{ 		
+		repository = [[[FSKRepository alloc] initWithIdentifier:[self className]] retain];
 		connection = [aConnection retain];
 	}
 	
@@ -72,12 +72,12 @@ static FSKContributorRepository *sharedInstance = nil;
 - (void)dealloc
 {
 	[connection release];
-	[cache release];
+	[repository release];
 	[super dealloc];
 }
 
-//- (FSKUser *)userForId:(NSString *)userId
-- (id)userForId:(NSString *)userId
+
+- (FSKContributor *)contributorForId:(NSString *)contributorId;
 {
 //	FSKUser *cachedUser = [cache objectForKey:userId];
 //	if (!cachedUser)

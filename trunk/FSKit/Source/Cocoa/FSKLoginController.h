@@ -9,8 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface FSKLoginController : NSWindowController {
-	IBOutlet NSTextField *signInNameField;
-	IBOutlet NSTextField *passwordField;
 	IBOutlet NSProgressIndicator *spinner;
 //	IBOutlet NSTextField *statusLabel;
 	
@@ -32,7 +30,6 @@
     BOOL usingSheet;
 //    id callback;
 //    SEL selector;
-    NSURLAuthenticationChallenge *_challenge;
 
 //	FSKRequest *_request;
 }
@@ -53,14 +50,14 @@
 
 - (BOOL)loadNib;
 
-- (void)runAsModalDialogWithChallenge:(NSURLAuthenticationChallenge *)chall;
-- (void)runAsSheetOnWindow:(NSWindow *)window withChallenge:(NSURLAuthenticationChallenge *)chall;
+- (void)runAsModalDialog;
+- (void)runAsSheetOnWindow:(NSWindow *)window;
 
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void  *)contextInfo;
 
 // from webkit handler
-- (void)startAuthentication:(NSURLAuthenticationChallenge *)challenge window:(NSWindow *)w;
-- (void)cancelAuthentication:(NSURLAuthenticationChallenge *)challenge;
+- (void)startAuthenticationForWindow:(NSWindow *)w;
+- (void)cancelAuthentication;
 
 //- (void)credential
 

@@ -20,7 +20,7 @@
 	//	IBOutlet PSPredicateEditor *predicateEditor;
 	RuleDelegate *ruleDelegate;
 	
-	NSXMLDocument *searchResultXML;
+	id<EnunciateXML> searchResultXML;
 	FSKSearchResponse *lastResponse;
 	
 	NSMutableDictionary *searchForm;

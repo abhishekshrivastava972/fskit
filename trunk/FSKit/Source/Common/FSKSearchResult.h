@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FSKPersonSummary.h"
+#import "familytree.h"
 
 @interface FSKSearchResult : NSObject {
 	NSNumber *score;
@@ -19,8 +20,8 @@
 	NSArray *children; // of FSKPersonSummary
 }
 
-+ (id)searchResultFromXML:(NSXMLElement *)searchElement;
-- (id)initWithXML:(NSXMLElement *)searchElement;
++ (id)searchResultFromXML:(FSFAMILYTREEV2SearchResult *)searchElement;
+- (id)initWithXML:(FSFAMILYTREEV2SearchResult *)searchResult;
 
 
 - (NSNumber *)score;

@@ -16,7 +16,6 @@
 NSString *kFSAPIProductionBaseURLString = @"https://api.familysearch.org";  // Production
 NSString *kFSAPIBetaBaseURLString = @"https://apibeta.familysearch.org";  // Beta
 NSString *kFSAPIDevBaseURLString = @"http://www.dev.usys.org";  // Development
-NSString *FSAPIVersion = @"v1";
 
 
 @implementation FSKConnection
@@ -39,7 +38,6 @@ NSString *userAgentString = @"test";
 
 - (void) dealloc
 {
-	[credential release];
 	[userAgentString release];
 	[responseDataCache release];
 	[requestQueue release];
@@ -67,18 +65,6 @@ NSString *userAgentString = @"test";
 		[baseURLString release];
 		baseURLString = [value copy];
 	}
-}
-
-
-- (NSURLCredential *)credential {
-    return [[credential retain] autorelease];
-}
-
-- (void)setCredential:(NSURLCredential *)value {
-    if (credential != value) {
-        [credential release];
-        credential = [value copy];
-    }
 }
 
 - (NSString *)developerKey {
@@ -169,7 +155,7 @@ NSString *userAgentString = @"test";
 	NSLog(@"%s", __PRETTY_FUNCTION__);
 	if ([request isKindOfClass:[FSKIdentityRequest class]])
 	{
-		[request responseWithXML:[request valueForKey:@"responseData"]];
+		[request responseWithData:[request valueForKey:@"responseData"]];
 	}
 	else
 	{
@@ -194,8 +180,8 @@ NSString *userAgentString = @"test";
 //-(void)connectionDidFinishLoading:(NSURLConnection *)connection
 //{	
 //	NSLog(@"%s %@", __PRETTY_FUNCTION__, connection);
-//	NSXMLDocument *returnXML = [[NSXMLDocument alloc] initWithData:[responseDataCache objectForKey:[connection description]]
-//														   options:nil
+//	id<EnunciateXML> returnXML = [[NSXMLDocument alloc] initWithData:[responseDataCache objectForKey:[connection description]]
+//														   options:0
 //															 error:nil];
 //    SEL _selector = @selector(requestFinished:);																	
 //	if([_delegate respondsToSelector:_selector])

@@ -33,13 +33,13 @@ NSString *kContributorEndpoint = @"Contributor";
 
 - (void)sendContributorReadRequestWithIds:(NSSet *)idList parameters:(NSDictionary *)parameters;
 {
-	[self fetchFamilySearchDataAtEndpoint:@"familytree/v2/Contributor" WithIds:idList parameters:parameters];
+	[self fetchFamilySearchDataAtEndpoint:@"familytree/v2/contributor" WithIds:idList parameters:parameters];
 }
 
-- (FSKContributorResponse *)responseWithXML:(NSXMLDocument *)xmlDoc
+- (FSKContributorResponse *)responseWithData:(NSData *)data
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);	
-	FSKContributorResponse *response = [[FSKContributorResponse alloc] initWithXML:xmlDoc];
+	FSKContributorResponse *response = [[FSKContributorResponse alloc] initWithData:data];
 	NSLog(@"response code: %d message: %@", [response statusCode], [response statusMessage]);	
 	return [response autorelease];
 }

@@ -7,7 +7,7 @@
 //
 
 #import "FSKPedigreeResponse.h"
-#import "NSXMLElement+BExtensions.h"
+#import "familytree.h"
 
 @implementation FSKPedigreeResponse
 
@@ -22,11 +22,18 @@
 //	persons = [theResults retain];
 //}
 
-- (id)initWithXML:(NSXMLDocument *)theXmlDocument
+- (id)initWithData:(NSData *)data
 {
-    if ((self = [super initWithXML:theXmlDocument]) != nil) 
+    if ((self = [super initWithData:data]) != nil) 
 	{ 
-		[self parsePersonResponse:[[[[xmlDocument rootElement] firstElementWithName:@"pedigrees"] firstElementWithName:@"pedigree"] firstElementWithName:@"persons"]];
+		FSFAMILYTREEV2FamilyTree *familytree = [FSFAMILYTREEV2FamilyTree readFromXML:data];
+		NSMutableArray *theResults = [NSMutableArray array];
+		NSEnumerator *enumerator = [[[familytree pedigrees] persons] objectEnumerator];
+		FSFAMILYTREEV2Person *personElement;
+		while (personElement = [enumerator nextObject]) {
+			[theResults addObject:[FSKPerson createFromXML:personElement]];
+		}
+		persons = [theResults retain];
 	}
 	
 	return self;	

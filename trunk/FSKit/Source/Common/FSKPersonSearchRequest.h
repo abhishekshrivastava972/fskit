@@ -25,6 +25,6 @@
 
 - (void)sendSearchRequestWithCriteria:(NSDictionary *)parameters;
 
-- (FSKSearchResponse *)responseWithXML:(NSXMLDocument *)xmlDoc;
+- (FSKSearchResponse *)responseWithData:(NSData *)data;
 
 @end
