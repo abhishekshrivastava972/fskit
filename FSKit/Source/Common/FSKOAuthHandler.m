@@ -230,8 +230,8 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
 									 @"", kMPOAuthCredentialConsumerSecret,
 									 nil];
 		NSDictionary *configuration = [NSDictionary dictionaryWithObjectsAndKeys:	
-									   [NSURL URLWithString:@"http://sisu1a.ldsonly.net/identity/v2/"], MPOAuthAuthenticationURLKey,
-									   [NSURL URLWithString:@"http://sisu1a.ldsonly.net/identity/v2/"], MPOAuthBaseURLKey,
+									   [NSURL URLWithString:@"http://www.dev.usys.org/identity/v2/"], MPOAuthAuthenticationURLKey,
+									   [NSURL URLWithString:@"http://www.dev.usys.org/identity/v2/"], MPOAuthBaseURLKey,
 									   [identityProperties valueForKey:FSKOAuthRequestTokenKey], MPOAuthRequestTokenURLKey,
 									   [identityProperties valueForKey:FSKOAuthAuthorizeURLKey], MPOAuthUserAuthorizationURLKey,
 									   [identityProperties valueForKey:FSKOAuthAccessTokenKey], MPOAuthAccessTokenURLKey,
