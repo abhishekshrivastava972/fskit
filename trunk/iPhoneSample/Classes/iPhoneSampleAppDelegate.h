@@ -3,11 +3,11 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 8/31/08.
-//  Copyright __MyCompanyName__ 2008. All rights reserved.
+//  Copyright RedBugz Software 2008. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "FSKit.h"
+#import <FSKit/FSKit.h>
 #import "AuthenticationController.h"
 
 @interface iPhoneSampleAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {

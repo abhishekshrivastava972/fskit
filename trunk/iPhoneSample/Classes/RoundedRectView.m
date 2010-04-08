@@ -4,7 +4,7 @@
 //  Created by Jeff LaMarche on 11/13/08.
 
 #import "RoundedRectView.h"
-#import "FSKPerson.h"
+#import <FSKit/FSKPerson.h>
 
 @implementation RoundedRectView
 @synthesize strokeColor;
@@ -85,10 +85,15 @@
     CGContextDrawPath(context, kCGPathFillStroke);
 	
 	UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(minx+5, miny+5, width-10, (height-10)/2.0)];
-	nameLabel.text = person.personId;
+	nameLabel.text = person.fullName;
 	nameLabel.backgroundColor = [UIColor clearColor];
 	nameLabel.opaque = NO;
 	[self addSubview:nameLabel];
+	UILabel *birthLabel = [[UILabel alloc] initWithFrame:CGRectMake(minx+5, miny+5+nameLabel.bounds.size.height, width-10, (height-10)/2.0)];
+	birthLabel.text = person.summary.birthdate;
+	birthLabel.backgroundColor = [UIColor clearColor];
+	birthLabel.opaque = NO;
+	[self addSubview:birthLabel];
 }
 
 - (void)dealloc {

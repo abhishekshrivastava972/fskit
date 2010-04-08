@@ -3,11 +3,11 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 3/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 RedBugz Software. All rights reserved.
 //
 
 #import "SearchResultDetailController.h"
-#import "FSKSearchResult.h"
+#import <FSKit/FSKSearchResult.h>
 
 @implementation SearchResultDetailController
 
@@ -34,6 +34,11 @@
 - (void)loadView {
 }
 */
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

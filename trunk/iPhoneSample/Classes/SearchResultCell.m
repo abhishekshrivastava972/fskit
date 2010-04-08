@@ -3,11 +3,11 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 3/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 RedBugz Software. All rights reserved.
 //
 
 #import "SearchResultCell.h"
-#import "FSKSearchResult.h"
+#import <FSKit/FSKSearchResult.h>
 #import "SearchResultView.h"
 
 @implementation SearchResultCell

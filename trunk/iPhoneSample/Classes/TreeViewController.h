@@ -3,7 +3,7 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 3/2/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 RedBugz Software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

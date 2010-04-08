@@ -49,19 +49,35 @@
 			<object class="IBUITabBarController" id="1034742383">
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-				<object class="IBUIViewController" key="IBUISelectedViewController" id="358353467">
-					<string key="IBUITitle">Person</string>
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="365024319">
-						<int key="IBUITag">2</int>
-						<string key="IBUITitle">Person</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">Users.tiff</string>
-						</object>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="121915252">
+					<string key="IBUITitle">Search</string>
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="184918805">
+						<int key="IBUISystemItemIdentifier">8</int>
 						<reference key="IBUITabBar"/>
 					</object>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
-					<string key="IBUINibName">PersonView</string>
+					<string key="IBUINibName">SearchView</string>
+					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="1039788639">
+						<nil key="NSNextResponder"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrameSize">{0, 0}</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+					</object>
+					<object class="NSMutableArray" key="IBUIViewControllers">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="IBUIViewController" id="689087111">
+							<string key="IBUITitle">Search</string>
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="117014832">
+								<reference key="IBUINavigationBar"/>
+								<string key="IBUITitle">Search</string>
+							</object>
+							<reference key="IBUIParentViewController" ref="121915252"/>
+							<string key="IBUINibName">SearchView</string>
+						</object>
+					</object>
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -78,36 +94,21 @@
 						<reference key="IBUIParentViewController" ref="1034742383"/>
 						<string key="IBUINibName">TreeView</string>
 					</object>
-					<object class="IBUINavigationController" id="121915252">
-						<string key="IBUITitle">Search</string>
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="184918805">
-							<int key="IBUISystemItemIdentifier">8</int>
+					<object class="IBUIViewController" id="358353467">
+						<string key="IBUITitle">Person</string>
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="365024319">
+							<int key="IBUITag">2</int>
+							<string key="IBUITitle">Person</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">Users.tiff</string>
+							</object>
 							<reference key="IBUITabBar"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
-						<string key="IBUINibName">SearchView</string>
-						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="1039788639">
-							<nil key="NSNextResponder"/>
-							<int key="NSvFlags">256</int>
-							<string key="NSFrameSize">{0, 0}</string>
-							<bool key="IBUIOpaque">NO</bool>
-							<bool key="IBUIClipsSubviews">YES</bool>
-							<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						</object>
-						<object class="NSMutableArray" key="IBUIViewControllers">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="689087111">
-								<string key="IBUITitle">Search</string>
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="117014832">
-									<string key="IBUITitle">Search</string>
-								</object>
-								<reference key="IBUIParentViewController" ref="121915252"/>
-								<string key="IBUINibName">SearchView</string>
-							</object>
-						</object>
+						<string key="IBUINibName">PersonView</string>
 					</object>
-					<reference ref="358353467"/>
+					<reference ref="121915252"/>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="795333663">
 					<nil key="NSNextResponder"/>
@@ -186,8 +187,8 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="795333663"/>
 							<reference ref="1024858337"/>
-							<reference ref="358353467"/>
 							<reference ref="121915252"/>
+							<reference ref="358353467"/>
 						</object>
 						<reference key="parent" ref="957960031"/>
 					</object>
@@ -379,6 +380,21 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">SearchResultDetailController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSMutableArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>birthText</string>
+							<string>idText</string>
+							<string>nameText</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UILabel</string>
+							<string>UILabel</string>
+							<string>UILabel</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">Classes/SearchResultDetailController.h</string>
