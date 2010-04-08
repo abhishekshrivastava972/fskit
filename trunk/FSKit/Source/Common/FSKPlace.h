@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "enunciate_common.h"
 
 @interface FSKPlace : NSObject {
 	NSString *original;
@@ -15,8 +15,8 @@
 	NSString *normalizedPlaceId;
 }
 
-+ (FSKPlace *)createFromXML:(NSXMLElement *)dateElement;
-- (id)initWithXML:(NSXMLElement *)dateElement;
++ (FSKPlace *)createFromXML:(id <EnunciateXML>)dateElement;
+- (id)initWithXML:(id <EnunciateXML>)dateElement;
 
 - (NSString *)displayString;
 

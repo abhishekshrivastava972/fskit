@@ -3,11 +3,11 @@
 //  FSKit
 //
 //  Created by Logan Allred on 8/16/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
+#import "enunciate_common.h"
 
 @interface FSKContributor : NSObject {
 	NSString *contributorId;
@@ -36,7 +36,7 @@
 - (NSString *)contributorId;
 
 
-+ (FSKContributor *)createFromXML:(NSXMLElement *)userElement;
-- (id)initWithXML:(NSXMLElement *)userElement;
++ (FSKContributor *)createFromXML:(id <EnunciateXML>)userElement;
+- (id)initWithXML:(id <EnunciateXML>)userElement;
 
 @end

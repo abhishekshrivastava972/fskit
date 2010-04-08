@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "enunciate_common.h"
+#import "fsv1.h"
 
 @interface FSKError : NSError {
 
 }
 
-- (id)initWithXML:(NSXMLElement *)errorElement;
+- (id)initWithXML:(FSV1BasicError *)errorElement;
 - (id)initWithError:(NSError *)error;
 
 @end

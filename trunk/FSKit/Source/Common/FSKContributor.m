@@ -3,11 +3,11 @@
 //  FSKit
 //
 //  Created by Logan Allred on 8/16/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import "FSKContributor.h"
-#import "NSXMLElement+BExtensions.h"
+#import "enunciate_common.h"
 
 
 @implementation FSKContributor
@@ -15,13 +15,13 @@
     return [[contributorId retain] autorelease];
 }
 
-+ (FSKContributor *)createFromXML:(NSXMLElement *)contributorElement
++ (FSKContributor *)createFromXML:(id <EnunciateXML>)contributorElement
 {
     id result = [[self alloc] initWithXML:contributorElement];
     return [result autorelease];
 }
 
-- (void)parseXML:(NSXMLElement *)contributorElement
+- (void)parseXML:(id <EnunciateXML>)contributorElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, contributorElement);
 	[self setValue:[[[contributorElement attributeForName:@"id"] stringValue] retain] forKey:@"userId"];
@@ -31,7 +31,7 @@
 	[self setValue:[[contributorElement firstValueForName:@"email"] retain] forKey:@"email"];
 	[self setValue:[[contributorElement firstValueForName:@"phone"] retain] forKey:@"phone"];
 	
-	NSXMLElement *addressElement = [contributorElement firstElementWithName:@"address"];
+	id <EnunciateXML>addressElement = [contributorElement firstElementWithName:@"address"];
 	if (addressElement)
 	{
 		[self setValue:[[addressElement firstValueForName:@"address1"] retain] forKey:@"address1"];
@@ -49,14 +49,14 @@
 	}
 	
 	NSEnumerator *enumerator = [[contributorElement elementsForName:@"aliases"] objectEnumerator];
-	NSXMLElement *aliasElement;
+	id <EnunciateXML>aliasElement;
 	while (aliasElement = [enumerator nextObject]) {
 		[aliases addObject:[[aliasElement attributeForName:@"ref"] stringValue]];
 	}
 	
 }
 
-- (id)initWithXML:(NSXMLElement *)contributorElement
+- (id)initWithXML:(id <EnunciateXML>)contributorElement
 {
     if ((self = [super init]) != nil) 
 	{

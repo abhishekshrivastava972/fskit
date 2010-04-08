@@ -3,11 +3,11 @@
 //  FSKit
 //
 //  Created by Logan Allred on 8/4/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
+#import "enunciate_common.h"
 
 @interface FSKPersonDetail : NSObject {
 	NSArray *nameAssertions; // of FSKAssertion
@@ -20,7 +20,7 @@
 	NSArray *families; // of FSKFamily
 }
 
-+ (FSKPersonDetail *)createFromXML:(NSXMLElement *)personElement;
-- (id)initWithXML:(NSXMLElement *)personElement;
++ (FSKPersonDetail *)createFromXML:(id <EnunciateXML>)personElement;
+- (id)initWithXML:(id <EnunciateXML>)personElement;
 
 @end

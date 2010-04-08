@@ -33,7 +33,7 @@
 	[connection setUserAgentString:@"FSKit BasicApp/1.0" override:NO];
 	
 	// get the me user from the user repository
-	[self takeValue:[[[FSKContributorRepository instanceWithConnection:connection] userForId:@""] retain] forKey:@"meUser"];
+	[self setValue:[[[FSKContributorRepository instanceWithConnection:connection] userForId:@""] retain] forKey:@"meUser"];
 	
 	// Make a request
 	personService = [[FSKPersonService

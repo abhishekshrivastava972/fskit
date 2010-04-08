@@ -3,7 +3,7 @@
 //  FSCommandLine
 //
 //  Created by Logan Allred on 8/31/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import "FSCLClient.h"

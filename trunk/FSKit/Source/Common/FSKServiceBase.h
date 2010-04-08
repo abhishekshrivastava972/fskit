@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FSKConnection.h"
+#import "enunciate_common.h"
 
 @interface FSKServiceBase : NSObject {
 	FSKConnection *connection;
@@ -24,7 +25,7 @@
 -(NSDictionary *)properties;
 
 // delegate methods
--(void) requestFinished:(NSXMLElement *)response;
+-(void) requestFinished:(id <EnunciateXML>)response;
 -(void) requestFailed:(NSError *)error;
 @end
 /* Is this the right way to go?

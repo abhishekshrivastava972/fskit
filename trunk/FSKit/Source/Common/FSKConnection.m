@@ -152,7 +152,7 @@ NSString *userAgentString = @"test";
 
 - (void)handleAuthenticationForRequest:(FSKRequest *)request
 {
-	NSLog(@"%s", __PRETTY_FUNCTION__);
+	NSLog(@"%s request:%@", __PRETTY_FUNCTION__, request);
 	if ([request isKindOfClass:[FSKIdentityRequest class]])
 	{
 		[request responseWithData:[request valueForKey:@"responseData"]];
@@ -162,6 +162,10 @@ NSString *userAgentString = @"test";
 		[requestQueue addObject:request];
 		if (!_isAuthenticating)
 		{
+			if ([_delegate respondsToSelector:@selector(request:didReceiveAuthenticationURL:)]) {
+				[_delegate request:request didReceiveAuthenticationURL:nil]; // where do we get the URL from?
+			}
+			// until we get the delegate call working, just login
 			[[[FSKIdentityService identityServiceWithConnection:self delegate:_delegate] retain] login];
 		}
 	}

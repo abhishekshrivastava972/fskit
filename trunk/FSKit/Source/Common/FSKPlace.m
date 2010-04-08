@@ -7,18 +7,18 @@
 //
 
 #import "FSKPlace.h"
-#import "NSXMLElement+BExtensions.h"
+#import "enunciate_common.h"
 
 
 @implementation FSKPlace
 
-+ (FSKPlace *)createFromXML:(NSXMLElement *)placeElement
++ (FSKPlace *)createFromXML:(id <EnunciateXML>)placeElement
 {
     id result = [[self alloc] initWithXML:placeElement];
     return [result autorelease];
 }
 
-- (void)parseXML:(NSXMLElement *)placeElement
+- (void)parseXML:(id <EnunciateXML>)placeElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, placeElement);
 	[self setValue:[[placeElement firstValueForName:@"original"] retain] forKey:@"original"];
@@ -26,7 +26,7 @@
 	[self setValue:[[placeElement firstValueForName:@"normalized"] retain] forKey:@"normalizedPlaceName"];
 }
 
-- (id)initWithXML:(NSXMLElement *)placeElement
+- (id)initWithXML:(id <EnunciateXML>)placeElement
 {
     if ((self = [super init]) != nil) 
 	{

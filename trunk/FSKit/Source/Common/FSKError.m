@@ -7,21 +7,20 @@
 //
 
 #import "FSKError.h"
-#import "NSXMLElement+BExtensions.h"
 
 @implementation FSKError
 
-- (void)parseError:(NSXMLElement *)errorElement
+- (void)parseError:(id <EnunciateXML>)errorElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, errorElement);
-	NSMutableDictionary *info = [[NSMutableDictionary dictionary] retain];
-	[self setValue:[[[errorElement attributeForName:@"code"] stringValue] retain] forKey:@"code"];
-	[info setValue:[[[errorElement attributeForName:@"fsapi-v1:level"] stringValue] retain] forKey:@"level"];
-	
-	[info setValue:[[errorElement firstValueForName:@"fsapi-v1:details"] retain] forKey:@"details"];
-	[info setValue:[[errorElement firstValueForName:@"fsapi-v1:message"] retain] forKey:@"message"];
-
-	[self setValue:info forKey:@"userInfo"];
+//	NSMutableDictionary *info = [[NSMutableDictionary dictionary] retain];
+//	[self setValue:[[[errorElement attributeForName:@"code"] stringValue] retain] forKey:@"code"];
+//	[info setValue:[[[errorElement attributeForName:@"fsapi-v1:level"] stringValue] retain] forKey:@"level"];
+//	
+//	[info setValue:[[errorElement firstValueForName:@"fsapi-v1:details"] retain] forKey:@"details"];
+//	[info setValue:[[errorElement firstValueForName:@"fsapi-v1:message"] retain] forKey:@"message"];
+//
+//	[self setValue:info forKey:@"userInfo"];
 }
 
 - (id)initWithError:(NSError *)error
@@ -34,7 +33,7 @@
 	return self;
 }
 
-- (id)initWithXML:(NSXMLElement *)errorElement
+- (id)initWithXML:(id <EnunciateXML>)errorElement
 {
     if ((self = [super init]) != nil) 
 	{ 

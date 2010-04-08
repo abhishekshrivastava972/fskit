@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "enunciate_common.h"
 
 @class FSKDate, FSKPlace;
 
@@ -20,8 +21,8 @@
 	NSString *type;
 }
 
-+ (FSKEventSummary *)createFromXML:(NSXMLElement *)personElement;
-- (id)initWithXML:(NSXMLElement *)personElement;
++ (FSKEventSummary *)createFromXML:(id <EnunciateXML>)personElement;
+- (id)initWithXML:(id <EnunciateXML>)personElement;
 
 - (FSKDate *)date;
 - (void)setDate:(FSKDate *)value;

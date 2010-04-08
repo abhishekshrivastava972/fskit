@@ -32,34 +32,34 @@
 	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", [connection baseURLString], @""]];
 	NSLog(@"url: %@", myURL);
 	NSError* err = nil;
-	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:0 error:&err];
-	if (err) {
-		NSLog(@"Error: %@", err);
-	}
-	NSLog(@"\n%@",[doc XMLStringWithOptions:NSXMLNodePrettyPrint]);	
-	NSLog(@"temple nodes: %@", [doc nodesForXPath:@"//temples/temple" error:&err]);
-		if (err) {
-			NSLog(@"Error: %@", err);
-		}
-		
-		return [doc nodesForXPath:@"//temples/temple" error:nil];
+//	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:0 error:&err];
+//	if (err) {
+//		NSLog(@"Error: %@", err);
+//	}
+//	NSLog(@"\n%@",[doc XMLStringWithOptions:NSXMLNodePrettyPrint]);	
+//	NSLog(@"temple nodes: %@", [doc nodesForXPath:@"//temples/temple" error:&err]);
+//		if (err) {
+//			NSLog(@"Error: %@", err);
+//		}
+//		
+//		return [doc nodesForXPath:@"//temples/temple" error:nil];
 //	return [NSArray arrayWithObjects:@"first", @"second", nil];
 }
-- (NSXMLNode *)fetchTempleWithCode:(NSString *)code {
+- (FSTEMPLEV1Temple *)fetchTempleWithCode:(NSString *)code {
 	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", [connection baseURLString], code]];
 	NSLog(@"url: %@", myURL);
 	NSError* err = nil;
-	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:0 error:&err];
-	if (err) {
-		NSLog(@"Error: %@", err);
-	}
-	NSLog(@"\n%@",[doc XMLStringWithOptions:NSXMLNodePrettyPrint]);	
-	
-	return [[doc nodesForXPath:@"//temples/temple" error:nil] lastObject];
-								//	return [NSArray arrayWithObjects:@"first", @"second", nil];
+//	NSXMLDocument *doc=[[NSXMLDocument alloc] initWithContentsOfURL:myURL options:0 error:&err];
+//	if (err) {
+//		NSLog(@"Error: %@", err);
+//	}
+//	NSLog(@"\n%@",[doc XMLStringWithOptions:NSXMLNodePrettyPrint]);	
+//	
+//	return [[doc nodesForXPath:@"//temples/temple" error:nil] lastObject];
+//								//	return [NSArray arrayWithObjects:@"first", @"second", nil];
 }
 
--(void) requestFinished:(NSXMLElement *)response
+-(void) requestFinished:(id <EnunciateXML>)response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
 }

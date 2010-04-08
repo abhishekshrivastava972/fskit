@@ -9,10 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <MPOAuth/MPOAuth.h>
 
-@class SimpleHTTPConnection, SimpleHTTPServer, FSKConnection;
+#if TARGET_OS_IPHONE
+#else
+@class SimpleHTTPConnection, SimpleHTTPServer;
+#endif
+@class FSKConnection;
 
 @interface FSKOAuthHandler : NSObject <MPOAuthAuthenticationMethodOAuthDelegate> {
+#if TARGET_OS_IPHONE
+#else
     SimpleHTTPServer *server;
+#endif
 	MPOAuthAPI *_oauthAPI;
 	NSString *oauthVerifier_;
 //	OAToken *requestToken;
@@ -23,7 +30,10 @@
 
 - (id)initWithConnection:(FSKConnection *)familySearchConnection delegate:(id)theDelegate;
 
+#if TARGET_OS_IPHONE
+#else
 - (void)processURL:(NSURL *)path connection:(SimpleHTTPConnection *)connection;
+#endif
 - (void)stopProcessing;
 
 - (void)setIdentityProperties:(NSDictionary *)properties;

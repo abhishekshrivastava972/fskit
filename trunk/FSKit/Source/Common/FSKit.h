@@ -8,10 +8,10 @@
  */
 
 #if defined(TARGET_IPHONE_SIMULATOR) || defined(TARGET_OS_IPHONE)
-#import "DDXML.h"
-#define NSXMLDocument DDXMLDocument 
-#define NSXMLElement DDXMLElement 
-#define NSXMLNode DDXMLNode
+//#import "DDXML.h"
+//#define NSXMLDocument DDXMLDocument 
+//#define NSXMLElement DDXMLElement 
+//#define NSXMLNode DDXMLNode
 #endif
 
 #import "FSKConnection.h"

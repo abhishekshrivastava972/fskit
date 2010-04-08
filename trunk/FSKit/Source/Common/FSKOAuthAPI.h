@@ -6,7 +6,7 @@
 //  Copyright 2010 RedBugz Software. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <MPOAuth/MPOAuth.h>
 
 @interface FSKOAuthAPI : MPOAuthAPI {
