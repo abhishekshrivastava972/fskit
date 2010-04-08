@@ -7,11 +7,16 @@
 //
 
 #import "FSKOAuthHandler.h"
-#import "SimpleHTTPConnection.h"
-#import "SimpleHTTPServer.h"
 #import "NSString+URIQuery.h"
 #import "Foundation/NSPathUtilities.h"
 #import "FSKSharedDefines.h"
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#else
+#import "SimpleHTTPConnection.h"
+#import "SimpleHTTPServer.h"
+#import <Cocoa/Cocoa.h>
+#endif
 
 NSString*   FSKOAuthRequestTokenKey = @"request.token.url";
 NSString*   FSKOAuthAuthorizeURLKey = @"authorize.url";
@@ -36,7 +41,10 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
 //	[consumer release];
 //	[requestToken release];
 	[customURL release];
+#if TARGET_OS_IPHONE
+#else
 	[server release];
+#endif
 	[super dealloc];
 }
 
@@ -60,6 +68,8 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
 //                  didFailSelector:@selector(accessTokenTicket:didFailWithError:)];
 //}
 
+#if TARGET_OS_IPHONE
+#else
 - (void)getUrl:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent
 {
 	NSString *url = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
@@ -85,6 +95,7 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
                             message:errorMsg];
     }
 }
+#endif
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application
@@ -96,11 +107,15 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
 //	{
 ////		[sessionIdText setStringValue:accessToken.key];
 //	}
-	
+#if TARGET_OS_IPHONE
+#else	
 	[[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(getUrl:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 	
+#endif
 }
 
+#if TARGET_OS_IPHONE
+#else
 - (void)processURL:(NSURL *)url connection:(SimpleHTTPConnection *)connection
 {
 	NSLog(@"%s url: %@", __PRETTY_FUNCTION__, url);
@@ -126,11 +141,11 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
 //		[self getAccessToken];
 		// get accesstoken
 		[self authenticate];
-//#if TARGET_OS_IPHONE
-//		[[UIApplication sharedApplication] openURL:userAuthURL];
-//#else
-//		[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-//#endif
+#if TARGET_OS_IPHONE
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[identityProperties valueForKey:FSKOAuthAuthorizeURLKey]]];
+#else
+		[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+#endif
 		
     } else {
         NSString *errorMsg = [NSString stringWithFormat:@"Error in URL: %@", params];
@@ -144,6 +159,7 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
 {
 	NSLog(@"stop processing");
 }
+#endif
 
 - (void)requestTokenReceived:(NSNotification *)inNotification {
 	NSLog(@"%s notification: %@", __PRETTY_FUNCTION__, inNotification);
@@ -221,9 +237,12 @@ NSString*   FSKOAuthAccessTokenKey = @"access.token.url";
 		NSURL *callbackURL = customURL;
 		if (!callbackURL)
 		{
+#if TARGET_OS_IPHONE
+#else
 			server = [[[SimpleHTTPServer alloc] initWithTCPPort:50000
 													   delegate:self] retain];
 			callbackURL = [NSURL URLWithString:@"http://localhost:50000"];
+#endif
 		}
 
 		NSDictionary *credentials = [NSDictionary dictionaryWithObjectsAndKeys:	kFSK_DEVELOPER_KEY, kMPOAuthCredentialConsumerKey,

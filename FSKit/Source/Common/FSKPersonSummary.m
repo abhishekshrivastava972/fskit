@@ -20,24 +20,24 @@
 - (void)parseXML:(FSFAMILYTREEV2SearchPerson *)personSummaryElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, personSummaryElement);
-	NSXMLElement *nameElement = (NSXMLElement *)[personSummaryElement firstNodeForXPath:@"names/name" error:nil];
+	id <EnunciateXML>nameElement = (id <EnunciateXML>)[personSummaryElement firstNodeForXPath:@"names/name" error:nil];
 	if (!nameElement)
 	{
 		nameElement = [personSummaryElement firstElementWithName:@"name"];
 	}
 	[self setValue:[[nameElement firstValueForXPath:@".//forms//form/fullText/text()" error:nil] retain] forKey:@"name"];
-	NSXMLElement *genderElement = (NSXMLElement *)[personSummaryElement firstNodeForXPath:@".//genders/gender" error:nil];
+	id <EnunciateXML>genderElement = (id <EnunciateXML>)[personSummaryElement firstNodeForXPath:@".//genders/gender" error:nil];
 	if (!genderElement)
 	{
 		genderElement = [personSummaryElement firstElementWithName:@"gender"];
 	}
 	[self setValue:[[personSummaryElement firstValueForXPath:@".//type" error:nil] retain] forKey:@"gender"];
 
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Birth']" error:nil]] retain] forKey:@"birthEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(id <EnunciateXML>)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Birth']" error:nil]] retain] forKey:@"birthEvent"];
 	[self setValue:[birthEvent valueForKeyPath:@"date.original"] forKey:@"birthdate"];
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Christening']" error:nil]] retain] forKey:@"christeningEvent"];
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Death']" error:nil]] retain] forKey:@"deathEvent"];
-	[self setValue:[[FSKEventSummary createFromXML:(NSXMLElement *)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Burial']" error:nil]] retain] forKey:@"burialEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(id <EnunciateXML>)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Christening']" error:nil]] retain] forKey:@"christeningEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(id <EnunciateXML>)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Death']" error:nil]] retain] forKey:@"deathEvent"];
+	[self setValue:[[FSKEventSummary createFromXML:(id <EnunciateXML>)[personSummaryElement firstNodeForXPath:@"./events/event/value[@type='Burial']" error:nil]] retain] forKey:@"burialEvent"];
 	
 	[self setValue:[personSummaryElement firstValueForName:@"minBirthYear"] forKey:@"minBirthYear"];
 	[self setValue:[personSummaryElement firstValueForName:@"maxDeathYear"] forKey:@"maxDeathYear"];

@@ -40,7 +40,7 @@
 	return properties;
 }
 
--(void) requestFinished:(NSXMLElement *)response
+-(void) requestFinished:(id <EnunciateXML>)response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
 	if ([connection needsAuthentication])

@@ -9,17 +9,17 @@
 #import "FSKEventSummary.h"
 #import "FSKDate.h"
 #import "FSKPlace.h"
-#import "NSXMLElement+BExtensions.h"
+#import "enunciate_common.h"
 
 @implementation FSKEventSummary
 
-+ (FSKEventSummary *)createFromXML:(NSXMLElement *)eventElement
++ (FSKEventSummary *)createFromXML:(id <EnunciateXML>)eventElement
 {
     id result = [[self alloc] initWithXML:eventElement];
     return [result autorelease];
 }
 
-- (void)parseXML:(NSXMLElement *)eventElement
+- (void)parseXML:(id <EnunciateXML>)eventElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, eventElement);
 	[self setValue:[[FSKDate createFromXML:[eventElement firstElementWithName:@"date"]] retain] forKey:@"date"];
@@ -28,7 +28,7 @@
 	[self setValue:[[[eventElement attributeForName:@"scope"] stringValue] retain] forKey:@"scope"];
 }
 
-- (id)initWithXML:(NSXMLElement *)eventElement
+- (id)initWithXML:(id <EnunciateXML>)eventElement
 {
     if ((self = [super init]) != nil) 
 	{

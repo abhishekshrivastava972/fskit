@@ -3,7 +3,7 @@
 //  FSKit
 //
 //  Created by Logan Allred on 8/16/08.
-//  Copyright 2008 __MyCompanyName__. All rights reserved.
+//  Copyright 2008 RedBugz Software. All rights reserved.
 //
 
 #import "FSKUser.h"
@@ -52,7 +52,7 @@
 		[self setValue:[[userElement phone] retain] forKey:@"phone"];
 				
 		NSEnumerator *enumerator = [[userElement elementsForName:@"aliases"] objectEnumerator];
-		NSXMLElement *aliasElement;
+		id <EnunciateXML>aliasElement;
 		while (aliasElement = [enumerator nextObject]) {
 			[self addAlias:[[aliasElement attributeForName:@"ref"] stringValue]];
 		}

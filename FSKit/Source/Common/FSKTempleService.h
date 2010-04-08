@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FSKServiceBase.h"
+#import "temple.h"
 
 @interface FSKTempleService : FSKServiceBase {
 
@@ -16,5 +17,5 @@
 -(id)initWithConnection:(FSKConnection *)connection;
 
 - (NSArray *)fetchTempleList;
-- (NSXMLNode *)fetchTempleWithCode:(NSString *)code;
+- (FSTEMPLEV1Temple *)fetchTempleWithCode:(NSString *)code;
 @end

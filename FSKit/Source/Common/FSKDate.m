@@ -7,18 +7,18 @@
 //
 
 #import "FSKDate.h"
-#import "NSXMLElement+BExtensions.h"
+#import "enunciate_common.h"
 
 
 @implementation FSKDate
 
-+ (FSKDate *)createFromXML:(NSXMLElement *)dateElement
++ (FSKDate *)createFromXML:(id <EnunciateXML>)dateElement
 {
     id result = [[self alloc] initWithXML:dateElement];
     return [result autorelease];
 }
 
-- (void)parseXML:(NSXMLElement *)dateElement
+- (void)parseXML:(id <EnunciateXML>)dateElement
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, dateElement);
 	[self setValue:[[dateElement firstValueForName:@"original"] retain] forKey:@"original"];
@@ -27,7 +27,7 @@
 	[self setValue:[[dateElement firstValueForXPath:@"*:astro/*:latest" error:nil] retain] forKey:@"latestAstro"];
 }
 
-- (id)initWithXML:(NSXMLElement *)dateElement
+- (id)initWithXML:(id <EnunciateXML>)dateElement
 {
     if ((self = [super init]) != nil) 
 	{

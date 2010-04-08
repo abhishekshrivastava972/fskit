@@ -3,7 +3,7 @@
 //  FSKit
 //
 //  Created by Logan Allred on 3/3/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 RedBugz Software. All rights reserved.
 //
 
 #import "FSKPedigreeResponse.h"
@@ -11,11 +11,11 @@
 
 @implementation FSKPedigreeResponse
 
-//- (void)parsePersonResponse:(NSXMLElement *)personsElement
+//- (void)parsePersonResponse:(id <EnunciateXML>)personsElement
 //{
 //	NSMutableArray *theResults = [NSMutableArray array];
 //	NSEnumerator *enumerator = [[personsElement elementsForName:@"person"] objectEnumerator];
-//	NSXMLElement *personElement;
+//	id <EnunciateXML>personElement;
 //	while (personElement = [enumerator nextObject]) {
 //		[theResults addObject:[FSKPerson createFromXML:personElement]];
 //	}

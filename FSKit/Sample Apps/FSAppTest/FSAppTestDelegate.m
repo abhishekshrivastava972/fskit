@@ -68,7 +68,7 @@
 - (void)authenticationDidSuceedWithToken:(NSString *)token
 {
 	sessionId = [token retain];
-	[connection setSessionId:sessionId];
+	[connection setSessionId:[sessionId stringValue]];
 	[connection setNeedsAuthentication:NO];
 	[identityService pingSession];
 }

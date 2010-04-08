@@ -223,23 +223,6 @@
 
 @implementation NSObject (FSKRequestDelegate)
 
-//- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-//{
-//	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
-////	[self handleAuthenticationChallenge:challenge];
-//}
-//
-//- (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request;
-//{
-//	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, request);
-//	return [NSApp mainWindow];
-//}
-//
-//- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-//{
-//	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, challenge);
-//}
-
 - (void)request:(FSKRequest *)request didReturnResponse:(FSKResponse *)response;
 {
 	NSLog(@"FSKRequest %s %@", __PRETTY_FUNCTION__, response);
@@ -284,10 +267,11 @@
 	FSKResponse *response = [self responseWithData:responseData];
 	if ([response respondsToSelector:@selector(setRequestedIds:)])
 	{
-		[response takeValue:_idList forKey:@"requestedIds"];
+		[response setValue:_idList forKey:@"requestedIds"];
 	}
 	
-	if ([response statusCode] != 200 && [familySearchConnection needsAuthentication])
+	// need to authenticate
+	if ([response statusCode] == 401)
 	{
 		[familySearchConnection handleAuthenticationForRequest:self];
 	}
@@ -310,54 +294,6 @@
 	[connection autorelease];
 }
 
--(void)connection:(NSURLConnection *)connection
-       didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-	NSLog(@"%s", __PRETTY_FUNCTION__);
-	// Should only occur on login requests, all others will receive a 401
-	//
-	// there are several ways to handle authentication from least to most involvement;
-	// 1. use the default keychain (we would never get here)
-	// 2. use our own custom keychain (consider implementing later)
-	// 3. use the provided credentials in the connection
-	// 4. have the request delegate handle the authentication event directly
-	// 5. have the connection delegate handle the authentication event directly
-	// 6. pop up a dialog/sheet and ask the user for credentials
-	// 
-	// in the end we need the challenge either cancelled or provided with credentials  
-	
-	// 3. use provided credential
-	if ([familySearchConnection credential])
-	{
-		[[challenge sender] useCredential:[familySearchConnection credential] forAuthenticationChallenge:challenge];
-		return;
-	}
-
-	// 4. have the request delegate handle it
-    if ([_delegate respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
-	{
-		[_delegate request:self didReceiveAuthenticationURL:challenge];
-		return;
-    }
-	
-	// 5. have the connection delegate handle it
-    if ([[familySearchConnection delegate] respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
-	{
-		[[familySearchConnection delegate] request:self didReceiveAuthenticationURL:challenge];
-		return;
-    }
-
-	// 6. do it ourselves
-	// until I know what to do, just cancel
-	[[challenge sender] cancelAuthenticationChallenge:challenge];
-//	[self handleAuthenticationChallenge:challenge];
-}
-
-
-- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-	NSLog(@"%s %@", __PRETTY_FUNCTION__, challenge);
-}
 @end
 
 #pragma mark -

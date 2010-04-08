@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "enunciate_common.h"
 
 
 @interface FSKDate : NSObject {
@@ -16,8 +17,8 @@
 	NSString *latestAstro;
 }
 
-+ (FSKDate *)createFromXML:(NSXMLElement *)dateElement;
-- (id)initWithXML:(NSXMLElement *)dateElement;
++ (FSKDate *)createFromXML:(id <EnunciateXML>)dateElement;
+- (id)initWithXML:(id <EnunciateXML>)dateElement;
 
 - (NSString *)displayString;
 

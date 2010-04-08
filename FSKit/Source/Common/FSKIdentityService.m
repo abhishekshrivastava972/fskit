@@ -100,7 +100,7 @@ BOOL isReady = NO;
 	[request sendLogoutRequest];
 }
 
-//-(void) requestFinished:(NSXMLElement *)response
+//-(void) requestFinished:(id <EnunciateXML>)response
 //{
 //	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
 //}
