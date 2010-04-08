@@ -3,12 +3,12 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 2/15/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 RedBugz Software. All rights reserved.
 //
 
 #import "TreeView.h"
 #import "RoundedRectView.h"
-#import "FSKPerson.h"
+#import <FSKit/FSKPerson.h>
 
 @implementation TreeView
 

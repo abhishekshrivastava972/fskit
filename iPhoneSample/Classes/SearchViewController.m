@@ -3,11 +3,11 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 8/31/08.
-//  Copyright __MyCompanyName__ 2008. All rights reserved.
+//  Copyright RedBugz Software 2008. All rights reserved.
 //
 
 #import "SearchViewController.h"
-#import "FSKit.h"
+#import <FSKit/FSKit.h>
 #import "SearchResultCell.h"
 
 #define kFSK_DEVELOPER_KEY @"WCQY-7J1Q-GKVV-7DNM-SQ5M-9Q5H-JX3H-CMJK"
@@ -67,6 +67,11 @@ enum HeaderSectionRows {
  }
  */
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 // If you need to do additional setup after loading the view, override viewDidLoad.      
  - (void)viewDidLoad {                                                                 
 	 
@@ -93,6 +98,19 @@ didReturnResponse:(FSKResponse *)theResponse
 	{
 		response = (FSKSearchResponse *)[theResponse retain];
 		[resultsTable reloadData];
+		@try {
+			[[response results] writeToFile:@"testarray.xml" atomically:YES];
+			NSString *archivePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"SearchResults.archive"];
+			BOOL result = [NSKeyedArchiver archiveRootObject:response
+													  toFile:archivePath];
+			NSLog(@"archive result: %d", result);
+		}
+		@catch (NSException * e) {
+			NSLog(@"archive exception %@", e);
+		}
+		@finally {
+			
+		}
 	}
 }
 - (void)request:(FSKRequest *)request 
@@ -122,6 +140,10 @@ didFailWithError:(FSKError *)error
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+	if ([[response closeMatches] count] == 0 || [[response partialMatches] count] == 0)
+	{
+		return 1;
+	}
 	return 2;
 }
 
@@ -144,10 +166,10 @@ didFailWithError:(FSKError *)error
 	NSInteger rows = 0;
 	switch (section) {
 		case 0:
-			rows = [response totalCloseMatches];
+			rows = [response closeMatchesInRequest];
 			break;
 		case 1:
-			rows = [response totalPartialMatches];
+			rows = [response partialMatchesInRequest];
 			break;
 	}
 	return rows;

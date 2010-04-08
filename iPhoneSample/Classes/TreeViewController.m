@@ -3,11 +3,11 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 3/2/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Copyright 2009 RedBugz Software. All rights reserved.
 //
 
 #import "TreeViewController.h"
-#import "FSKit.h"
+#import <FSKit/FSKit.h>
 #import "TreeView.h"
 
 @implementation TreeViewController
@@ -57,7 +57,7 @@ didReturnResponse:(FSKResponse *)response
 		FSKPersonResponse *resp = (FSKPersonResponse *)response;
 		personIdLabel.text = [[resp person] personId];
 		nameLabel.text = [[resp person] fullName];
-		//	birthLabel.text = [[resp summary] birthdate];
+		birthLabel.text = [[resp summary] birthdate];
 		[treeView setRootPerson:[resp person]];
 		[treeView setNeedsDisplay];
 	}

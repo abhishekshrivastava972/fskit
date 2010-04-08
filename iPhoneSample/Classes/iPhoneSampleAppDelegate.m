@@ -3,7 +3,7 @@
 //  iPhoneSample
 //
 //  Created by Logan Allred on 8/31/08.
-//  Copyright __MyCompanyName__ 2008. All rights reserved.
+//  Copyright RedBugz Software 2008. All rights reserved.
 //
 
 #import "iPhoneSampleAppDelegate.h"
@@ -29,7 +29,7 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
 	[connection setUserAgentString:@"FSKit iPhone Sample App/1.0" override:NO];
 	[connection setDelegate:self];
-	[connection setSessionId:[[NSUserDefaults standardUserDefaults] stringForKey:CURRENT_SESSION_ID_KEY]];
+//	[connection setSessionId:[[NSUserDefaults standardUserDefaults] stringForKey:CURRENT_SESSION_ID_KEY]];
 	[connection addObserver:self
 				 forKeyPath:@"sessionId"
 				    options:(NSKeyValueObservingOptionNew)
@@ -40,7 +40,10 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 //	NSString *documentsDirectory = [paths objectAtIndex:0];
 //	NSString *path = [documentsDirectory stringByAppendingPathComponent:@"patientList.plist"];
 //	[myPatients writeToFile:path atomically:YES];
-}
+//	NSLog(@"array read %@", [NSArray arrayWithContentsOfFile:@"testarray.xml"]);
+//	NSString *archivePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"SearchResults.archive"];
+//NSLog(@"archive read %@", [NSKeyedUnarchiver unarchiveObjectWithFile:archivePath]);
+	}
 
 
 /*
@@ -77,16 +80,16 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 	[super dealloc];
 }
 
-- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url
 {
-	NSLog(@"%s", __PRETTY_FUNCTION__);
+	NSLog(@"%s request:%@\nurl:%@", __PRETTY_FUNCTION__, request, url);
 	if (!authenticationController || YES)
 	{
-		authenticationController = [[AuthenticationController alloc] initWithNibName:@"SignInView" bundle:nil];
+		authenticationController = [[AuthenticationController alloc] initWithNibName:@"AuthenticationView" bundle:nil];
 	}
 	
 	NSLog(@"%s %@", _cmd, self.tabBarController);
-	authenticationController.challenge = challenge;
+//	authenticationController.challenge = challenge;
 	NSLog(@"%s %@", _cmd, self.tabBarController.modalViewController);
 //	int i=0;
 //	while(i < 1000 && self.tabBarController.modalViewController != nil) {
@@ -104,4 +107,3 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 }
 
 @end
-

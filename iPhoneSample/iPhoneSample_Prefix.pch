@@ -12,9 +12,9 @@
 //#define NSXMLDocument CXMLDocument 
 //#define NSXMLElement CXMLElement 
 //#define NSXMLNode CXMLNode
-#import "DDXML.h"
-#define NSXMLDocument DDXMLDocument 
-#define NSXMLElement DDXMLElement 
-#define NSXMLNode DDXMLNode
-#define NSXMLNodePrettyPrint DDXMLNodePrettyPrint
+//#import "DDXML.h"
+//#define NSXMLDocument DDXMLDocument 
+//#define NSXMLElement DDXMLElement 
+//#define NSXMLNode DDXMLNode
+//#define NSXMLNodePrettyPrint DDXMLNodePrettyPrint
 #endif
