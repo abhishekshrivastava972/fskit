@@ -1,0 +1,20 @@
+//
+// Prefix header for all source files of the 'iPhoneSample' target in the 'iPhoneSample' project
+//
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif
+
+#if defined(TARGET_IPHONE_SIMULATOR) || defined(TARGET_OS_IPHONE)
+//#import "TouchXML.h"
+//#define NSXMLDocument CXMLDocument 
+//#define NSXMLElement CXMLElement 
+//#define NSXMLNode CXMLNode
+//#import "DDXML.h"
+//#define NSXMLDocument DDXMLDocument 
+//#define NSXMLElement DDXMLElement 
+//#define NSXMLNode DDXMLNode
+//#define NSXMLNodePrettyPrint DDXMLNodePrettyPrint
+#endif

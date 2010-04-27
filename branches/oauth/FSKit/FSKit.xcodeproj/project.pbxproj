@@ -1,0 +1,2745 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		027149CF0D70A07A00072118 /* All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 027149DA0D70A0B900072118 /* Build configuration list for PBXAggregateTarget "All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				027149D10D70A08200072118 /* PBXTargetDependency */,
+				02F9DABB116826AC00468CFA /* PBXTargetDependency */,
+				027149D70D70A08200072118 /* PBXTargetDependency */,
+				0263AB2E0D96BFD800F3D51B /* PBXTargetDependency */,
+				0263AB300D96BFDB00F3D51B /* PBXTargetDependency */,
+			);
+			name = All;
+			productName = All;
+		};
+		02EEFE7C0CA6B53C007006DE /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 02EEFE7D0CA6B55A007006DE /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				02EEFE7B0CA6B53C007006DE /* ShellScript */,
+				02AA167F0E3C87EA00BA4890 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		020F97A7111E1008001EFA8F /* familytree.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F7A50010CCB523001C2BD3 /* familytree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		020F97A8111E1008001EFA8F /* familytree.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F7A50110CCB523001C2BD3 /* familytree.m */; };
+		020F97A9111E1009001EFA8F /* reservation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356711169F3700A0CDB5 /* reservation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		020F97AA111E100A001EFA8F /* reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356811169F3700A0CDB5 /* reservation.m */; };
+		020F97AB111E100A001EFA8F /* temple.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356911169F3700A0CDB5 /* temple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		020F97AC111E100B001EFA8F /* temple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356A11169F3700A0CDB5 /* temple.m */; };
+		020F97B1111E101C001EFA8F /* enunciate_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F97AD111E101C001EFA8F /* enunciate_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		020F97B2111E101C001EFA8F /* enunciate_common.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F97AE111E101C001EFA8F /* enunciate_common.m */; };
+		020F97B3111E101C001EFA8F /* fsv1.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F97AF111E101C001EFA8F /* fsv1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		020F97B4111E101C001EFA8F /* fsv1.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F97B0111E101C001EFA8F /* fsv1.m */; };
+		020F9990112047BF001EFA8F /* FSKUserProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F998E112047BF001EFA8F /* FSKUserProfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		020F9991112047BF001EFA8F /* FSKUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F998F112047BF001EFA8F /* FSKUserProfile.m */; };
+		02117E320D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02117E330D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */; };
+		0229349C11160B7800A0CDB5 /* FSKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E630D4B84DA0047B392 /* FSKError.m */; };
+		0229349D11160B7800A0CDB5 /* FSKOAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293416111607F500A0CDB5 /* FSKOAuthHandler.m */; };
+		0229349E11160B7800A0CDB5 /* FSKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0256776E0F3351480032079F /* FSKUtils.m */; };
+		0229349F11160B7800A0CDB5 /* FSKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E620D4B84DA0047B392 /* FSKError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022934A011160B7800A0CDB5 /* FSKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02439C6D0D43949200F50EBD /* FSKRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022934A111160B7800A0CDB5 /* FSKResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F19E5E0D4B82410047B392 /* FSKResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022934A211160B7800A0CDB5 /* FSKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E5F0D4B82410047B392 /* FSKResponse.m */; };
+		022934A311160B7800A0CDB5 /* FSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02439C6E0D43949200F50EBD /* FSKRequest.m */; };
+		022934A411160B7800A0CDB5 /* FSKUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0256776D0F3351480032079F /* FSKUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022934A511160B7800A0CDB5 /* FSKOAuthHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 02293415111607F500A0CDB5 /* FSKOAuthHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022934A611160B7800A0CDB5 /* SimpleHTTPServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 02293419111607F500A0CDB5 /* SimpleHTTPServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022934A711160B7800A0CDB5 /* SimpleHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229341A111607F500A0CDB5 /* SimpleHTTPServer.m */; };
+		022934A811160B7800A0CDB5 /* SimpleHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 02293417111607F500A0CDB5 /* SimpleHTTPConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022934A911160B7800A0CDB5 /* SimpleHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293418111607F500A0CDB5 /* SimpleHTTPConnection.m */; };
+		022935A11116A42000A0CDB5 /* identity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356511169F3700A0CDB5 /* identity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		022935A21116A42100A0CDB5 /* identity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356611169F3700A0CDB5 /* identity.m */; };
+		0229C1C70E901CDB005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
+		0229C1C80E901CE4005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
+		0229C1C90E901CE4005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
+		0229C1CA0E901CE5005447D2 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
+		023A76670D845D4D00CD028D /* SearchForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 023A76650D845D4D00CD028D /* SearchForm.h */; };
+		023A76680D845D4D00CD028D /* SearchForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A76660D845D4D00CD028D /* SearchForm.m */; };
+		023A770D0D84731100CD028D /* FSKSearchResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 023A770B0D84731100CD028D /* FSKSearchResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		023A770E0D84731100CD028D /* FSKSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A770C0D84731100CD028D /* FSKSearchResponse.m */; };
+		023A77180D84753900CD028D /* FSKSearchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 023A77160D84753900CD028D /* FSKSearchResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		023A77190D84753900CD028D /* FSKSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A77170D84753900CD028D /* FSKSearchResult.m */; };
+		02433DB00C9DE06D00FE5892 /* FSKConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 02433DAC0C9DE06D00FE5892 /* FSKConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02433DB10C9DE06D00FE5892 /* FSKConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DAD0C9DE06D00FE5892 /* FSKConnection.m */; };
+		02433DD30C9DE45500FE5892 /* FSKServiceBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 02433DD10C9DE45500FE5892 /* FSKServiceBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02433DD40C9DE45500FE5892 /* FSKServiceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DD20C9DE45500FE5892 /* FSKServiceBase.m */; };
+		02433DD90C9DE49C00FE5892 /* FSKPersonService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02433DD70C9DE49C00FE5892 /* FSKPersonService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02433DDA0C9DE49C00FE5892 /* FSKPersonService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DD80C9DE49C00FE5892 /* FSKPersonService.m */; };
+		02433DDF0C9DE4BB00FE5892 /* FSKAuthoritiesService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02433DDD0C9DE4BB00FE5892 /* FSKAuthoritiesService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02433DE00C9DE4BB00FE5892 /* FSKAuthoritiesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DDE0C9DE4BB00FE5892 /* FSKAuthoritiesService.m */; };
+		02433DE50C9DE4C400FE5892 /* FSKTempleService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02433DE30C9DE4C400FE5892 /* FSKTempleService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02433DE60C9DE4C400FE5892 /* FSKTempleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DE40C9DE4C400FE5892 /* FSKTempleService.m */; };
+		024525530F5D45FE003548D3 /* FSKPedigreeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525510F5D45FE003548D3 /* FSKPedigreeRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		024525540F5D45FE003548D3 /* FSKPedigreeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525520F5D45FE003548D3 /* FSKPedigreeRequest.m */; };
+		024525570F5D461E003548D3 /* FSKPedigreeResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525550F5D461E003548D3 /* FSKPedigreeResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		024525580F5D461E003548D3 /* FSKPedigreeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525560F5D461E003548D3 /* FSKPedigreeResponse.m */; };
+		0245255B0F5D4785003548D3 /* FSKRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525590F5D4785003548D3 /* FSKRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0245255C0F5D4785003548D3 /* FSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0245255A0F5D4785003548D3 /* FSKRepository.m */; };
+		024525A70F5D745F003548D3 /* FSKPedigree.h in Headers */ = {isa = PBXBuildFile; fileRef = 024525A50F5D745F003548D3 /* FSKPedigree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		024525A80F5D745F003548D3 /* FSKPedigree.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525A60F5D745F003548D3 /* FSKPedigree.m */; };
+		0249D2F70DA0FCA7005BF5A3 /* FSAppTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0249D2F60DA0FCA7005BF5A3 /* FSAppTestDelegate.m */; };
+		024AD3B7113BEC6B0016524F /* FSKProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 024AD3B5113BEC6B0016524F /* FSKProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		024AD3B8113BEC6B0016524F /* FSKProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AD3B6113BEC6B0016524F /* FSKProperties.m */; };
+		02538A89114C725600D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B52114C727B00D6750F /* libMPOAuth_s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A84114C725600D6750F /* libMPOAuth_s.a */; };
+		02538B54114C728A00D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B57114C72A200D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B59114C72AE00D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B5A114C72B000D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538B5C114C72BD00D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538BB5114C7CC500D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02538C6E114D347600D6750F /* FSKOAuthAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 02538C6C114D347600D6750F /* FSKOAuthAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02538C6F114D347600D6750F /* FSKOAuthAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 02538C6D114D347600D6750F /* FSKOAuthAPI.m */; };
+		02596CEE0D4D6E7E00AB8632 /* FSKIdentityResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02596CEF0D4D6E7E00AB8632 /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */; };
+		0263A9A20D96ADAC00F3D51B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0263A99B0D96ADAC00F3D51B /* InfoPlist.strings */; };
+		0263A9A30D96ADAC00F3D51B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0263A99D0D96ADAC00F3D51B /* MainMenu.nib */; };
+		0263A9A40D96ADAC00F3D51B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0263A9A00D96ADAC00F3D51B /* Info.plist */; };
+		0263A9A50D96ADAC00F3D51B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0263A9A10D96ADAC00F3D51B /* main.m */; };
+		0263A9AD0D96AFCD00F3D51B /* BasicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0263A9AC0D96AFCD00F3D51B /* BasicAppDelegate.m */; };
+		0263A9EF0D96BAEE00F3D51B /* FSKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		0263AB170D96BD4D00F3D51B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		0263AB180D96BD4D00F3D51B /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
+		0263AB190D96BD4D00F3D51B /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		0263AB290D96BE4C00F3D51B /* FSKPersonSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B49CAE2D0D884662003852A5 /* FSKPersonSearchRequest.m */; };
+		0268F14D0D7FAFDA00CD2F19 /* LoginPanel.nib in Resources */ = {isa = PBXBuildFile; fileRef = 0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */; };
+		027148710D709A1600072118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BA98020D7068CF00DC6E04 /* main.m */; };
+		027148720D709A1700072118 /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BA98050D7068CF00DC6E04 /* version.plist */; };
+		027148740D709A1800072118 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BA98010D7068CF00DC6E04 /* Info.plist */; };
+		0271488C0D709D4D00072118 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		0271489F0D709D5800072118 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
+		027149440D709D5C00072118 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		027149800D709D9E00072118 /* FSKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		0271499D0D709E3500072118 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02BA97F70D7068CF00DC6E04 /* InfoPlist.strings */; };
+		027149A00D709E3C00072118 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 02BA97F90D7068CF00DC6E04 /* MainMenu.nib */; };
+		02714A3B0D7200EE00072118 /* FSKPersonRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 02714A390D7200EE00072118 /* FSKPersonRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02714A3C0D7200EE00072118 /* FSKPersonRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A3A0D7200EE00072118 /* FSKPersonRepository.m */; };
+		02714A4E0D720B2900072118 /* FSKPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = 02714A4C0D720B2900072118 /* FSKPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02714A4F0D720B2900072118 /* FSKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A4D0D720B2900072118 /* FSKPerson.m */; };
+		02714A600D720F7A00072118 /* FSKFamily.h in Headers */ = {isa = PBXBuildFile; fileRef = 02714A5E0D720F7A00072118 /* FSKFamily.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02714A610D720F7A00072118 /* FSKFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A5F0D720F7A00072118 /* FSKFamily.m */; };
+		02714A660D720F8700072118 /* FSKCouple.h in Headers */ = {isa = PBXBuildFile; fileRef = 02714A640D720F8700072118 /* FSKCouple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02714A670D720F8700072118 /* FSKCouple.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A650D720F8700072118 /* FSKCouple.m */; };
+		0275A05A0F602A16005AF00D /* FSKPersonName.h in Headers */ = {isa = PBXBuildFile; fileRef = 0275A0580F602A16005AF00D /* FSKPersonName.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0275A05B0F602A16005AF00D /* FSKPersonName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0275A0590F602A16005AF00D /* FSKPersonName.m */; };
+		02810C1E0D4427C2003E36B7 /* FSKIdentityService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810C1C0D4427C2003E36B7 /* FSKIdentityService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02810C1F0D4427C2003E36B7 /* FSKIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */; };
+		02810C5F0D477585003E36B7 /* FSKIdentityRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810C5D0D477585003E36B7 /* FSKIdentityRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02810C600D477585003E36B7 /* FSKIdentityRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C5E0D477585003E36B7 /* FSKIdentityRequest.m */; };
+		02810DD20D4995E5003E36B7 /* FSKLoginController.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810DD00D4995E5003E36B7 /* FSKLoginController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02810DD30D4995E5003E36B7 /* FSKLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810DD10D4995E5003E36B7 /* FSKLoginController.m */; };
+		02810E0E0D49B146003E36B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		0283293D0DA95CE300C8B5BF /* user_icon_female.png in Resources */ = {isa = PBXBuildFile; fileRef = 0283293B0DA95CE300C8B5BF /* user_icon_female.png */; };
+		0283293E0DA95CE300C8B5BF /* user_icon_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 0283293C0DA95CE300C8B5BF /* user_icon_male.png */; };
+		028A356E0E6195E30007B2F0 /* FSKUserReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A356C0E6195E30007B2F0 /* FSKUserReadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		028A356F0E6195E30007B2F0 /* FSKUserReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A356D0E6195E30007B2F0 /* FSKUserReadRequest.m */; };
+		028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A35700E6195F10007B2F0 /* FSKUserResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35710E6195F10007B2F0 /* FSKUserResponse.m */; };
+		028A35C30E61A14C0007B2F0 /* FSKContributorRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		028A35C40E61A14C0007B2F0 /* FSKContributorRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */; };
+		0293E1C810D607CE00A49364 /* NSString+URIQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0293E1C610D607CE00A49364 /* NSString+URIQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0293E1C910D607CE00A49364 /* NSString+URIQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0293E1C710D607CE00A49364 /* NSString+URIQuery.m */; };
+		0294DB580E5719550022DBFB /* FSKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB560E5719550022DBFB /* FSKEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0294DB590E5719550022DBFB /* FSKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB570E5719550022DBFB /* FSKEvent.m */; };
+		0294DB5C0E57196A0022DBFB /* FSKFact.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB5A0E57196A0022DBFB /* FSKFact.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0294DB5D0E57196A0022DBFB /* FSKFact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB5B0E57196A0022DBFB /* FSKFact.m */; };
+		0294DB610E57198B0022DBFB /* FSKAssertion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB5F0E57198B0022DBFB /* FSKAssertion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0294DB620E57198B0022DBFB /* FSKAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB600E57198B0022DBFB /* FSKAssertion.m */; };
+		0294DB650E57383D0022DBFB /* FSKUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB630E57383D0022DBFB /* FSKUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0294DB660E57383D0022DBFB /* FSKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB640E57383D0022DBFB /* FSKUser.m */; };
+		0294DB690E57387A0022DBFB /* FSKContributor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0294DB670E57387A0022DBFB /* FSKContributor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0294DB6A0E57387A0022DBFB /* FSKContributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB680E57387A0022DBFB /* FSKContributor.m */; };
+		029BE8A70CDDFF3D0096B9F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
+		029C31640D7AF77500746CA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 029C315D0D7AF77500746CA6 /* InfoPlist.strings */; };
+		029C31660D7AF77500746CA6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029C31620D7AF77500746CA6 /* Info.plist */; };
+		029C31670D7AF77500746CA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 029C31630D7AF77500746CA6 /* main.m */; };
+		029C31860D7AF7F800746CA6 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		029C323B0D7AF80200746CA6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		029C323C0D7AF80200746CA6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
+		029C32580D7AF9E100746CA6 /* FSSearchDemoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 029C32570D7AF9E100746CA6 /* FSSearchDemoDelegate.m */; };
+		02A3A84B0E6B1D1B00A45179 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		02A3A8530E6B1DF800A45179 /* FSCLClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A8510E6B1DF800A45179 /* FSCLClient.m */; };
+		02A3A8540E6B1DF800A45179 /* FSCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A3A8520E6B1DF800A45179 /* FSCommandLine.m */; };
+		02A462191119B22800FD7885 /* authorities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0229356311169F3700A0CDB5 /* authorities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02A4621A1119B22800FD7885 /* authorities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356411169F3700A0CDB5 /* authorities.m */; };
+		02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */; };
+		02C85BE90EAB84090032CEBE /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02D2CD320CC3127B0013D298 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		02D2CD460CC3139D0013D298 /* FSKConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */; };
+		02E2AE080D817F6900CB1B6E /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 02E2AE060D817F6900CB1B6E /* MainMenu.nib */; };
+		02E2AE5D0D818FD700CB1B6E /* Users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 02E2AE5C0D818FD700CB1B6E /* Users.tiff */; };
+		02E2AE620D81900000CB1B6E /* format.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02E2AE600D81900000CB1B6E /* format.plist */; };
+		02E2AE630D81900000CB1B6E /* criteria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02E2AE610D81900000CB1B6E /* criteria.plist */; };
+		02E2AEE10D81927100CB1B6E /* ImageTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2AEDD0D81927100CB1B6E /* ImageTextCell.m */; };
+		02E2AEE20D81927100CB1B6E /* RuleDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2AEE00D81927100CB1B6E /* RuleDelegate.m */; };
+		02E2AF180D81937600CB1B6E /* RuleEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E2AF170D81937600CB1B6E /* RuleEditor.framework */; };
+		02E2AF3E0D8193DB00CB1B6E /* RuleEditor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02E2AF170D81937600CB1B6E /* RuleEditor.framework */; };
+		02E2AF3F0D8193DB00CB1B6E /* FSKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
+		02E2B1050D824BDA00CB1B6E /* SFHFRatingCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02E2B1030D824BDA00CB1B6E /* SFHFRatingCell.h */; };
+		02E2B1060D824BDA00CB1B6E /* SFHFRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2B1040D824BDA00CB1B6E /* SFHFRatingCell.m */; };
+		02E2B1090D824BEF00CB1B6E /* star_highlighted.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E2B1070D824BEF00CB1B6E /* star_highlighted.tif */; };
+		02E2B10A0D824BEF00CB1B6E /* star.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E2B1080D824BEF00CB1B6E /* star.tif */; };
+		02E58ADB0F64B5F200049C62 /* FSKContributorReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E58AD70F64B5F200049C62 /* FSKContributorReadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E58ADC0F64B5F200049C62 /* FSKContributorReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */; };
+		02E58ADD0F64B5F200049C62 /* FSKContributorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */; };
+		02E5903B0F65F69800049C62 /* FSKPersonRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */; };
+		02F19D0D0D4A236E0047B392 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F19D0C0D4A236E0047B392 /* Security.framework */; };
+		02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02F1A07B0D4CEED70047B392 /* MIT-License.rtf */; };
+		02F1A07F0D4CEED70047B392 /* NSData+RSHexDump.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F1A07C0D4CEED70047B392 /* NSData+RSHexDump.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02F1A0800D4CEED70047B392 /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */; };
+		02F527380DB27D7200DC9063 /* FSKEventSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F527360DB27D7200DC9063 /* FSKEventSummary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02F527390DB27D7200DC9063 /* FSKEventSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F527370DB27D7200DC9063 /* FSKEventSummary.m */; };
+		02F5273C0DB27E0900DC9063 /* FSKDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F5273A0DB27E0900DC9063 /* FSKDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02F5273D0DB27E0900DC9063 /* FSKDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F5273B0DB27E0900DC9063 /* FSKDate.m */; };
+		02F527400DB27E6700DC9063 /* FSKPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F5273E0DB27E6700DC9063 /* FSKPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02F527410DB27E6700DC9063 /* FSKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F5273F0DB27E6700DC9063 /* FSKPlace.m */; };
+		02F9D9601167D64200468CFA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 022933841115D3CB00A0CDB5 /* libxml2.dylib */; };
+		02F9D9631167D64E00468CFA /* libMPOAuthMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A86114C725600D6750F /* libMPOAuthMobile.a */; };
+		02F9D96E1167F68000468CFA /* authorities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356411169F3700A0CDB5 /* authorities.m */; };
+		02F9D96F1167F68000468CFA /* enunciate_common.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F97AE111E101C001EFA8F /* enunciate_common.m */; };
+		02F9D9701167F68000468CFA /* familytree.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F7A50110CCB523001C2BD3 /* familytree.m */; };
+		02F9D9711167F68000468CFA /* fsv1.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F97B0111E101C001EFA8F /* fsv1.m */; };
+		02F9D9721167F68000468CFA /* identity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356611169F3700A0CDB5 /* identity.m */; };
+		02F9D9731167F68000468CFA /* reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356811169F3700A0CDB5 /* reservation.m */; };
+		02F9D9741167F68000468CFA /* temple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356A11169F3700A0CDB5 /* temple.m */; };
+		02F9D9781167F6C500468CFA /* FSKConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DAD0C9DE06D00FE5892 /* FSKConnection.m */; };
+		02F9D97A1167F6C500468CFA /* NSString+URIQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0293E1C710D607CE00A49364 /* NSString+URIQuery.m */; };
+		02F9D97C1167F6E600468CFA /* FSKAssertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB600E57198B0022DBFB /* FSKAssertion.m */; };
+		02F9D97E1167F6E600468CFA /* FSKAuthoritiesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DDE0C9DE4BB00FE5892 /* FSKAuthoritiesService.m */; };
+		02F9D9801167F6E600468CFA /* FSKContributor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB680E57387A0022DBFB /* FSKContributor.m */; };
+		02F9D9821167F6E600468CFA /* FSKContributorReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */; };
+		02F9D9841167F6E600468CFA /* FSKContributorRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */; };
+		02F9D9861167F6E600468CFA /* FSKContributorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */; };
+		02F9D9881167F6E600468CFA /* FSKCouple.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A650D720F8700072118 /* FSKCouple.m */; };
+		02F9D98A1167F6E600468CFA /* FSKDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F5273B0DB27E0900DC9063 /* FSKDate.m */; };
+		02F9D98C1167F6E600468CFA /* FSKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E630D4B84DA0047B392 /* FSKError.m */; };
+		02F9D98E1167F6E600468CFA /* FSKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB570E5719550022DBFB /* FSKEvent.m */; };
+		02F9D9901167F6E600468CFA /* FSKEventSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F527370DB27D7200DC9063 /* FSKEventSummary.m */; };
+		02F9D9921167F6E600468CFA /* FSKFact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB5B0E57196A0022DBFB /* FSKFact.m */; };
+		02F9D9941167F6E600468CFA /* FSKFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A5F0D720F7A00072118 /* FSKFamily.m */; };
+		02F9D9961167F6E600468CFA /* FSKFamilyService.m in Sources */ = {isa = PBXBuildFile; fileRef = B485A1BC0D87C07C001822A5 /* FSKFamilyService.m */; };
+		02F9D9981167F6E600468CFA /* FSKIdentityRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C5E0D477585003E36B7 /* FSKIdentityRequest.m */; };
+		02F9D99A1167F6E600468CFA /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */; };
+		02F9D99C1167F6E600468CFA /* FSKIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */; };
+		02F9D99E1167F6E600468CFA /* FSKOAuthAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 02538C6D114D347600D6750F /* FSKOAuthAPI.m */; };
+		02F9D9A01167F6E600468CFA /* FSKOAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293416111607F500A0CDB5 /* FSKOAuthHandler.m */; };
+		02F9D9A21167F6E600468CFA /* FSKPedigree.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525A60F5D745F003548D3 /* FSKPedigree.m */; };
+		02F9D9A41167F6E600468CFA /* FSKPedigreeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525520F5D45FE003548D3 /* FSKPedigreeRequest.m */; };
+		02F9D9A61167F6E600468CFA /* FSKPedigreeResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525560F5D461E003548D3 /* FSKPedigreeResponse.m */; };
+		02F9D9A81167F6E600468CFA /* FSKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A4D0D720B2900072118 /* FSKPerson.m */; };
+		02F9D9AA1167F6E600468CFA /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */; };
+		02F9D9AC1167F6E600468CFA /* FSKPersonName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0275A0590F602A16005AF00D /* FSKPersonName.m */; };
+		02F9D9AE1167F6E600468CFA /* FSKPersonReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B404B7750D88152B005D7186 /* FSKPersonReadRequest.m */; };
+		02F9D9B01167F6E600468CFA /* FSKPersonRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A3A0D7200EE00072118 /* FSKPersonRepository.m */; };
+		02F9D9B21167F6E600468CFA /* FSKPersonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DF9CCB0D85CACD00D7073B /* FSKPersonResponse.m */; };
+		02F9D9B41167F6E600468CFA /* FSKPersonSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B49CAE2D0D884662003852A5 /* FSKPersonSearchRequest.m */; };
+		02F9D9B61167F6E600468CFA /* FSKPersonService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DD80C9DE49C00FE5892 /* FSKPersonService.m */; };
+		02F9D9B81167F6E600468CFA /* FSKPersonSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DF9CAF0D85A15E00D7073B /* FSKPersonSummary.m */; };
+		02F9D9BA1167F6E600468CFA /* FSKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F5273F0DB27E6700DC9063 /* FSKPlace.m */; };
+		02F9D9BC1167F6E600468CFA /* FSKProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 024AD3B6113BEC6B0016524F /* FSKProperties.m */; };
+		02F9D9BE1167F6E600468CFA /* FSKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 0245255A0F5D4785003548D3 /* FSKRepository.m */; };
+		02F9D9C01167F6E600468CFA /* FSKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02439C6E0D43949200F50EBD /* FSKRequest.m */; };
+		02F9D9C21167F6E600468CFA /* FSKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F19E5F0D4B82410047B392 /* FSKResponse.m */; };
+		02F9D9C41167F6E600468CFA /* FSKSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A770C0D84731100CD028D /* FSKSearchResponse.m */; };
+		02F9D9C61167F6E600468CFA /* FSKSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 023A77170D84753900CD028D /* FSKSearchResult.m */; };
+		02F9D9C81167F6E600468CFA /* FSKServiceBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DD20C9DE45500FE5892 /* FSKServiceBase.m */; };
+		02F9D9CA1167F6E600468CFA /* FSKTempleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02433DE40C9DE4C400FE5892 /* FSKTempleService.m */; };
+		02F9D9CC1167F6E600468CFA /* FSKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294DB640E57383D0022DBFB /* FSKUser.m */; };
+		02F9D9CE1167F6E600468CFA /* FSKUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F998F112047BF001EFA8F /* FSKUserProfile.m */; };
+		02F9D9D01167F6E600468CFA /* FSKUserReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A356D0E6195E30007B2F0 /* FSKUserReadRequest.m */; };
+		02F9D9D21167F6E600468CFA /* FSKUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35710E6195F10007B2F0 /* FSKUserResponse.m */; };
+		02F9D9D41167F6E600468CFA /* FSKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0256776E0F3351480032079F /* FSKUtils.m */; };
+		02F9D9D91167F74400468CFA /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02F9DA5111681C3200468CFA /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
+		02F9DB23116829F200468CFA /* fsv1.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F97AF111E101C001EFA8F /* fsv1.h */; };
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		B404B7760D88152B005D7186 /* FSKPersonReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B404B7740D88152B005D7186 /* FSKPersonReadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B404B7770D88152B005D7186 /* FSKPersonReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B404B7750D88152B005D7186 /* FSKPersonReadRequest.m */; };
+		B485A1BD0D87C07C001822A5 /* FSKFamilyService.h in Headers */ = {isa = PBXBuildFile; fileRef = B485A1BB0D87C07C001822A5 /* FSKFamilyService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B485A1BE0D87C07C001822A5 /* FSKFamilyService.m in Sources */ = {isa = PBXBuildFile; fileRef = B485A1BC0D87C07C001822A5 /* FSKFamilyService.m */; };
+		B49CAE2E0D884662003852A5 /* FSKPersonSearchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B49CAE2C0D884662003852A5 /* FSKPersonSearchRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4DF9CB00D85A15E00D7073B /* FSKPersonSummary.h in Headers */ = {isa = PBXBuildFile; fileRef = B4DF9CAE0D85A15E00D7073B /* FSKPersonSummary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4DF9CB10D85A15E00D7073B /* FSKPersonSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DF9CAF0D85A15E00D7073B /* FSKPersonSummary.m */; };
+		B4DF9CCC0D85CACD00D7073B /* FSKPersonResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = B4DF9CCA0D85CACD00D7073B /* FSKPersonResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4DF9CCD0D85CACE00D7073B /* FSKPersonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DF9CCB0D85CACD00D7073B /* FSKPersonResponse.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0263A9860D96ACC100F3D51B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = FSKit;
+		};
+		0263AB2D0D96BFD800F3D51B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 029C314B0D7AF71400746CA6;
+			remoteInfo = FSSearchDemo;
+		};
+		0263AB2F0D96BFDB00F3D51B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0263A97E0D96ACBB00F3D51B;
+			remoteInfo = FSBasicApp;
+		};
+		0271486E0D7099DB00072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = FSKit;
+		};
+		027149D00D70A08200072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = FSKit;
+		};
+		027149D60D70A08200072118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 027148660D7099D000072118;
+			remoteInfo = FSAppTest;
+		};
+		029C31570D7AF71B00746CA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = FSKit;
+		};
+		02A3A8610E6B1EB300A45179 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = FSKit;
+		};
+		02D2CD640CC317130013D298 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = FSKit;
+		};
+		02F9DABA116826AC00468CFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02F9D95A1167D62300468CFA;
+			remoteInfo = FSKitMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0263AA250D96BB0C00F3D51B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02538B54114C728A00D6750F /* MPOAuth.framework in CopyFiles */,
+				0263A9EF0D96BAEE00F3D51B /* FSKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0271494A0D709D7300072118 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02538B5C114C72BD00D6750F /* MPOAuth.framework in CopyFiles */,
+				027149800D709D9E00072118 /* FSKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02E2AF250D8193B200CB1B6E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				02538B5A114C72B000D6750F /* MPOAuth.framework in CopyFiles */,
+				02E2AF3E0D8193DB00CB1B6E /* RuleEditor.framework in CopyFiles */,
+				02E2AF3F0D8193DB00CB1B6E /* FSKit.framework in CopyFiles */,
+				02E2B1050D824BDA00CB1B6E /* SFHFRatingCell.h in CopyFiles */,
+				023A76670D845D4D00CD028D /* SearchForm.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		020F97AD111E101C001EFA8F /* enunciate_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enunciate_common.h; sourceTree = "<group>"; };
+		020F97AE111E101C001EFA8F /* enunciate_common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = enunciate_common.m; sourceTree = "<group>"; };
+		020F97AF111E101C001EFA8F /* fsv1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fsv1.h; sourceTree = "<group>"; };
+		020F97B0111E101C001EFA8F /* fsv1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fsv1.m; sourceTree = "<group>"; };
+		020F998E112047BF001EFA8F /* FSKUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserProfile.h; sourceTree = "<group>"; };
+		020F998F112047BF001EFA8F /* FSKUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserProfile.m; sourceTree = "<group>"; };
+		02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDefaultAuthenticationDelegate.h; sourceTree = "<group>"; };
+		02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDefaultAuthenticationDelegate.m; sourceTree = "<group>"; };
+		022933841115D3CB00A0CDB5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
+		02293415111607F500A0CDB5 /* FSKOAuthHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSKOAuthHandler.h; sourceTree = "<group>"; };
+		02293416111607F500A0CDB5 /* FSKOAuthHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSKOAuthHandler.m; sourceTree = "<group>"; };
+		02293417111607F500A0CDB5 /* SimpleHTTPConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHTTPConnection.h; sourceTree = "<group>"; };
+		02293418111607F500A0CDB5 /* SimpleHTTPConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleHTTPConnection.m; sourceTree = "<group>"; };
+		02293419111607F500A0CDB5 /* SimpleHTTPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleHTTPServer.h; sourceTree = "<group>"; };
+		0229341A111607F500A0CDB5 /* SimpleHTTPServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleHTTPServer.m; sourceTree = "<group>"; };
+		0229356311169F3700A0CDB5 /* authorities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authorities.h; sourceTree = "<group>"; };
+		0229356411169F3700A0CDB5 /* authorities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authorities.m; sourceTree = "<group>"; };
+		0229356511169F3700A0CDB5 /* identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = identity.h; sourceTree = "<group>"; };
+		0229356611169F3700A0CDB5 /* identity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = identity.m; sourceTree = "<group>"; };
+		0229356711169F3700A0CDB5 /* reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reservation.h; sourceTree = "<group>"; };
+		0229356811169F3700A0CDB5 /* reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reservation.m; sourceTree = "<group>"; };
+		0229356911169F3700A0CDB5 /* temple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = temple.h; sourceTree = "<group>"; };
+		0229356A11169F3700A0CDB5 /* temple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = temple.m; sourceTree = "<group>"; };
+		0229357311169F4E00A0CDB5 /* authorities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authorities.h; sourceTree = "<group>"; };
+		0229357411169F4E00A0CDB5 /* authorities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authorities.m; sourceTree = "<group>"; };
+		0229357511169F4E00A0CDB5 /* identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = identity.h; sourceTree = "<group>"; };
+		0229357611169F4E00A0CDB5 /* identity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = identity.m; sourceTree = "<group>"; };
+		0229357711169F4E00A0CDB5 /* reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reservation.h; sourceTree = "<group>"; };
+		0229357811169F4E00A0CDB5 /* reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reservation.m; sourceTree = "<group>"; };
+		0229357911169F4E00A0CDB5 /* temple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = temple.h; sourceTree = "<group>"; };
+		0229357A11169F4E00A0CDB5 /* temple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = temple.m; sourceTree = "<group>"; };
+		023A76650D845D4D00CD028D /* SearchForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchForm.h; path = FSSearchDemo/SearchForm.h; sourceTree = "<group>"; };
+		023A76660D845D4D00CD028D /* SearchForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchForm.m; path = FSSearchDemo/SearchForm.m; sourceTree = "<group>"; };
+		023A770B0D84731100CD028D /* FSKSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSearchResponse.h; sourceTree = "<group>"; };
+		023A770C0D84731100CD028D /* FSKSearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKSearchResponse.m; sourceTree = "<group>"; };
+		023A77160D84753900CD028D /* FSKSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSearchResult.h; sourceTree = "<group>"; };
+		023A77170D84753900CD028D /* FSKSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKSearchResult.m; sourceTree = "<group>"; };
+		02433DAC0C9DE06D00FE5892 /* FSKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKConnection.h; sourceTree = "<group>"; };
+		02433DAD0C9DE06D00FE5892 /* FSKConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKConnection.m; sourceTree = "<group>"; };
+		02433DD10C9DE45500FE5892 /* FSKServiceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKServiceBase.h; sourceTree = "<group>"; };
+		02433DD20C9DE45500FE5892 /* FSKServiceBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKServiceBase.m; sourceTree = "<group>"; };
+		02433DD70C9DE49C00FE5892 /* FSKPersonService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonService.h; sourceTree = "<group>"; };
+		02433DD80C9DE49C00FE5892 /* FSKPersonService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonService.m; sourceTree = "<group>"; };
+		02433DDD0C9DE4BB00FE5892 /* FSKAuthoritiesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAuthoritiesService.h; sourceTree = "<group>"; };
+		02433DDE0C9DE4BB00FE5892 /* FSKAuthoritiesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKAuthoritiesService.m; sourceTree = "<group>"; };
+		02433DE30C9DE4C400FE5892 /* FSKTempleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKTempleService.h; sourceTree = "<group>"; };
+		02433DE40C9DE4C400FE5892 /* FSKTempleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKTempleService.m; sourceTree = "<group>"; };
+		02439C6D0D43949200F50EBD /* FSKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKRequest.h; sourceTree = "<group>"; };
+		02439C6E0D43949200F50EBD /* FSKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKRequest.m; sourceTree = "<group>"; };
+		024525510F5D45FE003548D3 /* FSKPedigreeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPedigreeRequest.h; sourceTree = "<group>"; };
+		024525520F5D45FE003548D3 /* FSKPedigreeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPedigreeRequest.m; sourceTree = "<group>"; };
+		024525550F5D461E003548D3 /* FSKPedigreeResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPedigreeResponse.h; sourceTree = "<group>"; };
+		024525560F5D461E003548D3 /* FSKPedigreeResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPedigreeResponse.m; sourceTree = "<group>"; };
+		024525590F5D4785003548D3 /* FSKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKRepository.h; sourceTree = "<group>"; };
+		0245255A0F5D4785003548D3 /* FSKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKRepository.m; sourceTree = "<group>"; };
+		024525A50F5D745F003548D3 /* FSKPedigree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPedigree.h; sourceTree = "<group>"; };
+		024525A60F5D745F003548D3 /* FSKPedigree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPedigree.m; sourceTree = "<group>"; };
+		0249D2F50DA0FCA7005BF5A3 /* FSAppTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppTestDelegate.h; sourceTree = "<group>"; };
+		0249D2F60DA0FCA7005BF5A3 /* FSAppTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppTestDelegate.m; sourceTree = "<group>"; };
+		024AD3B5113BEC6B0016524F /* FSKProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKProperties.h; sourceTree = "<group>"; };
+		024AD3B6113BEC6B0016524F /* FSKProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKProperties.m; sourceTree = "<group>"; };
+		02538A84114C725600D6750F /* libMPOAuth_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMPOAuth_s.a; sourceTree = "<group>"; };
+		02538A86114C725600D6750F /* libMPOAuthMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMPOAuthMobile.a; sourceTree = "<group>"; };
+		02538A88114C725600D6750F /* MPOAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MPOAuth.framework; sourceTree = "<group>"; };
+		02538C6C114D347600D6750F /* FSKOAuthAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKOAuthAPI.h; sourceTree = "<group>"; };
+		02538C6D114D347600D6750F /* FSKOAuthAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKOAuthAPI.m; sourceTree = "<group>"; };
+		0256776D0F3351480032079F /* FSKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUtils.h; sourceTree = "<group>"; };
+		0256776E0F3351480032079F /* FSKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUtils.m; sourceTree = "<group>"; };
+		02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityResponse.h; sourceTree = "<group>"; };
+		02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityResponse.m; sourceTree = "<group>"; };
+		0263A97F0D96ACBB00F3D51B /* FSBasicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSBasicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0263A9810D96ACBB00F3D51B /* FSBasicApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSBasicApp-Info.plist"; sourceTree = "<group>"; };
+		0263A99C0D96ADAC00F3D51B /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		0263A99E0D96ADAC00F3D51B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
+		0263A99F0D96ADAC00F3D51B /* FSBasicApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBasicApp_Prefix.pch; sourceTree = "<group>"; };
+		0263A9A00D96ADAC00F3D51B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0263A9A10D96ADAC00F3D51B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0263A9AB0D96AFCD00F3D51B /* BasicAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAppDelegate.h; sourceTree = "<group>"; };
+		0263A9AC0D96AFCD00F3D51B /* BasicAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAppDelegate.m; sourceTree = "<group>"; };
+		0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = LoginPanel.nib; path = Resources/LoginPanel.nib; sourceTree = SOURCE_ROOT; };
+		026FC3F70E3CFB1900BD33C5 /* doxygen.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doxygen.config; sourceTree = "<group>"; };
+		027148670D7099D000072118 /* FSAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		027148690D7099D100072118 /* FSAppTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSAppTest-Info.plist"; sourceTree = "<group>"; };
+		02714A390D7200EE00072118 /* FSKPersonRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonRepository.h; sourceTree = "<group>"; };
+		02714A3A0D7200EE00072118 /* FSKPersonRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonRepository.m; sourceTree = "<group>"; };
+		02714A4C0D720B2900072118 /* FSKPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPerson.h; sourceTree = "<group>"; };
+		02714A4D0D720B2900072118 /* FSKPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPerson.m; sourceTree = "<group>"; };
+		02714A5E0D720F7A00072118 /* FSKFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFamily.h; sourceTree = "<group>"; };
+		02714A5F0D720F7A00072118 /* FSKFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKFamily.m; sourceTree = "<group>"; };
+		02714A640D720F8700072118 /* FSKCouple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKCouple.h; sourceTree = "<group>"; };
+		02714A650D720F8700072118 /* FSKCouple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKCouple.m; sourceTree = "<group>"; };
+		0275A0580F602A16005AF00D /* FSKPersonName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonName.h; sourceTree = "<group>"; };
+		0275A0590F602A16005AF00D /* FSKPersonName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonName.m; sourceTree = "<group>"; };
+		02810C1C0D4427C2003E36B7 /* FSKIdentityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityService.h; sourceTree = "<group>"; };
+		02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityService.m; sourceTree = "<group>"; };
+		02810C5D0D477585003E36B7 /* FSKIdentityRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityRequest.h; sourceTree = "<group>"; };
+		02810C5E0D477585003E36B7 /* FSKIdentityRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityRequest.m; sourceTree = "<group>"; };
+		02810DD00D4995E5003E36B7 /* FSKLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKLoginController.h; path = Cocoa/FSKLoginController.h; sourceTree = "<group>"; };
+		02810DD10D4995E5003E36B7 /* FSKLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSKLoginController.m; path = Cocoa/FSKLoginController.m; sourceTree = "<group>"; };
+		0283255C0DA859FC00C8B5BF /* FSKSharedDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSharedDefines.h; sourceTree = "<group>"; };
+		0283293B0DA95CE300C8B5BF /* user_icon_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_female.png; path = FSSearchDemo/user_icon_female.png; sourceTree = "<group>"; };
+		0283293C0DA95CE300C8B5BF /* user_icon_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_male.png; path = FSSearchDemo/user_icon_male.png; sourceTree = "<group>"; };
+		028A356C0E6195E30007B2F0 /* FSKUserReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserReadRequest.h; sourceTree = "<group>"; };
+		028A356D0E6195E30007B2F0 /* FSKUserReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserReadRequest.m; sourceTree = "<group>"; };
+		028A35700E6195F10007B2F0 /* FSKUserResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUserResponse.h; sourceTree = "<group>"; };
+		028A35710E6195F10007B2F0 /* FSKUserResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUserResponse.m; sourceTree = "<group>"; };
+		028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributorRepository.h; sourceTree = "<group>"; };
+		028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorRepository.m; sourceTree = "<group>"; };
+		028A39C90E626F430007B2F0 /* Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info copy.plist"; sourceTree = "<group>"; };
+		028A39DA0E6271900007B2F0 /* FSKit_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit_iPhone.h; sourceTree = "<group>"; };
+		0293E1C610D607CE00A49364 /* NSString+URIQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URIQuery.h"; sourceTree = "<group>"; };
+		0293E1C710D607CE00A49364 /* NSString+URIQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URIQuery.m"; sourceTree = "<group>"; };
+		0294DB560E5719550022DBFB /* FSKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEvent.h; sourceTree = "<group>"; };
+		0294DB570E5719550022DBFB /* FSKEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKEvent.m; sourceTree = "<group>"; };
+		0294DB5A0E57196A0022DBFB /* FSKFact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFact.h; sourceTree = "<group>"; };
+		0294DB5B0E57196A0022DBFB /* FSKFact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKFact.m; sourceTree = "<group>"; };
+		0294DB5F0E57198B0022DBFB /* FSKAssertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAssertion.h; sourceTree = "<group>"; };
+		0294DB600E57198B0022DBFB /* FSKAssertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKAssertion.m; sourceTree = "<group>"; };
+		0294DB630E57383D0022DBFB /* FSKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUser.h; sourceTree = "<group>"; };
+		0294DB640E57383D0022DBFB /* FSKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUser.m; sourceTree = "<group>"; };
+		0294DB670E57387A0022DBFB /* FSKContributor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributor.h; sourceTree = "<group>"; };
+		0294DB680E57387A0022DBFB /* FSKContributor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributor.m; sourceTree = "<group>"; };
+		029C314C0D7AF71400746CA6 /* FSSearchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSSearchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		029C31520D7AF71400746CA6 /* FSSearchDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSSearchDemo-Info.plist"; sourceTree = "<group>"; };
+		029C315E0D7AF77500746CA6 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		029C31610D7AF77500746CA6 /* FSSearchDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSSearchDemo_Prefix.pch; path = FSSearchDemo/FSSearchDemo_Prefix.pch; sourceTree = "<group>"; };
+		029C31620D7AF77500746CA6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FSSearchDemo/Info.plist; sourceTree = "<group>"; };
+		029C31630D7AF77500746CA6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FSSearchDemo/main.m; sourceTree = "<group>"; };
+		029C32560D7AF9E100746CA6 /* FSSearchDemoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSSearchDemoDelegate.h; path = FSSearchDemo/FSSearchDemoDelegate.h; sourceTree = "<group>"; };
+		029C32570D7AF9E100746CA6 /* FSSearchDemoDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSSearchDemoDelegate.m; path = FSSearchDemo/FSSearchDemoDelegate.m; sourceTree = "<group>"; };
+		02A3A8410E6B1D0500A45179 /* FSCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FSCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A3A8500E6B1DF800A45179 /* FSCLClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCLClient.h; sourceTree = "<group>"; };
+		02A3A8510E6B1DF800A45179 /* FSCLClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCLClient.m; sourceTree = "<group>"; };
+		02A3A8520E6B1DF800A45179 /* FSCommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCommandLine.m; sourceTree = "<group>"; };
+		02A3A8630E6B1ED500A45179 /* FSCommandLine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommandLine_Prefix.pch; sourceTree = "<group>"; };
+		02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonDetail.h; sourceTree = "<group>"; };
+		02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonDetail.m; sourceTree = "<group>"; };
+		02BA97F80D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		02BA97FA0D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		02BA97FC0D7068CF00DC6E04 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = "English.lproj/MainMenu~.nib"; sourceTree = "<group>"; };
+		02BA98000D7068CF00DC6E04 /* FSAppTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppTest_Prefix.pch; sourceTree = "<group>"; };
+		02BA98010D7068CF00DC6E04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02BA98020D7068CF00DC6E04 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		02BA98050D7068CF00DC6E04 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
+		02C85BE80EAB84090032CEBE /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
+		02D2CD2C0CC311600013D298 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
+		02D2CD440CC3139D0013D298 /* FSKConnectionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKConnectionTest.h; path = Tests/FSKConnectionTest.h; sourceTree = "<group>"; };
+		02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSKConnectionTest.m; path = Tests/FSKConnectionTest.m; sourceTree = "<group>"; };
+		02E2AE070D817F6900CB1B6E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = FSSearchDemo/English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		02E2AE5C0D818FD700CB1B6E /* Users.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Users.tiff; path = FSSearchDemo/Users.tiff; sourceTree = "<group>"; };
+		02E2AE600D81900000CB1B6E /* format.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = format.plist; path = FSSearchDemo/format.plist; sourceTree = "<group>"; };
+		02E2AE610D81900000CB1B6E /* criteria.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = criteria.plist; path = FSSearchDemo/criteria.plist; sourceTree = "<group>"; };
+		02E2AEDD0D81927100CB1B6E /* ImageTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageTextCell.m; path = FSSearchDemo/ImageTextCell.m; sourceTree = "<group>"; };
+		02E2AEDE0D81927100CB1B6E /* ImageTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageTextCell.h; path = FSSearchDemo/ImageTextCell.h; sourceTree = "<group>"; };
+		02E2AEDF0D81927100CB1B6E /* RuleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RuleDelegate.h; path = FSSearchDemo/RuleDelegate.h; sourceTree = "<group>"; };
+		02E2AEE00D81927100CB1B6E /* RuleDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RuleDelegate.m; path = FSSearchDemo/RuleDelegate.m; sourceTree = "<group>"; };
+		02E2AF170D81937600CB1B6E /* RuleEditor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RuleEditor.framework; path = FSSearchDemo/RuleEditor.framework; sourceTree = "<group>"; };
+		02E2B1030D824BDA00CB1B6E /* SFHFRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFHFRatingCell.h; path = FSSearchDemo/SFHFRatingCell.h; sourceTree = "<group>"; };
+		02E2B1040D824BDA00CB1B6E /* SFHFRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFHFRatingCell.m; path = FSSearchDemo/SFHFRatingCell.m; sourceTree = "<group>"; };
+		02E2B1070D824BEF00CB1B6E /* star_highlighted.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = star_highlighted.tif; path = FSSearchDemo/star_highlighted.tif; sourceTree = "<group>"; };
+		02E2B1080D824BEF00CB1B6E /* star.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = star.tif; path = FSSearchDemo/star.tif; sourceTree = "<group>"; };
+		02E58AD70F64B5F200049C62 /* FSKContributorReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributorReadRequest.h; sourceTree = "<group>"; };
+		02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorReadRequest.m; sourceTree = "<group>"; };
+		02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKContributorResponse.h; sourceTree = "<group>"; };
+		02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorResponse.m; sourceTree = "<group>"; };
+		02E590390F65F69800049C62 /* FSKPersonRepositoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonRepositoryTest.h; sourceTree = "<group>"; };
+		02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonRepositoryTest.m; sourceTree = "<group>"; };
+		02EEFE650CA6B341007006DE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		02EEFE660CA6B341007006DE /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
+		02EEFE670CA6B341007006DE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		02EEFE680CA6B341007006DE /* ACKNOWLEDGMENTS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACKNOWLEDGMENTS.txt; sourceTree = "<group>"; };
+		02EEFE820CA6B5B3007006DE /* headerDoc2HTML.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = headerDoc2HTML.config; path = Source/headerDoc2HTML.config; sourceTree = "<group>"; };
+		02EEFE830CA6B5B3007006DE /* toctemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = toctemplate.html; path = Source/toctemplate.html; sourceTree = "<group>"; };
+		02EEFE840CA6B5B3007006DE /* Framework.hdoc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Framework.hdoc; path = Source/Framework.hdoc; sourceTree = "<group>"; };
+		02F19D0C0D4A236E0047B392 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		02F19E5E0D4B82410047B392 /* FSKResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKResponse.h; sourceTree = "<group>"; };
+		02F19E5F0D4B82410047B392 /* FSKResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKResponse.m; sourceTree = "<group>"; };
+		02F19E620D4B84DA0047B392 /* FSKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKError.h; sourceTree = "<group>"; };
+		02F19E630D4B84DA0047B392 /* FSKError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKError.m; sourceTree = "<group>"; };
+		02F1A07B0D4CEED70047B392 /* MIT-License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "MIT-License.rtf"; sourceTree = "<group>"; };
+		02F1A07C0D4CEED70047B392 /* NSData+RSHexDump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+RSHexDump.h"; sourceTree = "<group>"; };
+		02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+RSHexDump.m"; sourceTree = "<group>"; };
+		02F527360DB27D7200DC9063 /* FSKEventSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKEventSummary.h; sourceTree = "<group>"; };
+		02F527370DB27D7200DC9063 /* FSKEventSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKEventSummary.m; sourceTree = "<group>"; };
+		02F5273A0DB27E0900DC9063 /* FSKDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDate.h; sourceTree = "<group>"; };
+		02F5273B0DB27E0900DC9063 /* FSKDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDate.m; sourceTree = "<group>"; };
+		02F5273E0DB27E6700DC9063 /* FSKPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPlace.h; sourceTree = "<group>"; };
+		02F5273F0DB27E6700DC9063 /* FSKPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPlace.m; sourceTree = "<group>"; };
+		02F7A50010CCB523001C2BD3 /* familytree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = familytree.h; sourceTree = "<group>"; };
+		02F7A50110CCB523001C2BD3 /* familytree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = familytree.m; sourceTree = "<group>"; };
+		02F7A50310CCB523001C2BD3 /* familytree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = familytree.h; sourceTree = "<group>"; };
+		02F7A50410CCB523001C2BD3 /* familytree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = familytree.m; sourceTree = "<group>"; };
+		02F9D95B1167D62300468CFA /* libFSKitMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFSKitMobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* FSKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKit_Prefix.pch; path = ../FSKit_Prefix.pch; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* FSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B404B7740D88152B005D7186 /* FSKPersonReadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonReadRequest.h; sourceTree = "<group>"; };
+		B404B7750D88152B005D7186 /* FSKPersonReadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonReadRequest.m; sourceTree = "<group>"; };
+		B485A1BB0D87C07C001822A5 /* FSKFamilyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKFamilyService.h; sourceTree = "<group>"; };
+		B485A1BC0D87C07C001822A5 /* FSKFamilyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKFamilyService.m; sourceTree = "<group>"; };
+		B49CAE2C0D884662003852A5 /* FSKPersonSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonSearchRequest.h; sourceTree = "<group>"; };
+		B49CAE2D0D884662003852A5 /* FSKPersonSearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonSearchRequest.m; sourceTree = "<group>"; };
+		B4DF9CAE0D85A15E00D7073B /* FSKPersonSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonSummary.h; sourceTree = "<group>"; };
+		B4DF9CAF0D85A15E00D7073B /* FSKPersonSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonSummary.m; sourceTree = "<group>"; };
+		B4DF9CCA0D85CACD00D7073B /* FSKPersonResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonResponse.h; sourceTree = "<group>"; };
+		B4DF9CCB0D85CACD00D7073B /* FSKPersonResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonResponse.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0263A97D0D96ACBB00F3D51B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02538B57114C72A200D6750F /* MPOAuth.framework in Frameworks */,
+				0263AB170D96BD4D00F3D51B /* Cocoa.framework in Frameworks */,
+				0263AB180D96BD4D00F3D51B /* AppKit.framework in Frameworks */,
+				0263AB190D96BD4D00F3D51B /* FSKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		027148650D7099D000072118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02538A89114C725600D6750F /* MPOAuth.framework in Frameworks */,
+				027149440D709D5C00072118 /* Cocoa.framework in Frameworks */,
+				0271489F0D709D5800072118 /* AppKit.framework in Frameworks */,
+				0271488C0D709D4D00072118 /* FSKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029C314A0D7AF71400746CA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02538B59114C72AE00D6750F /* MPOAuth.framework in Frameworks */,
+				029C323B0D7AF80200746CA6 /* Cocoa.framework in Frameworks */,
+				029C323C0D7AF80200746CA6 /* AppKit.framework in Frameworks */,
+				029C31860D7AF7F800746CA6 /* FSKit.framework in Frameworks */,
+				02E2AF180D81937600CB1B6E /* RuleEditor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A3A83F0E6B1D0500A45179 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02538B52114C727B00D6750F /* libMPOAuth_s.a in Frameworks */,
+				02A3A84B0E6B1D1B00A45179 /* FSKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D2CD290CC311600013D298 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D2CD320CC3127B0013D298 /* FSKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F9D9591167D62300468CFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F9D9631167D64E00468CFA /* libMPOAuthMobile.a in Frameworks */,
+				02F9D9601167D64200468CFA /* libxml2.dylib in Frameworks */,
+				02F9DA5111681C3200468CFA /* MPOAuth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02538BB5114C7CC500D6750F /* MPOAuth.framework in Frameworks */,
+				02810E0E0D49B146003E36B7 /* Cocoa.framework in Frameworks */,
+				029BE8A70CDDFF3D0096B9F9 /* Foundation.framework in Frameworks */,
+				02F19D0D0D4A236E0047B392 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		020E9AD00E99643600E38F75 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */,
+				02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */,
+			);
+			path = Cocoa;
+			sourceTree = "<group>";
+		};
+		020E9AD60E9965FA00E38F75 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				02F7A4FE10CCB523001C2BD3 /* enunciate */,
+				02C85BE80EAB84090032CEBE /* FSKit.h */,
+				02433DAC0C9DE06D00FE5892 /* FSKConnection.h */,
+				02433DAD0C9DE06D00FE5892 /* FSKConnection.m */,
+				B4DF9D4F0D864C0C00D7073B /* Services */,
+				02439C5B0D43936B00F50EBD /* Requests */,
+				B4DF9D470D863D6500D7073B /* Core */,
+				02714A320D72009200072118 /* Repositories */,
+				02714A490D720B1000072118 /* Model */,
+				0293E1C610D607CE00A49364 /* NSString+URIQuery.h */,
+				0293E1C710D607CE00A49364 /* NSString+URIQuery.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		02117D560D9DDDB900380BBF /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SampleData;
+			sourceTree = "<group>";
+		};
+		02439C5B0D43936B00F50EBD /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				02439C600D43940E00F50EBD /* Identity */,
+				02439C5F0D4393BC00F50EBD /* Family Tree */,
+				02439C5D0D43939C00F50EBD /* Authorities */,
+				02439C5E0D4393AA00F50EBD /* Temple */,
+				02A9ACEE0E46F0A400311AC0 /* Reservation */,
+				02439C610D43941500F50EBD /* Record Search */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		02439C5D0D43939C00F50EBD /* Authorities */ = {
+			isa = PBXGroup;
+			children = (
+				02433DDD0C9DE4BB00FE5892 /* FSKAuthoritiesService.h */,
+				02433DDE0C9DE4BB00FE5892 /* FSKAuthoritiesService.m */,
+			);
+			name = Authorities;
+			sourceTree = "<group>";
+		};
+		02439C5E0D4393AA00F50EBD /* Temple */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Temple;
+			sourceTree = "<group>";
+		};
+		02439C5F0D4393BC00F50EBD /* Family Tree */ = {
+			isa = PBXGroup;
+			children = (
+				02E58AD70F64B5F200049C62 /* FSKContributorReadRequest.h */,
+				02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */,
+				02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */,
+				02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */,
+				023A770B0D84731100CD028D /* FSKSearchResponse.h */,
+				023A770C0D84731100CD028D /* FSKSearchResponse.m */,
+				B4DF9CCA0D85CACD00D7073B /* FSKPersonResponse.h */,
+				B4DF9CCB0D85CACD00D7073B /* FSKPersonResponse.m */,
+				B404B7740D88152B005D7186 /* FSKPersonReadRequest.h */,
+				B404B7750D88152B005D7186 /* FSKPersonReadRequest.m */,
+				B49CAE2C0D884662003852A5 /* FSKPersonSearchRequest.h */,
+				B49CAE2D0D884662003852A5 /* FSKPersonSearchRequest.m */,
+				028A356C0E6195E30007B2F0 /* FSKUserReadRequest.h */,
+				028A356D0E6195E30007B2F0 /* FSKUserReadRequest.m */,
+				028A35700E6195F10007B2F0 /* FSKUserResponse.h */,
+				028A35710E6195F10007B2F0 /* FSKUserResponse.m */,
+				024525510F5D45FE003548D3 /* FSKPedigreeRequest.h */,
+				024525520F5D45FE003548D3 /* FSKPedigreeRequest.m */,
+				024525550F5D461E003548D3 /* FSKPedigreeResponse.h */,
+				024525560F5D461E003548D3 /* FSKPedigreeResponse.m */,
+			);
+			name = "Family Tree";
+			sourceTree = "<group>";
+		};
+		02439C600D43940E00F50EBD /* Identity */ = {
+			isa = PBXGroup;
+			children = (
+				02810C5D0D477585003E36B7 /* FSKIdentityRequest.h */,
+				02810C5E0D477585003E36B7 /* FSKIdentityRequest.m */,
+				02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */,
+				02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */,
+			);
+			name = Identity;
+			sourceTree = "<group>";
+		};
+		02439C610D43941500F50EBD /* Record Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Record Search";
+			sourceTree = "<group>";
+		};
+		0263A9880D96AD2800F3D51B /* FSBasicApp */ = {
+			isa = PBXGroup;
+			children = (
+				0263A9AB0D96AFCD00F3D51B /* BasicAppDelegate.h */,
+				0263A9AC0D96AFCD00F3D51B /* BasicAppDelegate.m */,
+				0263A99A0D96ADAC00F3D51B /* English.lproj */,
+				0263A99F0D96ADAC00F3D51B /* FSBasicApp_Prefix.pch */,
+				0263A9A00D96ADAC00F3D51B /* Info.plist */,
+				0263A9A10D96ADAC00F3D51B /* main.m */,
+			);
+			path = FSBasicApp;
+			sourceTree = "<group>";
+		};
+		0263A99A0D96ADAC00F3D51B /* English.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				0263A99B0D96ADAC00F3D51B /* InfoPlist.strings */,
+				0263A99D0D96ADAC00F3D51B /* MainMenu.nib */,
+			);
+			path = English.lproj;
+			sourceTree = "<group>";
+		};
+		02714A320D72009200072118 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				02714A390D7200EE00072118 /* FSKPersonRepository.h */,
+				02714A3A0D7200EE00072118 /* FSKPersonRepository.m */,
+				028A35C10E61A14C0007B2F0 /* FSKContributorRepository.h */,
+				028A35C20E61A14C0007B2F0 /* FSKContributorRepository.m */,
+				024525590F5D4785003548D3 /* FSKRepository.h */,
+				0245255A0F5D4785003548D3 /* FSKRepository.m */,
+			);
+			name = Repositories;
+			sourceTree = "<group>";
+		};
+		02714A490D720B1000072118 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02714A640D720F8700072118 /* FSKCouple.h */,
+				02714A650D720F8700072118 /* FSKCouple.m */,
+				02714A4C0D720B2900072118 /* FSKPerson.h */,
+				02714A4D0D720B2900072118 /* FSKPerson.m */,
+				02714A5E0D720F7A00072118 /* FSKFamily.h */,
+				02714A5F0D720F7A00072118 /* FSKFamily.m */,
+				023A77160D84753900CD028D /* FSKSearchResult.h */,
+				023A77170D84753900CD028D /* FSKSearchResult.m */,
+				B4DF9CAE0D85A15E00D7073B /* FSKPersonSummary.h */,
+				B4DF9CAF0D85A15E00D7073B /* FSKPersonSummary.m */,
+				02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */,
+				02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */,
+				02F527360DB27D7200DC9063 /* FSKEventSummary.h */,
+				02F527370DB27D7200DC9063 /* FSKEventSummary.m */,
+				02F5273A0DB27E0900DC9063 /* FSKDate.h */,
+				02F5273B0DB27E0900DC9063 /* FSKDate.m */,
+				02F5273E0DB27E6700DC9063 /* FSKPlace.h */,
+				02F5273F0DB27E6700DC9063 /* FSKPlace.m */,
+				0294DB560E5719550022DBFB /* FSKEvent.h */,
+				0294DB570E5719550022DBFB /* FSKEvent.m */,
+				0294DB5A0E57196A0022DBFB /* FSKFact.h */,
+				0294DB5B0E57196A0022DBFB /* FSKFact.m */,
+				0294DB5F0E57198B0022DBFB /* FSKAssertion.h */,
+				0294DB600E57198B0022DBFB /* FSKAssertion.m */,
+				0294DB630E57383D0022DBFB /* FSKUser.h */,
+				0294DB640E57383D0022DBFB /* FSKUser.m */,
+				0294DB670E57387A0022DBFB /* FSKContributor.h */,
+				0294DB680E57387A0022DBFB /* FSKContributor.m */,
+				024525A50F5D745F003548D3 /* FSKPedigree.h */,
+				024525A60F5D745F003548D3 /* FSKPedigree.m */,
+				0275A0580F602A16005AF00D /* FSKPersonName.h */,
+				0275A0590F602A16005AF00D /* FSKPersonName.m */,
+				020F998E112047BF001EFA8F /* FSKUserProfile.h */,
+				020F998F112047BF001EFA8F /* FSKUserProfile.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		02810DCF0D499597003E36B7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */,
+				02810DD00D4995E5003E36B7 /* FSKLoginController.h */,
+				02810DD10D4995E5003E36B7 /* FSKLoginController.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		028A391F0E626C6D0007B2F0 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				028A39DA0E6271900007B2F0 /* FSKit_iPhone.h */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		029C31370D7AF6C600746CA6 /* FSSearchDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0283293B0DA95CE300C8B5BF /* user_icon_female.png */,
+				0283293C0DA95CE300C8B5BF /* user_icon_male.png */,
+				02E2AF170D81937600CB1B6E /* RuleEditor.framework */,
+				02E2AEDD0D81927100CB1B6E /* ImageTextCell.m */,
+				02E2AEDE0D81927100CB1B6E /* ImageTextCell.h */,
+				02E2AEDF0D81927100CB1B6E /* RuleDelegate.h */,
+				02E2AEE00D81927100CB1B6E /* RuleDelegate.m */,
+				02E2B1030D824BDA00CB1B6E /* SFHFRatingCell.h */,
+				02E2B1040D824BDA00CB1B6E /* SFHFRatingCell.m */,
+				02E2B1070D824BEF00CB1B6E /* star_highlighted.tif */,
+				02E2B1080D824BEF00CB1B6E /* star.tif */,
+				02E2AE5C0D818FD700CB1B6E /* Users.tiff */,
+				02E2AE600D81900000CB1B6E /* format.plist */,
+				02E2AE610D81900000CB1B6E /* criteria.plist */,
+				029C315C0D7AF77500746CA6 /* English.lproj */,
+				029C31610D7AF77500746CA6 /* FSSearchDemo_Prefix.pch */,
+				029C31620D7AF77500746CA6 /* Info.plist */,
+				029C31630D7AF77500746CA6 /* main.m */,
+				029C32560D7AF9E100746CA6 /* FSSearchDemoDelegate.h */,
+				029C32570D7AF9E100746CA6 /* FSSearchDemoDelegate.m */,
+				023A76650D845D4D00CD028D /* SearchForm.h */,
+				023A76660D845D4D00CD028D /* SearchForm.m */,
+			);
+			name = FSSearchDemo;
+			sourceTree = "<group>";
+		};
+		029C315C0D7AF77500746CA6 /* English.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				02E2AE060D817F6900CB1B6E /* MainMenu.nib */,
+				029C315D0D7AF77500746CA6 /* InfoPlist.strings */,
+			);
+			name = English.lproj;
+			path = FSSearchDemo/English.lproj;
+			sourceTree = "<group>";
+		};
+		02A3A84F0E6B1DB200A45179 /* FSCommandLine */ = {
+			isa = PBXGroup;
+			children = (
+				02A3A8630E6B1ED500A45179 /* FSCommandLine_Prefix.pch */,
+				02A3A8500E6B1DF800A45179 /* FSCLClient.h */,
+				02A3A8510E6B1DF800A45179 /* FSCLClient.m */,
+				02A3A8520E6B1DF800A45179 /* FSCommandLine.m */,
+			);
+			path = FSCommandLine;
+			sourceTree = "<group>";
+		};
+		02A9ACEE0E46F0A400311AC0 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Reservation;
+			sourceTree = "<group>";
+		};
+		02BA97F30D70687900DC6E04 /* Sample Apps */ = {
+			isa = PBXGroup;
+			children = (
+				0283255C0DA859FC00C8B5BF /* FSKSharedDefines.h */,
+				0263A9880D96AD2800F3D51B /* FSBasicApp */,
+				02BA97F60D7068CF00DC6E04 /* FSAppTest */,
+				029C31370D7AF6C600746CA6 /* FSSearchDemo */,
+				02A3A84F0E6B1DB200A45179 /* FSCommandLine */,
+			);
+			path = "Sample Apps";
+			sourceTree = "<group>";
+		};
+		02BA97F60D7068CF00DC6E04 /* FSAppTest */ = {
+			isa = PBXGroup;
+			children = (
+				0249D2F50DA0FCA7005BF5A3 /* FSAppTestDelegate.h */,
+				0249D2F60DA0FCA7005BF5A3 /* FSAppTestDelegate.m */,
+				02BA97F70D7068CF00DC6E04 /* InfoPlist.strings */,
+				02BA97F90D7068CF00DC6E04 /* MainMenu.nib */,
+				02BA97FB0D7068CF00DC6E04 /* MainMenu~.nib */,
+				02BA98000D7068CF00DC6E04 /* FSAppTest_Prefix.pch */,
+				02BA98010D7068CF00DC6E04 /* Info.plist */,
+				02BA98020D7068CF00DC6E04 /* main.m */,
+				02BA98050D7068CF00DC6E04 /* version.plist */,
+			);
+			path = FSAppTest;
+			sourceTree = "<group>";
+		};
+		02D2CD480CC3147B0013D298 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				02D2CD440CC3139D0013D298 /* FSKConnectionTest.h */,
+				02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */,
+				02E590390F65F69800049C62 /* FSKPersonRepositoryTest.h */,
+				02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		02EEFE810CA6B5B3007006DE /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				026FC3F70E3CFB1900BD33C5 /* doxygen.config */,
+				02EEFE820CA6B5B3007006DE /* headerDoc2HTML.config */,
+				02EEFE830CA6B5B3007006DE /* toctemplate.html */,
+				02EEFE840CA6B5B3007006DE /* Framework.hdoc */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		02F1A07A0D4CEED60047B392 /* NSData+RSHexDump */ = {
+			isa = PBXGroup;
+			children = (
+				02F1A07B0D4CEED70047B392 /* MIT-License.rtf */,
+				02F1A07C0D4CEED70047B392 /* NSData+RSHexDump.h */,
+				02F1A07D0D4CEED70047B392 /* NSData+RSHexDump.m */,
+			);
+			path = "NSData+RSHexDump";
+			sourceTree = "<group>";
+		};
+		02F7A4FE10CCB523001C2BD3 /* enunciate */ = {
+			isa = PBXGroup;
+			children = (
+				02F7A4FF10CCB523001C2BD3 /* dev */,
+				02F7A50210CCB523001C2BD3 /* prod */,
+			);
+			path = enunciate;
+			sourceTree = "<group>";
+		};
+		02F7A4FF10CCB523001C2BD3 /* dev */ = {
+			isa = PBXGroup;
+			children = (
+				020F97AD111E101C001EFA8F /* enunciate_common.h */,
+				020F97AE111E101C001EFA8F /* enunciate_common.m */,
+				020F97AF111E101C001EFA8F /* fsv1.h */,
+				020F97B0111E101C001EFA8F /* fsv1.m */,
+				0229356311169F3700A0CDB5 /* authorities.h */,
+				0229356411169F3700A0CDB5 /* authorities.m */,
+				0229356511169F3700A0CDB5 /* identity.h */,
+				0229356611169F3700A0CDB5 /* identity.m */,
+				0229356711169F3700A0CDB5 /* reservation.h */,
+				0229356811169F3700A0CDB5 /* reservation.m */,
+				0229356911169F3700A0CDB5 /* temple.h */,
+				0229356A11169F3700A0CDB5 /* temple.m */,
+				02F7A50010CCB523001C2BD3 /* familytree.h */,
+				02F7A50110CCB523001C2BD3 /* familytree.m */,
+			);
+			path = dev;
+			sourceTree = "<group>";
+		};
+		02F7A50210CCB523001C2BD3 /* prod */ = {
+			isa = PBXGroup;
+			children = (
+				0229357311169F4E00A0CDB5 /* authorities.h */,
+				0229357411169F4E00A0CDB5 /* authorities.m */,
+				0229357511169F4E00A0CDB5 /* identity.h */,
+				0229357611169F4E00A0CDB5 /* identity.m */,
+				0229357711169F4E00A0CDB5 /* reservation.h */,
+				0229357811169F4E00A0CDB5 /* reservation.m */,
+				0229357911169F4E00A0CDB5 /* temple.h */,
+				0229357A11169F4E00A0CDB5 /* temple.m */,
+				02F7A50310CCB523001C2BD3 /* familytree.h */,
+				02F7A50410CCB523001C2BD3 /* familytree.m */,
+			);
+			path = prod;
+			sourceTree = "<group>";
+		};
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* FSKit.framework */,
+				02D2CD2C0CC311600013D298 /* Unit Tests.octest */,
+				027148670D7099D000072118 /* FSAppTest.app */,
+				029C314C0D7AF71400746CA6 /* FSSearchDemo.app */,
+				0263A97F0D96ACBB00F3D51B /* FSBasicApp.app */,
+				02A3A8410E6B1D0500A45179 /* FSCommandLine */,
+				02F9D95B1167D62300468CFA /* libFSKitMobile.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* FSKit */ = {
+			isa = PBXGroup;
+			children = (
+				02EEFE650CA6B341007006DE /* README.txt */,
+				02EEFE660CA6B341007006DE /* CHANGELOG.txt */,
+				02EEFE670CA6B341007006DE /* LICENSE.txt */,
+				02EEFE680CA6B341007006DE /* ACKNOWLEDGMENTS.txt */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				02D2CD480CC3147B0013D298 /* Tests */,
+				02BA97F30D70687900DC6E04 /* Sample Apps */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				02EEFE810CA6B5B3007006DE /* Documentation */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */,
+				027148690D7099D100072118 /* FSAppTest-Info.plist */,
+				029C31520D7AF71400746CA6 /* FSSearchDemo-Info.plist */,
+				0263A9810D96ACBB00F3D51B /* FSBasicApp-Info.plist */,
+				022933841115D3CB00A0CDB5 /* libxml2.dylib */,
+			);
+			name = FSKit;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				02117D560D9DDDB900380BBF /* SampleData */,
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				028A39C90E626F430007B2F0 /* Info copy.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				020E9AD60E9965FA00E38F75 /* Common */,
+				020E9AD00E99643600E38F75 /* Cocoa */,
+				028A391F0E626C6D0007B2F0 /* iPhone */,
+				02810DCF0D499597003E36B7 /* UI */,
+			);
+			name = Classes;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02F19D0C0D4A236E0047B392 /* Security.framework */,
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+				02538A84114C725600D6750F /* libMPOAuth_s.a */,
+				02538A86114C725600D6750F /* libMPOAuthMobile.a */,
+				02538A88114C725600D6750F /* MPOAuth.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				02F1A07A0D4CEED60047B392 /* NSData+RSHexDump */,
+				32DBCF5E0370ADEE00C91783 /* FSKit_Prefix.pch */,
+			);
+			name = "Other Sources";
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B4DF9D470D863D6500D7073B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				02538C6C114D347600D6750F /* FSKOAuthAPI.h */,
+				02538C6D114D347600D6750F /* FSKOAuthAPI.m */,
+				02439C6D0D43949200F50EBD /* FSKRequest.h */,
+				02439C6E0D43949200F50EBD /* FSKRequest.m */,
+				02F19E5E0D4B82410047B392 /* FSKResponse.h */,
+				02F19E5F0D4B82410047B392 /* FSKResponse.m */,
+				02F19E620D4B84DA0047B392 /* FSKError.h */,
+				02F19E630D4B84DA0047B392 /* FSKError.m */,
+				0256776D0F3351480032079F /* FSKUtils.h */,
+				0256776E0F3351480032079F /* FSKUtils.m */,
+				02293415111607F500A0CDB5 /* FSKOAuthHandler.h */,
+				02293416111607F500A0CDB5 /* FSKOAuthHandler.m */,
+				02293417111607F500A0CDB5 /* SimpleHTTPConnection.h */,
+				02293418111607F500A0CDB5 /* SimpleHTTPConnection.m */,
+				02293419111607F500A0CDB5 /* SimpleHTTPServer.h */,
+				0229341A111607F500A0CDB5 /* SimpleHTTPServer.m */,
+				024AD3B5113BEC6B0016524F /* FSKProperties.h */,
+				024AD3B6113BEC6B0016524F /* FSKProperties.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B4DF9D4F0D864C0C00D7073B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				02810C1C0D4427C2003E36B7 /* FSKIdentityService.h */,
+				02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */,
+				02433DD70C9DE49C00FE5892 /* FSKPersonService.h */,
+				02433DD80C9DE49C00FE5892 /* FSKPersonService.m */,
+				02433DD10C9DE45500FE5892 /* FSKServiceBase.h */,
+				02433DD20C9DE45500FE5892 /* FSKServiceBase.m */,
+				B485A1BB0D87C07C001822A5 /* FSKFamilyService.h */,
+				B485A1BC0D87C07C001822A5 /* FSKFamilyService.m */,
+				02433DE30C9DE4C400FE5892 /* FSKTempleService.h */,
+				02433DE40C9DE4C400FE5892 /* FSKTempleService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		02F9D9571167D62300468CFA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F9D9D91167F74400468CFA /* FSKit.h in Headers */,
+				02F9DB23116829F200468CFA /* fsv1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02C85BE90EAB84090032CEBE /* FSKit.h in Headers */,
+				02433DB00C9DE06D00FE5892 /* FSKConnection.h in Headers */,
+				02433DD30C9DE45500FE5892 /* FSKServiceBase.h in Headers */,
+				02433DD90C9DE49C00FE5892 /* FSKPersonService.h in Headers */,
+				02433DDF0C9DE4BB00FE5892 /* FSKAuthoritiesService.h in Headers */,
+				02433DE50C9DE4C400FE5892 /* FSKTempleService.h in Headers */,
+				02810C1E0D4427C2003E36B7 /* FSKIdentityService.h in Headers */,
+				02810C5F0D477585003E36B7 /* FSKIdentityRequest.h in Headers */,
+				02810DD20D4995E5003E36B7 /* FSKLoginController.h in Headers */,
+				02F1A07F0D4CEED70047B392 /* NSData+RSHexDump.h in Headers */,
+				02596CEE0D4D6E7E00AB8632 /* FSKIdentityResponse.h in Headers */,
+				02714A3B0D7200EE00072118 /* FSKPersonRepository.h in Headers */,
+				02714A4E0D720B2900072118 /* FSKPerson.h in Headers */,
+				02714A600D720F7A00072118 /* FSKFamily.h in Headers */,
+				02714A660D720F8700072118 /* FSKCouple.h in Headers */,
+				023A770D0D84731100CD028D /* FSKSearchResponse.h in Headers */,
+				023A77180D84753900CD028D /* FSKSearchResult.h in Headers */,
+				B4DF9CB00D85A15E00D7073B /* FSKPersonSummary.h in Headers */,
+				B4DF9CCC0D85CACD00D7073B /* FSKPersonResponse.h in Headers */,
+				B485A1BD0D87C07C001822A5 /* FSKFamilyService.h in Headers */,
+				B404B7760D88152B005D7186 /* FSKPersonReadRequest.h in Headers */,
+				B49CAE2E0D884662003852A5 /* FSKPersonSearchRequest.h in Headers */,
+				02117E320D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h in Headers */,
+				02F527380DB27D7200DC9063 /* FSKEventSummary.h in Headers */,
+				02F5273C0DB27E0900DC9063 /* FSKDate.h in Headers */,
+				02F527400DB27E6700DC9063 /* FSKPlace.h in Headers */,
+				02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */,
+				0294DB580E5719550022DBFB /* FSKEvent.h in Headers */,
+				0294DB5C0E57196A0022DBFB /* FSKFact.h in Headers */,
+				0294DB610E57198B0022DBFB /* FSKAssertion.h in Headers */,
+				0294DB650E57383D0022DBFB /* FSKUser.h in Headers */,
+				0294DB690E57387A0022DBFB /* FSKContributor.h in Headers */,
+				028A356E0E6195E30007B2F0 /* FSKUserReadRequest.h in Headers */,
+				028A35720E6195F10007B2F0 /* FSKUserResponse.h in Headers */,
+				028A35C30E61A14C0007B2F0 /* FSKContributorRepository.h in Headers */,
+				024525530F5D45FE003548D3 /* FSKPedigreeRequest.h in Headers */,
+				024525570F5D461E003548D3 /* FSKPedigreeResponse.h in Headers */,
+				0245255B0F5D4785003548D3 /* FSKRepository.h in Headers */,
+				024525A70F5D745F003548D3 /* FSKPedigree.h in Headers */,
+				0275A05A0F602A16005AF00D /* FSKPersonName.h in Headers */,
+				02E58ADB0F64B5F200049C62 /* FSKContributorReadRequest.h in Headers */,
+				02E58ADD0F64B5F200049C62 /* FSKContributorResponse.h in Headers */,
+				0293E1C810D607CE00A49364 /* NSString+URIQuery.h in Headers */,
+				0229349F11160B7800A0CDB5 /* FSKError.h in Headers */,
+				022934A011160B7800A0CDB5 /* FSKRequest.h in Headers */,
+				022934A111160B7800A0CDB5 /* FSKResponse.h in Headers */,
+				022934A411160B7800A0CDB5 /* FSKUtils.h in Headers */,
+				022934A511160B7800A0CDB5 /* FSKOAuthHandler.h in Headers */,
+				022934A611160B7800A0CDB5 /* SimpleHTTPServer.h in Headers */,
+				022934A811160B7800A0CDB5 /* SimpleHTTPConnection.h in Headers */,
+				022935A11116A42000A0CDB5 /* identity.h in Headers */,
+				02A462191119B22800FD7885 /* authorities.h in Headers */,
+				020F97A7111E1008001EFA8F /* familytree.h in Headers */,
+				020F97A9111E1009001EFA8F /* reservation.h in Headers */,
+				020F97AB111E100A001EFA8F /* temple.h in Headers */,
+				020F97B1111E101C001EFA8F /* enunciate_common.h in Headers */,
+				020F97B3111E101C001EFA8F /* fsv1.h in Headers */,
+				020F9990112047BF001EFA8F /* FSKUserProfile.h in Headers */,
+				024AD3B7113BEC6B0016524F /* FSKProperties.h in Headers */,
+				02538C6E114D347600D6750F /* FSKOAuthAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0263A97E0D96ACBB00F3D51B /* FSBasicApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0263A9850D96ACBC00F3D51B /* Build configuration list for PBXNativeTarget "FSBasicApp" */;
+			buildPhases = (
+				0263A97B0D96ACBB00F3D51B /* Resources */,
+				0263A97C0D96ACBB00F3D51B /* Sources */,
+				0263A97D0D96ACBB00F3D51B /* Frameworks */,
+				0263AA250D96BB0C00F3D51B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0263A9870D96ACC100F3D51B /* PBXTargetDependency */,
+			);
+			name = FSBasicApp;
+			productName = FSBasicApp;
+			productReference = 0263A97F0D96ACBB00F3D51B /* FSBasicApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		027148660D7099D000072118 /* FSAppTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0271486A0D7099D200072118 /* Build configuration list for PBXNativeTarget "FSAppTest" */;
+			buildPhases = (
+				027148630D7099D000072118 /* Resources */,
+				027148640D7099D000072118 /* Sources */,
+				027148650D7099D000072118 /* Frameworks */,
+				0271494A0D709D7300072118 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0271486F0D7099DB00072118 /* PBXTargetDependency */,
+			);
+			name = FSAppTest;
+			productName = FSAppTest;
+			productReference = 027148670D7099D000072118 /* FSAppTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		029C314B0D7AF71400746CA6 /* FSSearchDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029C31530D7AF71400746CA6 /* Build configuration list for PBXNativeTarget "FSSearchDemo" */;
+			buildPhases = (
+				029C31480D7AF71400746CA6 /* Resources */,
+				029C31490D7AF71400746CA6 /* Sources */,
+				029C314A0D7AF71400746CA6 /* Frameworks */,
+				02E2AF250D8193B200CB1B6E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				029C31580D7AF71B00746CA6 /* PBXTargetDependency */,
+			);
+			name = FSSearchDemo;
+			productName = FSSearchDemo;
+			productReference = 029C314C0D7AF71400746CA6 /* FSSearchDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		02A3A8400E6B1D0500A45179 /* FSCommandLine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02A3A84A0E6B1D1800A45179 /* Build configuration list for PBXNativeTarget "FSCommandLine" */;
+			buildPhases = (
+				02A3A83E0E6B1D0500A45179 /* Sources */,
+				02A3A83F0E6B1D0500A45179 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02A3A8620E6B1EB300A45179 /* PBXTargetDependency */,
+			);
+			name = FSCommandLine;
+			productName = FSCommandLine;
+			productReference = 02A3A8410E6B1D0500A45179 /* FSCommandLine */;
+			productType = "com.apple.product-type.tool";
+		};
+		02D2CD2B0CC311600013D298 /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02D2CD2E0CC311610013D298 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				02D2CD270CC311600013D298 /* Resources */,
+				02D2CD280CC311600013D298 /* Sources */,
+				02D2CD290CC311600013D298 /* Frameworks */,
+				02D2CD2A0CC311600013D298 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02D2CD650CC317130013D298 /* PBXTargetDependency */,
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = 02D2CD2C0CC311600013D298 /* Unit Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		02F9D95A1167D62300468CFA /* FSKitMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02F9D96B1167D67000468CFA /* Build configuration list for PBXNativeTarget "FSKitMobile" */;
+			buildPhases = (
+				02F9D9571167D62300468CFA /* Headers */,
+				02F9D9581167D62300468CFA /* Sources */,
+				02F9D9591167D62300468CFA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSKitMobile;
+			productName = FSKitMobile;
+			productReference = 02F9D95B1167D62300468CFA /* libFSKitMobile.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8DC2EF4F0486A6940098B216 /* FSKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "FSKit" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSKit;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = FSKit;
+			productReference = 8DC2EF5B0486A6940098B216 /* FSKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "RedBugz Software";
+			};
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "FSKit" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* FSKit */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				027149CF0D70A07A00072118 /* All */,
+				8DC2EF4F0486A6940098B216 /* FSKit */,
+				02F9D95A1167D62300468CFA /* FSKitMobile */,
+				02EEFE7C0CA6B53C007006DE /* Documentation */,
+				02D2CD2B0CC311600013D298 /* Unit Tests */,
+				027148660D7099D000072118 /* FSAppTest */,
+				029C314B0D7AF71400746CA6 /* FSSearchDemo */,
+				0263A97E0D96ACBB00F3D51B /* FSBasicApp */,
+				02A3A8400E6B1D0500A45179 /* FSCommandLine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0263A97B0D96ACBB00F3D51B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0263A9A20D96ADAC00F3D51B /* InfoPlist.strings in Resources */,
+				0263A9A30D96ADAC00F3D51B /* MainMenu.nib in Resources */,
+				0263A9A40D96ADAC00F3D51B /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		027148630D7099D000072118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027148720D709A1700072118 /* version.plist in Resources */,
+				027148740D709A1800072118 /* Info.plist in Resources */,
+				0271499D0D709E3500072118 /* InfoPlist.strings in Resources */,
+				027149A00D709E3C00072118 /* MainMenu.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029C31480D7AF71400746CA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029C31640D7AF77500746CA6 /* InfoPlist.strings in Resources */,
+				029C31660D7AF77500746CA6 /* Info.plist in Resources */,
+				02E2AE080D817F6900CB1B6E /* MainMenu.nib in Resources */,
+				02E2AE5D0D818FD700CB1B6E /* Users.tiff in Resources */,
+				02E2AE620D81900000CB1B6E /* format.plist in Resources */,
+				02E2AE630D81900000CB1B6E /* criteria.plist in Resources */,
+				02E2B1090D824BEF00CB1B6E /* star_highlighted.tif in Resources */,
+				02E2B10A0D824BEF00CB1B6E /* star.tif in Resources */,
+				0283293D0DA95CE300C8B5BF /* user_icon_female.png in Resources */,
+				0283293E0DA95CE300C8B5BF /* user_icon_male.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D2CD270CC311600013D298 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */,
+				0268F14D0D7FAFDA00CD2F19 /* LoginPanel.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02AA167F0E3C87EA00BA4890 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#  Build the doxygen documentation for the project and load the docset into Xcode.\n\n#  Use the following to adjust the value of the $DOXYGEN_PATH User-Defined Setting:\n#    Binary install location: /Applications/Doxygen.app/Contents/Resources/doxygen\n#    Source build install location: /usr/local/bin/doxygen\n\n#  If the config file doesn't exist, run 'doxygen -g $SOURCE_ROOT/doxygen.config' to \n#   a get default file.\n\nif ! [ -f $SOURCE_ROOT/doxygen.config ] \nthen \n  echo doxygen config file does not exist\n  $DOXYGEN_PATH -g $SOURCE_ROOT/doxygen.config\nfi\n\n#  Append the proper input/output directories and docset info to the config file.\n#  This works even though values are assigned higher up in the file. Easier than sed.\n\ncp $SOURCE_ROOT/doxygen.config $TEMP_DIR/doxygen.config\n\necho \"INPUT = $SOURCE_ROOT\" >> $TEMP_DIR/doxygen.config\necho \"OUTPUT_DIRECTORY = $SOURCE_ROOT/DoxygenDocs.docset\" >> $TEMP_DIR/doxygen.config\necho \"GENERATE_DOCSET        = YES\" >> $TEMP_DIR/doxygen.config\necho \"DOCSET_BUNDLE_ID       = com.googlecode.fskit.FSKit\" >> $TEMP_DIR/doxygen.config\n\n#  Run doxygen on the updated config file.\n#  Note: doxygen creates a Makefile that does most of the heavy lifting.\n\n$DOXYGEN_PATH $TEMP_DIR/doxygen.config\n\n#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.\n\nmake -C $SOURCE_ROOT/DoxygenDocs.docset/html install\n\n#  Construct a temporary applescript file to tell Xcode to load a docset.\n\nrm -f $TEMP_DIR/loadDocSet.scpt\n\necho \"tell application \\\"Xcode\\\"\" >> $TEMP_DIR/loadDocSet.scpt\necho \"load documentation set with path \\\"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/com.googlecode.fskit.FSKit.docset\\\"\" >> $TEMP_DIR/loadDocSet.scpt\necho \"end tell\" >> $TEMP_DIR/loadDocSet.scpt\n\n#  Run the load-docset applescript command.\n\nosascript $TEMP_DIR/loadDocSet.scpt\n\n~/projects/Tools/doxyclean/doxyclean.py -h -i $SOURCE_ROOT/DoxygenDocs.docset/xml -o Documentation\nexit 0";
+		};
+		02D2CD2A0CC311600013D298 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n# Run gcov on the framework getting tested \nif [ \"${CONFIGURATION}\" = 'Coverage' ]; then     \n\tFRAMEWORK_NAME=FSKit\n     FRAMEWORK_OBJ_DIR=${OBJROOT}/${FRAMEWORK_NAME}.build/${CONFIGURATION}/${FRAMEWORK_NAME}.build/Objects-normal/${NATIVE_ARCH}\n     mkdir -p coverage\n     pushd coverage\n     find ${OBJROOT} -name *.gcda -exec gcov -o ${FRAMEWORK_OBJ_DIR} {} \\;\n     popd\nfi";
+		};
+		02EEFE7B0CA6B53C007006DE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "exit 0\n# shell script goes here\nmkdir -p $BUILT_PRODUCTS_DIR/Documentation\ncd $SRCROOT/Source\nheaderdoc2html -o $BUILT_PRODUCTS_DIR/Documentation $SRCROOT/Source/*.h\nheaderdoc2html -o $BUILT_PRODUCTS_DIR/Documentation $SRCROOT/Source/Framework.hdoc\ngatherheaderdoc $BUILT_PRODUCTS_DIR/Documentation index.html\nexit 0\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0263A97C0D96ACBB00F3D51B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0263A9A50D96ADAC00F3D51B /* main.m in Sources */,
+				0263A9AD0D96AFCD00F3D51B /* BasicAppDelegate.m in Sources */,
+				0229C1CA0E901CE5005447D2 /* NSData+RSHexDump.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		027148640D7099D000072118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027148710D709A1600072118 /* main.m in Sources */,
+				0249D2F70DA0FCA7005BF5A3 /* FSAppTestDelegate.m in Sources */,
+				0229C1C80E901CE4005447D2 /* NSData+RSHexDump.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		029C31490D7AF71400746CA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029C31670D7AF77500746CA6 /* main.m in Sources */,
+				029C32580D7AF9E100746CA6 /* FSSearchDemoDelegate.m in Sources */,
+				02E2AEE10D81927100CB1B6E /* ImageTextCell.m in Sources */,
+				02E2AEE20D81927100CB1B6E /* RuleDelegate.m in Sources */,
+				02E2B1060D824BDA00CB1B6E /* SFHFRatingCell.m in Sources */,
+				023A76680D845D4D00CD028D /* SearchForm.m in Sources */,
+				0229C1C90E901CE4005447D2 /* NSData+RSHexDump.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A3A83E0E6B1D0500A45179 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A3A8530E6B1DF800A45179 /* FSCLClient.m in Sources */,
+				02A3A8540E6B1DF800A45179 /* FSCommandLine.m in Sources */,
+				0229C1C70E901CDB005447D2 /* NSData+RSHexDump.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02D2CD280CC311600013D298 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D2CD460CC3139D0013D298 /* FSKConnectionTest.m in Sources */,
+				02E5903B0F65F69800049C62 /* FSKPersonRepositoryTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02F9D9581167D62300468CFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F9D97C1167F6E600468CFA /* FSKAssertion.m in Sources */,
+				02F9D97E1167F6E600468CFA /* FSKAuthoritiesService.m in Sources */,
+				02F9D9801167F6E600468CFA /* FSKContributor.m in Sources */,
+				02F9D9821167F6E600468CFA /* FSKContributorReadRequest.m in Sources */,
+				02F9D9841167F6E600468CFA /* FSKContributorRepository.m in Sources */,
+				02F9D9861167F6E600468CFA /* FSKContributorResponse.m in Sources */,
+				02F9D9881167F6E600468CFA /* FSKCouple.m in Sources */,
+				02F9D98A1167F6E600468CFA /* FSKDate.m in Sources */,
+				02F9D98C1167F6E600468CFA /* FSKError.m in Sources */,
+				02F9D98E1167F6E600468CFA /* FSKEvent.m in Sources */,
+				02F9D9901167F6E600468CFA /* FSKEventSummary.m in Sources */,
+				02F9D9921167F6E600468CFA /* FSKFact.m in Sources */,
+				02F9D9941167F6E600468CFA /* FSKFamily.m in Sources */,
+				02F9D9961167F6E600468CFA /* FSKFamilyService.m in Sources */,
+				02F9D9981167F6E600468CFA /* FSKIdentityRequest.m in Sources */,
+				02F9D99A1167F6E600468CFA /* FSKIdentityResponse.m in Sources */,
+				02F9D99C1167F6E600468CFA /* FSKIdentityService.m in Sources */,
+				02F9D99E1167F6E600468CFA /* FSKOAuthAPI.m in Sources */,
+				02F9D9A01167F6E600468CFA /* FSKOAuthHandler.m in Sources */,
+				02F9D9A21167F6E600468CFA /* FSKPedigree.m in Sources */,
+				02F9D9A41167F6E600468CFA /* FSKPedigreeRequest.m in Sources */,
+				02F9D9A61167F6E600468CFA /* FSKPedigreeResponse.m in Sources */,
+				02F9D9A81167F6E600468CFA /* FSKPerson.m in Sources */,
+				02F9D9AA1167F6E600468CFA /* FSKPersonDetail.m in Sources */,
+				02F9D9AC1167F6E600468CFA /* FSKPersonName.m in Sources */,
+				02F9D9AE1167F6E600468CFA /* FSKPersonReadRequest.m in Sources */,
+				02F9D9B01167F6E600468CFA /* FSKPersonRepository.m in Sources */,
+				02F9D9B21167F6E600468CFA /* FSKPersonResponse.m in Sources */,
+				02F9D9B41167F6E600468CFA /* FSKPersonSearchRequest.m in Sources */,
+				02F9D9B61167F6E600468CFA /* FSKPersonService.m in Sources */,
+				02F9D9B81167F6E600468CFA /* FSKPersonSummary.m in Sources */,
+				02F9D9BA1167F6E600468CFA /* FSKPlace.m in Sources */,
+				02F9D9BC1167F6E600468CFA /* FSKProperties.m in Sources */,
+				02F9D9BE1167F6E600468CFA /* FSKRepository.m in Sources */,
+				02F9D9C01167F6E600468CFA /* FSKRequest.m in Sources */,
+				02F9D9C21167F6E600468CFA /* FSKResponse.m in Sources */,
+				02F9D9C41167F6E600468CFA /* FSKSearchResponse.m in Sources */,
+				02F9D9C61167F6E600468CFA /* FSKSearchResult.m in Sources */,
+				02F9D9C81167F6E600468CFA /* FSKServiceBase.m in Sources */,
+				02F9D9CA1167F6E600468CFA /* FSKTempleService.m in Sources */,
+				02F9D9CC1167F6E600468CFA /* FSKUser.m in Sources */,
+				02F9D9CE1167F6E600468CFA /* FSKUserProfile.m in Sources */,
+				02F9D9D01167F6E600468CFA /* FSKUserReadRequest.m in Sources */,
+				02F9D9D21167F6E600468CFA /* FSKUserResponse.m in Sources */,
+				02F9D9D41167F6E600468CFA /* FSKUtils.m in Sources */,
+				02F9D96E1167F68000468CFA /* authorities.m in Sources */,
+				02F9D9781167F6C500468CFA /* FSKConnection.m in Sources */,
+				02F9D97A1167F6C500468CFA /* NSString+URIQuery.m in Sources */,
+				02F9D96F1167F68000468CFA /* enunciate_common.m in Sources */,
+				02F9D9701167F68000468CFA /* familytree.m in Sources */,
+				02F9D9711167F68000468CFA /* fsv1.m in Sources */,
+				02F9D9721167F68000468CFA /* identity.m in Sources */,
+				02F9D9731167F68000468CFA /* reservation.m in Sources */,
+				02F9D9741167F68000468CFA /* temple.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0263AB290D96BE4C00F3D51B /* FSKPersonSearchRequest.m in Sources */,
+				02433DB10C9DE06D00FE5892 /* FSKConnection.m in Sources */,
+				02433DD40C9DE45500FE5892 /* FSKServiceBase.m in Sources */,
+				02433DDA0C9DE49C00FE5892 /* FSKPersonService.m in Sources */,
+				02433DE00C9DE4BB00FE5892 /* FSKAuthoritiesService.m in Sources */,
+				02433DE60C9DE4C400FE5892 /* FSKTempleService.m in Sources */,
+				02810C1F0D4427C2003E36B7 /* FSKIdentityService.m in Sources */,
+				02810C600D477585003E36B7 /* FSKIdentityRequest.m in Sources */,
+				02810DD30D4995E5003E36B7 /* FSKLoginController.m in Sources */,
+				02F1A0800D4CEED70047B392 /* NSData+RSHexDump.m in Sources */,
+				02596CEF0D4D6E7E00AB8632 /* FSKIdentityResponse.m in Sources */,
+				02714A3C0D7200EE00072118 /* FSKPersonRepository.m in Sources */,
+				02714A4F0D720B2900072118 /* FSKPerson.m in Sources */,
+				02714A610D720F7A00072118 /* FSKFamily.m in Sources */,
+				02714A670D720F8700072118 /* FSKCouple.m in Sources */,
+				023A770E0D84731100CD028D /* FSKSearchResponse.m in Sources */,
+				023A77190D84753900CD028D /* FSKSearchResult.m in Sources */,
+				B4DF9CB10D85A15E00D7073B /* FSKPersonSummary.m in Sources */,
+				B4DF9CCD0D85CACE00D7073B /* FSKPersonResponse.m in Sources */,
+				B485A1BE0D87C07C001822A5 /* FSKFamilyService.m in Sources */,
+				B404B7770D88152B005D7186 /* FSKPersonReadRequest.m in Sources */,
+				02117E330D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m in Sources */,
+				02F527390DB27D7200DC9063 /* FSKEventSummary.m in Sources */,
+				02F5273D0DB27E0900DC9063 /* FSKDate.m in Sources */,
+				02F527410DB27E6700DC9063 /* FSKPlace.m in Sources */,
+				02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */,
+				0294DB590E5719550022DBFB /* FSKEvent.m in Sources */,
+				0294DB5D0E57196A0022DBFB /* FSKFact.m in Sources */,
+				0294DB620E57198B0022DBFB /* FSKAssertion.m in Sources */,
+				0294DB660E57383D0022DBFB /* FSKUser.m in Sources */,
+				0294DB6A0E57387A0022DBFB /* FSKContributor.m in Sources */,
+				028A356F0E6195E30007B2F0 /* FSKUserReadRequest.m in Sources */,
+				028A35730E6195F10007B2F0 /* FSKUserResponse.m in Sources */,
+				028A35C40E61A14C0007B2F0 /* FSKContributorRepository.m in Sources */,
+				024525540F5D45FE003548D3 /* FSKPedigreeRequest.m in Sources */,
+				024525580F5D461E003548D3 /* FSKPedigreeResponse.m in Sources */,
+				0245255C0F5D4785003548D3 /* FSKRepository.m in Sources */,
+				024525A80F5D745F003548D3 /* FSKPedigree.m in Sources */,
+				0275A05B0F602A16005AF00D /* FSKPersonName.m in Sources */,
+				02E58ADC0F64B5F200049C62 /* FSKContributorReadRequest.m in Sources */,
+				02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */,
+				0293E1C910D607CE00A49364 /* NSString+URIQuery.m in Sources */,
+				0229349C11160B7800A0CDB5 /* FSKError.m in Sources */,
+				0229349D11160B7800A0CDB5 /* FSKOAuthHandler.m in Sources */,
+				0229349E11160B7800A0CDB5 /* FSKUtils.m in Sources */,
+				022934A211160B7800A0CDB5 /* FSKResponse.m in Sources */,
+				022934A311160B7800A0CDB5 /* FSKRequest.m in Sources */,
+				022934A711160B7800A0CDB5 /* SimpleHTTPServer.m in Sources */,
+				022934A911160B7800A0CDB5 /* SimpleHTTPConnection.m in Sources */,
+				022935A21116A42100A0CDB5 /* identity.m in Sources */,
+				02A4621A1119B22800FD7885 /* authorities.m in Sources */,
+				020F97A8111E1008001EFA8F /* familytree.m in Sources */,
+				020F97AA111E100A001EFA8F /* reservation.m in Sources */,
+				020F97AC111E100B001EFA8F /* temple.m in Sources */,
+				020F97B2111E101C001EFA8F /* enunciate_common.m in Sources */,
+				020F97B4111E101C001EFA8F /* fsv1.m in Sources */,
+				020F9991112047BF001EFA8F /* FSKUserProfile.m in Sources */,
+				024AD3B8113BEC6B0016524F /* FSKProperties.m in Sources */,
+				02538C6F114D347600D6750F /* FSKOAuthAPI.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0263A9870D96ACC100F3D51B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 0263A9860D96ACC100F3D51B /* PBXContainerItemProxy */;
+		};
+		0263AB2E0D96BFD800F3D51B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 029C314B0D7AF71400746CA6 /* FSSearchDemo */;
+			targetProxy = 0263AB2D0D96BFD800F3D51B /* PBXContainerItemProxy */;
+		};
+		0263AB300D96BFDB00F3D51B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0263A97E0D96ACBB00F3D51B /* FSBasicApp */;
+			targetProxy = 0263AB2F0D96BFDB00F3D51B /* PBXContainerItemProxy */;
+		};
+		0271486F0D7099DB00072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 0271486E0D7099DB00072118 /* PBXContainerItemProxy */;
+		};
+		027149D10D70A08200072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 027149D00D70A08200072118 /* PBXContainerItemProxy */;
+		};
+		027149D70D70A08200072118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 027148660D7099D000072118 /* FSAppTest */;
+			targetProxy = 027149D60D70A08200072118 /* PBXContainerItemProxy */;
+		};
+		029C31580D7AF71B00746CA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 029C31570D7AF71B00746CA6 /* PBXContainerItemProxy */;
+		};
+		02A3A8620E6B1EB300A45179 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 02A3A8610E6B1EB300A45179 /* PBXContainerItemProxy */;
+		};
+		02D2CD650CC317130013D298 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* FSKit */;
+			targetProxy = 02D2CD640CC317130013D298 /* PBXContainerItemProxy */;
+		};
+		02F9DABB116826AC00468CFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02F9D95A1167D62300468CFA /* FSKitMobile */;
+			targetProxy = 02F9DABA116826AC00468CFA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0263A99B0D96ADAC00F3D51B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0263A99C0D96ADAC00F3D51B /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0263A99D0D96ADAC00F3D51B /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0263A99E0D96ADAC00F3D51B /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		029C315D0D7AF77500746CA6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				029C315E0D7AF77500746CA6 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		02BA97F70D7068CF00DC6E04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02BA97F80D7068CF00DC6E04 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		02BA97F90D7068CF00DC6E04 /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02BA97FA0D7068CF00DC6E04 /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		02BA97FB0D7068CF00DC6E04 /* MainMenu~.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02BA97FC0D7068CF00DC6E04 /* English */,
+			);
+			name = "MainMenu~.nib";
+			sourceTree = "<group>";
+		};
+		02E2AE060D817F6900CB1B6E /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02E2AE070D817F6900CB1B6E /* English */,
+			);
+			name = MainMenu.nib;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		020438B90D5EBD7C00A309AC /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = "-lxml2";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Coverage;
+		};
+		020438BA0D5EBD7C00A309AC /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FSKit_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-lgcov";
+				PRODUCT_NAME = FSKit;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Coverage;
+		};
+		020438BB0D5EBD7C00A309AC /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DOXYGEN_PATH = /Applications/Doxygen.app/Contents/Resources/doxygen;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Documentation;
+			};
+			name = Coverage;
+		};
+		020438BC0D5EBD7C00A309AC /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Coverage;
+		};
+		0263A9820D96ACBB00F3D51B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSBasicApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSBasicApp;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		0263A9830D96ACBB00F3D51B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSBasicApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSBasicApp;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		0263A9840D96ACBB00F3D51B /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSBasicApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSBasicApp;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Coverage;
+		};
+		0271486B0D7099D200072118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSAppTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSAppTest;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		0271486C0D7099D200072118 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSAppTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSAppTest;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Coverage;
+		};
+		0271486D0D7099D200072118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSAppTest-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSAppTest;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		027149DB0D70A0B900072118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = All;
+			};
+			name = Debug;
+		};
+		027149DC0D70A0B900072118 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = All;
+			};
+			name = Coverage;
+		};
+		027149DD0D70A0B900072118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = All;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		029C31540D7AF71400746CA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSSearchDemo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSSearchDemo;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		029C31550D7AF71400746CA6 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSSearchDemo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSSearchDemo;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Coverage;
+		};
+		029C31560D7AF71400746CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/Sample Apps/FSSearchDemo\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "FSSearchDemo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSSearchDemo;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		02A3A8430E6B1D0500A45179 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sample Apps/FSCommandLine/FSCommandLine_Prefix.pch";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSCommandLine;
+			};
+			name = Debug;
+		};
+		02A3A8440E6B1D0500A45179 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sample Apps/FSCommandLine/FSCommandLine_Prefix.pch";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSCommandLine;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		02A3A8450E6B1D0500A45179 /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sample Apps/FSCommandLine/FSCommandLine_Prefix.pch";
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH_ACTUAL)";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = FSCommandLine;
+			};
+			name = Coverage;
+		};
+		02D2CD2F0CC311610013D298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		02D2CD300CC311610013D298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		02EEFE7E0CA6B55A007006DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DOXYGEN_PATH = /Applications/Doxygen.app/Contents/Resources/doxygen;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Documentation;
+			};
+			name = Debug;
+		};
+		02EEFE7F0CA6B55A007006DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DOXYGEN_PATH = /Applications/Doxygen.app/Contents/Resources/doxygen;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = Documentation;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		02F9D95D1167D62400468CFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					"${PROJECT_DIR}/MPOAuth.framework/Headers/",
+					/usr/include/libxml2,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = FSKitMobile;
+				SDKROOT = iphonesimulator3.0;
+			};
+			name = Debug;
+		};
+		02F9D95E1167D62400468CFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				HEADER_SEARCH_PATHS = (
+					"${PROJECT_DIR}/MPOAuth.framework/Headers/",
+					/usr/include/libxml2,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = FSKitMobile;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		02F9D95F1167D62400468CFA /* Coverage */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				HEADER_SEARCH_PATHS = (
+					"${PROJECT_DIR}/MPOAuth.framework/Headers/",
+					/usr/include/libxml2,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = FSKitMobile;
+			};
+			name = Coverage;
+		};
+		1DEB91AE08733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FSKit_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				PRODUCT_NAME = FSKit;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB91AF08733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FSKit_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				PRODUCT_NAME = FSKit;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = "-lxml2";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = "-lxml2";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0263A9850D96ACBC00F3D51B /* Build configuration list for PBXNativeTarget "FSBasicApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0263A9820D96ACBB00F3D51B /* Debug */,
+				0263A9830D96ACBB00F3D51B /* Release */,
+				0263A9840D96ACBB00F3D51B /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0271486A0D7099D200072118 /* Build configuration list for PBXNativeTarget "FSAppTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0271486B0D7099D200072118 /* Debug */,
+				0271486D0D7099D200072118 /* Release */,
+				0271486C0D7099D200072118 /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		027149DA0D70A0B900072118 /* Build configuration list for PBXAggregateTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027149DB0D70A0B900072118 /* Debug */,
+				027149DD0D70A0B900072118 /* Release */,
+				027149DC0D70A0B900072118 /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		029C31530D7AF71400746CA6 /* Build configuration list for PBXNativeTarget "FSSearchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029C31540D7AF71400746CA6 /* Debug */,
+				029C31560D7AF71400746CA6 /* Release */,
+				029C31550D7AF71400746CA6 /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02A3A84A0E6B1D1800A45179 /* Build configuration list for PBXNativeTarget "FSCommandLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A3A8430E6B1D0500A45179 /* Debug */,
+				02A3A8440E6B1D0500A45179 /* Release */,
+				02A3A8450E6B1D0500A45179 /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02D2CD2E0CC311610013D298 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02D2CD2F0CC311610013D298 /* Debug */,
+				02D2CD300CC311610013D298 /* Release */,
+				020438BC0D5EBD7C00A309AC /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02EEFE7D0CA6B55A007006DE /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02EEFE7E0CA6B55A007006DE /* Debug */,
+				02EEFE7F0CA6B55A007006DE /* Release */,
+				020438BB0D5EBD7C00A309AC /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02F9D96B1167D67000468CFA /* Build configuration list for PBXNativeTarget "FSKitMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F9D95D1167D62400468CFA /* Debug */,
+				02F9D95E1167D62400468CFA /* Release */,
+				02F9D95F1167D62400468CFA /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "FSKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91AE08733DA50010E9CD /* Debug */,
+				1DEB91AF08733DA50010E9CD /* Release */,
+				020438BA0D5EBD7C00A309AC /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "FSKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+				020438B90D5EBD7C00A309AC /* Coverage */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

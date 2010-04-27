@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'FSAppTest' target in the 'FSAppTest' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+#define DEBUG 1

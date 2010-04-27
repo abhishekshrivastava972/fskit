@@ -1,0 +1,6 @@
+FSKit: Change Log
+
+2007-08-29:
+
+* Initial work started
+

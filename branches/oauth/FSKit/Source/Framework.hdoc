@@ -1,0 +1,11 @@
+/*!
+ @framework FSKit Framework
+
+ @abstract A FamilySearch API framework written in Objective-C.
+
+ @discussion FSKit is a 
+ <a href="http://devnet.familysearch.org/articles/apis">FamilySearch API framework</a>.
+ It simplifies the work required for writing a FamilySearch desktop application. 
+ FSKit is released under the New BSD License and is hosted 
+ at (TBD).
+*/

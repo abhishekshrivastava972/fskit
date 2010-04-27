@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+<title>NSObject(FSKRequestDelegate)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="HeaderDoc">
+<style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style>
+</head>
+<body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">NSObject(FSKRequestDelegate)</font></h1>
+<br><a name="//apple_ref/doc/class/NSObject(FSKRequestDelegate)" title="NSObject(FSKRequestDelegate)"></a><h2>Discussion</h2>
+<br><br><p>
+The FSKRequestDelegate category on NSObject defines
+FSKRequest delegate methods that can be implemented by
+objects to receive informational callbacks about the asynchronous
+load of a FamilySearch API request.
+<br><br></p>
+<p>Note that all these will be called on the thread that started
+the asynchronous load operation on the associated FSKRequest
+object.
+</p>
+<p>The following contract governs the delivery of the callbacks
+defined in this interface:
+</p>
+<ul>
+<li>Before receiving a response or processing a redirect,
+<tt>request:didReceiveAuthenticationChallenge:</tt> may be
+received if authentication is required.
+</li>
+<li>Unless a FSKRequest receives a <tt>-cancel</tt> message,
+the delegate will receive one and only one of
+<tt>-request:didReturnResponse:</tt>, or
+<tt>-request:didFailWithError:</tt> message, but never
+both. In addition, once either of these callbacks is sent, the
+delegate will receive no further callbacks of any kind for the
+given FSKRequest. 
+</li>
+</ul>
+<hr>
+<br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a><dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didCancelAuthenticationChallenge:" target="_top">-request:didCancelAuthenticationChallenge:</a></tt></dt>
+<dd>Cancel authentication for a given request
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didFailWithError:" target="_top">-request:didFailWithError:</a></tt></dt>
+<dd>This method is called when an FSKRequest has
+failed to load successfully.
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didReceiveAuthenticationChallenge:" target="_top">-request:didReceiveAuthenticationChallenge:</a></tt></dt>
+<dd>Start authentication for a given challenge
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didReturnResponse:" target="_top">-request:didReturnResponse:</a></tt></dt>
+<dd>This method is called when an FSKRequest has
+finished loading successfully.
+</dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/windowForAuthenticationSheet:" target="_top">-windowForAuthenticationSheet:</a></tt></dt>
+<dd>Provides the window to attach the authentication sheet to
+</dd>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didCancelAuthenticationChallenge:;  name=NSObject(FSKRequestDelegate)::request:didCancelAuthenticationChallenge: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didCancelAuthenticationChallenge:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="request:didCancelAuthenticationChallenge:">request:didCancelAuthenticationChallenge:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>Cancel authentication for a given request
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/request //apple_ref/occ/clm/request //apple_ref/occ/intfcm/request //apple_ref/occ/func/request //apple_ref/occ/ftmplt/request //apple_ref/occ/defn/request //apple_ref/occ/macro/request" --><font class="function">request</font><!-- /a -->:(<a href="../../../../Documentation/FSKRequest/Classes/FSKRequest/index.html#//apple_ref/occ/cl/FSKRequest" logicalPath="//apple_ref/occ/cl/FSKRequest" target="_top"><font class="type">FSKRequest</font></a> <font class="type">*</font>)<font class="param">request</font> 
+        <!-- a logicalPath="//apple_ref/occ/instm/didCancelAuthenticationChallenge //apple_ref/occ/clm/didCancelAuthenticationChallenge //apple_ref/occ/intfcm/didCancelAuthenticationChallenge //apple_ref/occ/func/didCancelAuthenticationChallenge //apple_ref/occ/ftmplt/didCancelAuthenticationChallenge //apple_ref/occ/defn/didCancelAuthenticationChallenge //apple_ref/occ/macro/didCancelAuthenticationChallenge" --><font class="function">didCancelAuthenticationChallenge</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/tdef/NSURLAuthenticationChallenge //apple_ref/occ/tag/NSURLAuthenticationChallenge //apple_ref/occ/econst/NSURLAuthenticationChallenge //apple_ref/occ/struct/NSURLAuthenticationChallenge //apple_ref/occ/clconst/NSURLAuthenticationChallenge" --><font class="type">NSURLAuthenticationChallenge</font><!-- /a --> <font class="type">*</font>)<font class="param">challenge</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>request</i></code></dt>
+<dd>the request for which authentication was cancelled</dd>
+<dt><code><i>challenge</i></code></dt>
+<dd>The NSURLAuthenticationChallenge for which to cancel authentication</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didFailWithError:;  name=NSObject(FSKRequestDelegate)::request:didFailWithError: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didFailWithError:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="request:didFailWithError:">request:didFailWithError:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>This method is called when an FSKRequest has
+failed to load successfully.
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/request //apple_ref/occ/clm/request //apple_ref/occ/intfcm/request //apple_ref/occ/func/request //apple_ref/occ/ftmplt/request //apple_ref/occ/defn/request //apple_ref/occ/macro/request" --><font class="function">request</font><!-- /a -->:(<a href="../../../../Documentation/FSKRequest/Classes/FSKRequest/index.html#//apple_ref/occ/cl/FSKRequest" logicalPath="//apple_ref/occ/cl/FSKRequest" target="_top"><font class="type">FSKRequest</font></a> <font class="type">*</font>)<font class="param">request</font> <!-- a logicalPath="//apple_ref/occ/instm/didFailWithError //apple_ref/occ/clm/didFailWithError //apple_ref/occ/intfcm/didFailWithError //apple_ref/occ/func/didFailWithError //apple_ref/occ/ftmplt/didFailWithError //apple_ref/occ/defn/didFailWithError //apple_ref/occ/macro/didFailWithError" --><font class="function">didFailWithError</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FSKError //apple_ref/occ/cl/FSKError //apple_ref/occ/tdef/FSKError //apple_ref/occ/tag/FSKError //apple_ref/occ/econst/FSKError //apple_ref/occ/struct/FSKError //apple_ref/occ/clconst/FSKError" --><font class="type">FSKError</font><!-- /a --> <font class="type">*</font>)<font class="param">error</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>request</i></code></dt>
+<dd>an FSKRequest that has failed to load.</dd>
+<dt><code><i>error</i></code></dt>
+<dd>The error that encapsulates information about what
+caused the load to fail.</dd>
+</dl>
+</blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>See the category description for information regarding
+the contract associated with the delivery of this delegate
+callback.
+</p>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didReceiveAuthenticationChallenge:;  name=NSObject(FSKRequestDelegate)::request:didReceiveAuthenticationChallenge: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didReceiveAuthenticationChallenge:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="request:didReceiveAuthenticationChallenge:">request:didReceiveAuthenticationChallenge:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>Start authentication for a given challenge
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/request //apple_ref/occ/clm/request //apple_ref/occ/intfcm/request //apple_ref/occ/func/request //apple_ref/occ/ftmplt/request //apple_ref/occ/defn/request //apple_ref/occ/macro/request" --><font class="function">request</font><!-- /a -->:(<a href="../../../../Documentation/FSKRequest/Classes/FSKRequest/index.html#//apple_ref/occ/cl/FSKRequest" logicalPath="//apple_ref/occ/cl/FSKRequest" target="_top"><font class="type">FSKRequest</font></a> <font class="type">*</font>)<font class="param">request</font> 
+        <!-- a logicalPath="//apple_ref/occ/instm/didReceiveAuthenticationChallenge //apple_ref/occ/clm/didReceiveAuthenticationChallenge //apple_ref/occ/intfcm/didReceiveAuthenticationChallenge //apple_ref/occ/func/didReceiveAuthenticationChallenge //apple_ref/occ/ftmplt/didReceiveAuthenticationChallenge //apple_ref/occ/defn/didReceiveAuthenticationChallenge //apple_ref/occ/macro/didReceiveAuthenticationChallenge" --><font class="function">didReceiveAuthenticationChallenge</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/cl/NSURLAuthenticationChallenge //apple_ref/occ/tdef/NSURLAuthenticationChallenge //apple_ref/occ/tag/NSURLAuthenticationChallenge //apple_ref/occ/econst/NSURLAuthenticationChallenge //apple_ref/occ/struct/NSURLAuthenticationChallenge //apple_ref/occ/clconst/NSURLAuthenticationChallenge" --><font class="type">NSURLAuthenticationChallenge</font><!-- /a --> <font class="type">*</font>)<font class="param">challenge</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>request</i></code></dt>
+<dd>the request for which authentication is needed</dd>
+<dt><code><i>challenge</i></code></dt>
+<dd>The NSURLAuthenticationChallenge to start authentication for</dd>
+</dl>
+</blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>Call useCredential:forAuthenticationChallenge:,
+continueWithoutCredentialForAuthenticationChallenge: or cancelAuthenticationChallenge: on
+the challenge sender when done.
+</p>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didReturnResponse:;  name=NSObject(FSKRequestDelegate)::request:didReturnResponse: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/request:didReturnResponse:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="request:didReturnResponse:">request:didReturnResponse:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>This method is called when an FSKRequest has
+finished loading successfully.
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void" --><font class="type">void</font><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/request //apple_ref/occ/clm/request //apple_ref/occ/intfcm/request //apple_ref/occ/func/request //apple_ref/occ/ftmplt/request //apple_ref/occ/defn/request //apple_ref/occ/macro/request" --><font class="function">request</font><!-- /a -->:(<a href="../../../../Documentation/FSKRequest/Classes/FSKRequest/index.html#//apple_ref/occ/cl/FSKRequest" logicalPath="//apple_ref/occ/cl/FSKRequest" target="_top"><font class="type">FSKRequest</font></a> <font class="type">*</font>)<font class="param">request</font> <!-- a logicalPath="//apple_ref/occ/instm/didReturnResponse //apple_ref/occ/clm/didReturnResponse //apple_ref/occ/intfcm/didReturnResponse //apple_ref/occ/func/didReturnResponse //apple_ref/occ/ftmplt/didReturnResponse //apple_ref/occ/defn/didReturnResponse //apple_ref/occ/macro/didReturnResponse" --><font class="function">didReturnResponse</font><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FSKResponse //apple_ref/occ/cl/FSKResponse //apple_ref/occ/tdef/FSKResponse //apple_ref/occ/tag/FSKResponse //apple_ref/occ/econst/FSKResponse //apple_ref/occ/struct/FSKResponse //apple_ref/occ/clconst/FSKResponse" --><font class="type">FSKResponse</font><!-- /a --> <font class="type">*</font>)<font class="param">response</font>;</pre></blockquote>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><code><i>request</i></code></dt>
+<dd>an FSKRequest that has finished loading
+successfully.</dd>
+<dt><code><i>responseXML</i></code></dt>
+<dd>an NSXMLDocument that contains the</dd>
+</dl>
+</blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>See the category description for information regarding
+the contract associated with the delivery of this delegate
+callback.
+</p>
+</dl>
+<hr>
+<!-- headerDoc=instm;  uid=//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/windowForAuthenticationSheet:;  name=NSObject(FSKRequestDelegate)::windowForAuthenticationSheet: --><a name="//apple_ref/doc/compositePage/occ/instm/NSObject(FSKRequestDelegate)/windowForAuthenticationSheet:"></a><table border="0" cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5">
+<h3><a name="windowForAuthenticationSheet:">windowForAuthenticationSheet:</a></h3>
+</td></tr></table>
+<hr>
+<dl></dl>
+<p>Provides the window to attach the authentication sheet to
+</p>
+<blockquote><pre>- (<!-- a logicalPath="//apple_ref/occ/cl/NSWindow //apple_ref/occ/cl/NSWindow //apple_ref/occ/tdef/NSWindow //apple_ref/occ/tag/NSWindow //apple_ref/occ/econst/NSWindow //apple_ref/occ/struct/NSWindow //apple_ref/occ/clconst/NSWindow" --><font class="type">NSWindow</font><!-- /a --> <font class="type">*</font>)<!-- a logicalPath="//apple_ref/occ/instm/windowForAuthenticationSheet //apple_ref/occ/clm/windowForAuthenticationSheet //apple_ref/occ/intfcm/windowForAuthenticationSheet //apple_ref/occ/func/windowForAuthenticationSheet //apple_ref/occ/ftmplt/windowForAuthenticationSheet //apple_ref/occ/defn/windowForAuthenticationSheet //apple_ref/occ/macro/windowForAuthenticationSheet" --><font class="function">windowForAuthenticationSheet</font><!-- /a -->:(<a href="../../../../Documentation/FSKRequest/Classes/FSKRequest/index.html#//apple_ref/occ/cl/FSKRequest" logicalPath="//apple_ref/occ/cl/FSKRequest" target="_top"><font class="type">FSKRequest</font></a> <font class="type">*</font>)<font class="param">request</font>;</pre></blockquote>
+<dl>
+<h5><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<p>If you implement this delegate method, you can choose which window will have
+the authentication sheet attached to it during an authentication challenge. If you do not
+implement this method, by default the sheet will attempt to attach to [.NSApp mainWindow]
+If you return nil, the authentication will be performed with an application modal dialog
+instead of a sheet.
+</p>
+</dl>
+<p>(Last Updated February 24, 2008)
+</p>
+</body>
+</html>
