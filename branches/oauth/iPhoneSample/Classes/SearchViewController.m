@@ -10,7 +10,7 @@
 #import <FSKit/FSKit.h>
 #import "SearchResultCell.h"
 
-#define kFSK_DEVELOPER_KEY @"WCQY-7J1Q-GKVV-7DNM-SQ5M-9Q5H-JX3H-CMJK"
+#define kFSK_DEVELOPER_KEY @"NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN"
 
 @implementation SearchViewController
 enum Sections {
@@ -77,7 +77,7 @@ enum HeaderSectionRows {
 	 
 	 // Make a request
 //	 FSKIdentityService *identityService = [[FSKIdentityService identityServiceWithConnection:connection delegate:self] retain];
-//	 [identityService loginWithCredential:[NSURLCredential credentialWithUser:@"api-user-1009" password:@"f8cc" persistence:NSURLCredentialPersistenceForSession]];
+//	 [identityService loginWithCredential:[NSURLCredential credentialWithUser:@"" password:@"" persistence:NSURLCredentialPersistenceForSession]];
 	  
 	 FSKPersonService *personService = [[FSKPersonService
 										 personServiceWithConnection:[FSKConnection sharedConnection] 

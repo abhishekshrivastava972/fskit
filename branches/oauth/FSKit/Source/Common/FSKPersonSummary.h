@@ -37,8 +37,8 @@
 	BOOL hasAdditionalChildren;
 }
 
-+ (FSKPersonSummary *)createFromXML:(FSFAMILYTREEV2SearchPerson *)personElement;
-- (id)initWithXML:(FSFAMILYTREEV2SearchPerson *)personElement;
++ (FSKPersonSummary *)createFromXML:(FSFAMILYTREEV2Person *)personElement;
+- (id)initWithXML:(FSFAMILYTREEV2Person *)personElement;
 
 - (NSString *)lifespanString;
 

@@ -18,3 +18,5 @@
 //#define NSXMLNode DDXMLNode
 //#define NSXMLNodePrettyPrint DDXMLNodePrettyPrint
 #endif
+
+#define DEBUG 1

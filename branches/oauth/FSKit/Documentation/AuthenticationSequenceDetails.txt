@@ -1,0 +1,71 @@
+participant User
+participant Browser
+participant AuthenticationUI
+participant Application
+participant FSKAuthenticationDelegate
+participant "<FSKOAuthVerifierHandler>\nFSKOAuthSimpleServer\nFSKOAuthSimpleServerCustomURL" as FSKOAuthVerifierHandler
+participant FSKConnection
+participant "<MPOAuthAuthenticationMethodOAuthDelegate>\nFSKOAuthHandler" as FSKOAuthHandler
+participant MPOAuth
+participant FSKRequest
+participant "Public API" as api
+User->Application: request data
+Application->FSKRequest: Data Request
+FSKRequest->api: Request
+note right of api
+  Public API checks cookies for sessionId
+end note
+api-->FSKRequest: 401 unauthorized response
+FSKRequest->FSKConnection: handleAuthenticationForRequest
+FSKConnection->Application: authenticationWillStartNotification
+FSKConnection->FSKOAuthHandler: authenticate
+FSKOAuthHandler->MPOAuth: authenticate
+MPOAuth->FSKOAuthHandler: callbackURLForCompletedUserAuthorization:
+FSKOAuthHandler->FSKAuthenticationDelegate: callbackURL:
+FSKAuthenticationDelegate->FSKOAuthVerifierHandler: callbackURL:
+FSKOAuthVerifierHandler-->FSKAuthenticationDelegate: return URL
+FSKAuthenticationDelegate-->FSKOAuthHandler: return URL
+FSKOAuthHandler-->MPOAuth: return URL
+MPOAuth->api: RequestToken(callbackURL)
+api-->MPOAuth: RequestToken Response
+MPOAuth->FSKOAuthHandler: MPOAuthNotificationRequestTokenReceived
+MPOAuth->FSKOAuthHandler: automaticallyRequestAuthenticationFromURL:withCallbackURL:
+FSKOAuthHandler->FSKAuthenticationDelegate: automaticallyRequestAuthenticationFromURL:
+FSKAuthenticationDelegate-->FSKOAuthHandler: return NO
+FSKOAuthHandler-->MPOAuth: return NO
+FSKAuthenticationDelegate->AuthenticationUI: <<show authentication UI>>
+activate AuthenticationUI
+AuthenticationUI->User: connect to FamilySearch?
+User-->AuthenticationUI: connect
+AuthenticationUI->FSKAuthenticationDelegate: authenticate
+FSKAuthenticationDelegate->Browser: Authorize Request
+activate Browser
+Browser->User: Authorize?
+User-->Browser: ALLOW
+Browser->api: ALLOW
+api->Browser: callback URL(verifier)
+Browser->FSKOAuthVerifierHandler: callback URL(verifier)
+destroy Browser
+FSKOAuthVerifierHandler->FSKAuthenticationDelegate: setVerifier
+FSKAuthenticationDelegate->FSKOAuthHandler: setVerifier
+FSKOAuthHandler->MPOAuth: authenticate
+MPOAuth->FSKOAuthHandler: oauthVerifierForCompletedUserAuthorization
+FSKOAuthHandler-->MPOAuth: return verifier
+FSKOAuthHandler->api: AccessToken Request(verifier)
+api->FSKOAuthHandler: AccessToken Response (sessionId)
+FSKOAuthHandler->FSKConnection: setSessionId
+FSKConnection->Application: AuthenticationSucessNotification
+FSKConnection->FSKAuthenticationDelegate: AuthenticationSucessNotification
+FSKAuthenticationDelegate->AuthenticationUI: close
+destroy AuthenticationUI
+FSKConnection->FSKRequest: pingSession
+FSKRequest->api: identity/v2/session
+api-->FSKRequest: session response (set cookie)
+FSKConnection->FSKRequest: resend request
+FSKRequest->api: Resend Original Data Request (with cookie)
+note right of api
+  Public API checks cookies for sessionId
+end note
+api-->FSKRequest: Data Response (Success)
+FSKRequest-->Application: return data
+Application-->User: show data

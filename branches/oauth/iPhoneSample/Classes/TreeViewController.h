@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class TreeView;
+@class TreeView, FSKIdentityService;
 
 @interface TreeViewController : UIViewController {
     IBOutlet UILabel *birthLabel;
     IBOutlet UILabel *nameLabel;
     IBOutlet UILabel *personIdLabel;
     IBOutlet TreeView *treeView;
+	FSKIdentityService *identityService;
 }
 
+- (IBAction)signin:(id)sender;
+- (IBAction)signout:(id)sender;
 @end

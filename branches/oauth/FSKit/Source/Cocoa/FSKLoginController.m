@@ -19,13 +19,12 @@ static NSString *ERR_LOGIN_OTHER = @"Login Error.";
 static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO, fix this once registration is available
 
 @implementation FSKLoginController
-- (id)init
+- (id) initWithDelegate:(id)delegate
 {
     self = [super initWithWindowNibName:@"LoginDialog"];
     
     if ( self ) {
-//		_request = [request retain];
-//		loginProperties = [[NSMutableDictionary alloc] init];
+		_delegate = delegate;
 	}
     return self;
 }
@@ -124,6 +123,7 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
         [[NSApplication sharedApplication] stopModalWithCode:0];
     }
 
+	[_delegate authenticate];
 //    NSDictionary *values = [[NSUserDefaultsController sharedUserDefaultsController] values];	
 //    NSString *apiURLString = [values valueForKey: kAPI_URL_DEFAULTS_KEY];
 //	NSURL *apiURL = [NSURL URLWithString: FSAPIServerUrlString];	
@@ -186,19 +186,6 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
 {
 	[loginPanel cancelOperation:self];
 }
-
--(void)_authenticationDoneWithChallenge:(NSURLAuthenticationChallenge *)challenge result:(NSURLCredential *)credential
-{
-	NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, challenge, credential);
-
-    if (credential == nil) {
-        [[challenge sender] cancelAuthenticationChallenge:challenge];
-    } else {
-        [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
-    }
-
-}
-
 
 - (BOOL)loadNib
 {

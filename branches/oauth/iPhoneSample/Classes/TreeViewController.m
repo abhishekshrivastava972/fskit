@@ -28,13 +28,23 @@
 }
 */
 
+- (IBAction)signin:(id)sender;
+{
+	[identityService login];
+}
+
+- (IBAction)signout:(id)sender;
+{
+	[[FSKConnection sharedConnection] signOut];
+	[identityService logout];
+}	
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
  // Make a request
- //	 FSKIdentityService *identityService = [[FSKIdentityService identityServiceWithConnection:connection delegate:self] retain];
- //	 [identityService loginWithCredential:[NSURLCredential credentialWithUser:@"api-user-1009" password:@"f8cc" persistence:NSURLCredentialPersistenceForSession]];
+	 identityService = [[FSKIdentityService identityServiceWithConnection:[FSKConnection sharedConnection] delegate:self] retain];
+//	 [identityService login];
  
  FSKPersonService *personService = [[FSKPersonService
  personServiceWithConnection:[FSKConnection sharedConnection] 
@@ -55,11 +65,7 @@ didReturnResponse:(FSKResponse *)response
 	if ([response isKindOfClass:[FSKPersonResponse class]])
 	{
 		FSKPersonResponse *resp = (FSKPersonResponse *)response;
-		personIdLabel.text = [[resp person] personId];
-		nameLabel.text = [[resp person] fullName];
-		birthLabel.text = [[resp summary] birthdate];
-		[treeView setRootPerson:[resp person]];
-		[treeView setNeedsDisplay];
+		[self setPerson:[resp person]];
 	}
 }
 - (void)request:(FSKRequest *)request 
@@ -68,7 +74,17 @@ didFailWithError:(FSKError *)error
 	NSLog(@"%s", _cmd);
 }
 
-
+- (void)setPerson:(FSKPerson *)person
+{
+	if ([person personId]) {
+	personIdLabel.text = [person personId];
+	}
+	nameLabel.text = [person fullName];
+//	birthLabel.text = [[resp summary] birthdate];
+	[treeView setRootPerson:person];
+	[treeView setNeedsDisplay];
+	
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations
