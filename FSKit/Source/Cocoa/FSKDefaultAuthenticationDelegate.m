@@ -13,45 +13,44 @@
 #import "FSKIdentityResponse.h"
 #import "FSKIdentityService.h"
 #import "FSKLoginController.h"
-
+#import "FSKConnection.h"
+#import "FSKOAuthSimpleServer.h"
 
 @implementation FSKDefaultAuthenticationDelegate
 
-- (void)initWithConnection:(FSKConnection *)aConnection;
+- (id) initWithConnection:(FSKConnection *)aConnection
 {
-	connection = aConnection;
+	self = [super init];
+	if (self != nil) {
+		connection = [aConnection retain];
+		verifierHandler = [[[FSKOAuthSimpleServer alloc] initWithDelegate:self] retain];
+	}
+	return self;
 }
+
+- (void) dealloc
+{
+	[verifierHandler release];
+	[authenticationURL release];
+	[connection release];
+	[super dealloc];
+}
+
 
 - (void)handleAuthenticationURL:(NSURL *)url
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-//	if ([challenge previousFailureCount] < 3)
-//	{
-		// set default value, allow request delegate to override?
-//		NSWindow *window = [NSApp mainWindow];
-//		if ([[connection _delegate] respondsToSelector:@selector(windowForAuthenticationSheet:)])
-//		{
-//			window = [_delegate windowForAuthenticationSheet:(FSKRequest *)self];
-//		}
-	[[NSWorkspace sharedWorkspace] openURL:url];
-//		FSKLoginController *loginController = [[FSKLoginController alloc] init];
-//		[loginController startAuthentication:url window:window];
-//	} else
-//	{
-//		// If we don't have a valid credential, or have already failed auth 3x...
-//		[[challenge sender] cancelAuthenticationChallenge:challenge];
-//	}
+	
+	[[NSNotificationCenter defaultCenter]
+	 postNotificationName:FSKitNotificationAuthenticationURLWillOpen object:self];
+	FSKLoginController *loginController = [[FSKLoginController alloc] initWithDelegate:self];
+	[loginController startAuthenticationForWindow:[self windowForAuthenticationSheet:nil]];
 }
 
 - (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url;
 {
 	NSLog(@"%s url: %@", __PRETTY_FUNCTION__, url);
 	[self handleAuthenticationURL:url];
-}
-
-- (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
-{
-	NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 - (NSWindow *)windowForAuthenticationSheet:(FSKRequest *)request
@@ -68,6 +67,50 @@
 		[connection setSessionId:[response sessionId]];
 		[connection setNeedsAuthentication:NO];
 	}
+}
+
+- (NSURL *)callbackURL
+{
+	NSLog(@"%s", __PRETTY_FUNCTION__);
+	return [verifierHandler callbackURL];
+}
+
+- (void)setVerifier:(NSString *)verifier
+{
+	NSLog(@"%s verifier:%@", __PRETTY_FUNCTION__, verifier);
+	[connection processVerifier:verifier];
+}
+
+- (BOOL)automaticallyRequestAuthenticationFromURL:(NSURL *)inAuthURL withCallbackURL:(NSURL *)inCallbackURL {
+	NSLog(@"%s url: %@ callback: %@", __PRETTY_FUNCTION__, inAuthURL, inCallbackURL);
+	authenticationURL = [inAuthURL retain];
+	[self handleAuthenticationURL:inAuthURL];
+	return NO;	
+}
+
+- (void)authenticate
+{
+	[[NSWorkspace sharedWorkspace] openURL:authenticationURL];
+}
+
+- (void)authenticationDidSucceedWithToken:(NSString *)token
+{
+	NSLog(@"%s token: %@", __PRETTY_FUNCTION__, token);
+	[connection setSessionId:token];
+	[connection setNeedsAuthentication:NO];
+	[[NSNotificationCenter defaultCenter]
+	 postNotificationName:FSKitNotificationAuthenticationDidSucceed object:token];
+	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+//	[loginController cancelAuthentication];
+}
+
+- (void)authenticationDidFailWithError:(NSError *)error
+{
+	NSLog(@"%s error: %@", __PRETTY_FUNCTION__, error);
+	[connection setSessionId:nil];
+	[connection setNeedsAuthentication:YES];
+	[[NSNotificationCenter defaultCenter]
+	 postNotificationName:FSKitNotificationAuthenticationDidFail object:error];
 }
 
 @end

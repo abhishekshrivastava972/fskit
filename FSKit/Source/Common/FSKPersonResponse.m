@@ -16,14 +16,24 @@
 {
     if ((self = [super init]) != nil) 
 	{
-		FSFAMILYTREEV2FamilyTree *familytree = [FSFAMILYTREEV2FamilyTree readFromXML:data];
-		NSMutableArray *theResults = [NSMutableArray array];
-		NSEnumerator *enumerator = [[familytree persons] objectEnumerator];
-		FSFAMILYTREEV2Person *personElement;
-		while (personElement = [enumerator nextObject]) {
-			[theResults addObject:[FSKPerson createFromXML:personElement]];
+		@try {
+			FSFAMILYTREEV2FamilyTree *familytree = [FSFAMILYTREEV2FamilyTree readFromXML:data];
+			statusCode = *([familytree statusCode]);
+			statusMessage = [[familytree statusMessage] retain];
+			version = [[familytree version] retain];
+			NSMutableArray *theResults = [NSMutableArray array];
+			NSEnumerator *enumerator = [[familytree persons] objectEnumerator];
+			FSFAMILYTREEV2Person *personElement;
+			while (personElement = [enumerator nextObject]) {
+				[theResults addObject:[FSKPerson createFromXML:personElement]];
+			}
+			persons = [theResults retain];
 		}
-		persons = [theResults retain];
+		@catch (NSException * e) {
+			NSLog(@"error: %@", e);
+		}
+		@finally {
+		}
 	}
 	
 	return self;	
@@ -50,6 +60,12 @@ NSLog(@"fskpersresp summary %d %@", [persons count], [[persons lastObject] summa
 {
 	NSLog(@"fskpersresp person %d %@", [persons count], [persons lastObject]);
 	return [persons lastObject];
+}
+
+- (FSKPersonSummary *)personSummary
+{
+	NSLog(@"fskpersresp personsummary %d %@", [persons count], [persons lastObject]);
+	return [FSKPersonSummary createFromXML:[persons lastObject]];
 }
 
 @end

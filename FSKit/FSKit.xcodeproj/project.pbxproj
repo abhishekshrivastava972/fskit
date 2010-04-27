@@ -106,8 +106,6 @@
 		02538B5A114C72B000D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
 		02538B5C114C72BD00D6750F /* MPOAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
 		02538BB5114C7CC500D6750F /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
-		02538C6E114D347600D6750F /* FSKOAuthAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 02538C6C114D347600D6750F /* FSKOAuthAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02538C6F114D347600D6750F /* FSKOAuthAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 02538C6D114D347600D6750F /* FSKOAuthAPI.m */; };
 		02596CEE0D4D6E7E00AB8632 /* FSKIdentityResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02596CEF0D4D6E7E00AB8632 /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */; };
 		0263A9A20D96ADAC00F3D51B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0263A99B0D96ADAC00F3D51B /* InfoPlist.strings */; };
@@ -140,6 +138,10 @@
 		02714A670D720F8700072118 /* FSKCouple.m in Sources */ = {isa = PBXBuildFile; fileRef = 02714A650D720F8700072118 /* FSKCouple.m */; };
 		0275A05A0F602A16005AF00D /* FSKPersonName.h in Headers */ = {isa = PBXBuildFile; fileRef = 0275A0580F602A16005AF00D /* FSKPersonName.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0275A05B0F602A16005AF00D /* FSKPersonName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0275A0590F602A16005AF00D /* FSKPersonName.m */; };
+		027C6A6E1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 027C6A6C1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		027C6A6F1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C6A6D1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m */; };
+		027C6A701186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 027C6A6C1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		027C6A711186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 027C6A6D1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m */; };
 		02810C1E0D4427C2003E36B7 /* FSKIdentityService.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810C1C0D4427C2003E36B7 /* FSKIdentityService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02810C1F0D4427C2003E36B7 /* FSKIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */; };
 		02810C5F0D477585003E36B7 /* FSKIdentityRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02810C5D0D477585003E36B7 /* FSKIdentityRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -182,6 +184,7 @@
 		02A4621A1119B22800FD7885 /* authorities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356411169F3700A0CDB5 /* authorities.m */; };
 		02A9ACF30E46F4D500311AC0 /* FSKPersonDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 02A9ACF10E46F4D500311AC0 /* FSKPersonDetail.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02A9ACF40E46F4D500311AC0 /* FSKPersonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A9ACF20E46F4D500311AC0 /* FSKPersonDetail.m */; };
+		02BAB585118387D1000E3FAB /* FS_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02BAB584118387D1000E3FAB /* FS_logo.jpg */; };
 		02C85BE90EAB84090032CEBE /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02D2CD320CC3127B0013D298 /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* FSKit.framework */; };
 		02D2CD460CC3139D0013D298 /* FSKConnectionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D2CD450CC3139D0013D298 /* FSKConnectionTest.m */; };
@@ -198,11 +201,22 @@
 		02E2B1060D824BDA00CB1B6E /* SFHFRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2B1040D824BDA00CB1B6E /* SFHFRatingCell.m */; };
 		02E2B1090D824BEF00CB1B6E /* star_highlighted.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E2B1070D824BEF00CB1B6E /* star_highlighted.tif */; };
 		02E2B10A0D824BEF00CB1B6E /* star.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E2B1080D824BEF00CB1B6E /* star.tif */; };
+		02E30EE8117F729300AC3537 /* FSKOAuthHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 02293415111607F500A0CDB5 /* FSKOAuthHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02E58ADB0F64B5F200049C62 /* FSKContributorReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E58AD70F64B5F200049C62 /* FSKContributorReadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02E58ADC0F64B5F200049C62 /* FSKContributorReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58AD80F64B5F200049C62 /* FSKContributorReadRequest.m */; };
 		02E58ADD0F64B5F200049C62 /* FSKContributorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E58AD90F64B5F200049C62 /* FSKContributorResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02E58ADE0F64B5F200049C62 /* FSKContributorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */; };
 		02E5903B0F65F69800049C62 /* FSKPersonRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */; };
+		02E935161179E92700096B82 /* FSKAuthenticationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E935141179E92700096B82 /* FSKAuthenticationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E935171179E92700096B82 /* FSKAuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E935151179E92700096B82 /* FSKAuthenticationController.m */; };
+		02E9351B1179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E935191179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E9351C1179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E9351A1179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.m */; };
+		02E9358A117A855000096B82 /* FSKOAuthSimpleServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E93588117A855000096B82 /* FSKOAuthSimpleServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E9358B117A855000096B82 /* FSKOAuthSimpleServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E93589117A855000096B82 /* FSKOAuthSimpleServer.m */; };
+		02E9358E117A85BE00096B82 /* FSKOAuthCustomURLHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E9358C117A85BE00096B82 /* FSKOAuthCustomURLHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E9358F117A85BE00096B82 /* FSKOAuthCustomURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E9358D117A85BE00096B82 /* FSKOAuthCustomURLHandler.m */; };
+		02E93590117A85BE00096B82 /* FSKOAuthCustomURLHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E9358C117A85BE00096B82 /* FSKOAuthCustomURLHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02E93591117A85BE00096B82 /* FSKOAuthCustomURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E9358D117A85BE00096B82 /* FSKOAuthCustomURLHandler.m */; };
 		02F19D0D0D4A236E0047B392 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F19D0C0D4A236E0047B392 /* Security.framework */; };
 		02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 02F1A07B0D4CEED70047B392 /* MIT-License.rtf */; };
 		02F1A07F0D4CEED70047B392 /* NSData+RSHexDump.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F1A07C0D4CEED70047B392 /* NSData+RSHexDump.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -214,7 +228,6 @@
 		02F527400DB27E6700DC9063 /* FSKPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 02F5273E0DB27E6700DC9063 /* FSKPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02F527410DB27E6700DC9063 /* FSKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F5273F0DB27E6700DC9063 /* FSKPlace.m */; };
 		02F9D9601167D64200468CFA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 022933841115D3CB00A0CDB5 /* libxml2.dylib */; };
-		02F9D9631167D64E00468CFA /* libMPOAuthMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A86114C725600D6750F /* libMPOAuthMobile.a */; };
 		02F9D96E1167F68000468CFA /* authorities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0229356411169F3700A0CDB5 /* authorities.m */; };
 		02F9D96F1167F68000468CFA /* enunciate_common.m in Sources */ = {isa = PBXBuildFile; fileRef = 020F97AE111E101C001EFA8F /* enunciate_common.m */; };
 		02F9D9701167F68000468CFA /* familytree.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F7A50110CCB523001C2BD3 /* familytree.m */; };
@@ -241,7 +254,6 @@
 		02F9D9981167F6E600468CFA /* FSKIdentityRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C5E0D477585003E36B7 /* FSKIdentityRequest.m */; };
 		02F9D99A1167F6E600468CFA /* FSKIdentityResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 02596CED0D4D6E7E00AB8632 /* FSKIdentityResponse.m */; };
 		02F9D99C1167F6E600468CFA /* FSKIdentityService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */; };
-		02F9D99E1167F6E600468CFA /* FSKOAuthAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 02538C6D114D347600D6750F /* FSKOAuthAPI.m */; };
 		02F9D9A01167F6E600468CFA /* FSKOAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 02293416111607F500A0CDB5 /* FSKOAuthHandler.m */; };
 		02F9D9A21167F6E600468CFA /* FSKPedigree.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525A60F5D745F003548D3 /* FSKPedigree.m */; };
 		02F9D9A41167F6E600468CFA /* FSKPedigreeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 024525520F5D45FE003548D3 /* FSKPedigreeRequest.m */; };
@@ -270,8 +282,7 @@
 		02F9D9D21167F6E600468CFA /* FSKUserResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 028A35710E6195F10007B2F0 /* FSKUserResponse.m */; };
 		02F9D9D41167F6E600468CFA /* FSKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0256776E0F3351480032079F /* FSKUtils.m */; };
 		02F9D9D91167F74400468CFA /* FSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 02C85BE80EAB84090032CEBE /* FSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02F9DA5111681C3200468CFA /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02538A88114C725600D6750F /* MPOAuth.framework */; };
-		02F9DB23116829F200468CFA /* fsv1.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F97AF111E101C001EFA8F /* fsv1.h */; };
+		02F9DB23116829F200468CFA /* fsv1.h in Headers */ = {isa = PBXBuildFile; fileRef = 020F97AF111E101C001EFA8F /* fsv1.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		B404B7760D88152B005D7186 /* FSKPersonReadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B404B7740D88152B005D7186 /* FSKPersonReadRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B404B7770D88152B005D7186 /* FSKPersonReadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B404B7750D88152B005D7186 /* FSKPersonReadRequest.m */; };
@@ -461,8 +472,6 @@
 		02538A84114C725600D6750F /* libMPOAuth_s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMPOAuth_s.a; sourceTree = "<group>"; };
 		02538A86114C725600D6750F /* libMPOAuthMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMPOAuthMobile.a; sourceTree = "<group>"; };
 		02538A88114C725600D6750F /* MPOAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MPOAuth.framework; sourceTree = "<group>"; };
-		02538C6C114D347600D6750F /* FSKOAuthAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKOAuthAPI.h; sourceTree = "<group>"; };
-		02538C6D114D347600D6750F /* FSKOAuthAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKOAuthAPI.m; sourceTree = "<group>"; };
 		0256776D0F3351480032079F /* FSKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKUtils.h; sourceTree = "<group>"; };
 		0256776E0F3351480032079F /* FSKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKUtils.m; sourceTree = "<group>"; };
 		02596CEC0D4D6E7E00AB8632 /* FSKIdentityResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityResponse.h; sourceTree = "<group>"; };
@@ -490,12 +499,14 @@
 		02714A650D720F8700072118 /* FSKCouple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKCouple.m; sourceTree = "<group>"; };
 		0275A0580F602A16005AF00D /* FSKPersonName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonName.h; sourceTree = "<group>"; };
 		0275A0590F602A16005AF00D /* FSKPersonName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonName.m; sourceTree = "<group>"; };
+		027C6A6C1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDefaultAuthenticationDelegateBase.h; sourceTree = "<group>"; };
+		027C6A6D1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDefaultAuthenticationDelegateBase.m; sourceTree = "<group>"; };
 		02810C1C0D4427C2003E36B7 /* FSKIdentityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityService.h; sourceTree = "<group>"; };
 		02810C1D0D4427C2003E36B7 /* FSKIdentityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityService.m; sourceTree = "<group>"; };
 		02810C5D0D477585003E36B7 /* FSKIdentityRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKIdentityRequest.h; sourceTree = "<group>"; };
 		02810C5E0D477585003E36B7 /* FSKIdentityRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKIdentityRequest.m; sourceTree = "<group>"; };
-		02810DD00D4995E5003E36B7 /* FSKLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSKLoginController.h; path = Cocoa/FSKLoginController.h; sourceTree = "<group>"; };
-		02810DD10D4995E5003E36B7 /* FSKLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSKLoginController.m; path = Cocoa/FSKLoginController.m; sourceTree = "<group>"; };
+		02810DD00D4995E5003E36B7 /* FSKLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKLoginController.h; sourceTree = "<group>"; };
+		02810DD10D4995E5003E36B7 /* FSKLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKLoginController.m; sourceTree = "<group>"; };
 		0283255C0DA859FC00C8B5BF /* FSKSharedDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKSharedDefines.h; sourceTree = "<group>"; };
 		0283293B0DA95CE300C8B5BF /* user_icon_female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_female.png; path = FSSearchDemo/user_icon_female.png; sourceTree = "<group>"; };
 		0283293C0DA95CE300C8B5BF /* user_icon_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_icon_male.png; path = FSSearchDemo/user_icon_male.png; sourceTree = "<group>"; };
@@ -541,6 +552,7 @@
 		02BA98010D7068CF00DC6E04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02BA98020D7068CF00DC6E04 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02BA98050D7068CF00DC6E04 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
+		02BAB584118387D1000E3FAB /* FS_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FS_logo.jpg; path = Resources/FS_logo.jpg; sourceTree = "<group>"; };
 		02C85BE80EAB84090032CEBE /* FSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKit.h; sourceTree = "<group>"; };
 		02D2CD2C0CC311600013D298 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D2CD2D0CC311600013D298 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
@@ -565,6 +577,15 @@
 		02E58ADA0F64B5F200049C62 /* FSKContributorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKContributorResponse.m; sourceTree = "<group>"; };
 		02E590390F65F69800049C62 /* FSKPersonRepositoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKPersonRepositoryTest.h; sourceTree = "<group>"; };
 		02E5903A0F65F69800049C62 /* FSKPersonRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKPersonRepositoryTest.m; sourceTree = "<group>"; };
+		02E935131179E91300096B82 /* FSKAuthenticationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FSKAuthenticationView.xib; sourceTree = "<group>"; };
+		02E935141179E92700096B82 /* FSKAuthenticationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKAuthenticationController.h; sourceTree = "<group>"; };
+		02E935151179E92700096B82 /* FSKAuthenticationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKAuthenticationController.m; sourceTree = "<group>"; };
+		02E935191179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKDefaultMobileAuthenticationDelegate.h; sourceTree = "<group>"; };
+		02E9351A1179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKDefaultMobileAuthenticationDelegate.m; sourceTree = "<group>"; };
+		02E93588117A855000096B82 /* FSKOAuthSimpleServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKOAuthSimpleServer.h; sourceTree = "<group>"; };
+		02E93589117A855000096B82 /* FSKOAuthSimpleServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKOAuthSimpleServer.m; sourceTree = "<group>"; };
+		02E9358C117A85BE00096B82 /* FSKOAuthCustomURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKOAuthCustomURLHandler.h; sourceTree = "<group>"; };
+		02E9358D117A85BE00096B82 /* FSKOAuthCustomURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKOAuthCustomURLHandler.m; sourceTree = "<group>"; };
 		02EEFE650CA6B341007006DE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		02EEFE660CA6B341007006DE /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
 		02EEFE670CA6B341007006DE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -666,9 +687,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F9D9631167D64E00468CFA /* libMPOAuthMobile.a in Frameworks */,
 				02F9D9601167D64200468CFA /* libxml2.dylib in Frameworks */,
-				02F9DA5111681C3200468CFA /* MPOAuth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +710,9 @@
 			children = (
 				02117E300D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.h */,
 				02117E310D9E6D1A00380BBF /* FSKDefaultAuthenticationDelegate.m */,
+				0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */,
+				02810DD00D4995E5003E36B7 /* FSKLoginController.h */,
+				02810DD10D4995E5003E36B7 /* FSKLoginController.m */,
 			);
 			path = Cocoa;
 			sourceTree = "<group>";
@@ -870,20 +892,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		02810DCF0D499597003E36B7 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				0268F14C0D7FAFDA00CD2F19 /* LoginPanel.nib */,
-				02810DD00D4995E5003E36B7 /* FSKLoginController.h */,
-				02810DD10D4995E5003E36B7 /* FSKLoginController.m */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
 		028A391F0E626C6D0007B2F0 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
 				028A39DA0E6271900007B2F0 /* FSKit_iPhone.h */,
+				02E935131179E91300096B82 /* FSKAuthenticationView.xib */,
+				02E935141179E92700096B82 /* FSKAuthenticationController.h */,
+				02E935151179E92700096B82 /* FSKAuthenticationController.m */,
+				02E935191179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.h */,
+				02E9351A1179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.m */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -1102,6 +1119,7 @@
 		089C1665FE841158C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02BAB584118387D1000E3FAB /* FS_logo.jpg */,
 				02117D560D9DDDB900380BBF /* SampleData */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
@@ -1116,7 +1134,6 @@
 				020E9AD60E9965FA00E38F75 /* Common */,
 				020E9AD00E99643600E38F75 /* Cocoa */,
 				028A391F0E626C6D0007B2F0 /* iPhone */,
-				02810DCF0D499597003E36B7 /* UI */,
 			);
 			name = Classes;
 			path = Source;
@@ -1156,8 +1173,6 @@
 		B4DF9D470D863D6500D7073B /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				02538C6C114D347600D6750F /* FSKOAuthAPI.h */,
-				02538C6D114D347600D6750F /* FSKOAuthAPI.m */,
 				02439C6D0D43949200F50EBD /* FSKRequest.h */,
 				02439C6E0D43949200F50EBD /* FSKRequest.m */,
 				02F19E5E0D4B82410047B392 /* FSKResponse.h */,
@@ -1168,12 +1183,18 @@
 				0256776E0F3351480032079F /* FSKUtils.m */,
 				02293415111607F500A0CDB5 /* FSKOAuthHandler.h */,
 				02293416111607F500A0CDB5 /* FSKOAuthHandler.m */,
+				02E9358C117A85BE00096B82 /* FSKOAuthCustomURLHandler.h */,
+				02E9358D117A85BE00096B82 /* FSKOAuthCustomURLHandler.m */,
+				02E93588117A855000096B82 /* FSKOAuthSimpleServer.h */,
+				02E93589117A855000096B82 /* FSKOAuthSimpleServer.m */,
 				02293417111607F500A0CDB5 /* SimpleHTTPConnection.h */,
 				02293418111607F500A0CDB5 /* SimpleHTTPConnection.m */,
 				02293419111607F500A0CDB5 /* SimpleHTTPServer.h */,
 				0229341A111607F500A0CDB5 /* SimpleHTTPServer.m */,
 				024AD3B5113BEC6B0016524F /* FSKProperties.h */,
 				024AD3B6113BEC6B0016524F /* FSKProperties.m */,
+				027C6A6C1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h */,
+				027C6A6D1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1204,6 +1225,11 @@
 			files = (
 				02F9D9D91167F74400468CFA /* FSKit.h in Headers */,
 				02F9DB23116829F200468CFA /* fsv1.h in Headers */,
+				02E935161179E92700096B82 /* FSKAuthenticationController.h in Headers */,
+				02E9351B1179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.h in Headers */,
+				02E93590117A85BE00096B82 /* FSKOAuthCustomURLHandler.h in Headers */,
+				02E30EE8117F729300AC3537 /* FSKOAuthHandler.h in Headers */,
+				027C6A6E1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1270,7 +1296,9 @@
 				020F97B3111E101C001EFA8F /* fsv1.h in Headers */,
 				020F9990112047BF001EFA8F /* FSKUserProfile.h in Headers */,
 				024AD3B7113BEC6B0016524F /* FSKProperties.h in Headers */,
-				02538C6E114D347600D6750F /* FSKOAuthAPI.h in Headers */,
+				02E9358A117A855000096B82 /* FSKOAuthSimpleServer.h in Headers */,
+				02E9358E117A85BE00096B82 /* FSKOAuthCustomURLHandler.h in Headers */,
+				027C6A701186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1488,6 +1516,7 @@
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 				02F1A07E0D4CEED70047B392 /* MIT-License.rtf in Resources */,
 				0268F14D0D7FAFDA00CD2F19 /* LoginPanel.nib in Resources */,
+				02BAB585118387D1000E3FAB /* FS_logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1610,7 +1639,6 @@
 				02F9D9981167F6E600468CFA /* FSKIdentityRequest.m in Sources */,
 				02F9D99A1167F6E600468CFA /* FSKIdentityResponse.m in Sources */,
 				02F9D99C1167F6E600468CFA /* FSKIdentityService.m in Sources */,
-				02F9D99E1167F6E600468CFA /* FSKOAuthAPI.m in Sources */,
 				02F9D9A01167F6E600468CFA /* FSKOAuthHandler.m in Sources */,
 				02F9D9A21167F6E600468CFA /* FSKPedigree.m in Sources */,
 				02F9D9A41167F6E600468CFA /* FSKPedigreeRequest.m in Sources */,
@@ -1647,6 +1675,10 @@
 				02F9D9721167F68000468CFA /* identity.m in Sources */,
 				02F9D9731167F68000468CFA /* reservation.m in Sources */,
 				02F9D9741167F68000468CFA /* temple.m in Sources */,
+				02E935171179E92700096B82 /* FSKAuthenticationController.m in Sources */,
+				02E9351C1179EFD500096B82 /* FSKDefaultMobileAuthenticationDelegate.m in Sources */,
+				02E93591117A85BE00096B82 /* FSKOAuthCustomURLHandler.m in Sources */,
+				027C6A6F1186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1712,7 +1744,9 @@
 				020F97B4111E101C001EFA8F /* fsv1.m in Sources */,
 				020F9991112047BF001EFA8F /* FSKUserProfile.m in Sources */,
 				024AD3B8113BEC6B0016524F /* FSKProperties.m in Sources */,
-				02538C6F114D347600D6750F /* FSKOAuthAPI.m in Sources */,
+				02E9358B117A855000096B82 /* FSKOAuthSimpleServer.m in Sources */,
+				02E9358F117A85BE00096B82 /* FSKOAuthCustomURLHandler.m in Sources */,
+				027C6A711186FD9E00E175BE /* FSKDefaultAuthenticationDelegateBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2043,7 +2077,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_GC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -2198,6 +2232,10 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
 				INFOPLIST_FILE = "FSSearchDemo-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -2484,7 +2522,10 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = FSKitMobile;
 				SDKROOT = iphonesimulator3.0;
@@ -2559,7 +2600,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;

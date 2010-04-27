@@ -10,10 +10,12 @@
 
 
 @interface AuthenticationController : UIViewController {
-	IBOutlet UILabel *instructionsLabel;
+	id delegate;
+	IBOutlet UITextView *instructionsText;
 }
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)authenticate:(id)sender;
+- (void)setDelegate:(id)theDelegate;
 
 @end

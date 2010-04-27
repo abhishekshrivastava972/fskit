@@ -10,13 +10,21 @@
 #import "FSKIdentityService.h"
 #if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE))
 #import "FSKDefaultAuthenticationDelegate.h"
+#else
+#import "FSKDefaultMobileAuthenticationDelegate.h"
 #endif
-
+#import "FSKOAuthHandler.h"
 
 NSString *kFSAPIProductionBaseURLString = @"https://api.familysearch.org";  // Production
 NSString *kFSAPIBetaBaseURLString = @"https://apibeta.familysearch.org";  // Beta
 NSString *kFSAPIDevBaseURLString = @"http://www.dev.usys.org";  // Development
 
+NSString *kFSK_ERROR_DOMAIN = @"com.googlecode.fskit.error.domain";
+
+NSString * const FSKitNotificationAuthenticationRequired = @"FSKitNotificationAuthenticationRequired";
+NSString * const FSKitNotificationAuthenticationURLWillOpen = @"FSKitNotificationAuthenticationURLWillOpen";
+NSString * const FSKitNotificationAuthenticationDidSucceed = @"FSKitNotificationAuthenticationDidSucceed";
+NSString * const FSKitNotificationAuthenticationDidFail = @"FSKitNotificationAuthenticationDidFail";
 
 @implementation FSKConnection
 NSString *userAgentString = @"test";
@@ -30,8 +38,12 @@ NSString *userAgentString = @"test";
 		responseDataCache = [[[NSMutableDictionary alloc] init] retain];
 		requestQueue = [[[NSMutableArray alloc] init] retain];
 #if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE))
-		_delegate = [[FSKDefaultAuthenticationDelegate alloc] init];
+		defaultAuthenticationDelegate = [[FSKDefaultAuthenticationDelegate alloc] initWithConnection:self];
+#else
+		defaultAuthenticationDelegate = [[FSKDefaultMobileAuthenticationDelegate alloc] initWithConnection:self];
 #endif
+		authenticationHandler = [[[FSKOAuthHandler alloc] initWithConnection:self delegate:defaultAuthenticationDelegate] retain];
+		isAuthenticating = NO;
 	}
 	return self;
 }
@@ -41,6 +53,7 @@ NSString *userAgentString = @"test";
 	[userAgentString release];
 	[responseDataCache release];
 	[requestQueue release];
+	[authenticationHandler release];
 	[super dealloc];
 }
 
@@ -79,19 +92,24 @@ NSString *userAgentString = @"test";
 }
 
 - (NSString *)sessionId {
-    return [[_sessionId retain] autorelease];
+	if (!sessionId)
+	{
+		sessionId = [[authenticationHandler accessToken] retain];
+	}
+    return [[sessionId retain] autorelease];
 }
 
 - (void)setSessionId:(NSString *)value {
-    if (_sessionId != value) {
-        [_sessionId release];
-        _sessionId = [value copy];
+    if (sessionId != value) {
+        [sessionId release];
+        sessionId = [value copy];
+		isAuthenticating = NO;
     }
 }
 
 - (BOOL)hasSessionId
 {
-	return (_sessionId && [_sessionId length] > 0);
+	return (sessionId && [sessionId length] > 0);
 }
 
 - (BOOL)needsAuthentication
@@ -108,12 +126,12 @@ NSString *userAgentString = @"test";
 		{
 			NSLog(@" processing requestQueue");
 			FSKRequest *request;
-			NSEnumerator *enumerator = [requestQueue objectEnumerator];
-			while (request = [enumerator nextObject]) {
+			while ([requestQueue count] > 0) {
+				request = [requestQueue objectAtIndex:0];
+				[requestQueue removeObjectAtIndex:0];
 				[request reissueRequest];
 			}
 		}
-		[requestQueue removeAllObjects];
     }
 }
 
@@ -143,11 +161,11 @@ NSString *userAgentString = @"test";
 }
 
 - (id)delegate {
-    return [[_delegate retain] autorelease];
+    return [[delegate retain] autorelease];
 }
 
 - (void)setDelegate:(id)value {
-	_delegate = value;
+	delegate = value;
 }
 
 - (void)handleAuthenticationForRequest:(FSKRequest *)request
@@ -159,16 +177,52 @@ NSString *userAgentString = @"test";
 	}
 	else
 	{
-		[requestQueue addObject:request];
-		if (!_isAuthenticating)
+		if (request)
 		{
-			if ([_delegate respondsToSelector:@selector(request:didReceiveAuthenticationURL:)]) {
-				[_delegate request:request didReceiveAuthenticationURL:nil]; // where do we get the URL from?
-			}
-			// until we get the delegate call working, just login
-			[[[FSKIdentityService identityServiceWithConnection:self delegate:_delegate] retain] login];
+			[requestQueue addObject:request];
+		}
+		if (!identityService)
+		{
+			identityService = [[FSKIdentityService identityServiceWithConnection:self delegate:self] retain];
+			[authenticationHandler setIdentityProperties:[[identityService identityProperties] properties]];
+		}
+		[authenticationHandler setIdentityProperties:[[identityService identityProperties] properties]];
+		NSLog(@"isAuthenticating?%d", isAuthenticating);
+		if (!isAuthenticating)
+		{
+			isAuthenticating = YES;
+			[authenticationHandler signOut];
+			[authenticationHandler authenticate];
 		}
 	}
+}
+
+- (void)processVerifier:(NSString *)verifier
+{
+	NSLog(@"%s verifier:%@", __PRETTY_FUNCTION__, verifier);
+	[authenticationHandler setVerifier:verifier];
+}
+
+- (void)handleOpenURL:(NSURL *)url;
+{
+	NSLog(@"%s url:%@", __PRETTY_FUNCTION__, url);
+	if (delegate && [delegate respondsToSelector:@selector(handleOpenURL:)])
+	{
+		[delegate handleOpenURL:url];
+	} else {
+		[defaultAuthenticationDelegate handleOpenURL:url];
+	}
+}
+
+- (void)signOut
+{
+	[authenticationHandler signOut];
+//	[identityService logout];
+}
+
+- (void)authenticate
+{
+	[defaultAuthenticationDelegate performAuthentication];
 }
 
 @end

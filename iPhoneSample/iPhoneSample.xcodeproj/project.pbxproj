@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		020ABCFA0EAC542B0015DAC8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020ABCF90EAC542B0015DAC8 /* CoreGraphics.framework */; };
-		0210A7FF0E980B0F00748795 /* AuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0210A7FE0E980B0F00748795 /* AuthenticationController.m */; };
+		02770FA51185A7AD00AD8A29 /* FS_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02770FA41185A7AD00AD8A29 /* FS_logo.jpg */; };
+		027C6A471186AC0D00E175BE /* FSKAuthenticationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027C6A461186AC0D00E175BE /* FSKAuthenticationView.xib */; };
 		029F6F250F5BCED3009D6CF9 /* Users.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 029F6F240F5BCED3009D6CF9 /* Users.tiff */; };
 		029F6F2B0F5BE098009D6CF9 /* tree_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 029F6F2A0F5BE098009D6CF9 /* tree_icon.png */; };
 		029F6FF20F5BF42E009D6CF9 /* TreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 029F6FF10F5BF42E009D6CF9 /* TreeViewController.m */; };
+		02BAB51711826FC3000E3FAB /* NSData+RSHexDump.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BAB51611826FC3000E3FAB /* NSData+RSHexDump.m */; };
 		02E586F60F63F7F600049C62 /* TreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E586F50F63F7F600049C62 /* TreeView.xib */; };
 		02E5887E0F6450D200049C62 /* star_highlighted.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E5887C0F6450D200049C62 /* star_highlighted.tif */; };
 		02E5887F0F6450D200049C62 /* star.tif in Resources */ = {isa = PBXBuildFile; fileRef = 02E5887D0F6450D200049C62 /* star.tif */; };
@@ -23,11 +25,10 @@
 		02E58FA90F6515A600049C62 /* user_icon_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 02E58FA70F6515A600049C62 /* user_icon_male.png */; };
 		02F99B430EE300C700146B6E /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F99B420EE300C700146B6E /* PersonViewController.m */; };
 		02F99B450EE3019200146B6E /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F99B440EE3019200146B6E /* PersonView.xib */; };
-		02F9DB661168E83400468CFA /* FSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DB651168E83400468CFA /* FSKit.framework */; };
-		02F9DB681168E83400468CFA /* libFSKitMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DB671168E83400468CFA /* libFSKitMobile.a */; };
-		02F9DB6A1168E83400468CFA /* libMPOAuthMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DB691168E83400468CFA /* libMPOAuthMobile.a */; };
-		02F9DB6C1168E83400468CFA /* MPOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DB6B1168E83400468CFA /* MPOAuth.framework */; };
-		02F9DBB91168FE8300468CFA /* AuthenticationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F9DBB71168FE8300468CFA /* AuthenticationView.xib */; };
+		02FAC3D91181389F00026950 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FAC3D81181389F00026950 /* Security.framework */; };
+		02FAC3DD118138A600026950 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FAC3DC118138A600026950 /* libxml2.dylib */; };
+		02FAC3EE11813B0300026950 /* libFSKitMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02F9DB671168E83400468CFA /* libFSKitMobile.a */; };
+		02FAC3F011813B0300026950 /* libMPOAuthMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FAC3EF11813B0300026950 /* libMPOAuthMobile.a */; };
 		02FCCF930F48DB8C00AFDB51 /* RoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCF920F48DB8C00AFDB51 /* RoundedRectView.m */; };
 		02FCCF9C0F48E15E00AFDB51 /* TreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCCF9B0F48E15E00AFDB51 /* TreeView.m */; };
 		02FCD1B90F49ABD600AFDB51 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */; };
@@ -42,12 +43,14 @@
 
 /* Begin PBXFileReference section */
 		020ABCF90EAC542B0015DAC8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0210A7FD0E980B0F00748795 /* AuthenticationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationController.h; sourceTree = "<group>"; };
-		0210A7FE0E980B0F00748795 /* AuthenticationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationController.m; sourceTree = "<group>"; };
+		02770FA41185A7AD00AD8A29 /* FS_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FS_logo.jpg; sourceTree = "<group>"; };
+		027C6A461186AC0D00E175BE /* FSKAuthenticationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FSKAuthenticationView.xib; path = Frameworks/FSKitMobile/FSKAuthenticationView.xib; sourceTree = "<group>"; };
 		029F6F240F5BCED3009D6CF9 /* Users.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Users.tiff; sourceTree = "<group>"; };
 		029F6F2A0F5BE098009D6CF9 /* tree_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree_icon.png; sourceTree = "<group>"; };
 		029F6FF00F5BF42E009D6CF9 /* TreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeViewController.h; sourceTree = "<group>"; };
 		029F6FF10F5BF42E009D6CF9 /* TreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeViewController.m; sourceTree = "<group>"; };
+		02BAB51511826FC3000E3FAB /* NSData+RSHexDump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+RSHexDump.h"; path = "../FSKit/Source/NSData+RSHexDump/NSData+RSHexDump.h"; sourceTree = SOURCE_ROOT; };
+		02BAB51611826FC3000E3FAB /* NSData+RSHexDump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+RSHexDump.m"; path = "../FSKit/Source/NSData+RSHexDump/NSData+RSHexDump.m"; sourceTree = SOURCE_ROOT; };
 		02E586F50F63F7F600049C62 /* TreeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreeView.xib; sourceTree = "<group>"; };
 		02E5887C0F6450D200049C62 /* star_highlighted.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = star_highlighted.tif; sourceTree = "<group>"; };
 		02E5887D0F6450D200049C62 /* star.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = star.tif; sourceTree = "<group>"; };
@@ -64,17 +67,16 @@
 		02F99B410EE300C700146B6E /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
 		02F99B420EE300C700146B6E /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		02F99B440EE3019200146B6E /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
-		02F9DB651168E83400468CFA /* FSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSKit.framework; path = Frameworks/FSKit.framework; sourceTree = "<group>"; };
 		02F9DB671168E83400468CFA /* libFSKitMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFSKitMobile.a; path = Frameworks/libFSKitMobile.a; sourceTree = "<group>"; };
-		02F9DB691168E83400468CFA /* libMPOAuthMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMPOAuthMobile.a; path = Frameworks/libMPOAuthMobile.a; sourceTree = "<group>"; };
-		02F9DB6B1168E83400468CFA /* MPOAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MPOAuth.framework; path = Frameworks/MPOAuth.framework; sourceTree = "<group>"; };
-		02F9DBB71168FE8300468CFA /* AuthenticationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationView.xib; sourceTree = "<group>"; };
+		02FAC3D81181389F00026950 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		02FAC3DC118138A600026950 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		02FAC3EF11813B0300026950 /* libMPOAuthMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMPOAuthMobile.a; path = Frameworks/libMPOAuthMobile.a; sourceTree = "<group>"; };
 		02FCCF910F48DB8C00AFDB51 /* RoundedRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedRectView.h; sourceTree = "<group>"; };
 		02FCCF920F48DB8C00AFDB51 /* RoundedRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedRectView.m; sourceTree = "<group>"; };
 		02FCCF9A0F48E15E00AFDB51 /* TreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeView.h; sourceTree = "<group>"; };
 		02FCCF9B0F48E15E00AFDB51 /* TreeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeView.m; sourceTree = "<group>"; };
-		02FCD1B70F49ABD600AFDB51 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		02FCD1B70F49ABD600AFDB51 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = externals/fskit/RegexKitLite.h; sourceTree = "<group>"; };
+		02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = externals/fskit/RegexKitLite.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iPhoneSampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneSampleAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneSampleAppDelegate.m; sourceTree = "<group>"; };
@@ -94,29 +96,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02FAC3DD118138A600026950 /* libxml2.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				020ABCFA0EAC542B0015DAC8 /* CoreGraphics.framework in Frameworks */,
-				02F9DB661168E83400468CFA /* FSKit.framework in Frameworks */,
-				02F9DB681168E83400468CFA /* libFSKitMobile.a in Frameworks */,
-				02F9DB6A1168E83400468CFA /* libMPOAuthMobile.a in Frameworks */,
-				02F9DB6C1168E83400468CFA /* MPOAuth.framework in Frameworks */,
+				02FAC3D91181389F00026950 /* Security.framework in Frameworks */,
+				02FAC3EE11813B0300026950 /* libFSKitMobile.a in Frameworks */,
+				02FAC3F011813B0300026950 /* libMPOAuthMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02C85B530EAB83440032CEBE /* fskit */ = {
-			isa = PBXGroup;
-			children = (
-				02FCD1B70F49ABD600AFDB51 /* RegexKitLite.h */,
-				02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */,
-			);
-			name = fskit;
-			path = externals/fskit;
-			sourceTree = "<group>";
-		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +116,6 @@
 				28216C960DB411BC00E5133A /* SearchViewController.m */,
 				1D3623240D0F684500981E51 /* iPhoneSampleAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iPhoneSampleAppDelegate.m */,
-				0210A7FD0E980B0F00748795 /* AuthenticationController.h */,
-				0210A7FE0E980B0F00748795 /* AuthenticationController.m */,
 				02F99B410EE300C700146B6E /* PersonViewController.h */,
 				02F99B420EE300C700146B6E /* PersonViewController.m */,
 				02FCCF910F48DB8C00AFDB51 /* RoundedRectView.h */,
@@ -162,6 +152,9 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				02FAC3D81181389F00026950 /* Security.framework */,
+				02FAC3DC118138A600026950 /* libxml2.dylib */,
+				02FAC3EF11813B0300026950 /* libMPOAuthMobile.a */,
 			);
 			name = iPhoneSample;
 			sourceTree = "<group>";
@@ -169,7 +162,10 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				02C85B530EAB83440032CEBE /* fskit */,
+				02BAB51511826FC3000E3FAB /* NSData+RSHexDump.h */,
+				02BAB51611826FC3000E3FAB /* NSData+RSHexDump.m */,
+				02FCD1B70F49ABD600AFDB51 /* RegexKitLite.h */,
+				02FCD1B80F49ABD600AFDB51 /* RegexKitLite.m */,
 				28A0AB4B0D9B1048005BE974 /* iPhoneSample_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -179,6 +175,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				027C6A461186AC0D00E175BE /* FSKAuthenticationView.xib */,
 				02E58FA60F6515A600049C62 /* user_icon_female.png */,
 				02E58FA70F6515A600049C62 /* user_icon_male.png */,
 				02E5887C0F6450D200049C62 /* star_highlighted.tif */,
@@ -190,7 +187,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				02F99B440EE3019200146B6E /* PersonView.xib */,
 				02E586F50F63F7F600049C62 /* TreeView.xib */,
-				02F9DBB71168FE8300468CFA /* AuthenticationView.xib */,
+				02770FA41185A7AD00AD8A29 /* FS_logo.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -201,10 +198,7 @@
 				020ABCF90EAC542B0015DAC8 /* CoreGraphics.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				02F9DB651168E83400468CFA /* FSKit.framework */,
 				02F9DB671168E83400468CFA /* libFSKitMobile.a */,
-				02F9DB691168E83400468CFA /* libMPOAuthMobile.a */,
-				02F9DB6B1168E83400468CFA /* MPOAuth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,7 +258,8 @@
 				02E5887F0F6450D200049C62 /* star.tif in Resources */,
 				02E58FA80F6515A600049C62 /* user_icon_female.png in Resources */,
 				02E58FA90F6515A600049C62 /* user_icon_male.png in Resources */,
-				02F9DBB91168FE8300468CFA /* AuthenticationView.xib in Resources */,
+				02770FA51185A7AD00AD8A29 /* FS_logo.jpg in Resources */,
+				027C6A471186AC0D00E175BE /* FSKAuthenticationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +273,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* iPhoneSampleAppDelegate.m in Sources */,
 				28216C970DB411BC00E5133A /* SearchViewController.m in Sources */,
-				0210A7FF0E980B0F00748795 /* AuthenticationController.m in Sources */,
 				02F99B430EE300C700146B6E /* PersonViewController.m in Sources */,
 				02FCCF930F48DB8C00AFDB51 /* RoundedRectView.m in Sources */,
 				02FCCF9C0F48E15E00AFDB51 /* TreeView.m in Sources */,
@@ -288,6 +282,7 @@
 				02E588910F64577200049C62 /* SearchResultCell.m in Sources */,
 				02E58C080F64D00000049C62 /* SearchResultDetailController.m in Sources */,
 				02E58EEE0F6507C700049C62 /* SearchResultView.m in Sources */,
+				02BAB51711826FC3000E3FAB /* NSData+RSHexDump.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,11 +294,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/FSKit\"",
-					"\"$(SRCROOT)/Frameworks\"",
-				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -311,8 +301,13 @@
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/FSKit\"",
 					"\"$(SRCROOT)/Frameworks\"",
+				);
+				OTHER_LDFLAGS = (
+					"-licucore",
+					"-lxml2",
+					"-all_load",
+					"-ObjC",
 				);
 				PRODUCT_NAME = iPhoneSample;
 			};
@@ -348,11 +343,16 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
+				HEADER_SEARCH_PATHS = (
+					"/usr/include/libxml2/**",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-licucore",
 					"-lxml2",
+					"-all_load",
+					"-ObjC",
 				);
 				PREBINDING = NO;
 				SDKROOT = iphonesimulator3.0;

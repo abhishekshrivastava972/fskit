@@ -7,9 +7,8 @@
 //
 
 #import "iPhoneSampleAppDelegate.h"
-#import "AuthenticationController.h"
 
-#define kFSK_DEVELOPER_KEY @"WCQY-7J1Q-GKVV-7DNM-SQ5M-9Q5H-JX3H-CMJK"
+#define kFSK_DEVELOPER_KEY @"NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN"
 static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_session_id";
 
 @implementation iPhoneSampleAppDelegate
@@ -28,12 +27,19 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 	[connection setBaseURLString:kFSAPIDevBaseURLString];
 	[connection setDeveloperKey:kFSK_DEVELOPER_KEY];
 	[connection setUserAgentString:@"FSKit iPhone Sample App/1.0" override:NO];
-	[connection setDelegate:self];
+//	[connection setDelegate:self];
 //	[connection setSessionId:[[NSUserDefaults standardUserDefaults] stringForKey:CURRENT_SESSION_ID_KEY]];
 	[connection addObserver:self
 				 forKeyPath:@"sessionId"
 				    options:(NSKeyValueObservingOptionNew)
 					context:NULL];
+	
+	FSKIdentityService *identityService = [FSKIdentityService identityServiceWithConnection:connection delegate:self];
+	[identityService fetchProperties];
+	
+//	[self request:nil didReceiveAuthenticationURL:nil];
+	
+//	[identityService login];
 	
 // use this code to save the sessionId to disk	
 //	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -63,7 +69,11 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
                        context:(void *)context
 {
     if ([keyPath isEqual:@"sessionId"]) {
-		[[NSUserDefaults standardUserDefaults] setObject:[change objectForKey:NSKeyValueChangeNewKey] forKey:CURRENT_SESSION_ID_KEY];
+		NSString *sessId = [change objectForKey:NSKeyValueChangeNewKey];
+		if (sessId)
+		{
+			[[NSUserDefaults standardUserDefaults] setObject:sessId forKey:CURRENT_SESSION_ID_KEY];
+		}
     }
     // be sure to call the super implementation
     // if the superclass implements it
@@ -80,12 +90,20 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 	[super dealloc];
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+	NSLog(@"%s url: %@", __PRETTY_FUNCTION__, url);
+	[connection handleOpenURL:url];
+	return YES;
+}
+
+
 - (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url
 {
 	NSLog(@"%s request:%@\nurl:%@", __PRETTY_FUNCTION__, request, url);
 	if (!authenticationController || YES)
 	{
-		authenticationController = [[AuthenticationController alloc] initWithNibName:@"AuthenticationView" bundle:nil];
+		authenticationController = [[[FSKAuthenticationController alloc] initWithDelegate:connection] retain];
 	}
 	
 	NSLog(@"%s %@", _cmd, self.tabBarController);

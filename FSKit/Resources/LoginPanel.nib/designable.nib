@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1040</int>
-		<string key="IBDocument.SystemVersion">10C540</string>
-		<string key="IBDocument.InterfaceBuilderVersion">740</string>
-		<string key="IBDocument.AppKitVersion">1038.25</string>
-		<string key="IBDocument.HIToolboxVersion">458.00</string>
+		<string key="IBDocument.SystemVersion">10D573</string>
+		<string key="IBDocument.InterfaceBuilderVersion">762</string>
+		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.HIToolboxVersion">460.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">740</string>
+			<string key="NS.object.0">762</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -51,7 +51,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{500, 202}</string>
+				<string key="NSWindowContentMaxSize">{424, 239}</string>
 				<string key="NSWindowContentMinSize">{300, 100}</string>
 				<object class="NSView" key="NSWindowView" id="911804267">
 					<reference key="NSNextResponder"/>
@@ -68,7 +68,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="1019088440">
 								<int key="NSCellFlags">69336577</int>
 								<int key="NSCellFlags2">138412032</int>
-								<string key="NSContents">Sign in to FamilySearch.org</string>
+								<string key="NSContents">Sign in to FamilySearch</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">16</double>
@@ -94,7 +94,7 @@
 						<object class="NSTextField" id="868216914">
 							<reference key="NSNextResponder" ref="911804267"/>
 							<int key="NSvFlags">290</int>
-							<string key="NSFrame">{{101, 157}, {291, 35}}</string>
+							<string key="NSFrame">{{101, 44}, {291, 35}}</string>
 							<reference key="NSSuperview" ref="911804267"/>
 							<int key="NSTag">2</int>
 							<bool key="NSEnabled">YES</bool>
@@ -127,13 +127,13 @@
 						<object class="NSButton" id="313533926">
 							<reference key="NSNextResponder" ref="911804267"/>
 							<int key="NSvFlags">289</int>
-							<string key="NSFrame">{{326, 12}, {84, 32}}</string>
+							<string key="NSFrame">{{322, 12}, {92, 32}}</string>
 							<reference key="NSSuperview" ref="911804267"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="765830729">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">137887744</int>
-								<string key="NSContents">Sign In</string>
+								<string key="NSContents">Connect</string>
 								<object class="NSFont" key="NSSupport" id="335972735">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">13</double>
@@ -237,13 +237,16 @@
 						<object class="NSTextField" id="1054113264">
 							<reference key="NSNextResponder" ref="911804267"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{101, 48}, {291, 101}}</string>
+							<string key="NSFrame">{{101, 87}, {291, 102}}</string>
 							<reference key="NSSuperview" ref="911804267"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="649624996">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">272629760</int>
-								<string key="NSContents">Click "Sign In" to sign in with FamilySearch.  Your browser will open with the FamilySearch login page. Click "Allow", then you will be returned to this application to continue.</string>
+								<string type="base64-UTF8" key="NSContents">Q2xpY2sgIkNvbm5lY3QiIGJlbG93IHRvIHNpZ24gaW4gd2l0aCBGYW1pbHlTZWFyY2guCllvdXIgd2Vi
+IGJyb3dzZXIgd2lsbCBvcGVuIHRvIHRoZSBGYW1pbHlTZWFyY2ggbG9naW4gcGFnZS4KQ2xpY2sgIlNp
+Z24gSW4iLCB0aGVuIHlvdSB3aWxsIGJlIHJldHVybmVkIHRvIHRoaXMgYXBwbGljYXRpb24gdG8gY29u
+dGludWUuA</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">13</double>
@@ -254,13 +257,33 @@
 								<reference key="NSTextColor" ref="507357941"/>
 							</object>
 						</object>
+						<object class="NSButton" id="798493568">
+							<reference key="NSNextResponder" ref="911804267"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{17, 16}, {25, 25}}</string>
+							<reference key="NSSuperview" ref="911804267"/>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="492208966">
+								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags2">134217728</int>
+								<string key="NSContents"/>
+								<reference key="NSSupport" ref="335972735"/>
+								<reference key="NSControlView" ref="798493568"/>
+								<int key="NSButtonFlags">-2038415105</int>
+								<int key="NSButtonFlags2">161</int>
+								<string key="NSAlternateContents"/>
+								<string key="NSKeyEquivalent"/>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
+							</object>
+						</object>
 					</object>
 					<string key="NSFrameSize">{424, 239}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{300, 122}</string>
-				<string key="NSMaxSize">{500, 224}</string>
+				<string key="NSMaxSize">{424, 261}</string>
 				<string key="NSFrameAutosaveName">FamilySearch Sign In Panel</string>
 			</object>
 		</object>
@@ -391,11 +414,12 @@
 							<reference ref="847055599"/>
 							<reference ref="210836756"/>
 							<reference ref="313533926"/>
-							<reference ref="868216914"/>
 							<reference ref="274477111"/>
 							<reference ref="245651750"/>
 							<reference ref="494435801"/>
+							<reference ref="868216914"/>
 							<reference ref="1054113264"/>
+							<reference ref="798493568"/>
 						</object>
 						<reference key="parent" ref="353878138"/>
 					</object>
@@ -502,6 +526,20 @@
 						<reference key="object" ref="649624996"/>
 						<reference key="parent" ref="1054113264"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">162</int>
+						<reference key="object" ref="798493568"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="492208966"/>
+						</object>
+						<reference key="parent" ref="911804267"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">163</int>
+						<reference key="object" ref="492208966"/>
+						<reference key="parent" ref="798493568"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -522,8 +560,16 @@
 					<string>124.ImportedFromIB2</string>
 					<string>131.IBPluginDependency</string>
 					<string>131.ImportedFromIB2</string>
+					<string>148.IBPluginDependency</string>
+					<string>153.IBPluginDependency</string>
+					<string>154.IBPluginDependency</string>
+					<string>155.IBPluginDependency</string>
+					<string>156.IBPluginDependency</string>
+					<string>157.IBPluginDependency</string>
 					<string>158.IBPluginDependency</string>
 					<string>159.IBPluginDependency</string>
+					<string>162.IBPluginDependency</string>
+					<string>163.IBPluginDependency</string>
 					<string>86.IBPluginDependency</string>
 					<string>86.ImportedFromIB2</string>
 					<string>93.IBEditorWindowLastContentRect</string>
@@ -558,14 +604,22 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<boolean value="YES"/>
-					<string>{{0, 906}, {424, 239}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{0, 906}, {424, 239}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<boolean value="YES"/>
+					<string>{{683, 403}, {424, 239}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>{{683, 403}, {424, 239}}</string>
 					<boolean value="YES"/>
 					<boolean value="YES"/>
 					<boolean value="YES"/>
-					<string>{500, 202}</string>
+					<string>{424, 239}</string>
 					<string>{300, 100}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
@@ -589,7 +643,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">159</int>
+			<int key="maxID">163</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -621,9 +675,7 @@
 							<string>imageView</string>
 							<string>loginErrorText</string>
 							<string>loginPanel</string>
-							<string>passwordField</string>
 							<string>remember</string>
-							<string>signInNameField</string>
 							<string>spinner</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -631,9 +683,7 @@
 							<string>id</string>
 							<string>NSTextField</string>
 							<string>NSPanel</string>
-							<string>NSTextField</string>
 							<string>id</string>
-							<string>NSTextField</string>
 							<string>NSProgressIndicator</string>
 						</object>
 					</object>
@@ -1188,6 +1238,7 @@
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1040" key="NS.object.0"/>
@@ -1201,7 +1252,7 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">FSKit.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../FSKit.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 	</data>
 </archive>

@@ -25,9 +25,9 @@ BOOL isReady = NO;
 	{ 
 		moduleName = @"identity";
 		versionString = @"v2";
-		identityProperties = [[FSKProperties alloc] initWithFamilySearchConnection:familySearchConnection 
+		identityProperties = [[[FSKProperties alloc] initWithFamilySearchConnection:familySearchConnection 
 																		  delegate:self 
-																		  endpoint:[NSString stringWithFormat:@"%@/%@", moduleName, versionString]];
+																		  endpoint:[NSString stringWithFormat:@"%@/%@", moduleName, versionString]] retain];
 	}
 	return self;
 }
@@ -46,6 +46,11 @@ BOOL isReady = NO;
 //	FSKIdentityRequest *request = [[[FSKIdentityRequest alloc] initWithFamilySearchConnection:connection delegate:self selector:@selector(handlePropertiesResponse:)] retain]; 
 //	[request sendPropertiesRequest];
 }	
+
+- (FSKProperties *)identityProperties;
+{
+	return identityProperties;
+}
 
 - (void)pingSession {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
@@ -66,23 +71,18 @@ BOOL isReady = NO;
 	NSLog(@"identityProperties hasProperties? %@", ([identityProperties hasProperties] ? @"YES" : @"NO"));
 	if ([identityProperties hasProperties])
 	{
-		handler = [[[FSKOAuthHandler alloc] initWithConnection:connection delegate:self] retain];
-		[handler setIdentityProperties:[identityProperties properties]];
-		if ([_delegate respondsToSelector:@selector(callbackURL)]) {
-			[handler setCustomURL:[_delegate performSelector:@selector(callbackURL)]];
-		}
-		[handler authenticate];
+		[connection handleAuthenticationForRequest:nil];
 	} else {
 		[self fetchProperties];
 	}
 }
 
-- (void)authenticationDidSuceedWithToken:(NSString *)token
+- (void)authenticationDidSucceedWithToken:(NSString *)token
 {
 	[connection setSessionId:token];
 	[connection setNeedsAuthentication:NO];
 	[self pingSession];
-	[_delegate authenticationDidSuceedWithToken:token];
+	[_delegate authenticationDidSucceedWithToken:token];
 }
 
 - (void)loginWithSessionId:(NSString *)sessionId

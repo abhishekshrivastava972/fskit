@@ -62,8 +62,22 @@
 	
 	NSURLConnection *urlConnection = [[NSURLConnection connectionWithRequest:urlRequest
 																	   delegate:self] retain];
-	NSLog(@"connection: %@ headers: %@", urlConnection, [urlRequest allHTTPHeaderFields]);
+
+	NSArray *oldCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[familySearchConnection baseURLString]]];
+	NSLog(@"allcookies count: %d, cookiesforURL:%@", [[[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] count], oldCookies);
+    // Now we can print all of the cookies we have:
+    for (NSHTTPCookie *cookie in oldCookies)
+        NSLog(@"Name: %@ : Value: %@, Expires: %@", cookie.name, cookie.value, cookie.expiresDate); 
+    NSArray * availableCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[familySearchConnection baseURLString]]];
+    NSDictionary * headers = [NSHTTPCookie requestHeaderFieldsWithCookies:availableCookies];
+	NSLog(@"cookie headers: %@ HTTPShouldHandleCookies:%d", headers, [urlRequest HTTPShouldHandleCookies]);
+	NSString *cookieHeader = [headers objectForKey:@"Cookie"]; // key used in header dictionary
+	if (cookieHeader) {
+        [urlRequest addValue:cookieHeader forHTTPHeaderField:@"Cookie"]; // header name
+	}
 	
+	
+	NSLog(@"connection: %@ headers: %@", urlConnection, [urlRequest allHTTPHeaderFields]);
 }
 
 
@@ -196,9 +210,9 @@
 
 - (void)reissueRequest
 {
-//	[responseData release];
-//	responseData = [[[NSMutableData alloc] init] retain];
-	[responseData setLength:0];
+	[responseData release];
+	responseData = [[[NSMutableData alloc] init] retain];
+//	[responseData setLength:0];
 	[self fetchFamilySearchDataAtEndpoint:_endpoint WithIds:_idList parameters:_parameters];
 }
 
@@ -246,6 +260,23 @@
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
 	NSLog(@"%s %@ %d %@ headers:\n%@", __PRETTY_FUNCTION__, response, [(NSHTTPURLResponse*)response statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[(NSHTTPURLResponse*)response statusCode]], [(NSHTTPURLResponse*)response allHeaderFields]);
+	NSArray *oldCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[familySearchConnection baseURLString]]];
+	NSLog(@"allcookies count: %d, cookiesforURL:%@", [[[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] count], oldCookies);
+    // Now we can print all of the cookies we have:
+    for (NSHTTPCookie *cookie in oldCookies)
+        NSLog(@"Name: %@ : Value: %@, Expires: %@", cookie.name, cookie.value, cookie.expiresDate); 
+	
+	// If you want to get all of the cookies:
+    NSArray * all = [NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:nil];
+    NSLog(@"How many Cookies: %d", all.count);
+    // Store the cookies:
+    // NSHTTPCookieStorage is a Singleton.
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:all forURL:[NSURL URLWithString:[familySearchConnection baseURLString]] mainDocumentURL:nil];
+	
+    // Now we can print all of the cookies we have:
+    for (NSHTTPCookie *cookie in all)
+        NSLog(@"Name: %@ : Value: %@, Expires: %@", cookie.name, cookie.value, cookie.expiresDate); 
+	
 	NSLog(@"length:%d", [response expectedContentLength]);
 	_responseCode = [(NSHTTPURLResponse*)response statusCode];
 	if (_responseCode == 401)
@@ -263,6 +294,10 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {	
 	NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, connection, self);
+	if (_responseCode == 401)
+	{
+		[familySearchConnection handleAuthenticationForRequest:self];
+	}
 	NSError *error = nil;
 	FSKResponse *response = [self responseWithData:responseData];
 	if ([response respondsToSelector:@selector(setRequestedIds:)])

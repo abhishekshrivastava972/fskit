@@ -19,10 +19,9 @@
 
 - (IBAction)authenticate:(id)sender 
 {
-//	NSURLCredential *credential = [NSURLCredential credentialWithUser:usernameField.text password:passwordField.text persistence:NSURLCredentialPersistenceForSession];
-	[self.parentViewController dismissModalViewControllerAnimated:YES];	
+	[delegate performSelector:@selector(authenticate) withObject:nil afterDelay:0.1];
 
-//	[self performSelector:@selector(sendCredential:) withObject:credential afterDelay:0.5];
+	[self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -40,14 +39,14 @@
  */
 
 // If you need to do additional setup after loading the view, override viewDidLoad.
-- (void)viewDidLoad {
-//	[usernameField becomeFirstResponder];
+/*
+ - (void)viewDidLoad {
 }
-
+*/
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	// Return YES for supported orientations
-	return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+	return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +57,11 @@
 
 - (void)dealloc {
 	[super dealloc];
+}
+
+- (void)setDelegate:(id)theDelegate;
+{
+	delegate = theDelegate;
 }
 
 @end

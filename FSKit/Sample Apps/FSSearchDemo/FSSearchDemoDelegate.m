@@ -158,6 +158,8 @@ NSMutableData *receivedData;
 	
 	/* CONFIGURE RULE EDITOR*/
 	
+}
+-(void)hack {
 	ruleDelegate = [[[RuleDelegate alloc] init] retain];
 	[ruleEditor setDelegate:ruleDelegate];
 	//	[predicateEditor setDelegate:delegate];
