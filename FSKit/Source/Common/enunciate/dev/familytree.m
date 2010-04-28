@@ -14505,6 +14505,7 @@
   [newId retain];
   [_id release];
   _id = newId;
+	_personId = newId;
 }
 
 /**

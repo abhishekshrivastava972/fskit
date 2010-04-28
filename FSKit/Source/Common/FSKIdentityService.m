@@ -11,7 +11,6 @@
 
 BOOL isReady = NO;
 
-
 @implementation FSKIdentityService
 
 + (FSKIdentityService *)identityServiceWithConnection:(FSKConnection *)familySearchConnection delegate:theDelegate
@@ -63,33 +62,15 @@ BOOL isReady = NO;
 
 - (void)login {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-	NSLog(@"identityProperties hasProperties? %@", ([identityProperties hasProperties] ? @"YES" : @"NO"));
-	if ([identityProperties hasProperties])
-	{
-		handler = [[[FSKOAuthHandler alloc] initWithConnection:connection delegate:self] retain];
-		[handler setIdentityProperties:[identityProperties properties]];
-		if ([_delegate respondsToSelector:@selector(callbackURL)]) {
-			[handler setCustomURL:[_delegate performSelector:@selector(callbackURL)]];
+	FSKIdentityRequest *request = [[[FSKIdentityRequest alloc] initWithFamilySearchConnection:connection delegate:self selector:@selector(handleLoginResponse:)] retain]; 
+	[request sendLoginRequest];
 		}
-		[handler authenticate];
-	} else {
-		[self fetchProperties];
-	}
-}
 
-- (void)authenticationDidSuceedWithToken:(NSString *)token
-{
-	[connection setSessionId:token];
-	[connection setNeedsAuthentication:NO];
-	[self pingSession];
-	[_delegate authenticationDidSuceedWithToken:token];
-}
-
-- (void)loginWithSessionId:(NSString *)sessionId
+- (void)loginWithCredential:(NSURLCredential *)credential
 {
 //	NSXMLDocument* responseXML = [connection postFamilySearchData:myURL
 //												  withData:[[NSString stringWithFormat:@"username=%@&password=%@&key=%@", 
-//													  [sessionId user], [sessionId password], developerKey] dataUsingEncoding:NSUTF8StringEncoding] ofType:nil];
+//													  [credential user], [credential password], developerKey] dataUsingEncoding:NSUTF8StringEncoding] ofType:nil];
 
 }
 

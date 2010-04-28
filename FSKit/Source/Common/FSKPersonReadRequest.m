@@ -37,7 +37,7 @@ NSString *kPersonEndpoint = @"person";
 
 - (FSKPersonResponse *)responseWithData:(NSData *)data
 {
-	NSLog(@"%s", __PRETTY_FUNCTION__);	
+	NSLog(@"%s data:%@", __PRETTY_FUNCTION__, data);	
 	FSKPersonResponse *response = [[FSKPersonResponse alloc] initWithData:data];
 	NSLog(@"response code: %d message: %@", [response statusCode], [response statusMessage]);	
 	return [response autorelease];

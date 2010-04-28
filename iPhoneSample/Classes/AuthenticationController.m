@@ -10,20 +10,29 @@
 
 @implementation AuthenticationController
 
+@synthesize challenge;
+
 - (IBAction)cancel:(id)sender 
 {
 	NSLog(@"%s %@", _cmd, self.parentViewController);
 
+	[challenge.sender cancelAuthenticationChallenge:challenge];
 	[self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)authenticate:(id)sender 
 {
-//	NSURLCredential *credential = [NSURLCredential credentialWithUser:usernameField.text password:passwordField.text persistence:NSURLCredentialPersistenceForSession];
+	NSURLCredential *credential = [NSURLCredential credentialWithUser:usernameField.text password:passwordField.text persistence:NSURLCredentialPersistenceForSession];
 	[self.parentViewController dismissModalViewControllerAnimated:YES];	
 
-//	[self performSelector:@selector(sendCredential:) withObject:credential afterDelay:0.5];
+	[self performSelector:@selector(sendCredential:) withObject:credential afterDelay:0.5];
 }
+
+- (void)sendCredential:(NSURLCredential *)credential
+{
+	[[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -41,7 +50,7 @@
 
 // If you need to do additional setup after loading the view, override viewDidLoad.
 - (void)viewDidLoad {
-//	[usernameField becomeFirstResponder];
+	[usernameField becomeFirstResponder];
 }
 
 
@@ -49,6 +58,20 @@
 	// Return YES for supported orientations
 	return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+	[theTextField resignFirstResponder];
+	if (theTextField == usernameField)
+	{
+		[passwordField becomeFirstResponder];
+	}
+	if(theTextField == passwordField)
+	{
+		[self authenticate:self];
+	}
+	return YES;
+}
+
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview

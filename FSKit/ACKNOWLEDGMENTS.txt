@@ -8,3 +8,6 @@ Some code copyright Karelia
 	(See copyright notice at <http://cocoa.karelia.com>)
 
 Uses code Copyright (c) 2006 Red Sweater Software (NSData+RSHexDump) under the MIT License
+FamilySearch and the FamilySearch Logo are trademarks licensed to the Genealogical Society of Utah and are registered in the United States of American and other countries.
+
+

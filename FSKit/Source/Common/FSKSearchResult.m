@@ -13,7 +13,7 @@
 
 + (id)searchResultFromXML:(FSFAMILYTREEV2SearchResult *)searchElement
 {
-    id result = [[self alloc] initWithXML:searchElement];
+    id result = [[FSKSearchResult alloc] initWithXML:searchElement];
     return [result autorelease];
 }
 

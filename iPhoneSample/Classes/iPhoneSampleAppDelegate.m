@@ -9,7 +9,7 @@
 #import "iPhoneSampleAppDelegate.h"
 #import "AuthenticationController.h"
 
-#define kFSK_DEVELOPER_KEY @"WCQY-7J1Q-GKVV-7DNM-SQ5M-9Q5H-JX3H-CMJK"
+#define kFSK_DEVELOPER_KEY @"NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN-NNNN"
 static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_session_id";
 
 @implementation iPhoneSampleAppDelegate
@@ -34,6 +34,13 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 				 forKeyPath:@"sessionId"
 				    options:(NSKeyValueObservingOptionNew)
 					context:NULL];
+	
+	FSKIdentityService *identityService = [FSKIdentityService identityServiceWithConnection:connection delegate:self];
+	[identityService fetchProperties];
+	
+//	[self request:nil didReceiveAuthenticationURL:nil];
+	
+//	[identityService login];
 	
 // use this code to save the sessionId to disk	
 //	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -63,7 +70,11 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
                        context:(void *)context
 {
     if ([keyPath isEqual:@"sessionId"]) {
-		[[NSUserDefaults standardUserDefaults] setObject:[change objectForKey:NSKeyValueChangeNewKey] forKey:CURRENT_SESSION_ID_KEY];
+		NSString *sessId = [change objectForKey:NSKeyValueChangeNewKey];
+		if (sessId)
+		{
+			[[NSUserDefaults standardUserDefaults] setObject:sessId forKey:CURRENT_SESSION_ID_KEY];
+    }
     }
     // be sure to call the super implementation
     // if the superclass implements it
@@ -80,16 +91,16 @@ static const NSString *CURRENT_SESSION_ID_KEY = @"com.googlecode.fskit.current_s
 	[super dealloc];
 }
 
-- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url
+- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
-	NSLog(@"%s request:%@\nurl:%@", __PRETTY_FUNCTION__, request, url);
+	NSLog(@"%s", __PRETTY_FUNCTION__);
 	if (!authenticationController || YES)
 	{
-		authenticationController = [[AuthenticationController alloc] initWithNibName:@"AuthenticationView" bundle:nil];
+		authenticationController = [[AuthenticationController alloc] initWithNibName:@"SignInView" bundle:nil];
 	}
 	
 	NSLog(@"%s %@", _cmd, self.tabBarController);
-//	authenticationController.challenge = challenge;
+	authenticationController.challenge = challenge;
 	NSLog(@"%s %@", _cmd, self.tabBarController.modalViewController);
 //	int i=0;
 //	while(i < 1000 && self.tabBarController.modalViewController != nil) {

@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <FSKit/FSKit.h>
-#import "AuthenticationController.h"
+#import <FSKit/FSKAuthenticationController.h>
 
 @interface iPhoneSampleAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
 	IBOutlet UIWindow *window;
 	IBOutlet UITabBarController *tabBarController;
 
 	FSKConnection *connection;
-	AuthenticationController* authenticationController;
+	FSKAuthenticationController* authenticationController;
 }
 
 @property (nonatomic, retain) UIWindow *window;
