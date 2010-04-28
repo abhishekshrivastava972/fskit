@@ -1,8 +1,6 @@
 #import "FSAppTestDelegate.h"
 #import "FSKSharedDefines.h"
 
-#define DEFAULT_CALLBACK_HANDLER YES
-
 @implementation FSAppTestDelegate
 - (id)init {
 	self = [super init];
@@ -32,16 +30,30 @@
 
 - (IBAction)login:(id)sender
 {
-	NSLog(@"%s", _cmd);
+	NSLog(@"%s %@ %d", _cmd, [radio selectedCell], [[radio selectedCell] tag]);
 
+	switch ([[radio selectedCell] tag]) {
+		case 0: // panel
 	[identityService login];
+			break;
+		case 1: // default credential
+			[connection setCredential:[NSURLCredential credentialWithUser:@"api-user-1009" password:@"f8cc" persistence:NSURLCredentialPersistenceForSession]];
+			NSLog(@"credential: %@", [connection credential]);
+			[connection setDelegate:self];
+			break;
+		case 2: // username/password
+			[connection setCredential:[NSURLCredential credentialWithUser:[username stringValue] password:[password stringValue] persistence:NSURLCredentialPersistenceForSession]];
+			NSLog(@"credential: %@", [connection credential]);
+			[connection setDelegate:self];
+//			[identityService login];
+			break;
 }
 
 - (IBAction)logout:(id)sender
 {
 	NSLog(@"%s", _cmd);
-	
-	[identityService logout];
+	[connection signOut];
+	//[identityService logout];
 }
 
 - (IBAction)fetchMe:(id)sender
@@ -65,23 +77,29 @@
 	}
 }
 
-- (void)authenticationDidSuceedWithToken:(NSString *)token
+- (void)authenticationDidSucceedWithToken:(NSString *)token
 {
 	sessionId = [token retain];
-	[connection setSessionId:[sessionId stringValue]];
-	[connection setNeedsAuthentication:NO];
 	[identityService pingSession];
+}
+
+- (void)authenticationDidFailWithError:(NSError *)error
+{
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, error);
 }
 
 @end
 
 @implementation FSAppTestDelegate (PrivateMethods)
--(void) requestFinished:(id<EnunciateXML> )response
+-(void) requestFinished:(FSKResponse *)response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
 	[[[myResults textStorage] mutableString] appendString: [response description]];
 //	results = [response retain];
-	[self setTheDocument:response];
+	if ([response isKindOfClass:[FSKPersonResponse class]])
+	{
+		[[[myResults textStorage] mutableString] appendString: [response personSummary]];
+}
 }
 
 -(void) requestFailed:(NSError *)error
@@ -93,7 +111,7 @@
 - (void)request:(FSKRequest *)request didReturnResponse:(FSKIdentityResponse *)response
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, response);
-	[self requestFinished:[response xmlDocument]];
+	[self requestFinished:response];
 }
 
 - (void)request:(FSKRequest *)request didFailWithError:(FSKError *)error

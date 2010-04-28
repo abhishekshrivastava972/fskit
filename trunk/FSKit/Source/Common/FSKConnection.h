@@ -13,7 +13,7 @@
     @details  FSKRequest details
 */
 
-@class FSKRequest;
+@class FSKRequest, FSKIdentityService;
 
 /*!
     @brief   <#(description)#>
@@ -36,22 +36,38 @@ extern NSString *kFSAPIBetaBaseURLString;  // Beta
 extern NSString *kFSAPIDevBaseURLString;  // Development
 
 /*!
+    @brief   <#(description)#>
+    @details <#(description)#>
+*/
+extern NSString *FSAPIVersion;
+extern NSString *kFSK_ERROR_DOMAIN;
+
+extern NSString * const FSKitNotificationAuthenticationRequired;
+extern NSString * const FSKitNotificationAuthenticationURLWillOpen;
+extern NSString * const FSKitNotificationAuthenticationDidSucceed;
+extern NSString * const FSKitNotificationAuthenticationDidFail;
+
+
+/*!
     @class	FSKConnection
     @brief    Stores details needed to make connections to the FamilySearch web services, including authentication
 	@details  (comprehensive description)
 */
 @interface FSKConnection : NSObject {
 
+	NSURLCredential *credential;
+	
 	NSString *baseURLString;
 
 	NSString *developerKey;
-	NSString *_sessionId;
+	NSString *sessionId;
 	BOOL needsAuthentication;
-	BOOL _isAuthenticating;
+	BOOL isAuthenticating;
 	NSTimeInterval connectionTimeoutInterval;
-	id _delegate;	
+	id delegate;	
 	NSMutableDictionary *responseDataCache;
 	NSMutableArray *requestQueue;
+	FSKIdentityService *identityService;
 }
 
 /*!
@@ -66,6 +82,13 @@ extern NSString *kFSAPIDevBaseURLString;  // Development
 
 - (NSString *)baseURLString;
 - (void)setBaseURLString:(NSString *)value;
+
+/*!
+    @brief   <#(brief description)#>
+    @details <#(comprehensive description)#>
+*/
+- (NSURLCredential *)credential;
+- (void)setCredential:(NSURLCredential *)value;
 
 /**
  * Stores the developer key for this session, only used for login requests, but is required
@@ -91,6 +114,9 @@ extern NSString *kFSAPIDevBaseURLString;  // Development
 
 
 - (void)handleAuthenticationForRequest:(FSKRequest *)request;
+- (void)signOut;
+- (void)authenticate;
+
 @end
 
 #pragma mark -
@@ -118,7 +144,7 @@ extern NSString *kFSAPIDevBaseURLString;  // Development
     @param request the request for which authentication is needed
     @param challenge The NSURLAuthenticationChallenge to start authentication for
 */
-- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url;
+- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 /*!
     @brief   Provides the window to attach the authentication sheet to

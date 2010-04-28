@@ -62,8 +62,22 @@
 	
 	NSURLConnection *urlConnection = [[NSURLConnection connectionWithRequest:urlRequest
 																	   delegate:self] retain];
-	NSLog(@"connection: %@ headers: %@", urlConnection, [urlRequest allHTTPHeaderFields]);
 	
+	NSArray *oldCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[familySearchConnection baseURLString]]];
+	NSLog(@"allcookies count: %d, cookiesforURL:%@", [[[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] count], oldCookies);
+    // Now we can print all of the cookies we have:
+    for (NSHTTPCookie *cookie in oldCookies)
+        NSLog(@"Name: %@ : Value: %@, Expires: %@", cookie.name, cookie.value, cookie.expiresDate); 
+    NSArray * availableCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[familySearchConnection baseURLString]]];
+    NSDictionary * headers = [NSHTTPCookie requestHeaderFieldsWithCookies:availableCookies];
+	NSLog(@"cookie headers: %@ HTTPShouldHandleCookies:%d", headers, [urlRequest HTTPShouldHandleCookies]);
+	NSString *cookieHeader = [headers objectForKey:@"Cookie"]; // key used in header dictionary
+	if (cookieHeader) {
+        [urlRequest addValue:cookieHeader forHTTPHeaderField:@"Cookie"]; // header name
+}
+
+
+	NSLog(@"connection: %@ headers: %@", urlConnection, [urlRequest allHTTPHeaderFields]);
 }
 
 
@@ -246,6 +260,23 @@
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
 	NSLog(@"%s %@ %d %@ headers:\n%@", __PRETTY_FUNCTION__, response, [(NSHTTPURLResponse*)response statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[(NSHTTPURLResponse*)response statusCode]], [(NSHTTPURLResponse*)response allHeaderFields]);
+	NSArray *oldCookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[familySearchConnection baseURLString]]];
+	NSLog(@"allcookies count: %d, cookiesforURL:%@", [[[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies] count], oldCookies);
+    // Now we can print all of the cookies we have:
+    for (NSHTTPCookie *cookie in oldCookies)
+        NSLog(@"Name: %@ : Value: %@, Expires: %@", cookie.name, cookie.value, cookie.expiresDate); 
+	
+	// If you want to get all of the cookies:
+    NSArray * all = [NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:nil];
+    NSLog(@"How many Cookies: %d", all.count);
+    // Store the cookies:
+    // NSHTTPCookieStorage is a Singleton.
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:all forURL:[NSURL URLWithString:[familySearchConnection baseURLString]] mainDocumentURL:nil];
+	
+    // Now we can print all of the cookies we have:
+    for (NSHTTPCookie *cookie in all)
+        NSLog(@"Name: %@ : Value: %@, Expires: %@", cookie.name, cookie.value, cookie.expiresDate); 
+	
 	NSLog(@"length:%d", [response expectedContentLength]);
 	_responseCode = [(NSHTTPURLResponse*)response statusCode];
 	if (_responseCode == 401)
@@ -263,6 +294,10 @@
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {	
 	NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, connection, self);
+	if (_responseCode == 401)
+	{
+		[familySearchConnection handleAuthenticationForRequest:self];
+	}
 	NSError *error = nil;
 	FSKResponse *response = [self responseWithData:responseData];
 	if ([response respondsToSelector:@selector(setRequestedIds:)])
@@ -294,6 +329,54 @@
 	[connection autorelease];
 }
 
+-(void)connection:(NSURLConnection *)connection
+       didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+	NSLog(@"%s", __PRETTY_FUNCTION__);
+	// Should only occur on login requests, all others will receive a 401
+	//
+	// there are several ways to handle authentication from least to most involvement;
+	// 1. use the default keychain (we would never get here)
+	// 2. use our own custom keychain (consider implementing later)
+	// 3. use the provided credentials in the connection
+	// 4. have the request delegate handle the authentication event directly
+	// 5. have the connection delegate handle the authentication event directly
+	// 6. pop up a dialog/sheet and ask the user for credentials
+	// 
+	// in the end we need the challenge either cancelled or provided with credentials  
+	
+	// 3. use provided credential
+	if ([familySearchConnection credential])
+	{
+		[[challenge sender] useCredential:[familySearchConnection credential] forAuthenticationChallenge:challenge];
+		return;
+	}
+
+	// 4. have the request delegate handle it
+    if ([_delegate respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
+	{
+		[_delegate request:self didReceiveAuthenticationChallenge:challenge];
+		return;
+    }
+	
+	// 5. have the connection delegate handle it
+    if ([[familySearchConnection delegate] respondsToSelector:@selector(request:didReceiveAuthenticationChallenge:)])
+	{
+		[[familySearchConnection delegate] request:self didReceiveAuthenticationChallenge:challenge];
+		return;
+    }
+
+	// 6. do it ourselves
+	// until I know what to do, just cancel
+	[[challenge sender] cancelAuthenticationChallenge:challenge];
+//	[self handleAuthenticationChallenge:challenge];
+}
+
+
+- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, challenge);
+}
 @end
 
 #pragma mark -

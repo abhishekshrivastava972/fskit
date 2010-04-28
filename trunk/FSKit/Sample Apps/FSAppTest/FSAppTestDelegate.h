@@ -13,7 +13,9 @@
     IBOutlet NSTextView *myResults;
 	IBOutlet NSTextField *welcomeMessage;
 	IBOutlet NSTextField *sessionId;
-	IBOutlet NSButton *customURLCheckbox;
+	IBOutlet NSTextField *username;
+	IBOutlet NSTextField *password;
+	IBOutlet NSMatrix *radio;
 }
 
 - (IBAction)fetchMe:(id)sender;

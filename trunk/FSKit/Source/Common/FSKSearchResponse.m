@@ -16,17 +16,18 @@
     if ((self = [super initWithData:data]) != nil) 
 	{ 
 		_ft = [FSFAMILYTREEV2FamilyTree readXML:data];
-		FSFAMILYTREEV2SearchResults *searchResults = [[_ft searches] objectAtIndex:0];
-		totalCount = [searchResults count];
-		closeMatchesCount = [searchResults close];
-		partialMatchesCount = [searchResults partial];
+		FSFAMILYTREEV2SearchResults *thesearchResults = [[_ft searches] objectAtIndex:0];
+		totalCount = [thesearchResults count];
+		closeMatchesCount = [thesearchResults close];
+		partialMatchesCount = [thesearchResults partial];
 		NSMutableArray *theResults = [[NSMutableArray array] retain];
-		NSEnumerator *enumerator = [[searchResults results] objectEnumerator];
+		NSEnumerator *enumerator = [[thesearchResults results] objectEnumerator];
 		FSFAMILYTREEV2SearchResult *searchElement;
 		while (searchElement = [enumerator nextObject]) {
 			[theResults addObject:[FSKSearchResult searchResultFromXML:searchElement]];
 		}
 		searchResults = [[NSArray arrayWithArray:theResults] retain];
+		results = [searchResults mutableCopy];
 	}
 	
 	return self;	

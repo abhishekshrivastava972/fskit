@@ -10,9 +10,6 @@
 #import "FSKServiceBase.h"
 #import "FSKConnection.h"
 #import "FSKIdentityRequest.h"
-#import "FSKOAuthHandler.h"
-#import "FSKProperties.h"
-#import "FSKUserProfile.h"
 
 /*!
     @brief    <#(brief description)#>
@@ -20,7 +17,6 @@
 */
 
 @interface FSKIdentityService : FSKServiceBase {
-	FSKOAuthHandler *handler;
 	FSKProperties *identityProperties;
 }
 
@@ -32,10 +28,11 @@
     @details (comprehensive description)
 */
 - (void)login;
-- (void)loginWithSessionId:(NSString *)sessionId;
+- (void)loginWithCredential:(NSURLCredential *)credential;
 - (void)logout;
 - (void)pingSession;
 - (NSArray *)permissions;
 - (FSKUserProfile *)profile;
+- (FSKProperties *)identityProperties;
 
 @end

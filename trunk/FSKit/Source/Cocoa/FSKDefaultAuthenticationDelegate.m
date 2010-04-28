@@ -22,31 +22,31 @@
 	connection = aConnection;
 }
 
-- (void)handleAuthenticationURL:(NSURL *)url
+- (void)handleAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
 	NSLog(@"%s", __PRETTY_FUNCTION__);
-//	if ([challenge previousFailureCount] < 3)
-//	{
+	if ([challenge previousFailureCount] < 3)
+	{
 		// set default value, allow request delegate to override?
-//		NSWindow *window = [NSApp mainWindow];
+		NSWindow *window = [NSApp mainWindow];
 //		if ([[connection _delegate] respondsToSelector:@selector(windowForAuthenticationSheet:)])
 //		{
 //			window = [_delegate windowForAuthenticationSheet:(FSKRequest *)self];
 //		}
-	[[NSWorkspace sharedWorkspace] openURL:url];
-//		FSKLoginController *loginController = [[FSKLoginController alloc] init];
-//		[loginController startAuthentication:url window:window];
-//	} else
-//	{
-//		// If we don't have a valid credential, or have already failed auth 3x...
-//		[[challenge sender] cancelAuthenticationChallenge:challenge];
-//	}
+		
+		FSKLoginController *loginController = [[FSKLoginController alloc] init];
+		[loginController startAuthentication:challenge window:window];
+	} else
+	{
+		// If we don't have a valid credential, or have already failed auth 3x...
+		[[challenge sender] cancelAuthenticationChallenge:challenge];
+}
 }
 
-- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url;
+- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 {
-	NSLog(@"%s url: %@", __PRETTY_FUNCTION__, url);
-	[self handleAuthenticationURL:url];
+	NSLog(@"%s challenge: %@", __PRETTY_FUNCTION__, challenge);
+	[self handleAuthenticationChallenge:challenge];
 }
 
 - (void)request:(FSKRequest *)request didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge

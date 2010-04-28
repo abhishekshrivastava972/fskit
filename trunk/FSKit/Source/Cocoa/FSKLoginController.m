@@ -15,8 +15,18 @@
 #define LoginPanelNibName @"LoginPanel"
 
 
+static NSString *ERR_LOGIN_AUTHENTICATION = @"Invalid sign-in name or password";
 static NSString *ERR_LOGIN_OTHER = @"Login Error.";
+static NSString *ERR_LOGIN_NO_CREDENTIALS_SPECIFIED = @"Sign-in name or password not specified";
+
+//static NSString *kUSERNAME_DEFAULTS_KEY = @"username";
+//static NSString *kPASSWORD_DEFAULTS_KEY = @"password";
+//static NSString *kAPI_URL_DEFAULTS_KEY = @"apiurl";
+//static NSString *kAUTOLOGIN_DEFAULTS_KEY = @"autologin";
 static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO, fix this once registration is available
+
+static NSString *kDEFAULT_SECURITY_DOMAIN = @"FamilySearch API, Version 1.0"; // TODO get this from the challenge
+
 
 @implementation FSKLoginController
 - (id)init
@@ -108,7 +118,16 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
 	[spinner startAnimation: self];
 	//[self commitEditing];
 
+	NSString *username = [signInNameField stringValue];//[loginProperties objectForKey: kUSERNAME_DEFAULTS_KEY];
+	NSString *password = [passwordField stringValue];//[loginProperties objectForKey: kPASSWORD_DEFAULTS_KEY];
+//	BOOL autologin = [[loginProperties objectForKey: @"autologin"] boolValue];
 	NSError *loginError;
+	
+	if (!username || !password || [username length] == 0 || [password length] == 0) {
+		[loginErrorText setStringValue: ERR_LOGIN_NO_CREDENTIALS_SPECIFIED];
+		[spinner stopAnimation: self];
+		return;
+	}
 	
 //from webkit
     // This is required because the body of this method is going to
@@ -128,9 +147,22 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
 //    NSString *apiURLString = [values valueForKey: kAPI_URL_DEFAULTS_KEY];
 //	NSURL *apiURL = [NSURL URLWithString: FSAPIServerUrlString];	
 	
+	/* Write username to defaults */
+//	NSUserDefaults *defaults = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
+//	[defaults setObject: username forKey: kUSERNAME_DEFAULTS_KEY];
+	
 	/* If we're supposed to autologin, remember that */
 //	[defaults setObject: [NSNumber numberWithBool: autologin] forKey: kAUTOLOGIN_DEFAULTS_KEY];
 		
+	/* Make sure the password gets updated in both the keychain and the shared NSURLCredentialStorage used by NSURLConnection */
+//	NSURLCredential *credential = [NSURLCredential credentialWithUser: username password: password persistence: NSURLCredentialPersistenceForSession];
+//	NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc] initWithHost: [apiURL host] port: 0 protocol: [apiURL scheme] realm: kDEFAULT_SECURITY_DOMAIN authenticationMethod: NSURLAuthenticationMethodDefault];
+//	NSLog(@"b4 def cred: %@", [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace: protectionSpace]);
+//	NSLog(@"b4 all creds: %@", [[NSURLCredentialStorage sharedCredentialStorage] credentialsForProtectionSpace: protectionSpace]);
+//	[[NSURLCredentialStorage sharedCredentialStorage] setDefaultCredential: credential forProtectionSpace: protectionSpace];
+//	NSLog(@"af def cred: %@", [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace: protectionSpace]);
+//	NSLog(@"af all creds: %@", [[NSURLCredentialStorage sharedCredentialStorage] credentialsForProtectionSpace: protectionSpace]);
+	
 //	if([self loginWithUsername: username password: password APIURL: apiURL error: &loginError]) {
 //		[loginPanel close];
 //	}
@@ -154,9 +186,21 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
 }
 
 
--(void)startAuthenticationForWindow:(NSWindow *)w
+-(void)startAuthentication:(NSURLAuthenticationChallenge *)challenge window:(NSWindow *)w
 {
-	NSLog(@"%s", __PRETTY_FUNCTION__);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, [challenge protectionSpace]);
+	NSLog(@"%s host:%@ realm:%@", __PRETTY_FUNCTION__, [[challenge protectionSpace] host], [[challenge protectionSpace] realm]);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, [[NSURLCredentialStorage sharedCredentialStorage] credentialsForProtectionSpace:[challenge protectionSpace]]);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace:[challenge protectionSpace]]);
+                                                                    
+	NSURLCredential *latestCredential = [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace:[challenge protectionSpace]];
+	NSLog(@"latestCredential: %@ hasPwd: %d", latestCredential, [latestCredential hasPassword]);
+	
+    if ([latestCredential hasPassword]) {
+        [[challenge sender] useCredential:latestCredential forAuthenticationChallenge:challenge];
+        [challenge release];
+        return;
+    }
                                                                     
 //    [self startAuthentication:challenge window:(window == WebModalDialogPretendWindow ? nil : window)];
     //[challenge release];
@@ -170,19 +214,19 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
     // unlikely (how would you be loading a page if you had an error
     // sheet up?)
     if ([w attachedSheet] != nil) {
-//        [[challenge sender] cancelAuthenticationChallenge:challenge];
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
         return;
     }
 
     
     if (window) {
-        [self runAsSheetOnWindow:window];
+        [self runAsSheetOnWindow:window withChallenge:challenge];
     } else {
-        [self runAsModalDialog];
+        [self runAsModalDialogWithChallenge:challenge];
     }
 }
 
--(void)cancelAuthentication
+-(void)cancelAuthentication:(NSURLAuthenticationChallenge *)challenge
 {
 	[loginPanel cancelOperation:self];
 }
@@ -218,46 +262,73 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
 
 // Methods related to displaying the panel
 
--(void)setUpForAuthentication
+-(void)setUpForChallenge:(NSURLAuthenticationChallenge *)chall
 {
     [self loadNib];
+
+    NSURLProtectionSpace *space = [chall protectionSpace];
+
+    NSString *host;
+    if ([space port] == 0) {
+        host = [space host];
+    } else {
+        host = [NSString stringWithFormat:@"%@:%u", [space host], [space port]];
+    }
 
  //   NSString *realm = [space realm];
     NSString *message = @"";
 
-//    if ([chall previousFailureCount] > 0) {
-//            message = @"The sign-in name or password was incorrect. Please try again.";
-//    }
+    if ([chall previousFailureCount] > 0) {
+            message = @"The sign-in name or password was incorrect. Please try again.";
+    }
 
     [loginErrorText setStringValue:message];
     //[mainLabel sizeToFitAndAdjustWindowHeight];
 
+//    if ([space receivesCredentialSecurely]) {
+//        [smallLabel setStringValue:
+//            @"Your log-in information will be sent securely."];
+//    } else {
+//        [smallLabel setStringValue:
+//            @"Your password will be sent in the clear."];
+//    }
+
+    if ([[chall proposedCredential] user] != nil) {
+        [signInNameField setStringValue:[[chall proposedCredential] user]];
+        [loginPanel setInitialFirstResponder:passwordField];
+    } else {
+        [signInNameField setStringValue:@""];
+        [passwordField setStringValue:@""];
+        [loginPanel setInitialFirstResponder:signInNameField];
+}
 }
 
-- (void)runAsModalDialog
+- (void)runAsModalDialogWithChallenge:(NSURLAuthenticationChallenge *)chall
 {
-    [self setUpForAuthentication];
+    [self setUpForChallenge:chall];
     usingSheet = FALSE;
+    NSURLCredential *credential = nil;
 
     if ([[NSApplication sharedApplication] runModalForWindow:loginPanel] == 0) {
-//        credential = [NSURLCredential credentialWithUser:[signInNameField stringValue] password:[passwordField stringValue] persistence:([remember state] == NSOnState) ? NSURLCredentialPersistenceForSession : NSURLCredentialPersistenceForSession];
+        credential = [NSURLCredential credentialWithUser:[signInNameField stringValue] password:[passwordField stringValue] persistence:([remember state] == NSOnState) ? NSURLCredentialPersistenceForSession : NSURLCredentialPersistenceForSession];
     }
 	else
 	{
-//		[[chall sender] cancelAuthenticationChallenge:chall];		
+		[[chall sender] cancelAuthenticationChallenge:chall];		
 	}
 
-//	[[chall sender] useCredential:credential forAuthenticationChallenge:chall];
+	[[chall sender] useCredential:credential forAuthenticationChallenge:chall];
 //    [callback performSelector:selector withObject:chall withObject:credential];
 }
 
-- (void)runAsSheetOnWindow:(NSWindow *)window
+- (void)runAsSheetOnWindow:(NSWindow *)window withChallenge:(NSURLAuthenticationChallenge *)chall
 {
     //ASSERT(!usingSheet);
 
-    [self setUpForAuthentication];
+    [self setUpForChallenge:chall];
 
     usingSheet = TRUE;
+    _challenge = [chall retain];
     
     [[NSApplication sharedApplication] beginSheet:loginPanel modalForWindow:window modalDelegate:self didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:NULL];
 }
@@ -265,14 +336,14 @@ static NSString *kREGISTRATION_URL = @"https://new.familysearch.org/";  // TODO,
 - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void  *)contextInfo
 {
     if (returnCode == 0) {
-//        [[_challenge sender] useCredential:[NSURLCredential credentialWithUser:[signInNameField stringValue] password:[passwordField stringValue] persistence:([remember state] == NSOnState) ? NSURLCredentialPersistenceForSession : NSURLCredentialPersistenceForSession] forAuthenticationChallenge:_challenge];
+        [[_challenge sender] useCredential:[NSURLCredential credentialWithUser:[signInNameField stringValue] password:[passwordField stringValue] persistence:([remember state] == NSOnState) ? NSURLCredentialPersistenceForSession : NSURLCredentialPersistenceForSession] forAuthenticationChallenge:_challenge];
     }
 	else
 	{
-//		[[_challenge sender] cancelAuthenticationChallenge:_challenge];
+		[[_challenge sender] cancelAuthenticationChallenge:_challenge];
 	}
 
-//    [_challenge release];
+    [_challenge release];
 }
 
 @end

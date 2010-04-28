@@ -16,6 +16,6 @@
 	FSKConnection *connection;
 }
 
-- (void)request:(FSKRequest *)request didReceiveAuthenticationURL:(NSURL *)url;
+- (void)request:(FSKRequest *)request didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 @end

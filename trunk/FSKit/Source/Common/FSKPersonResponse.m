@@ -16,7 +16,11 @@
 {
     if ((self = [super init]) != nil) 
 	{
+		@try {
 		FSFAMILYTREEV2FamilyTree *familytree = [FSFAMILYTREEV2FamilyTree readFromXML:data];
+			statusCode = *([familytree statusCode]);
+			statusMessage = [[familytree statusMessage] retain];
+			version = [[familytree version] retain];
 		NSMutableArray *theResults = [NSMutableArray array];
 		NSEnumerator *enumerator = [[familytree persons] objectEnumerator];
 		FSFAMILYTREEV2Person *personElement;
@@ -24,6 +28,12 @@
 			[theResults addObject:[FSKPerson createFromXML:personElement]];
 		}
 		persons = [theResults retain];
+	}
+		@catch (NSException * e) {
+			NSLog(@"error: %@", e);
+		}
+		@finally {
+		}
 	}
 	
 	return self;	
