@@ -43,7 +43,7 @@
 //		}
 //		
 //		return [doc nodesForXPath:@"//temples/temple" error:nil];
-//	return [NSArray arrayWithObjects:@"first", @"second", nil];
+	return [NSArray arrayWithObjects:@"first", @"second", nil];
 }
 - (FSTEMPLEV1Temple *)fetchTempleWithCode:(NSString *)code {
 	NSURL *myURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/temple/v1/temple/%@", [connection baseURLString], code]];
@@ -57,6 +57,7 @@
 //	
 //	return [[doc nodesForXPath:@"//temples/temple" error:nil] lastObject];
 //								//	return [NSArray arrayWithObjects:@"first", @"second", nil];
+	return nil;//[[FSTEMPLEV1TempleRootElement readFromXML:data];
 }
 
 -(void) requestFinished:(id <EnunciateXML>)response
