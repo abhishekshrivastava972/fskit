@@ -47,6 +47,7 @@
 			[connection setDelegate:self];
 //			[identityService login];
 			break;
+	}
 }
 
 - (IBAction)logout:(id)sender
@@ -64,17 +65,6 @@
 	[personService readPersons:[NSSet setWithObjects:@"MMMM-MMD",@"KW3B-NK3",@"KW3B-NKH",@"KW3B-NK7",@"ZZZZ-ZZZ",@"ABCD-EFG",nil]];
 	[personService readPerson:@"ZZZZ-ZZZ"];
 	[personService readPerson:@"ABCD-EFG"];
-}
-
-- (NSURL *)callbackURL
-{
-	if ([customURLCheckbox state] == NSOnState)
-	{
-		return [NSURL URLWithString:@"x-com-mpoauth-mobile://result"];
-	}
-	else {
-		return nil;
-	}
 }
 
 - (void)authenticationDidSucceedWithToken:(NSString *)token

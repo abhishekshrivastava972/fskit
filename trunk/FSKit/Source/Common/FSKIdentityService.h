@@ -10,6 +10,8 @@
 #import "FSKServiceBase.h"
 #import "FSKConnection.h"
 #import "FSKIdentityRequest.h"
+#import "FSKProperties.h"
+#import "FSKUserProfile.h"
 
 /*!
     @brief    <#(brief description)#>
